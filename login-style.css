@@ -162,7 +162,10 @@
    .remember-forgot label input{
     accent-color: #000;
     margin-right: 3px;
-    
+   }
+
+   .remember-forgot input{
+    cursor: pointer;
    }
 
    .remember-forgot a{
@@ -184,7 +187,8 @@
     border-radius: 2rem;
     font-size: 1.6rem;
     font-weight: bold;
-    margin-bottom: 1rem ;
+    margin-bottom: 1rem;
+    cursor: pointer;
    }
 
    .login-register{
