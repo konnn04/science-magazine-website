@@ -61,8 +61,8 @@ async function fetchLogin(){
                    if ( data[i]["username"]==$('#emailLogin').val().trim() || data[i]["email"]==$('#emailLogin').val().trim() ) {
                         check=true;
                         if (data[i]["password"]==$('#passwordLogin').val()) {
-                            status=200
-                            
+                            setCookie(data[i]["username"],data[i]["email"],$('.input-check').eq(0).is(':checked'))
+                            status=200                            
                         }else{
                             status=301                            
                         }
@@ -157,7 +157,6 @@ $(document).ready(async(e)=>{
             let status = await fetchLogin()
             switch (status) {
                 case 200:{
-                    setCookie(data[i]["username"],data[i]["email"],$('.input-check').eq(0).is(':checked'))
                     setTimeout(()=>{
                         location.pathname='/homepage.html'
                     },1000)
