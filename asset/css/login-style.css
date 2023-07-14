@@ -6,18 +6,18 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
-   }
+}
 
-   :root{
+:root{
     font-size: 10px;
-   }
+}
 
    ou, ul{
     list-style-type: none;
    }
 
    body{
-    background: url('./img/login/background-login.jpg') no-repeat center center fixed;
+    background: url('/img/login/background-login.jpg') no-repeat center center fixed;
    }
    
    header{
@@ -52,7 +52,7 @@
     height: 40rem;
     width: 40rem;
     position: relative;
-    border: 2px solid rgba(0,0,0,0.5);
+    border: 2px solid rgba(255,255,255,0.5);
     border-radius: 2rem;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
@@ -72,8 +72,11 @@
     height: 54rem;
    }
 
+   .form-box *{
+    transition: all .1s ease-in;
+   }
+
    .form-box.login{
-    transition: .2s ease;
     transform: translateX(0rem);
    }
 
@@ -95,7 +98,7 @@
 
    .form-box h2{
     font-size: 3.5rem;
-    color: #000;
+    color: #fcfcfc;
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
@@ -105,7 +108,7 @@
     position: relative;
     width: 100%;
     height: 5rem;
-    border-bottom:2px solid #000;
+    border-bottom:2px solid #fcfcfc;
     margin: 20px 0;
    }
 
@@ -115,7 +118,7 @@
     left: 0.5rem;
     transform: translateY(-50%);
     font-size: 1.6rem;
-    color: #000;
+    color: #fcfcfc;
     font-weight: 500;
     pointer-events: none;
     transition: 0.3s;
@@ -136,7 +139,7 @@
     border: none;
     outline: none;
     font-size: 1.6rem;
-    color: #000;
+    color: #fcfcfc;
     font-weight: 500;
     padding: 0 35px 0 5px;
    }
@@ -153,20 +156,23 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.3rem;
     font-weight: 500;
-    color:#000;
-    margin: 10px 0 10px;
+    color:#fcfcfc;
+    margin: 15px 0 10px;
     display: flex;
     justify-content: space-between;
    }
 
    .remember-forgot label input{
-    accent-color: #000;
+    accent-color:#fcfcfc;
     margin-right: 3px;
-    
+   }
+
+   .remember-forgot input{
+    cursor: pointer;
    }
 
    .remember-forgot a{
-    color: #000;
+    color: #fcfcfc;
     text-decoration: none;
    }
 
@@ -184,13 +190,14 @@
     border-radius: 2rem;
     font-size: 1.6rem;
     font-weight: bold;
-    margin-bottom: 1rem ;
+    margin-bottom: 1rem;
+    cursor: pointer;
    }
 
    .login-register{
     font-size: 1.4rem;
     font-weight: 500;
-    color:#000;
+    color:#fcfcfc;
     text-align: center;
    }
 
@@ -199,10 +206,64 @@
    }
 
    .login-register p a{
-    color: #000;
+    color: #fcfcfc;
     text-decoration: none;
    }
 
    .login-register p a:hover{
     text-decoration: underline;
    }
+
+   /* Xu ly hau ki */
+.notify{
+    display: none;
+}
+
+.notify i{
+    font-size: 1.4rem;
+}
+
+.invalid{
+    border-bottom:2px solid #b11f35!important;
+    margin: 20px 0 40px 0;
+}
+
+
+.invalid label{
+    color: #951528!important;
+}
+
+.invalid .notify{
+    display: block;
+    color: #951528!important;
+    margin: 8px 0 0 3px;
+    font-size: 1.6rem;
+    animation: shack .5s ease;
+}
+
+.valid{
+    border-bottom:2px solid #00e92b!important;
+}
+.valid label{
+    color: #00e92b!important;
+}
+
+@keyframes shack{
+    0%{
+        transform: skewX(0deg);
+        scale: 1;
+    }
+    20%{
+        transform: skewX(20deg);
+        scale: 1.1;
+
+    }
+    66%{
+        scale: 1;
+        transform: skewX(-20deg);
+    }
+    100%{
+        scale: 1;
+        transform: skewX(0deg);
+    }
+}
