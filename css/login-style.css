@@ -17,14 +17,14 @@
    }
 
    body{
-    background: url('./img/login/background-login.jpg') no-repeat center center fixed;
+    background: url('/img/login/background-login.jpg') no-repeat center center fixed;
    }
    
    header{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    background-color: #000;
     width: 100vw;
     height: 7rem;
    }
@@ -32,7 +32,7 @@
    .logo{
     font-size: 4rem;
     font-weight: bold;
-    color: #fff;
+    color: #fcfcfc;
     margin-left: 6rem;
     font-family: 'Bacasime Antique', serif;
     cursor: pointer;
@@ -48,11 +48,15 @@
     justify-content: center;
    }
 
+   i{
+    color: #fcfcfc;
+   }
+
    .wrapper{
     height: 40rem;
     width: 40rem;
     position: relative;
-    border: 2px solid rgba(0,0,0,0.5);
+    border: 2px solid rgba(255,255,255,0.5);
     border-radius: 2rem;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
@@ -95,7 +99,7 @@
 
    .form-box h2{
     font-size: 3.5rem;
-    color: #000;
+    color: #fcfcfc;
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
@@ -105,7 +109,7 @@
     position: relative;
     width: 100%;
     height: 5rem;
-    border-bottom:2px solid #000;
+    border-bottom:2px solid #fcfcfc;
     margin: 20px 0;
    }
 
@@ -115,7 +119,7 @@
     left: 0.5rem;
     transform: translateY(-50%);
     font-size: 1.6rem;
-    color: #000;
+    color: #fcfcfc;
     font-weight: 500;
     pointer-events: none;
     transition: 0.3s;
@@ -136,7 +140,7 @@
     border: none;
     outline: none;
     font-size: 1.6rem;
-    color: #000;
+    color: #fcfcfc;
     font-weight: 500;
     padding: 0 35px 0 5px;
    }
@@ -153,14 +157,14 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.3rem;
     font-weight: 500;
-    color:#000;
+    color:#fcfcfc;
     margin: 10px 0 10px;
     display: flex;
     justify-content: space-between;
    }
 
    .remember-forgot label input{
-    accent-color: #000;
+    accent-color: #fcfcfc;
     margin-right: 3px;
    }
 
@@ -169,7 +173,7 @@
    }
 
    .remember-forgot a{
-    color: #000;
+    color: #fcfcfc;
     text-decoration: none;
    }
 
@@ -194,7 +198,7 @@
    .login-register{
     font-size: 1.4rem;
     font-weight: 500;
-    color:#000;
+    color:#fcfcfc;
     text-align: center;
    }
 
@@ -203,7 +207,7 @@
    }
 
    .login-register p a{
-    color: #000;
+    color: #fcfcfc;
     text-decoration: none;
    }
 
