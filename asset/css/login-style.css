@@ -10,6 +10,9 @@
 
 :root{
     font-size: 10px;
+    --sucess:#7ACF4B;
+    --error:#FF3131;
+    --text: #FCFCFC;
 }
 
    ou, ul{
@@ -24,7 +27,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #000;
+    background:linear-gradient(180deg, #000, rgba(0,0,0,0.5));
     width: 100vw;
     height: 7rem;
    }
@@ -32,7 +35,7 @@
    .logo{
     font-size: 4rem;
     font-weight: bold;
-    color: #fcfcfc;
+    color: var(--text);
     margin-left: 6rem;
     font-family: 'Bacasime Antique', serif;
     cursor: pointer;
@@ -49,7 +52,7 @@
    }
 
    i{
-    color: #fcfcfc;
+    color: var(--text);
    }
 
    .wrapper{
@@ -81,6 +84,7 @@
    }
 
    .form-box.login{
+    transition: .2s ease;
     transform: translateX(0rem);
    }
 
@@ -102,7 +106,7 @@
 
    .form-box h2{
     font-size: 3.5rem;
-    color: #fcfcfc;
+    color: var(--text);
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
@@ -112,7 +116,7 @@
     position: relative;
     width: 100%;
     height: 5rem;
-    border-bottom:2px solid #fcfcfc;
+    border-bottom:2px solid var(--text);
     margin: 20px 0;
    }
 
@@ -122,7 +126,7 @@
     left: 0.5rem;
     transform: translateY(-50%);
     font-size: 1.6rem;
-    color: #fcfcfc;
+    color: var(--text);
     font-weight: 500;
     pointer-events: none;
     transition: 0.3s;
@@ -143,7 +147,7 @@
     border: none;
     outline: none;
     font-size: 1.6rem;
-    color: #fcfcfc;
+    color: var(--text);
     font-weight: 500;
     padding: 0 35px 0 5px;
    }
@@ -160,22 +164,14 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.3rem;
     font-weight: 500;
-    color:#fcfcfc;
-<<<<<<<< HEAD:css/login-style.css
-    margin: 10px 0 10px;
-========
+    color:var(--text);
     margin: 15px 0 10px;
->>>>>>>> konnn:asset/css/login-style.css
     display: flex;
     justify-content: space-between;
    }
 
    .remember-forgot label input{
-<<<<<<<< HEAD:css/login-style.css
-    accent-color: #fcfcfc;
-========
-    accent-color:#fcfcfc;
->>>>>>>> konnn:asset/css/login-style.css
+    color:var(--text);
     margin-right: 3px;
    }
 
@@ -184,7 +180,7 @@
    }
 
    .remember-forgot a{
-    color: #fcfcfc;
+    color: var(--text);
     text-decoration: none;
    }
 
@@ -209,7 +205,7 @@
    .login-register{
     font-size: 1.4rem;
     font-weight: 500;
-    color:#fcfcfc;
+    color:var(--text);
     text-align: center;
    }
 
@@ -218,7 +214,7 @@
    }
 
    .login-register p a{
-    color: #fcfcfc;
+    color: var(--text);
     text-decoration: none;
    }
 
@@ -236,31 +232,31 @@
 }
 
 .invalid{
-    border-bottom:2px solid #b11f35!important;
+    border-bottom:2px solid var(--error)!important;
     margin: 20px 0 40px 0;
 }
 
 
-.invalid label{
-    color: #951528!important;
+.invalid label, .invalid i{
+    color:var(--error)!important;
 }
 
 .invalid .notify{
     display: block;
-    color: #951528!important;
+    color: var(--error)!important;
     margin: 8px 0 0 3px;
     font-size: 1.6rem;
-    animation: shack .5s ease;
+    animation: shake .5s ease;
 }
 
 .valid{
-    border-bottom:2px solid #00e92b!important;
+    border-bottom:2px solid var(--sucess);
 }
-.valid label{
-    color: #00e92b!important;
+.valid label, .valid i{
+    color: var(--sucess);
 }
 
-@keyframes shack{
+@keyframes shake{
     0%{
         transform: skewX(0deg);
         scale: 1;
@@ -278,4 +274,14 @@
         scale: 1;
         transform: skewX(0deg);
     }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--text);
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px transparent;
 }

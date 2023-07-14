@@ -1,6 +1,8 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Montserrat&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 *{ 
     margin: 0;
@@ -11,6 +13,7 @@
 
    :root{
     font-size: 10px;
+    --text: #fcfcfc;
    }
 
    ou, ul{
@@ -30,12 +33,13 @@
     background-color: black;
     width: 100vw;
     height: 7rem;
+    max-width: 100vw;
    }
    
    .logo{
     font-size: 4rem;
     font-weight: bold;
-    color: #fff;
+    color: var(--text);
     margin-left: 6rem;
     font-family: 'Bacasime Antique', serif;
     cursor: pointer;
@@ -49,7 +53,7 @@
    .nav_links{
     font-size: 1.8rem;
     text-decoration: none;
-    color: #fff;
+    color: var(--text);
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     position: relative;
@@ -80,7 +84,7 @@
    
    
    .btnLogin-popup{
-    color: #fff;
+    color: var(--text);
     width: 13rem;
     height: 4rem;
     font-family: 'Montserrat', sans-serif;
@@ -88,7 +92,7 @@
     font-size: 1.8rem;
     cursor: pointer;
     border-radius: 4rem;
-    border: #fff 2px solid;
+    border: var(--text) 2px solid;
     background-color: transparent;
     transition: all 0.2s ease-in;
    }
@@ -107,7 +111,7 @@
    }
 
    .user-info h2{
-    color: #fff;
+    color: var(--text);
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 1.8rem;
@@ -131,7 +135,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: var(--text);
    }
 
    .primary-bar-l{
@@ -183,37 +187,107 @@
    }
 
    .recommended{
-    height: 100%;
     max-height: 55rem;
+    max-width: 60%;
     aspect-ratio: 16/9;
-    margin: 1rem auto;
+    margin: 3rem auto;
     position: relative;
-    background-image: linear-gradient(-90deg, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0)), url('./img/login/background-login.jpg');
-    
    }
+
+   .r-frame{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-90deg, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0)), url('/img/body/recommend/recommend-img(1).jpg') no-repeat center;
+    background-size: cover;
+   }
+
    .info{
     width: 30%;
     height: 100%;
     position: absolute;
     right: 0;
+    
    }
 
    .info p{
-    color: #fff;
+    color: var(--text);
    }
 
    .r-type{
     font-size: 1.8rem;
     font-size: 600;
-    margin: 2rem 0;
+    margin: 4rem 0;
+    border-left: 2px solid #ffcc00;
+    padding-left: .5rem;
    }
 
    .r-title{
     font-size: 3rem;
     font-weight: 800;
+    font-family: 'Merriweather Sans', sans-serif;
+    text-transform: uppercase;
    }
 
-  
+   .r-summary{
+    font-size: 1.3rem;
+    margin: 1rem 2rem 2rem 0;
+    text-align: justify;
+    font-family: 'Merriweather', serif;
+    overflow:hidden ;
+   }
+
+   .readMore-btn{
+    position: absolute;
+    right: 2rem;
+    margin: 2rem 0;
+
+   }
+
+   .readMore-btn button{
+    background-color: transparent;
+    color: var(--text);
+    border: 2px solid #ffcc00;
+    border-radius: 3rem;
+    padding: 0.5rem;
+    transition: all .1s ease-in-out;
+   }
+
+   .readMore-btn i{
+    color: #ffcc00
+   }
+
+   .readMore-btn button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+   }
+
+   .control{
+    height: 2rem;
+    width: 100%;
+    position: absolute;
+    bottom:0;
+    display: flex;
+    gap:1rem;
+    justify-content: center;
+    
+   }
+
+   .control button{
+    width: 0.9rem;
+    height: 0.9rem;
+    background-color: #fcfcfc;
+    opacity: .5;
+    border-radius: 50%;
+    cursor: pointer;
+   }
+
+   /*cái này t để tượng trưng, sửa lại bằng js nha*/
+   .control button:first-child{
+    opacity: 1;
+    background-color: #ffcc00;
+   }
+
 
 
 
