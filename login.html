@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link rel="stylesheet" href="./css/login-style.css">
+=======
+    <link rel="stylesheet" href="./asset/css/login-style.css">
+>>>>>>> konnn
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="https://static.thenounproject.com/png/1201563-200.png" type="image/x-icon">
     <title>Science Journal - Login</title>
+    <script src="./asset/js/redirects.js"></script>
 </head>
 <body>
     <header>
@@ -19,21 +24,30 @@
             <form action="#">
                 <div class="input-box">
                     <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-                    <input type="text" name="" id="email" required>
-                    <label for="email">Email or Username</label>
+                    <input type="text" id="emailLogin" required>
+                    <label for="emailLogin">Email or Username</label>
+                    <span class="notify">
+                        <i class="fa-solid fa-circle-info"></i>
+                        No email or username found!
+                    </span>
                 </div>
+                
                 <div class="input-box">
                     <span class="icon"><i class="fa-solid fa-lock"></i></span>
-                    <input type="password" name="" id="password" required>
-                    <label for="password">Password</label>
+                    <input type="password" id="passwordLogin" required>
+                    <label for="passwordLogin">Password</label>
+                    <span class="notify">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Wrong password
+                    </span>
                 </div>
                 <div class="remember-forgot">
-                    <label><input type="checkbox">Remember me</label>
+                    <label><input class="input-check" type="checkbox">Remember me</label>
                     <a href="#">Forgot Password?</a>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn submitBtn">Login</button>
                 <div class="login-register">
-                <p>Don't have an account?  <a href="#" class="register-link">Register</a></p>
+                <p>Don't have an account?  <a href="#register" class="register-link">Register</a></p>
                 </div>
             </form>
             </div>
@@ -41,37 +55,56 @@
             <div class="form-box register">
                 <h2>Registration</h2>
                 <form action="#">
-                    <div class="input-box">
+                    <div class="input-box ">
                         <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-                        <input type="text" name="" id="email" required>
-                        <label for="email">Email</label>
+                        <input type="text" name="" id="emailSignUp" required>
+                        <label for="emailSignUp">Email</label>
+                        <span class="notify">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </span>
                     </div>
-                    <div class="input-box">
+                    <div class="input-box" title="Username length must be more 6 letters">
                         <span class="icon"><i class="fa-solid fa-user"></i> </i></span>
                         <input type="text" name="" id="username" required>
                         <label for="username">Username</label>
+                        <span class="notify">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </span>
                     </div>
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-lock"></i></span>
                         <input type="password" name="" id="password" required>
                         <label for="password">Password</label>
+                        <span class="notify">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </span>
                     </div>
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-lock"></i></span>
                         <input type="password" name="" id="c-password" required>
                         <label for="c-password">Confirm Password</label>
+                        <!-- <span class="notify">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Password does not match above!
+                        </span> -->
                     </div>
                     <div class="remember-forgot">
-                        <label><input type="checkbox">I agree with <a href="#">Terms & Conditions</a></label>
+                        <label><input type="checkbox" class="input-check" required>I agree with <a href="#">Terms & Conditions</a></label>
+                        
                     </div>
-                    <button type="submit" class="btn">Register</button>
+                    <button type="submit" class="btn submitBtn">Register</button>
                     <div class="login-register">
                     <p>Already have an account?  <a href="#" class="login-link">Login</a></p>
                     </div>
                 </form>
                 </div>
         </div>
+<<<<<<< HEAD
         <script src="./js/login.js"></script>
+=======
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="./asset/js/login.js"></script>
+>>>>>>> konnn
     </main>
 </body>
 </html>
