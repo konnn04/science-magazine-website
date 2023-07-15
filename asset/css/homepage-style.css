@@ -188,7 +188,8 @@
 
    .recommended{
     max-height: 55rem;
-    max-width: 60%;
+    max-width: 100rem;
+    width: 100%;
     aspect-ratio: 16/9;
     margin: 3rem auto;
     position: relative;
@@ -198,8 +199,11 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(-90deg, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0)), url('/img/body/recommend/recommend-img(1).jpg') no-repeat center;
+    background: linear-gradient(-90deg, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0)),  no-repeat center;
     background-size: cover;
+    opacity: 0;
+    z-index: -1;
+    overflow: hidden;
    }
 
    .info{
@@ -283,9 +287,61 @@
    }
 
    /*cái này t để tượng trưng, sửa lại bằng js nha*/
-   .control button:first-child{
+   
+
+   .control button.active{
     opacity: 1;
     background-color: #ffcc00;
+   }
+
+  .r-frame.show{
+    animation: showFrame .5s ease-out forwards;
+  }
+  .r-frame.hide{
+    animation: hideFrame .5s ease-out forwards;
+  }
+   
+
+   @keyframes hideFrame {
+      0%{
+        opacity: 1;
+        scale: 1;
+      }
+      50%{
+        opacity: 0.8;
+        scale: 1.05;
+      }
+      99%{
+        transform: translateX(-9rem);
+        opacity: 0;
+        scale: 1;
+      }
+      100%{
+        opacity: 0;
+        transform: translateX(0);
+        z-index: -1;
+      }
+   }
+
+   @keyframes showFrame {
+    0%{
+      opacity: 0;
+      scale: .7;
+    }
+    50%{
+      opacity: 0.8;
+      scale: 1.05;
+      transform: translateX(9rem);
+    }
+    99%{
+      scale: 1;
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100%{     
+      opacity: 1;
+      z-index: 0;
+    }
    }
 
 

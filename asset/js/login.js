@@ -1,4 +1,5 @@
 var cd=false
+const API="https://64b00d29c60b8f941af524b6.mockapi.io/acc"
 
 function initCd() {
     cd=true
@@ -21,7 +22,7 @@ function setCookie(username,email,remember) {
 
 async function fetchSignUp(upload) {
     var status = 200
-    await fetch("https://64b00d29c60b8f941af524b6.mockapi.io/acc",{
+    await fetch(API,{
         method:"GET",
         headers:{'content-type':'application/json'},
     }).then(async res =>{
@@ -37,7 +38,7 @@ async function fetchSignUp(upload) {
             }            
         }
         if (status==200) {
-            await fetch("https://64b00d29c60b8f941af524b6.mockapi.io/acc",{
+            await fetch(API,{
                 method:"POST",
                 headers:{'content-type':'application/json'},
                 body: JSON.stringify(upload)
@@ -51,7 +52,7 @@ async function fetchSignUp(upload) {
 
 async function fetchLogin(){
     var status = 500
-    await fetch("https://64b00d29c60b8f941af524b6.mockapi.io/acc",{
+    await fetch(API,{
         method:"GET",
         headers:{'content-type':'application/json'}
     }).then(async (res)=>{
