@@ -22,6 +22,7 @@
 
    body{
     background: linear-gradient(315deg, #262626 0%, #28313b 74%) no-repeat center center fixed;
+    
    }
 
    /*header*/
@@ -34,6 +35,7 @@
     width: 100vw;
     height: 7rem;
     max-width: 100vw;
+    position: relative;
    }
    
    .logo{
@@ -105,9 +107,18 @@
 
    .user-info{
     display: flex;
+    padding: 2rem;
     align-items: center;
     justify-content: end;
     gap: 1rem;
+    transition: all .2s ease;
+    
+   }
+
+   .user-info:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    
    }
 
    .user-info h2{
@@ -119,6 +130,34 @@
 
    .user-info i{
     font-size: 1.8rem;
+   }
+
+   .log-out{
+    width: 15rem;
+    height: 4rem;
+    position: absolute;
+    right: 0;
+    bottom: -4rem;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+   }
+
+   .log-out h2{
+    color: var(--text);
+    font-size: 1.8rem;
+    font-family: 'Montserrat', sans-serif;
+   }
+   .log-out i{
+    color: var(--text);
+    font-size: 1.8rem;
+   }
+
+   .log-out:hover{
+    cursor: pointer;
    }
 
    /*Body*/
@@ -219,23 +258,23 @@
    }
 
    .r-type{
-    font-size: 1.8rem;
+    font-size: 1.8em;
     font-size: 600;
-    margin: 4rem 0;
+    margin: 4em 0;
     border-left: 2px solid #ffcc00;
-    padding-left: .5rem;
+    padding-left: .5em;
    }
 
    .r-title{
-    font-size: 3rem;
+    font-size: 3em;
     font-weight: 800;
     font-family: 'Merriweather Sans', sans-serif;
     text-transform: uppercase;
    }
 
    .r-summary{
-    font-size: 1.3rem;
-    margin: 1rem 2rem 2rem 0;
+    font-size: 1.3em;
+    margin: 1em 2em 2em 0;
     text-align: justify;
     font-family: 'Merriweather', serif;
     overflow:hidden ;
@@ -342,6 +381,61 @@
       opacity: 1;
       z-index: 0;
     }
+   }
+
+   .category{
+    width: 100vw;
+    height: 30rem;
+    box-sizing: border-box;
+
+   }
+
+   .section-title{
+    padding: 1rem 0 0 1rem;
+   }
+
+   .category div h2{
+    color: var(--text);
+    font-size: 3rem;
+    padding: 0.5rem;
+    width: fit-content;
+    border-left: #ffcc00 solid 2px;
+    border-top: #ffcc00 solid 2px;
+   }
+
+   .c-container{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   
+   .c-wrapper{
+    width: 20%;
+    height: 90%;
+    box-sizing: border-box;
+    padding: .5rem;
+   }
+
+   .c-type{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 2rem;
+    background-color: #ffcc00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/img/login/background-login.jpg');
+    font-size: 3rem;
+    color: var(--text);
+    transition: all 0.2s ease;
+   }
+
+   .c-type:hover{
+    cursor: pointer;
+    transform: scale(1.05);
    }
 
 
