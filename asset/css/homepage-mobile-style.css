@@ -1,0 +1,7 @@
+header{
+  flex-wrap: wrap;
+}
+
+.logo,nav{
+  width: 100%;
+}

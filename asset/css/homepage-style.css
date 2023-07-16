@@ -9,7 +9,7 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
-   }
+}
 
    :root{
     font-size: 10px;
@@ -22,12 +22,13 @@
 
    body{
     background: linear-gradient(315deg, #262626 0%, #28313b 74%) no-repeat center center fixed;
-    
+    overflow-x: hidden;
    }
 
    /*header*/
    
    header{
+    user-select: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -112,7 +113,8 @@
     justify-content: end;
     gap: 1rem;
     transition: all .2s ease;
-    
+    position: relative;
+    z-index: 5;
    }
 
    .user-info:hover{
@@ -131,35 +133,52 @@
    .user-info i{
     font-size: 1.8rem;
    }
-
-   .log-out{
-    width: 15rem;
-    height: 4rem;
+   .menu-user-box{
+    display: none;
     position: absolute;
+    top: 100%;
     right: 0;
-    bottom: -4rem;
-    z-index: 2;
-    background-color: rgba(0,0,0,0.8);
+    background-color: aqua;
+    width: 16rem;
+    background-color: black;
+    color: var(--text);
+}
+   .menu-user{
+    width: 100%;
+    list-style-type: none;
+   }
+
+   .menu-user > li{
+    transition: all .2s ease;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 2rem;
    }
 
-   .log-out h2{
-    color: var(--text);
-    font-size: 1.8rem;
-    font-family: 'Montserrat', sans-serif;
-   }
-   .log-out i{
-    color: var(--text);
-    font-size: 1.8rem;
+   .menu-user > li:hover{
+    color: #000;
+    background-color: white;
    }
 
-   .log-out:hover{
-    cursor: pointer;
+   .menu-user > li:hover h2{
+    color: #000;
+  }
+
+   .menu-user-box.show{
+      display: block;
+      animation: showMenuUser .3s ease-in forwards;
    }
 
+   @keyframes showMenuUser {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+   }
    /*Body*/
    
    .body-container{
@@ -325,9 +344,6 @@
     cursor: pointer;
    }
 
-   /*cái này t để tượng trưng, sửa lại bằng js nha*/
-   
-
    .control button.active{
     opacity: 1;
     background-color: #ffcc00;
@@ -382,7 +398,7 @@
       z-index: 0;
     }
    }
-
+/*  */
    .category{
     width: 100vw;
     height: 30rem;
@@ -404,15 +420,22 @@
    }
 
    .c-container{
-    width: 100%;
+    user-select: none;
+    width: 99%;
     height: 80%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    overflow-x: auto;
+   }
+
+   .c-container::-webkit-scrollbar{
+    opacity: 0;
    }
    
    .c-wrapper{
     width: 20%;
+    min-width: 30rem;
     height: 90%;
     box-sizing: border-box;
     padding: .5rem;

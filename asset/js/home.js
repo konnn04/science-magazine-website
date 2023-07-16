@@ -5,6 +5,39 @@ function cutString(s,length) {
     return (s.indexOf(' ',length) ==-1)?s:s.slice(0,s.indexOf(' ',length)+1)+"..."
 }
 
+function initEvent() {
+    $(".user-info").click(()=>{
+        $(".menu-user-box").toggleClass("show");
+    })
+
+    $(".menu-user li").eq(0).click(()=>{
+        document.cookie="username=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
+        document.cookie="email=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
+        setTimeout(()=>{
+            initUser()
+        },500)
+    })
+}
+
+function initUser() {
+    if (getCookie("username")) {
+        $("#user-check").html(`<div class="user-info">
+                       <h2>${getCookie("username")}</h2>
+                       <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                       <div class="menu-user-box">
+                           <ul class="menu-user">
+                               <li>
+                                   <i class="fa-solid fa-right-from-bracket"></i>
+                                   <h2>Log out</h2>
+                               </li>                                
+                           </ul>
+                       </div>
+       `)
+   }else{
+       $("#user-check").html(`<a class="nav_btn" href="./login.html" id="loginBtn"><button class="btnLogin-popup">Login</button></a>`)
+   }
+}
+
 function runFrame(i) {
     //Xóa Interval trước đó nếu có
     clearInterval(setIntervalFrame)
@@ -78,16 +111,9 @@ function initRFrame(data) {
 }
 
 $(document).ready(async()=>{
-    if (getCookie("username")) {
-        $("#user-check").html(`<div 
-        class="user-info">
-        <h2>${getCookie("username")}</h2>
-        <i class="fa-solid fa-user" style="color: #ffffff;"></i>
-    </div>
-        `)
-    }else{
-        $("#user-check").html(`<a class="nav_btn" href="./login.html" id="loginBtn"><button class="btnLogin-popup">Login</button></a>`)
-    }
+    initUser()
+
+    initEvent()
 
     await fetch("/asset/data/recommend.json")
     .then(async (res)=>{
