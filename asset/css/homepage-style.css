@@ -3,6 +3,10 @@
   @import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Montserrat&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+  @font-face {
+    font-family: GeoFont;
+    src: url(/font/freeedit-webfont.woff.ttf);
+  }
 
 *{ 
     margin: 0;
@@ -22,7 +26,7 @@
    }
 
    body{
-    background: linear-gradient(315deg, #262626 0%, #28313b 74%) no-repeat center center fixed;
+    background: linear-gradient(315deg, #262626 0%, #121212 74%) no-repeat center center fixed;
     overflow-x: hidden;
    }
 
@@ -404,11 +408,11 @@
    .category{
     width: 100vw;
     height: fit-content;
-    background-color: darkgrey;
    }
 
    .section-title{
     padding: 1rem 0 0 1rem;
+    margin-left: 2rem;
    }
 
    .category div h2,
@@ -425,7 +429,8 @@
 
 .t-container{
     width: 100%;
-    margin-top: 70px;
+    margin-top: 2rem;
+    margin-bottom: 7rem;
   }
 
 .type{
@@ -433,18 +438,43 @@
     text-align: center;
     width: 100%;
     text-transform: uppercase;
+    color: var(--text);
   }
 
 .t-wrapper{
     width: 98%;
-    margin: 0 auto;
+    margin: 1rem auto 0;
     display: flex;
-    
+    position: relative;
+  }
+
+  .r-arrow, .l-arrow{
+    aspect-ratio: 1;
+    width: 2.5rem;
+    border-top: 3px solid var(--text);
+    border-right: 3px solid var(--text);
+    position: absolute;
+    z-index: 5;
+    top: 40%;
+  }
+
+  .r-arrow{
+    transform: rotate(45deg);
+    right: 2rem;
+  }
+
+  .l-arrow{
+    transform: rotate(-135deg);
+    left: 2rem;
+  }
+
+  .r-arrow:hover, .l-arrow:hover{
+    cursor: pointer;
   }
 
 .new{
-    width: 300px;
-    height: 300px;
+    width: 33rem;
+    height: 30rem;
     flex-shrink: 0;
 }
 
@@ -452,28 +482,36 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 1rem;
 }
 
 .new-img{
     width: 100%;
     height: 80%;
-    background-color: #fff;
-    margin-bottom: 10px;
+    background-image: url(/img/login/background-login.jpg);
+    margin-bottom: 1.8rem;
+    border-radius: 1rem 1rem 0 0;
+    overflow: hidden;
+    transition: all .2s ease;
+  }
+  .new-img:hover{
+    cursor: pointer;
+    transform: scale(1.05);
   }
 
 .new-title{
     text-decoration: none;
-    color: black;
+    color: var(--text);
     font-size: 18px;
     font-weight: 600;
+    font-family: 'Arial', sans-serif;
   }
 
 /*  */
 .magazine{
   width: 100%;
   height: fit-content;
-  padding: 2rem;
+  /* padding: 2rem; */
   user-select: none;
   overflow: hidden;
 }
