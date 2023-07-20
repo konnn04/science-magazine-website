@@ -398,12 +398,11 @@
       z-index: 0;
     }
    }
-/*  */
+
    .category{
     width: 100vw;
-    height: 30rem;
-    box-sizing: border-box;
-
+    height: fit-content;
+    background-color: darkgrey;
    }
 
    .section-title{
@@ -419,47 +418,53 @@
     border-top: #ffcc00 solid 2px;
    }
 
-   .c-container{
-    user-select: none;
-    width: 99%;
-    height: 80%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    overflow-x: auto;
-   }
-
-   .c-container::-webkit-scrollbar{
-    opacity: 0;
-   }
    
-   .c-wrapper{
-    width: 20%;
-    min-width: 30rem;
-    height: 90%;
-    box-sizing: border-box;
-    padding: .5rem;
-   }
 
-   .c-type{
+.t-container{
+    width: 100%;
+    margin-top: 70px;
+  }
+
+.type{
+    font-size: 2.2rem;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+  }
+
+.t-wrapper{
+    width: 98%;
+    margin: 0 auto;
+    display: flex;
+    
+  }
+
+.new{
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+}
+
+.new-wrapper{
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    border-radius: 2rem;
-    background-color: #ffcc00;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('/img/login/background-login.jpg');
-    font-size: 3rem;
-    color: var(--text);
-    transition: all 0.2s ease;
-   }
+    padding: 10px;
+}
 
-   .c-type:hover{
-    cursor: pointer;
-    transform: scale(1.05);
-   }
+.new-img{
+    width: 100%;
+    height: 80%;
+    background-color: #fff;
+    margin-bottom: 10px;
+  }
+
+.new-title{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+  }
 
 
 
