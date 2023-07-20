@@ -14,6 +14,7 @@
    :root{
     font-size: 10px;
     --text: #fcfcfc;
+    --w-cover-maga:350px;
    }
 
    ou, ul{
@@ -48,6 +49,7 @@
     cursor: pointer;
    }
    
+
 
    .navigation li{
     display: inline-block;
@@ -410,7 +412,8 @@
     padding: 1rem 0 0 1rem;
    }
 
-   .category div h2{
+   .category div h2,
+   .magazine div h2{
     color: var(--text);
     font-size: 3rem;
     padding: 0.5rem;
@@ -461,10 +464,93 @@
     transform: scale(1.05);
    }
 
+/*  */
+.magazine{
+  width: 100%;
+  height: fit-content;
+  padding: 2rem;
+  user-select: none;
+  overflow: hidden;
+}
+
+.magazine .maga-border{
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.maga-border .maga-l-arrow,
+.maga-border .maga-r-arrow{
+  cursor: pointer;
+  width: 50px;
+  aspect-ratio: 1;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+  rotate: 135deg;
+}
+
+.maga-border .maga-l-arrow{
+  rotate: -45deg;
+}
+
+.maga-border .maga-box{
+  position: relative;
+  width: var(--w-cover-maga);
+  height: 600px;
+}
+
+.magazine .maga-cover-box{
+  transition: all .2s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 90%;
+}
+
+.magazine .maga-cover{
+  width: 100%;
+}
+
+.magazine .maga-cover img{
+  width: 100%;
+}
 
 
+.active1{
+  z-index: -5;
+  translate: -70% 0;
+  left: -5rem;
+  filter: brightness(.5);
+  scale: .7;
+}
+.active2{
+  z-index: -4;
+  translate: -35% 0;
+  left: -2.5rem;
+  filter: brightness(.7);
+  scale: 0.85;
+}
+.active3{
+  z-index: -3;
+  scale: 1;
+}
+.active4{
+  z-index: -4;
+  left: -5rem;
+  scale: 0.85;
+  filter: brightness(.7);
+  translate: 35% 0;
 
-   
+}
+.active5{
+  scale: .7;
+  translate: 70% 0;
+  z-index: -5;
+  filter: brightness(.5);
+}
    
 
 

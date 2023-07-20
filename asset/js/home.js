@@ -1,4 +1,5 @@
 var currentRFrame=0
+var MagaCover = 0
 var setIntervalFrame
 //Hàm trả về string được cắt + "..."
 function cutString(s,length) {
@@ -16,6 +17,35 @@ function initEvent() {
         setTimeout(()=>{
             initUser()
         },500)
+    })
+}
+
+function tramformMagaCover(x) {
+    let n=$(".maga-cover-box").length
+    let f = MagaCover
+    MagaCover+=x
+    MagaCover=(MagaCover<0)?MagaCover+n:MagaCover;
+    MagaCover=(MagaCover>n-1)?MagaCover-n:MagaCover;
+    for (let i=0;i<n;i++)   {
+        let j = MagaCover+i+1;
+        j=(j<1)?j+n:j;
+        j=(j>5)?j-n:j;
+        $(".maga-cover-box").eq(i).addClass(`active${j}`)
+        j = f+i+1;
+        j=(j<1)?j+n:j;
+        j=(j>5)?j-n:j;        
+        $(".maga-cover-box").eq(i).removeClass(`active${j}`)
+        
+    }
+}
+
+function initMagaList() {
+    $(".maga-l-arrow").click(()=>{
+        tramformMagaCover(1)
+    })
+
+    $(".maga-r-arrow").click(()=>{
+        tramformMagaCover(-1)        
     })
 }
 
@@ -114,6 +144,8 @@ $(document).ready(async()=>{
     initUser()
 
     initEvent()
+
+    initMagaList()
 
     await fetch("/asset/data/recommend.json")
     .then(async (res)=>{
