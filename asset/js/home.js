@@ -6,10 +6,37 @@ function cutString(s,length) {
     return (s.indexOf(' ',length) ==-1)?s:s.slice(0,s.indexOf(' ',length)+1)+"..."
 }
 
-function initEvent() {
-    $(".user-info").click(()=>{
-        $(".menu-user-box").toggleClass("show");
+function initBasicEvent() {
+    $(".menu-btn i").click(()=>{
+        $(".menu-box").show()
+        setTimeout(()=>{
+            $(".menu-box").toggleClass("active")
+        },100)
     })
+
+    $(".close-icon i").click(()=>{
+        $(".menu-box").removeClass("active")
+        setTimeout(()=>{
+            $(".menu-box").hide()
+        },100)
+    })
+
+    $(window).scroll(function () { 
+        if ( $(window).scrollTop()>80) {
+            $("header").addClass("fixed")
+        }else{
+            $("header").removeClass("fixed")
+        }
+    });
+}
+
+
+function initEvent() {
+    for (let i=0;i<$(".user-info").length;i++) {
+        $(".user-info").eq(i).click(()=>{
+            $(".menu-user-box").eq(1).toggleClass("show");
+        })
+    }
 
     $(".menu-user li").eq(0).click(()=>{
         document.cookie="username=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
@@ -141,6 +168,8 @@ function initRFrame(data) {
 }
 
 $(document).ready(async()=>{
+    initBasicEvent()
+
     initUser()
 
     initEvent()

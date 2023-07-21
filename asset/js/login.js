@@ -168,7 +168,7 @@ $(document).ready(async(e)=>{
                     break
                 }
                 case 301:{
-                    $('.input-box').eq(0).addClass("invalid")
+                    $('.input-box').eq(1).addClass("invalid")
                     break
                 }
             }

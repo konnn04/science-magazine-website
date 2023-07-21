@@ -38,7 +38,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: black;
-    width: 100vw;
+    width: 100%;
     height: 7rem;
     max-width: 100vw;
     position: relative;
@@ -597,6 +597,10 @@
 /* MENU */
 
 .menu-box{
+  transition: all .2s ease;
+  transform: translate(100%, 0);
+  opacity: 0;
+  display: none;
   position: absolute;
   background-color: #000000;
   z-index: 999;
@@ -606,7 +610,24 @@
   max-width: 400px;
   padding: 1rem;
   color: #fff;
+  height: 130vh;
+}
+
+.menu-box::before{
+  content: "";
+  width: 150vw;
   height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #0000005a;
+  z-index: -5;
+}
+
+.menu-box.active{
+  display: block;
+  transform: translate(0,0);
+  opacity: 1;
 }
 
 .close-icon{
@@ -638,6 +659,7 @@
   border: none;
   font-size: 1.8rem;
   flex-grow: 1;
+  color: var(--text);
 }
 
 .search-box2 .search-icon{
@@ -682,4 +704,35 @@
 .nav_col a:hover{
   background-color: #ffcc00;
   color: #000;
+}
+
+
+
+header .menu-btn {
+  height: 100%;
+  aspect-ratio: 1;
+  display: none;
+}
+
+header .menu-btn i{
+  margin: auto;
+  font-size: 3rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+header.fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+header.fixed .menu-btn{
+  display: flex;
+}
+
+
+header.fixed nav{
+  display: none;
 }
