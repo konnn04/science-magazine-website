@@ -51,7 +51,7 @@ function initMagaList() {
 
 function initUser() {
     if (getCookie("username")) {
-        $("#user-check").html(`<div class="user-info">
+        $(".user-check").html(`<div class="user-info">
                        <h2>${getCookie("username")}</h2>
                        <i class="fa-solid fa-user" style="color: #ffffff;"></i>
                        <div class="menu-user-box">
@@ -64,7 +64,7 @@ function initUser() {
                        </div>
        `)
    }else{
-       $("#user-check").html(`<a class="nav_btn" href="./login.html" id="loginBtn"><button class="btnLogin-popup">Login</button></a>`)
+       $(".user-check").html(`<a class="nav_btn" href="./login.html" id="loginBtn"><button class="btnLogin-popup">Login</button></a>`)
    }
 }
 
