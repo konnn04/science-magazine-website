@@ -1,6 +1,21 @@
 var currentRFrame=0
 var MagaCover = 0
 var setIntervalFrame
+
+
+//to top btn
+$(window).scroll(function(){
+    if($(this).scrollTop() > 100){
+        $(".to-top").fadeIn();
+    }
+    else{
+        $(".to-top").fadeOut();
+   }
+})
+
+$(".to-top").click(function(){
+   $("html,body").animate({scrollTop:0},'slow');
+});
 //Hàm trả về string được cắt + "..."
 function cutString(s,length) {
     return (s.indexOf(' ',length) ==-1)?s:s.slice(0,s.indexOf(' ',length)+1)+"..."
