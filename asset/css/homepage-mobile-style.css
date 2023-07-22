@@ -10,3 +10,12 @@ header{
 .navigation {
   display: none;
  }
+
+ footer{
+  display: block;
+ }
+
+ .f-wrapper{
+  justify-content: left;
+  margin-left: 3rem;
+ }

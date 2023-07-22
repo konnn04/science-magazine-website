@@ -185,6 +185,30 @@
       opacity: 1;
     }
    }
+
+   /* To top button */
+   .to-top{
+    width: 5rem;
+    height: 5rem;
+    border: 2px solid #ffcc00;
+    border-radius: 50px ;
+    z-index: 9999;
+    position: fixed;
+    right: 2rem;
+    bottom: 1rem;
+    display: none;
+   }
+
+   .to-top:hover{
+    cursor: pointer;
+   }
+
+   .to-top i{
+    font-size: 3rem;
+    color: #ffcc00;
+    padding: 1rem;
+    
+   }
    /*Body*/
    
    .body-container{
@@ -672,7 +696,11 @@
 
 .menu-item-box>a{
   margin: 1rem;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
+  color: var(--text);
+  text-decoration: none;
+  font-family: 'Bacasime Antique', serif;
+  font-weight: 600;
 }
 
 .menu-item-box.nav_col{
@@ -735,4 +763,99 @@ header.fixed .menu-btn{
 
 header.fixed nav{
   display: none;
+}
+
+footer{
+  width: 100%;
+  background-color: #000;
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+}
+
+.f-border{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.f-wrapper{
+  width:35rem;
+  display: flex;
+  justify-content: center;
+}
+
+.f-box{
+  margin-bottom:2rem;
+}
+
+.f-box .fb-title{
+color: var(--text);
+text-transform: uppercase;
+font-size: 1.6rem;
+margin: 1rem 0;
+font-family: 'Montserrat', sans-serif;
+font-weight: 600;
+
+}
+
+.f-box li{
+  padding: .5rem 0;
+}
+
+.f-box a, .f-box p{
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0.6;
+}
+
+.f-box a:hover{
+  opacity: 1;
+}
+
+.social-icon{
+  margin-top:0.5rem;
+  margin-bottom: 1rem; 
+  width: 50%;
+}
+
+.social-icon i{
+  color: var(--text);
+  font-size: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.social-icon i:hover{
+  color:#ffcc00;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.social{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright-box{
+  width: 100%;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-top: .5px solid var(--text) ;
+}
+
+.copyright-box .logo{
+  font-size: 2.6rem;
+}
+
+.copyright-box .copyright{
+  color: var(--text);
+  font-size: 1.4rem;
 }
