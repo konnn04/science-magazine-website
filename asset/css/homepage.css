@@ -31,8 +31,7 @@
   width: 30%;
   height: 100%;
   position: absolute;
-  right: 0;
-  
+  right: 0;  
  }
 
  .info p{
@@ -42,13 +41,14 @@
  .r-type{
   font-size: 1.8em;
   font-size: 600;
-  margin: 4em 0;
+  margin: 10%  0;
+  height: 5%;
   border-left: 2px solid #ffcc00;
   padding-left: .5em;
  }
 
  .r-title{
-  font-size: 3em;
+  font-size: 3rem;
   font-weight: 800;
   font-family: 'Merriweather Sans', sans-serif;
   text-transform: uppercase;
@@ -60,13 +60,14 @@
   text-align: justify;
   font-family: 'Merriweather', serif;
   overflow:hidden ;
+  text-overflow:ellipsis;
+  max-height: 50%;
  }
 
  .readMore-btn{
   position: absolute;
   right: 2rem;
   margin: 2rem 0;
-
  }
 
  .readMore-btn button{
@@ -278,6 +279,7 @@ align-items: center;
 justify-content: space-between;
 max-width: 1000px;
 width: 100%;
+height: fit-content;
 }
 
 .maga-border .maga-l-arrow,
@@ -297,7 +299,8 @@ rotate: -45deg;
 .maga-border .maga-box{
 position: relative;
 width: var(--w-cover-maga);
-height: 600px;
+height: calc(100vw + 10rem);
+max-height: 600px;
 }
 
 .magazine .maga-cover-box{

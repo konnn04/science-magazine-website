@@ -44,10 +44,10 @@ header{
 }
 
 .logo{
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     color: var(--text);
-    margin-left: 6rem;
+    margin-left: 3rem;
     font-family: 'Bacasime Antique', serif;
     cursor: pointer;
    }
@@ -56,7 +56,7 @@ header{
   
    .navigation li{
     display: inline-block;
-    margin-right: 4rem;
+    margin-right: 2rem;
    }
    .nav_links{
     font-size: 1.8rem;
@@ -113,7 +113,7 @@ header{
   
    .user-info{
     display: flex;
-    padding: 2rem;
+    padding: 2rem 0;
     align-items: center;
     justify-content: end;
     gap: 1rem;
@@ -403,14 +403,12 @@ header{
 
  .menu{
   margin-right: 1rem;
- }
-
- .menu input{
-  opacity: 0;
- }
-
- .menu label{
   font-size: 1.5rem;
+  cursor: pointer;
+ }
+
+ .menu i{
+  margin-left: 1rem;
  }
 
 
@@ -425,10 +423,11 @@ padding: 1rem 2rem;
 .f-border{
 width: 100%;
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
 flex-direction: row;
 margin-top: 2rem;
 margin-bottom: 2rem;
+flex-wrap: wrap;
 }
 
 .f-wrapper{
