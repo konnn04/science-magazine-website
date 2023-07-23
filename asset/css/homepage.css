@@ -184,9 +184,10 @@
  }
 
 .t-container{
-  width: 100%;
+  max-width: 100%;
   margin-top: 2rem;
   margin-bottom: 7rem;
+  overflow: hidden;
 }
 
 .type{
@@ -198,10 +199,16 @@
 }
 
 .t-wrapper{
-  width: 98%;
-  margin: 1rem auto 0;
+  width: calc(100%);
+  margin: 0;
   display: flex;
   position: relative;
+}
+
+.all-new-items{
+  transition: all .2s ease;
+  transform: translateX(0);
+  display: flex;
 }
 
 .r-arrow, .l-arrow{
@@ -210,8 +217,18 @@
   border-top: 3px solid var(--text);
   border-right: 3px solid var(--text);
   position: absolute;
-  z-index: 5;
+  z-index: 10;
   top: 40%;
+}
+.r-arrow::after,
+.l-arrow::after{
+  position: absolute;
+  top: -100px;
+  left: 0;
+  content: "";
+  height: 200px;
+  width: 50px;
+  transform: rotate(-45deg);
 }
 
 .r-arrow{

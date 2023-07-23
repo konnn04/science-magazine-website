@@ -1,8 +1,35 @@
 var currentRFrame=0
 var MagaCover = 0
 var setIntervalFrame
+var cdType = false
 
-function initHomeEvent() {
+function initTypeEvent() {
+    for (let i=0;i<$(".all-new-items").length;i++) {
+        $(".r-arrow").eq(i).click(()=>{
+            if (cdType) return
+            let temp = parseInt($('.all-new-items').eq(i).css('transform').split(',')[4])
+            if (temp<= -1*( $(".all-new-items").eq(i).width() - $(document).width())) return
+            $(".all-new-items").eq(i).css({
+                "transform":`translateX(${temp - $(".new").width()}px)`
+            })
+            cdType=true
+            setTimeout(()=>{
+                cdType=false
+            },300)
+        })
+        $(".l-arrow").eq(i).click(()=>{  
+            if (cdType) return
+            let temp = parseInt($('.all-new-items').eq(i).css('transform').split(',')[4])
+            if (temp>=-50) return
+            $(".all-new-items").eq(i).css({
+                "transform":`translateX(${temp + $(".new").width()}px)`
+            })
+            cdType=true
+            setTimeout(()=>{
+                cdType=false
+            },300)
+        })
+    }
     
 }
 
@@ -34,8 +61,6 @@ function initMagaList() {
         tramformMagaCover(-1)        
     })
 }
-
-
 
 function runFrame(i) {
     //Xóa Interval trước đó nếu có
@@ -112,8 +137,9 @@ function initRFrame(data) {
 $(document).ready(async()=>{
     initUser()
     initHeaderEvent()
-    // initEvent()
+    
     initMagaList()
+    initTypeEvent()
     await fetch("/asset/data/recommend.json")
     .then(async (res)=>{
         let data = await res.json()
