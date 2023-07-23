@@ -2,6 +2,8 @@
     position: relative;
     width: 100%;
     height: fit-content;
+    padding: 1.4rem;
+
 }
 
 .n-header-box *{
@@ -32,6 +34,12 @@
     background-color: #242424;
     height: 80vh;
     width: 100vw;
+    z-index: -1;
+}
+
+.body-container{
+    position: relative;
+    background-color: #fff;
     z-index: -1;
 }
 
@@ -102,17 +110,12 @@
     font-size: 1.8rem;
 }
 
-.body-container{
-    background-color: #fff;
-    z-index: -1;
-}
-
 .n-body{
+    padding: 1.4rem;
     display: grid;
     grid-template-columns: 1fr 400px;
 }
-
-
+/* Share Option */
 .n-share-box{
     margin: auto;
     display: flex;

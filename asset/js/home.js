@@ -47,13 +47,10 @@ function initBasicEvent() {
 
 
 function initEvent() {
-    for (let i=0;i<$(".user-info").length;i++) {
-        $(".user-info").eq(i).click(()=>{
-            $(".menu-user-box").eq(1).toggleClass("show");
-        })
-    }
-
-    $(".menu-user li").eq(0).click(()=>{
+    $(".user-info").click(()=>{
+        $(".menu-user-box").toggleClass("show");
+    })
+    $(".menu-user li").click(()=>{
         document.cookie="username=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
         document.cookie="email=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
         setTimeout(()=>{

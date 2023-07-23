@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./asset/css/homepage-style.css">
-    <link rel="stylesheet" href="./asset/css/homepage-mobile-style.css" media="screen and (max-width: 600px)">
-    <link rel="stylesheet" href="./asset/css/detail-style.css">
+    <link rel="stylesheet" href="./asset/css/main.css">
+    <link rel="stylesheet" href="./asset/css/main_m.css" media="screen and (max-width: 600px)">
+    <link rel="stylesheet" href="./asset/css/detailpage.css">
+    <!-- <link rel="stylesheet" href="./asset/css/detailpage_m.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="https://static.thenounproject.com/png/1201563-200.png" type="image/x-icon">
     <title>Science Journal</title>
@@ -78,6 +79,27 @@
         </section>
     </header>
     <main class="body-container">
+        <section class="primary-bar">
+            <div class="primary-bar-l">
+            <div class="searchbar">
+                <form action="" class="searchbox">
+                    <input type="search" placeholder="Search...">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+            <div class="keywords">
+                <a href="">Animal</a>
+                <a href="">Finance</a>
+                <a href="">Medical</a>
+                <a href="">Space</a>
+                <a href="">Society</a>
+            </div>
+            </div> 
+            <div class="menu">
+                <input type="checkbox" id="check">
+                <label for="check">Menu <i class="fa-solid fa-caret-down"></i></label>
+            </div>
+        </section>
         <section class="n-bigbox">
             <div class="n-bg-header"></div>
             <div class="n-header-box">
@@ -146,10 +168,10 @@
             </div>
             <div class="n-rside">
                 <div class="n-topic-box">
-                    <h1>Science</h1>
+                    <h3>Same topic</h3>
                 </div>
                 <div class="n-news-est">
-                    <h1>Recommended</h1>
+                    <h3>Recommended</h3>
                 </div>
             </div>
         </section>
