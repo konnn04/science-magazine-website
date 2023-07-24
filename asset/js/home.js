@@ -136,8 +136,7 @@ function initRFrame(data) {
 
 $(document).ready(async()=>{
     initUser()
-    initHeaderEvent()
-    
+    initHeaderEvent()    
     initMagaList()
     initTypeEvent()
     await fetch("/asset/data/recommend.json")
