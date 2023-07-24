@@ -1,0 +1,255 @@
+[
+    {
+        "id":"20221",
+        "publicationDate":1648800000000,
+        "imgCover":"https://cdn.glitch.global/b598bd4a-1b14-4871-bb74-1961a4f1032a/2022-1.png?v=1690185285231",
+        "news":[
+            {
+                "title":"‘We are cut off.’ Tensions with Russia are hobbling Arctic research",
+                "type":"SCIENTIFIC COMMUNITY",
+                "cover":"https://www.science.org/do/10.1126/science.adi5514/full/_20230505_nid_stiltedhomenew.jpg",
+                "desCover":"",
+                "subTitle":"Impasse after Ukraine invasion threatens long-running data sets in oceanography, ecology, and climate science",
+                "time":1646136000000,
+                "author":[{
+                    "avt":"https://www.science.org/do/10.1126/author.22247/authorSummary/warrencornwall.jpeg",
+                    "name":"Warren Cornwall",
+                    "job":"Author",
+                    "bio":"Warren Cornwall is a contributing correspondent who covers a wide range of issues, including energy, the environment, and science policy. He lives in Washington state.",
+                    "social":["mailto:cornwallw@gmail.com","https://www.twitter.com/@WarrenCornwall"]
+                }],
+                "tags":["scientific community","SCIENCEINSIDER"],
+                "content":[
+                    {
+                        "type":"p",
+                        "text":"In 2010, Russian President Vladimir Putin—then the prime minister—visited a remote research station on Samoylov Island, in Siberia’s far north. Beginning in the 1990s, the facility on the Lena River had become a hub for German and Russian collaboration on change in the region’s permafrost. “I see a good example of international cooperation here,” Putin told a group of scientists."
+                    }, {
+                        "type":"p",
+                        "text":"Today, as Arctic researchers prepare for their summer fieldwork, Samoylov station instead highlights the collapse of international cooperation. German scientists have not been to Samoylov since 2021, and a regular stream of permafrost data has dried up. After Russia invaded Ukraine in 2022, Germany and other European countries joined the <span>United States and Canada</span> in barring their scientists from collaborating on most projects with Russia, which controls half of the Arctic’s coastline. “We are cut off from this part of the Arctic,” says Anne Morgenstern, a permafrost scientist at Germany’s Alfred Wegener Institute who coordinated the German presence at Samoylov. “It’s just a tragedy, the whole situation, and everybody hopes that this horrible war ends soon.”"
+                    }, {
+                        "type":"p",
+                        "text":"The abrupt rupture is jeopardizing data on climate change, oceanography, and ecology that stretch back decades. On Samoylov Island, sensors that measure carbon dioxide and methane emissions from the warming permafrost are likely still operating, Morgenstern says. But none of the data is flowing to German scientists, and she questions how long the observations can be sustained without spare parts or specialized knowledge from Germany. “We suspect it’s going to be very hard for them to maintain the measurements in the long term,” she says."
+                    }, {
+                        "type":"p",
+                        "text":"Rebuilding severed ties could be slow. Mike Sfraga, chair of the U.S. Arctic Research Commission, described it as a “tectonic shift” at a February conference in Norway. “If the war stopped tomorrow miraculously, things don’t just turn back on.”"
+                    }, {
+                        "type":"p",
+                        "text":"Russia continues to pursue Arctic research. It is building a <span>permafrost monitoring network</span> and recently launched the Severny Polyus <i>(North Pole) </i>, a research vessel designed for yearslong Arctic deployments, the press office of the St. Petersburg–based Arctic and Antarctic Research Institute said in a statement. Most collaborations with the West “have now been suspended, not on our initiative. Of course, we regret this decision of foreign colleagues, but we continue to work on our own.”"
+                    }, {
+                        "type":"p",
+                        "text":"Some Western scientists have found workarounds. Jan van Gils, an ecologist at the Royal Netherlands Institute for Sea Research, studies red knots, shorebirds that winter in Africa, then fly 9000 kilometers to Siberia to breed in the summer. He was planning an intensive 4-year field campaign in Russia. Instead, during fieldwork last month in Mauritania, he attached GPS trackers to 80 of the birds in hopes of following them remotely. “Of course the science would even be better if we could study it onsite,” he says."
+                    }, {
+                        "type":"p",
+                        "text":"Agencies are also improvising. For years, Russian vessels had serviced a set of Arctic Ocean sensors, funded by the U.S. National Science Foundation, that are moored just outside Russian waters. Instead, the U.S. Coast Guard icebreaker Healy will travel this summer to work on them."
+                    }, {
+                        "type":"p",
+                        "text":"Many scientists are also reorienting their research to more accessible territory in Scandinavia and North America. Morgenstern is working to establish a program on the Mackenzie River in the Canadian Arctic to monitor its water chemistry, including the effects of thawing permafrost. That would take the place of her past work on the Lena River. Bruce Forbes, a geographer at Finland’s University of Lapland, is moving a planned study of the cues that guide reindeer migration across the tundra from Siberia to northern Finland. “I hope I can go back eventually,” Forbes says."
+                    }, {
+                        "type":"img",
+                        "src":"https://www.science.org/do/10.1126/science.adi5514/files/_20230505_nid_putinnew.jpg",
+                        "desp":"In 2010, Vladimir Putin, then Russia’s prime minister, visited the Samoylov research station.THOMAS OPEL/ALFRED WEGENER INSTITUTE"
+                    }, {
+                        "type":"p",
+                        "text":"As individual scientists and institutions try to move forward, the Arctic Council, an intergovernmental policymaking body, remains in limbo. Composed of officials from the eight Arctic nations, the council doesn’t directly fund research. But it sets research priorities and coordinates scientific activities. After the invasion, most work was frozen when officials from the seven Western countries refused to meet with their Russian counterpart, even though Russia held the council’s chair."
+                    }, {
+                        "type":"p",
+                        "text":"Norway takes over as chair on 11 May. It may try to get all the nations to agree to ground rules that would allow lower level council committees to resume activities that require Russian involvement, says Jennifer Spence, a Harvard University Arctic policy expert who recently served on the council’s Sustainable Development Working Group. That could include publishing scientific reports and supporting researchers monitoring environmental conditions. “Norway is looking for a meaningful way to keep the work of the Arctic Council alive,” she says."
+                    }, {
+                        "type":"p",
+                        "text":"In the Barents Sea, Norway and Russia continue to exchange data about fisheries they managed together. But it’s just a sliver of the past cooperation on this shared water body, says Ole Arve Misund, executive director of the Norwegian Polar Institute. “This is the only official contact,” he says."
+                    }, {
+                        "type":"p",
+                        "text":"Individual researchers are also struggling to keep lines of communication open. Last year, Norwegian organizers of the largest Arctic science conference, the Arctic Science Summit Week, barred Russians from participating. This year, Austrian organizers of the event allowed Russians to attend as long as they displayed no official affiliation with a Russian institution, such as listing it on a name tag. But only six Russian scientists ended up attending a gathering that drew more than 800 people, and five of those were online."
+                    }, {
+                        "type":"p",
+                        "text":"Vladimir Romanovsky, a Russian-born permafrost expert at the University of Alaska Fairbanks who carries both U.S. and Russian passports, traveled via Turkey to a conference in Siberia’s Yakutsk region this winter, where a good friend leads a permafrost research program. He says he’s glad he went, in part to encourage young researchers he met. “I will continue to support these relations just for those young people to have some hope.”"
+                    }, {
+                        "type":"p",
+                        "text":"Yet he worries that a program he coordinates tracking permafrost temperatures across the Arctic is imperiled. He has had to abandon his practice of sending money to Russian colleagues to help support their work. He says they are reluctant to accept research money from abroad, fearing they will be labeled a “foreign agent”—which could put them at risk of government scrutiny or arrest. “The coming field season is in big question,” he says."
+                    }
+                ]
+            },{
+                "title":"NIH rules are supposed to stop ‘pass the harasser.’ In one recent case, they appear to have failed",
+                "type":"SCIENTIFIC COMMUNITY",
+                "cover":"https://www.science.org/do/10.1126/science.adi4131/full/_20230424_nid_david_gilbert.jpg",
+                "desCover":"",
+                "subTitle":"Despite sending unwanted sexual emails and other “invasive” behavior, David Gilbert carried two NIH grants to a new institution and was awarded $2.5 million in new money",
+                "time":1646589600000,
+                "author":[{
+                    "avt":"https://www.science.org/do/10.1126/author.2341294/authorSummary/meredith-wadman_person_image.jpg",
+                    "name":"Meredith Wadman",
+                    "job":"Author",
+                    "bio":"Meredith Wadman's beat includes biology research, policy, and sexual harassment .",
+                    "social":["mailto:mwadman@aaas.org","https://www.twitter.com/@meredithwadman"]
+                }],
+                "tags":["PEOPLE & EVENT","scientific community"],
+                "content":[
+                    {
+                        "type":"p",
+                        "text":"When genome researcher David Gilbert left Florida State University (FSU) in 2021 for the San Diego Biomedical Research Institute (SDBRI), he took two large National Institutes of Health (NIH) grants with him. The biomedical agency approved the transfer and went on to award Gilbert, a DNA replication expert who publishes in <i>Science, Nature, and Cell</i>, a new, $2.5 million grant last year."
+                    }, {
+                        "type":"p",
+                        "text":"None of this would be out of the ordinary—except that, in 2020, prior to any of these moves, FSU had completed a far-reaching investigation prompted when Gilbert emailed a description of his erotic dream to a graduate student. The probe revealed a yearslong history and concluded that Gilbert’s “gendered, sexualized and invasive behaviors were severe and pervasive.” NIH learned the full nature and extent of his misconduct at FSU before making the new award but after his move to San Diego—where his behavior elicited a new probe, Science has learned, and drove at least one woman scientist from the institute."
+                    }, {
+                        "type":"p",
+                        "text":"The sequence of events that allowed Gilbert to continue a well-funded career unfolded at the same time as NIH very publicly said it was cracking down on sexual harassers who tried to move their bad behavior from one institution to another. <span>In 2020, NIH instituted a requirement that then-Director Francis Collins said in a Science editorial</span> was aimed in part at “preventing ‘passing the harasser,’ in which a scientist who changed institutions could evade the consequences of findings of sexual harassment.” The policy required grantee institutions to notify the agency about sexual harassment findings if they drove requests to make certain changes to a grant, including transferring it to a new institution, so NIH could weigh this information in its decision about whether to approve the change or take other action. <span>In March 2022, Congress wrote a tightened policy into law</span>, making it mandatory for institutions to inform NIH of disciplinary actions taken against harassers, regardless of whether they prompted changes including transferring a grant between institutions. By then, NIH in concert with institutions had already removed dozens of principal investigators (PIs) from grants."
+                    }, {
+                        "type":"p",
+                        "text":"Gilbert was not one of them. In his case, say academic harassment experts who reviewed related documents at Science’s request, the agency was either remiss or ineffectual, compounding a failure of the two institutions to adequately protect victims. “It’s outrageous” that Gilbert still has a job and three big NIH grants, says Angie Rasmussen, a virologist at the University of Saskatchewan who in 2019 served on a working group advising the NIH director on combating sexual harassment. “I would just like to know what NIH plans to do to resolve this. Because when I was on that committee, we were assured over and over again, first by Francis Collins, then by [acting NIH Director] Larry Tabak, that this was a priority for NIH … that they were going to crack down.”"
+                    }, {
+                        "type":"p",
+                        "text":"FSU launched its investigation of Gilbert early in 2020 after a biology graduate student filed a complaint triggered by an email from Gilbert, a professor with an endowed chair and a high profile. (The following description includes crude language and disturbing details.) “You were in my dream last night,” he wrote before describing the erotic dream in the email, which concluded: “I hope … you appreciate that i (sic) am not some 20-something who is done in 30 minutes … Us ‘mature’ guys like to work slowly - take our time and savor every minute!!!!”"
+                    }, {
+                        "type":"p",
+                        "text":"The investigation resulted in a 131-page report detailing behavior that stretched back to at least 2017. Incidents documented in emails and witness testimonies, and admitted to by Gilbert, include kissing a student on the neck and emailing his lab members to ask which one of them had spelled “cock” with refrigerator magnets during a party at Gilbert’s home. He added in a follow-up email: “I guess it is something that is available at my house, if the right person were to ask nicely.” In an exchange with a lab technician who asked for help writing a website summary of her work, he joked, unsolicited, about her sticking things up her nose, then asked whether “you stick things up the other end of your body,” adding, “The things I thought of would get me fired for sexual harassment.” One undergraduate who worked in Gilbert’s lab reported her unease when he pulled her in to dance at a party at his home, where he also grew angry at her when she refused to drink tequila shots; she was 19. “Severely uncomfortable” whenever she had to meet with him, she told investigators, “I would go to people and ask for help and their response was, ‘Dave makes so much money for FSU so they’re not going to talk to him.’” After her experience, she added, “I’m definitely not doing research again.”"
+                    }, {
+                        "type":"p",
+                        "text":"Gilbert did not respond to repeated interview requests from Science. But when asked by FSU investigators about the email regarding the erotic dream, he said he felt “immediate remorse” and acknowledged that it “wasn’t appropriate or welcome.” Of some other witness testimony, he said: “These inferences are distorted, out of context and in some cases completely fabricated accusations.”"
+                    }, {
+                        "type":"p",
+                        "text":"After its probe concluded, FSU told Science, it removed Gilbert’s endowed chair and his access to the funds the endowment generated. He was suspended for 10 days without pay. He also received “follow-up training” and a warning that any repeat of the behavior could cost him his job, FSU later wrote to NIH. These sanctions were “commensurate with the level of offense,” FSU told Science."
+                    }, {
+                        "type":"p",
+                        "text":"Others disagree. The university's response “just seems so insufficient” and sends “a very distinct message that there is very little consequence for his violation,” says Jennifer Freyd, a psychologist who studies institutional betrayal as president of the Center for Institutional Courage."
+                    }, {
+                        "type":"p",
+                        "text":"NIH didn’t learn of the FSU probe until April 2021, 1 year after it was completed. As Gilbert was planning to move to SDBRI at the end of June 2021, NIH policy required FSU to alert the agency of the sexual harassment investigation and its conclusion in the process of asking NIH to approve the transfer of Gilbert’s two grants, worth $867,000 annually at the time. FSU did not share its lengthy written report with NIH.."
+                    }, {
+                        "type":"p",
+                        "text":"NIH Deputy Director for Extramural Research Michael Lauer<span> soon wrote to FSU to find out whether the probe and any resulting disciplinary actions</span> had affected Gilbert’s ability to perform the funded research in the preceding year. Laurel Fulkerson, FSU’s interim vice president for research, wrote to Lauer that Gilbert had not lost access to NIH funding, to campus, or to his lab. She added that Gilbert was “contrite” and that he meant his behavior as “funny.” In a June 2021 teleconference, FSU administrators and NIH agreed that his grants would be reassigned to SDBRI."
+                    }, {
+                        "type":"p",
+                        "text":"And with that, Lauer later wrote, “we were under the impression that this issue was resolved”—until November 2021 when Tristan Wood, a reporter at FloridaPolitics.com, <span>published an article</span> linking to the full 131-page Gilbert report."
+                    }, {
+                        "type":"p",
+                        "text":"Lauer <span>soon wrote to FSU the bureaucratic-language equivalent of an outraged letter</span>. He cited vivid details of Gilbert’s behavior from the report and said the article “raises concerns about the severity of Dr. Gilbert’s violations, compared to what the University previously reported to NIH.” The correspondence went on to discuss what actions the university was taking to, as Lauer put it, “assure that NIH-funded research and training is conducted in a civil, safe, and respectful environment, free from discrimination and unlawful harassment.” Gilbert, however, was already long gone."
+                    }, {
+                        "type":"p",
+                        "text":"Two months after Lauer sent that irate missive to FSU, on 10 March 2022, NIH’s National Cancer Institute (NCI) sent Gilbert a new, $2.5 million award, to support his work at SDBRI. Whether NIH imposed any conditions on the new grant award is not clear. In a statement responding to detailed questions for Lauer about the Gilbert case, NIH’s Office of Extramural Research (OER) said it “does not discuss grant deliberations.” Asked who permitted Gilbert’s new award, OER said the institute or center funding the grant—in this case, NCI—“carry out preaward risk assessments” and send awards out the door. It added that the agency requires institutions to have in place “effective internal controls” for assuring safe work spaces. OER can prevent grant transfers or hold a pending award to a “PI of concern” until it is satisfied that “compliance issues are resolved.” <span>If they can’t be, Tabak said last year, it is within NIH’s power to terminate harassers’ grants.</span>"
+                    }, {
+                        "type":"p",
+                        "text":"FSU did not tell the San Diego institute about Gilbert’s behavior, and by one account, it continued there. In early 2021, a trainee landed in Gilbert’s new SDBRI lab a few months ahead of him. She had met Gilbert at a conference, and he was “very nice” and “seemed supportive” as she began corresponding with him about a possible job, she says. He was a big name and she was excited to work for him."
+                    }, {
+                        "type":"p",
+                        "text":"But as soon as Gilbert arrived, in July 2021, the abuse began, she says. He shouted at her, called her stupid, and complained about her to a colleague—then told her he had done so. He was by turns dismissive and patronizing and she left every conversation feeling humiliated, the trainee says. Sometimes he would allude to the “great night” he had just had with his girlfriend. One time, she says, he came into the small, dark microscopy room where she was working and stood extremely close to her. Intimidated, she asked him forcefully to leave."
+                    }, {
+                        "type":"p",
+                        "text":"The last straw came in July 2022, when Gilbert texted her an image of a young woman’s breasts in a strapless bra, which he soon texted had been intended for his girlfriend. Within days, the trainee complained to SDBRI President Joanna Davies, who launched an investigation."
+                    }, {
+                        "type":"p",
+                        "text":"n late August, Davies and the external investigator she had hired to conduct the probe called in the trainee to tell her the results: Gilbert had not violated any legal standard of sexual harassment. The trainee insisted on receiving that finding in writing. Davies and an SDBRI human resources professional wrote a terse memo stating that, despite the lack of a legal finding, “the Institute recognizes that steps need to be taken to ensure that individuals who work with Dave are working in what they believe is a respectful environment.” (Davies did not respond to repeated interview requests.) The trainee was devastated, she says, and soon moved to a new institution."
+                    }, {
+                        "type":"p",
+                        "text":"Gilbert continues to work at the San Diego institute. His three NIH grants provide him and the institute $1.5 million in annual funding—$527,000 of which goes to SDBRI in the form of indirect costs."
+                    }, {
+                        "type":"p",
+                        "text":"“For people who are high-flying scientists—particularly well-funded ones—institutions seem to be remarkably willing to look the other way to obtain their employment,” says Jeremy Berg, former head of NIH’s National Institute of General Medical Sciences, which funds one of Gilbert’s grants. (Berg is also former editor-in-chief of the Science family of journals.)"
+                    }, {
+                        "type":"p",
+                        "text":"Given this kind of payout, Rasmussen asks, “If NIH isn’t going to put a stop to this money getting passed around, what incentive is there for the institutions to do anything about it themselves?”"
+                    }
+                ]
+            },{
+                "title":"‘Game changer’ method lets scientists peer into—and fly through—mouse bodies",
+                "type":"BIOLOGY",
+                "cover":"https://www.science.org/do/10.1126/science.adi4325/full/_20230425_on_wilddisco_mouse.jpg",
+                "desCover":"An antibody specific to neurons provides a visualization of different levels of the peripheral nervous system in a whole mouse.ERTÜRK LAB/HELMHOLTZ MUNICH",
+                "subTitle":"Latest version of imaging technique enables use of thousands of antibodies that can map specific cell types",
+                "time":1644410700000,
+                "author":[{
+                    "avt":"",
+                    "name":"Esra Öz",
+                    "job":"Author",
+                    "bio":"Esra Öz is a journalist based in Turkey.",
+                    "social":[]
+                }],
+                "tags":["BIOLOGY"],
+                "content":[
+                    {
+                        "type":"p",
+                        "text":"A research team has turned the bodies of dead mice into vivid 3D maps of anatomy, with tissues, nerves, and vessels highlighted in color. The technique, which renders the corpses transparent and then exposes them to fluorescent antibodies that label distinct cell types, could help everything from drug development to understanding the spread of cancer, its creators and other scientists say."
+                    }, {
+                        "type":"p",
+                        "text":"The developers, at the Helmholtz Munich research institute, call their technique wildDISCO—wild because it can work on any “wild type,” or normal, mice, and DISCO for 3D imaging of solvent-cleared organs. Building on their previous success at making mouse bodies transparent, the new technique removes cholesterol from the bodies so that a vast array of existing antibodies can penetrate deep into the animals. “wildDISCO is a game changer—it allows us to see the hidden highways and byways in the body,” says Muzlifah Haniffa, a dermatologist and immunologist at the Wellcome Sanger Institute and Newcastle University’s Biosciences Institute who was not involved in the research."
+                    }, {
+                        "type":"p",
+                        "text":"The method should let scientists map a mouse at the cellular level and explore previously hidden links between tissues, like neural connections between organs, says neuroscientist Ali Ertürk, director of Helmholtz Munich, who led the work, posted recently as a preprint. His group in Germany has already posted eye-catching videos of “flying” through the 3D anatomy of a mouse with different tissues labeled."
+                    }, {
+                        "type":"video",
+                        "src":"https://cdn.glitch.me/b598bd4a-1b14-4871-bb74-1961a4f1032a/%E2%80%98Game%20changer%E2%80%99%20method%20lets%20scientists%20peer%20into%E2%80%94and%20fly%20through%E2%80%94mouse%20bodies%20-%20Science%20-%20AAAS.mp4?v=1690192433449",
+                        "desp":"wildDISCO can use various antibodies to map different cell types in dead mice, showing new connections between tissues and much more.ERTÜRK LAB/HELMHOLTZ MUNICH"
+                    }, {
+                        "type":"p",
+                        "text":"The method is a variation of work his team started more than a decade ago, when various scientists were developing novel ways, such as one called CLARITY, to chemically treat tissue samples and isolated organs so they became transparent and the cells inside could be seen. Ertürk and colleagues developed a similar method that made entire mouse bodies transparent. Seeking a way to pick out different cell types in the see-through bodies, they turned to nanobodies, synthetic antibodies that are much smaller than standard ones and can slip more easily into the tissue. But only a handful of nanobodies have been designed for specific cell types, limiting efforts to map the mice bodies."
+                    }, {
+                        "type":"p",
+                        "text":"So the group went looking for a way to expand its method to the thousands of standard, bigger antibodies already available commercially. Ertürk’s team found that treating mouse bodies for 2 weeks with a chemical called beta-cyclodextrin dissolves cholesterol in the cell membrane, creating spongelike holes in the whole organism without damaging other parts of the tissues. This allows standard immunoglobulin G antibodies, targeting various cell types and easily ordered from many companies, to penetrate deeply into all the mouse tissues. So far, Ertürk says his team has shown that more than 30 antibodies work with wildDISCO, including markers of the nervous system, vasculature, immune system, and proliferating cells—and the list is growing, he adds."
+                    }, {
+                        "type":"p",
+                        "text":"“This is exciting, and the immunolabeling data are quite impressive,” says Alain Chédotal, a neuroscientist at the Vision Institute in Paris who was not involved in the study. So are the fly-through visualizations of the data, he says. “This study also nicely shows that virtual reality is a great way to navigate through large 3D image data sets.”"
+                    }, {
+                        "type":"p",
+                        "text":"Chédotal stresses that more work is needed for wildDISCO to reach its full potential. The preprint only shows it working with two antibodies simultaneously, allowing just two cell types at a time to be labeled. “We are working on solving this problem,” says Jie Luo, who with his Helmholtz Munich colleague Hongcheng Mai shares first authorship on the study. “We are working on using three and four antibodies at the same time.”"
+                    }, {
+                        "type":"p",
+                        "text":"Still, Chédotal believes the team’s visualizations show previously unknown details of the enteric nervous system, a collection of nerve cells driving gastrointestinal functions, and some of the nodes, vessels, and organs in the lymphatic system. Next, Ertürk predicts, his team will make a complete map of the lymphatic system, which could sharpen the picture of how cancer metastasizes and how best to treat it."
+                    }
+                ]
+            },{
+                "title":"In frenzied vote, Mexico's lawmakers pass controversial science reform bill",
+                "type":"SCIENTIFIC COMMUNITY",
+                "cover":"https://www.science.org/do/10.1126/science.adi5352/full/_20230501_on_mexico_science_bill.jpg",
+                "subTitle":"Many researchers oppose measure, which could face court challenge",
+                "desCover":"Opposition lawmakers seized the dais of Mexico’s Senate last week to protest actions by the majority.LUIS BARRON/EYEPIX GROUP/SIPA VIA AP IMAGES",
+                "time":1647115200000,
+                "author":[{
+                    "avt":"",
+                    "name":"Alejandra Manjarrez",
+                    "job":"Author",
+                    "bio":"Alejandra Manjarrez is a journalist in Mexico City.",
+                    "social":["",""]
+                }],
+                "tags":["Latin America","Science and Policy"],
+                "content":[
+                    {
+                        "type":"p",
+                        "text":"A controversial effort by Mexico’s president to reshape the nation’s research funding and governance system has reached a chaotic conclusion that clears the way for the bill to become law. Many scientists strongly oppose the measure, saying it will tighten government control over science. But it was approved in a rapid-fire series of votes last week, including one on 29 April when senators from the ruling party abandoned their chamber because of a protest and passed the measure after just 14 minutes of debate, with no opposition lawmakers present."
+                    }, {
+                        "type":"p",
+                        "text":"The frenzied maneuvering could expose the bill to legal challenges, observers say. The process was “full of legislative procedural flaws” that will likely “be fought in the courts,” says Alma Cristal Hernández Mondragón, president of the Mexican Association for the Advancement of Science and a policy specialist at the National Polytechnic Institute’s Center for Research and Advanced Studies."
+                    }, {
+                        "type":"p",
+                        "text":"The Senate move capped several years of often fierce debate over the legislation, which President Andrés Manuel López Obrador’s administration has said is needed to streamline policymaking and bolster government support for basic and applied research. After many scientists objected to a first draft released in late 2020—in part because they said it gave too much power to Mexico’s central funding agency, the National Council of Science and Technology (Conacyt)—the administration said it would revise the plan. But that revision, presented to congress in December 2022, did little to quell many scientists’ concerns. And critics say the now-approved version retains a number of problematic provisions."
+                    }, {
+                        "type":"p",
+                        "text":"One that has drawn notice eliminates a semi-independent panel that helps the government set research priorities and includes a relatively wide range of representatives from the public and private sectors. It would be replaced by a new group with a narrower membership that sits beneath a new agency, the National Council for the Humanities, Sciences, Technologies and Innovation (Conahcti), which will replace Conacyt. Hernández Mondragón fears the new panel will exclude “voices that can contribute” to policy debates. And the Mexican Academies of Sciences, Engineering, and Medicine has expressed concern that the law could restrict “freedom of research” by giving the new agency greater control."
+                    }, {
+                        "type":"p",
+                        "text":"Other researchers worry about provisions that make it harder for researchers at Mexico’s private universities to compete for government grants. The law favors public universities and will result in “discriminatory treatment” of researchers and students at private institutions, says David René Romero Camarena, a genome scientist at the National Autonomous University of Mexico, which is a public institution."
+                    }, {
+                        "type":"p",
+                        "text":"The law also abandons a goal, backed in previous legislation, of spending 1% of Mexico’s gross domestic product on research. Although the nation has never reached that goal, researchers worry the move signifies a rollback of Mexico’s scientific ambitions."
+                    }, {
+                        "type":"p",
+                        "text":"In a statement after the vote, Conacyt defended the measure, calling it “an historic milestone” that will protect “the human right to science and knowledge” and help address “urgent national problems.” It rejected charges that the law would centralize power and said “it does not disdain research done at private universities.”"
+                    }, {
+                        "type":"p",
+                        "text":"Some scientists are encouraged by provisions that call for work on behalf of the environment and disadvantaged communities. “It will help many who were not privileged before,” says Martha Ileana Espejel Carbajal, a social ecologist who recently retired from the Autonomous University of Baja California. “It is the first time in 40 years of being a research professor that the law asks to do what my team has always struggled to defend: the work with the most marginalized communities, with women, with youth, with social and ecological systems.” The measure may have flaws, she adds, but “every law is perfectible.”"
+                    }, {
+                        "type":"p",
+                        "text":"Science groups, however, fault lawmakers for breaking promises to consult with the public and scientists. They note that Mexico’s lower house, the Chamber of Deputies, held just two of seven promised public hearings before moving to rapidly approve the bill on 26 April by a vote of 257 to 209."
+                    }, {
+                        "type":"p",
+                        "text":"Researchers were still surprised—and ­angry—about that vote when the Senate took up the bill 2 days later. Initially, it appeared the Senate would not vote on the measure before it recessed on 30 April because opposition lawmakers seized the dais to protest actions by the ruling bloc. But senators from López Obrador’s Morena party and their allies moved to a nearby venue, where they passed the science bill and 18 other measures in a few frenzied hours."
+                    }, {
+                        "type":"p",
+                        "text":"The new law is likely to face court challenges. But whatever the outcome, Romero Camarena says he’s optimistic. “Mexican scientists have had to face a great number of obstacles,” he says. “This is one more obstacle that we will be able to overcome.”"
+                    }
+                ]
+            }
+        ],
+        "researchs":[
+            
+        ]
+    }
+]

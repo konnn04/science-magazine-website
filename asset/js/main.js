@@ -8,6 +8,10 @@ $(window).scroll(function(){
    }
 })
 
+function getStringUnixTime(milisecond) {
+    return new Date(milisecond).toLocaleString()
+}
+
 $(".to-top").click(function(){
    $("html,body").animate({scrollTop:0},'slow');
 });
