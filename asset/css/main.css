@@ -9,7 +9,7 @@
 
 
 body{
-  background: linear-gradient(315deg, #262626 0%, #121212 74%) no-repeat center center fixed;
+  
   overflow-x: hidden;
 }
 
@@ -421,7 +421,8 @@ padding: 1rem 2rem;
 }
 
 .f-border{
-width: 100%;
+width: 90%;
+margin: 0 auto;
 display: flex;
 justify-content: space-between;
 flex-direction: row;
@@ -431,9 +432,8 @@ flex-wrap: wrap;
 }
 
 .f-wrapper{
-width:35rem;
-display: flex;
-justify-content: center;
+width:30rem;
+
 }
 
 .f-box{

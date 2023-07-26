@@ -1,5 +1,7 @@
  /*Body*/
- 
+ body{
+  background: linear-gradient(315deg, #262626 0%, #121212 74%) no-repeat center center fixed;
+ }
  .body-container{
   width: 100%;
   height: fit-content;
