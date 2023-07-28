@@ -15,7 +15,11 @@ function getStringUnixTime(milisecond) {
 $(".to-top").click(function(){
    $("html,body").animate({scrollTop:0},'slow');
 });
-
+//init user
+$(document).ready(async()=>{
+    initUser()
+    initHeaderEvent() 
+})
 //Hàm trả về string được cắt + "..."
 function cutString(s,length) {
     return (s.indexOf(' ',length) ==-1)?s:s.slice(0,s.indexOf(' ',length)+1)+"..."

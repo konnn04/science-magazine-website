@@ -1,7 +1,222 @@
 main{
    width: 80%;
-   height: 100vh;
    position: relative;
    margin: 0 auto;
+   background-color: #fff;
+   margin-top: 7rem;
+   padding: 0.25rem 2.4rem;
+}
+
+.cover-issue{
+   width: 100%;
    
+}
+
+.cover-img{
+   width: 100vw;
+   height: 18rem;
+  overflow: hidden;
+  background: url('/img/login/background-login.jpg') no-repeat center;
+  background-size:cover;
+  position: absolute;
+}
+
+.toc-path-box{
+   width: 100%;    
+   margin: 1rem 0;
+   /* border: 1px dashed #000; */
+}
+
+.toc-path-box span a{
+   font-size: 1.8rem;
+   margin-right: .2rem;
+   font-family: 'Roboto', sans-serif;
+   text-decoration: none;
+}
+
+.toc-path-box span:last-child{
+   color: #fff;
+}
+
+/*cover issue box*/
+
+.issue-info-box{
+   width: 100%;
+   height: 22rem;
+   margin-bottom: 2rem;
+   display: flex;
+}
+
+.book-cover-wrapper{
+   height: 100%;
+   aspect-ratio: 47/75;
+   background-color: #000;
+   box-shadow: -2px -2px 5px 1px rgba(0, 0, 0, 0.5), 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.book-cover-wrapper img{
+   width: 100%;
+}
+
+.issue-detail{
+   margin-left: 2rem;
+}
+
+.issue-detail div{
+   margin-bottom: 1rem;
+}
+
+.issue-title{
+   font-family:'Bacasime Antique', serif;
+   font-size: 2.4rem;
+   font-weight: 600;
+}
+
+.issue-release-date{
+   font-family: 'Roboto', sans-serif;
+   font-size: 1.6rem;
+   font-weight: 600;
+}
+
+.issue-summary-box p{
+   margin-right: 4rem;
+   font-size: 1.6rem;
+}
+
+.content-wrapper{
+   width: 100%;
+   position: relative;
+}
+
+.content-box{
+   width: 70%;
+   margin-top: 4rem;
+   border-top: 4px solid #ffcc00;
+   margin-bottom: 10rem;
+}
+
+.type{
+   width: 100%;
+   font-size: 2.4rem;
+   font-weight: 600;
+   font-family: 'Roboto', sans-serif;
+   margin: 1rem 0 3rem;
+}
+
+.article-box{
+   width: 100%;
+}
+
+.article{
+   width: 100%;
+   margin-bottom: 2rem;
+}
+
+.a-title{
+   font-size: 2rem;
+   font-weight: 600;
+   margin: 1rem 0;
+   font-family: 'Roboto', sans-serif;
+}
+
+.a-info{
+   display: flex;
+   justify-content: flex-start;
+   gap: 1rem;
+}
+
+.a-info p{
+   font-size: 1rem;
+   font-family: 'Roboto', sans-serif;
+}
+
+.author{
+   text-transform: uppercase;
+}
+
+.release{
+   font-weight: 600;
+}
+
+.a-summary{
+   margin: 1rem 0;
+}
+
+.a-summary p{
+   font-size: 1.3rem;
+   font-family: 'Merriweather', serif;
+}
+
+.article + .article{
+   border-top: 2px solid rgba(11,12,13,0.5);
+}
+
+.ads{
+   position: absolute;
+   top:0;
+   right: 0;
+   width: 250px;
+   box-sizing: border-box;
+}
+
+.ads-wrapper{
+   border: 1px solid #121314;
+}
+
+.ads-wrapper p{
+   font-family: 'Roboto', sans-serif;
+   text-align: center;
+   transform: translateY(-50%);
+}
+
+.ads-wrapper span{
+   background-color: #fff;
+   padding: 0 1rem;
+}
+
+.ads-img{
+   width: 100%;
+   aspect-ratio: 1;
+   padding: 1rem;
+}
+
+.ads-img img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+  
+}
+
+
+.issue-list{
+   width: 100%;
+   border-top: 4px solid #ffcc00;
+}
+
+.issue-container{
+   height: fit-content;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.issue-wrapper{
+   width: 30rem;
+   aspect-ratio: 47/75;
+   box-sizing: border-box;
+   padding: .5rem;
+   flex-shrink: 0;
+   margin-bottom: 2rem;
+   position: relative;
+}
+
+.issue-wrapper img{
+   width: 100%;
+   box-shadow: -2px -2px 5px 1px rgba(0, 0, 0, 0.5), 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
+   transition: all .2s ease;
+}
+
+.issue-wrapper img:hover{
+   cursor: pointer;
+   transform: scale(1.05);
 }
