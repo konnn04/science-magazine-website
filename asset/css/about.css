@@ -38,25 +38,30 @@
 
  .ads{
     width: 13%;
-    height: 800px;
+    height: 500px;
     border: 2px dashed #000;
     position: absolute;
     background:linear-gradient(#3545cc,#cc33cc);
     display: flex;
     justify-content: center;
     align-items: center;
+    top:2rem;
  }
 
  .r-ads{
-    top:2rem;
     right: 1rem;
  }
 
  .l-ads{
-    top:2rem;
     left: 1rem;
  }
 
- 
-
- 
+ @media screen and (max-width:1150px){
+   .ads{
+      position: static;
+      margin: 0 auto;
+      width: 70%;
+      height: 150px;
+      margin-bottom: 2rem;
+   }
+ }
