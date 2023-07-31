@@ -12,14 +12,14 @@ function getStringUnixTime(milisecond) {
     return new Date(milisecond).toLocaleString()
 }
 
+function getStringUnixDate(milisecond) {
+    return new Date(milisecond).toLocaleDateString()
+}
+
 $(".to-top").click(function(){
    $("html,body").animate({scrollTop:0},'slow');
 });
-//init user
-$(document).ready(async()=>{
-    initUser()
-    initHeaderEvent() 
-})
+
 //Hàm trả về string được cắt + "..."
 function cutString(s,length) {
     return (s.indexOf(' ',length) ==-1)?s:s.slice(0,s.indexOf(' ',length)+1)+"..."
@@ -65,12 +65,18 @@ function initHeaderEvent() {
             $(".menu-box").hide()
         },100)
     })
-
+//Làm mượt chuyển động + Bù phần khuyết
     $(window).scroll(function () { 
         if ( $(window).scrollTop()>80) {
             $("header").addClass("fixed")
+            $(".body-container").css({
+                "marginTop":`${$("header").height()}px`
+            })
         }else{
             $("header").removeClass("fixed")
+            $(".body-container").css({
+                "marginTop":`0`
+            })
         }
     });
     // user 

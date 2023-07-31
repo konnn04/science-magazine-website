@@ -1,0 +1,586 @@
+body{
+    background: none;
+}
+
+.body-container{
+    background-color: #fff;
+}
+
+.body-container h1{
+    font-size: 4rem;
+    margin: 1rem 0;
+}
+.body-container h2{
+    margin: 1rem 0;
+    font-size: 3.5rem;
+}
+.body-container h3{
+    margin: 1rem 0;
+    font-size: 3.0rem;
+}
+.body-container h4{
+    margin: 1rem 0;
+    font-size: 2.5rem;
+}
+.body-container h5{
+    font-size: 2.0rem;
+    margin: 1rem 0;
+}
+.body-container h6{
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.body-container p{
+    margin: 1rem 0;
+    font-size: 2rem;
+}
+
+a{
+    color: unset;
+    text-decoration: none;
+}
+/*  */
+.main{
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    background-color: #fff;
+    grid-template-columns: 1fr 400px;
+    grid-column-gap: 3rem;
+    padding: 1rem;
+}
+
+.mid{
+    width: 100%;
+}
+
+
+
+.r-path-box{
+    width: 100%;    
+    margin: 2rem 0;
+
+}
+
+.r-path-box span{
+    font-size: 1.8rem;
+    color: #898989;
+    margin-right: .2rem;
+}
+
+.r-path-box span:last-child{
+    color: #000000;
+}
+
+span.type{
+    font-family: 'Merriweather Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    padding: 0 1rem;
+}
+
+span.type:first-child{
+    color: #FFCC00;
+    padding-left: 0;
+    border-right: 2px solid #000;
+}
+/*  */
+.r-header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.r-header .share-box{
+    display: flex;
+    gap: .2rem;
+}
+.r-header .icon-share i{
+    font-size: 2rem;
+    padding: 0 .5rem;
+    cursor: pointer;
+    transition: all .1s ease;
+}
+.icon-share:nth-child(1):hover {
+    color: #6b9aff;
+    scale: .9;
+}
+.icon-share:nth-child(2):hover {
+    color: #547cd1;
+    scale: .9;
+}
+.icon-share:nth-child(3):hover {
+    scale: .9;
+    color: #1da1f2;
+}
+.icon-share:nth-child(4):hover {
+    scale: .9;
+    color: #3a5898;
+}
+.icon-share:nth-child(5):hover {
+    scale: .9;
+    color: #f05c5c;
+}
+.icon-share:nth-child(6):hover {
+    scale: .9;
+    color: #d19354;
+}
+/*  */
+.r-author-box{
+    margin: 1rem 0;
+}
+
+.author-items{
+    display: inline-block;
+    height: fit-content;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.author-items:hover{
+    text-decoration: underline;
+}
+
+.author-items img{
+    height: 1.8rem;
+    padding: .3rem .5rem 0 .5rem;
+}
+
+.r-author-box button{
+    background-color: transparent;
+    padding: .6rem;
+    border: 1px solid #000;
+    border-radius: 2rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.r-author-box button:hover{
+    background-color: #FFCC00;
+    color: #fff;
+}
+
+.r-release-date{
+    color: #393939;
+    font-size: 1.3rem;
+}
+/*  */
+.r-menu{
+    display: flex;
+    font-size: 2.5rem;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.r-menu.fixed{
+    top: 6rem;
+    position: fixed;
+    max-width: calc(1000px - 5rem);
+    width: calc(100% - 400px - 5rem);
+    background-color: #f0f0f0;
+    z-index: 2;
+}
+
+.tool{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-family: sans-serif;
+    gap: 1rem;
+    color: #484848;
+}
+/*  */
+.r-menu>.btn{
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.r-menu.active .menu-read{
+    display: block;
+}
+
+.menu-read{
+    display: none;
+    position: absolute;
+    font-size: 1.4rem;
+    top: 100%;
+    left: 0;
+    padding: 1rem;
+    background-color: #4c4c4c;
+    color: #fff;
+    z-index: 99;
+}
+
+.menu-read a{
+    font-family: 'Merriweather Sans', sans-serif;
+    display: inline-block;
+    margin: 5px 0;
+    border-left: 2px solid #fff;
+    padding-left: 1rem;
+}
+
+.tool .count-download{
+    font-size: 1.6rem;
+}
+
+.tool>.btn{
+    padding: 0 .5rem;
+    cursor: pointer;
+}
+
+#rdownload{
+    background-color:  #FFCC00 ;
+    padding: 1rem 1.2rem;
+    color: #fff;
+    border-radius: 2rem;
+    font-size: 1.8rem;
+}
+
+.tool>.btn>span{
+    display: block;
+}
+/*  */
+
+/*  */
+.content-box{
+    padding: 2rem;
+    background-color: #efefef;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.content-box h2{
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 1rem;
+}
+
+
+.pdf-view-box>div>button {
+    margin: auto;
+    display: block;
+    transition: all 0.2s ease-in;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    cursor: pointer;
+    border-radius: 4rem;
+    border: 2px solid #FFCC00;
+    color: #ffffff;
+    background-color: #FFCC00;
+    padding: 1rem 2.4rem;
+}
+
+.pdf-view-box>div>button:hover{
+    background-color: #efefef;
+    color: #FFCC00;
+}
+
+.pdf-view-box {
+    color: #000000;
+    padding:  3rem;
+}
+
+.pdf-view-box iframe{
+    aspect-ratio: 4/3;
+}
+
+.pdf-view-box h2,
+.pdf-view-box p,
+.pdf-view-box h1{
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.pdf-view-box>div.login{
+    display: flex;
+    justify-content: center;
+}
+
+.pdf-view-box p{
+    font-style: italic;
+}
+
+.pdf-view-box>div.login button{
+    transition: all 0.2s ease-in;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    cursor: pointer;
+    border-radius: 4rem;
+    border: 2px solid #FFCC00;
+    color: #ffffff;
+    background-color: #FFCC00;
+    padding: 1rem 2.4rem;
+}
+
+.pdf-view-box>div.login button:hover{
+    background-color: #ffcc00!important;
+    border: #ffcc00 2px solid!important;
+    color:#000!important;
+}
+
+.doc-box-download,
+.ref-and-note-box{
+    border-top: 1px solid #68686861 ;
+    padding: 2rem;
+    width: 100%;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.doc-box-download h2,.doc-box-download h4,
+.ref-and-note-box h2{
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.doc-box-download .doc-item-box button
+{
+    transition: all .2s ease;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #686868;
+    border: 2px solid #676767;
+    padding: .8rem 2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.doc-box-download .doc-item-box button:hover{
+    color: #fff;
+    border: 2px solid #FFCC00;
+    background-color: #FFCC00;
+}
+
+.doc-box-download .doc-item-box span{
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: .5rem 0 .5rem .8rem;
+    border-left: 2px solid #000;
+    margin-left: .8rem;
+}
+
+.ref-and-note-box{
+    margin-bottom: 4rem;
+    transition: all .2s ease;
+}
+
+.ref-and-note-box>.ref-item{
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+}
+
+
+.ref-and-note-box>.ref-item>p{
+    font-size: 2rem;
+}
+
+.ref-and-note-box>.ref-item>p:first-child{
+    padding-top: .6rem;
+    height: 4rem;
+    width: 4rem;
+    text-align: center;
+    flex-shrink: 0;
+    border-radius:50%;
+    background-color: #FFCC00;
+    font-size: 2.4rem;
+    font-family: sans-serif;
+    color: #fff;
+}
+
+
+.ref-and-note-box>.ref-item>p>a{
+    color: #FFCC00;
+}
+
+.ref-and-note-box>.ref-item>p>a:hover{
+    text-decoration: underline;
+}
+
+.showmore-overlay{
+    display: none;
+    position: absolute;
+    background-image: linear-gradient(#0000,#fff);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 250px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.ref-and-note-box.lite{
+    height: 400px;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+
+.ref-and-note-box.lite .showmore-overlay{
+    display: flex;
+
+}
+
+.showmore-overlay > button,
+.hide-overlay > button{
+    margin: 0 auto;
+    transition: all .2s ease;
+    display: block;
+    border: 1px solid #676767;
+    background-color: transparent;
+    padding: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.showmore-overlay > button:hover,
+.hide-overlay > button:hover{
+    display: block;
+    border: 1px solid #676767;
+    background-color: #676767;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+/* RSUDE */
+.rside{
+    font-family: 'Merriweather Sans', sans-serif;
+    background-color: #0000000b;
+    padding: 1rem;
+}
+
+.current-issue-box{
+    width: 100%;
+}
+
+.current-issue-box>.cover-box{
+    width: 100%;
+    overflow: hidden;
+}
+
+.current-issue-box>.cover-box>img{
+    width: 100%;
+}
+
+.other-research-box{
+    width: 100%;
+}
+
+.other-research-item{
+    border-top: 1px solid #a2a2a2;
+    padding: 1rem 0;
+}
+
+.other-research-item:first-child{
+    border-top: 0;
+}
+
+.rside a:hover{
+    text-decoration: underline;
+}
+
+.other-research-box > button{
+    transition: all .2s ease;
+    display: block;
+    padding: 1rem;
+    color: #FFCC00;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 2rem;
+    background-color: transparent;
+    margin-bottom: 1rem;
+    margin-left: auto;
+}
+
+.other-research-box i{
+    padding-left: 1rem;
+    transition: padding .2s ease;
+}
+
+
+
+.other-research-box > button:hover{
+    background-color: #FFCC00;
+    color: #fff;
+}
+
+.other-research-box > button:hover i{
+    padding-left: .3rem;
+}
+
+/*  */
+.last-news-box,
+.recommended-box{
+    padding: 1rem 0;
+    border-top: 3px solid #000;
+}
+
+
+.last-news-box span,
+.recommended-box  span{
+    font-size: 1.2rem;
+}
+
+.last-news-box .items>span:first-child,
+.recommended-box .items>span:first-child{
+    color: #FFCC00;
+    padding-right: .4rem;
+    margin-right: .4rem;
+    border-right: 2px solid #00000017;
+}
+
+
+@media screen and (max-width:1200px) {
+    .main{
+        display: block;
+        max-width: 800px;
+    }
+    .r-menu.fixed{
+        position: fixed;
+        max-width: calc(800px - 2rem);
+        width: calc(100% - 2rem);
+    }
+    .body-container h1{
+        font-size: 3.4rem;
+        margin: 1rem 0;
+    }
+    .body-container h2{
+        margin: 1rem 0;
+        font-size: 3.1rem;
+    }
+    .body-container h3{
+        margin: 1rem 0;
+        font-size: 2.8rem;
+    }
+    .body-container h4{
+        margin: 1rem 0;
+        font-size: 2.5rem;
+    }
+    .body-container h5{
+        font-size: 2.2rem;
+        margin: 1rem 0;
+    }
+    .body-container h6{
+        margin: 1rem 0;
+        font-size: 1.8rem;
+    }
+    
+    .body-container p{
+        margin: 1rem 0;
+        font-size: 1.8rem;
+    }
+}
