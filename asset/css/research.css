@@ -65,9 +65,10 @@ a{
 }
 
 .r-path-box span{
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: #898989;
     margin-right: .2rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 .r-path-box span:last-child{
