@@ -159,7 +159,7 @@ $(document).ready(async(e)=>{
             switch (status) {
                 case 200:{
                     setTimeout(()=>{
-                        location.pathname='/home.html'
+                        location.pathname='./home.html'
                     },1000)
                     break
                 }
