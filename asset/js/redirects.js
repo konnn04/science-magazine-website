@@ -13,12 +13,9 @@ function getCookie(key) {
     return "";
 }
 
-switch (location.pathname) {
-    case '/login.html':{
-        if (getCookie("username")!="" && getCookie("email")!="" ) {
-            location.href = "./home.html"
-            console.log("ok")
-        }
-        break;
+if (location.pathname.includes('/login.html')) {
+    if (getCookie("username")!="" && getCookie("email")!="" ) {
+        location.href = "./home.html"
+        console.log("ok")
     }
 }
