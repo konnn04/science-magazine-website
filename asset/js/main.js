@@ -8,6 +8,18 @@ $(window).scroll(function(){
    }
 })
 
+function err404HTML() {
+    return `<section id="err404">
+           <div>
+            <img src="../img/err/err404.gif" alt="">
+           </div>
+           <div>
+                <h1>404 NOT FOUND!</h1>
+                <div><a href="./home.html">Return homepage</a></div>
+           </div>
+        </section>`
+}
+
 function getStringUnixTime(milisecond) {
     return new Date(milisecond).toLocaleString()
 }

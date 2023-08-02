@@ -1,4 +1,4 @@
-function initPath(data,issue,type,id) {
+function initPath(data,issue,id) {
     $(".n-path-box").html(`
     <span>Home</span>
     <span>></span>
@@ -9,7 +9,7 @@ function initPath(data,issue,type,id) {
     <span>${data[issue]["news"][id]["title"]}`)
 }
 
-function initNewsHeaderBox(data,issue,type,id) {
+function initNewsHeaderBox(data,issue,id) {
     $(".n-header-box").html($(".n-header-box").html() + `
     <h6>${data[issue]["news"][id]["type"]}</h6>
     <h1>${data[issue]["news"][id]["title"]}</h1>
@@ -23,7 +23,7 @@ function initNewsHeaderBox(data,issue,type,id) {
     `)
 }
 
-function initNewsIssueDetailBox(data,issue,type,id) {
+function initNewsIssueDetailBox(data,issue,id) {
     $(".n-issue-detail-box").html(`
     <div class="n-cover-issue-img">
         <img src="${data[issue]["imgCover"]}" alt="" srcset="">
@@ -89,7 +89,7 @@ function HTMLContent(type,dataHTML) {
     }
 }
 
-function initNewsContent(data,issue,type,id) {
+function initNewsContent(data,issue,id) {
     let HTML = "<br>"
     for (let i of data[issue]["news"][id]["content"]) {
         HTML+=HTMLContent(i["type"],i)
@@ -97,8 +97,8 @@ function initNewsContent(data,issue,type,id) {
     $(".n-content-box").html(HTML)
 }
 
-function initNewsTagBox(data,issue,type,id) {
-    for (let i of data[issue][type][id]["tags"]) {
+function initNewsTagBox(data,issue,id) {
+    for (let i of data[issue]["news"][id]["tags"]) {
         $(".tag-box").html(  $(".tag-box").html() +`<a href="#"> <span>${i.toUpperCase()}</span> </a>`)
     }
 }
@@ -129,15 +129,127 @@ function initNewsAuthorBox(data,issue,id) {
 }
 
 
-async function getNews(issue,type,id) {
+function initMoreNews(data,issue,id) {
+    let count=3
+    for (let j=0;(j<data[issue]["news"].length && count>0);j++) {
+        if (id != j) {
+            count--
+            $(".n-more-items-box").html(
+                $(".n-more-items-box").html()+
+                `<div class="n-more-items">
+                <div class="more-img">
+                    <a href="./news.html?issue=${data[issue]["id"]}&id=${j}">
+                        <img src="${data[issue]["news"][j]["cover"]}" alt="" srcset="">
+                    </a>
+                </div>
+                <div class="more-text">
+                    <span>${getStringUnixDate(data[issue]["news"][j]["time"])}</span>
+                    <a href="./news.html?issue=${data[issue]["id"]}&id=${j}">
+                        <h6>${cutString(data[issue]["news"][j]["title"],60)}</h6>
+                    </a>
+                    <span>BY ${data[issue]["news"][j]["author"][0]["name"]}</span>   
+                </div>                       
+            </div>`
+            )
+        }
+    }
+    
+}
+
+function initSameTopic(data,issue,id) {
+    let topic = data[issue]["news"][id]["type"].toUpperCase()
+    let count = 3
+    for (let i=0;i<data.length;i++) {
+        for (let j=0;(j<data[i]["news"].length && count>0);j++) {
+            if (data[i]["news"][j]["type"].toUpperCase() === topic && !(issue==i && j==id)) {
+                count--
+                $(".n-rside-item-box").eq(0).html(
+                    $(".n-rside-item-box").eq(0).html()+
+                    `<div class="n-rside-item">
+                            <div class="n-rside-item-img">
+                                <a href="./news.html?issue=${data[i]["id"]}&id=${j}">
+                                    <img src="${data[i]["news"][j]["cover"]}" alt="" srcset="">
+                                </a>
+                            </div>
+                            <div class="n-rside-item-text">
+                                <span>${getStringUnixDate(data[i]["news"][j]["time"])}</span>
+                                <span>${data[i]["news"][j]["author"][0]["name"]}</span>
+                                <a href="./news.html?issue=${data[i]["id"]}&id=${j}">
+                                    <h3>${cutString(data[i]["news"][j]["title"],60)}</h3>
+                                </a>
+                            </div>
+                        </div>`
+                )
+            }
+        }
+    }
+}
+
+function initRecommend(data,issue,id) {
+    let rand = []
+    let j=3
+    while (rand.length<3){
+        let ok=true
+        let randIssue = Math.floor(Math.random() * (data.length))
+        let randID = Math.floor(Math.random() * (data[randIssue]["news"].length))
+        for (let i of rand) {
+            if ((i["issue"] == randIssue && i["id"] == randID)) {
+                ok=false
+                break
+            }
+        }
+        if (ok) {
+            rand.push({
+                "issue":randIssue,
+                "id":randID
+            })
+            $(".n-rside-item-box").eq(1).html(
+                $(".n-rside-item-box").eq(1).html()+
+                `<div class="n-rside-item">
+                        <div class="n-rside-item-img">
+                            <a href="./news.html?issue=${data[randIssue]["id"]}&id=${randID}">
+                                <img src="${data[randIssue]["news"][randID]["cover"]}" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="n-rside-item-text">
+                            <span>${getStringUnixDate(data[randIssue]["news"][randID]["time"])}</span>
+                            <span>${data[randIssue]["news"][randID]["author"][0]["name"]}</span>
+                            <a href="./news.html?issue=${data[randIssue]["id"]}&id=${randID}">
+                                <h3>${cutString(data[randIssue]["news"][randID]["title"],60)}</h3>
+                            </a>
+                        </div>
+                    </div>`
+            )
+        }
+    }
+}
+
+
+async function getNews(obj) {
+    let id=obj.id
+    let issue = 0
     await fetch("/asset/data/data.json").then(async (res)=>{
+        let check = false
         let data = await res.json()
-        initPath(data,issue,type,id)
-        initNewsHeaderBox(data,issue,type,id)
-        initNewsIssueDetailBox(data,issue,type,id)
-        initNewsContent(data,issue,type,id)
-        initNewsTagBox(data,issue,type,id)
-        initNewsAuthorBox(data,issue,id)
+        for (let i=0;i<data.length;i++) {
+            if (data[i]["id"]===obj.issue && id >=0 && id<data[i]["news"].length) {
+                issue=i
+                check=true
+                initPath(data,issue,id)
+                initNewsHeaderBox(data,issue,id)
+                initNewsIssueDetailBox(data,issue,id)
+                initNewsContent(data,issue,id)
+                initNewsTagBox(data,issue,id)
+                initNewsAuthorBox(data,issue,id)
+                initMoreNews(data,issue,id)   //Mới nhất (hoặc chưa đọc)
+                initSameTopic(data,issue,id) //Cùng chủ đề (Type)
+                initRecommend(data,issue,id)//Random
+            }
+        }
+        if (!check) {
+            $(".body-container").html(err404HTML())
+        }
+        
     }).catch(err =>{
         console.log(err)
         alert("Lỗi tải trang!")
@@ -145,7 +257,12 @@ async function getNews(issue,type,id) {
 }
 
 $(document).ready(async()=> {
+    const urlParams = new URLSearchParams(window.location.search);
+    const newsPath = {
+        "issue":urlParams.get('issue'),
+        "id":parseInt(urlParams.get('id')),        
+    }
     initUser()
     initHeaderEvent()
-    await getNews(0,"news",2)
+    await getNews(newsPath)
 });

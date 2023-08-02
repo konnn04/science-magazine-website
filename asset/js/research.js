@@ -53,7 +53,7 @@ function initHeaderContent(data,issue,id) {
     //Sửa lỗi Header che tiêu đề
     $(".menu-read a").click(()=>{
        setTimeout(()=>{
-        $("html,body").animate({scrollTop:$(window).scrollTop() - 100},'slow');
+        $("html,body").animate({scrollTop:$(window).scrollTop() - 120},'slow');
        },100)
 
     })
@@ -148,7 +148,7 @@ function initRSide(data,issue,id) {
             $(".other-research-box").html() + `
             <div class="other-research-item">
                 <h6>
-                    <a href="#">
+                    <a href="./research.html?issue=${data[issue]["id"]}&id=${i}">
                     ${data[issue]["researchs"][i]["title"]}
                     </a>
                 </h6>
@@ -170,7 +170,11 @@ function initRSide(data,issue,id) {
         <div class="items">
         <span>NEWS</span>
         <span>${getStringUnixDate(data[issue]["news"][i]["time"])}</span>
-        <h6><a href="#">${data[issue]["news"][i]["title"]}</a></h6>
+        <h6>
+            <a href="./news.html?issue=${data[issue]["id"]}&id=${i}">
+                ${data[issue]["news"][i]["title"]}
+            </a>
+        </h6>
         </div>
         `)
     }
@@ -193,16 +197,29 @@ $(window).scroll(function () {
     }
 });
 
-async function getResearch(issue,id) {
+async function getResearch(obj) {
+    let id=obj.id
+    let issue = 0
     await fetch("/asset/data/data.json").then(async (res)=>{
+        let check = false
         let data = await res.json()
-        initPath(data,issue,id)
-        initHeaderContent(data,issue,id)
-        initNewsContent(data,issue,id)
-        initPDFView(data,issue,id)
-        initDownloadDoc(data,issue,id)
-        initDataRMenu(data,issue,id)
-        initRSide(data,issue,id)
+        for (let i=0;i<data.length;i++) {
+            if (data[i]["id"]===obj.issue && id >=0 && id<data[i]["researchs"].length) {
+                issue=i
+                check=true
+                initPath(data,issue,id)
+                initHeaderContent(data,issue,id)
+                initNewsContent(data,issue,id)
+                initPDFView(data,issue,id)
+                initDownloadDoc(data,issue,id)
+                initDataRMenu(data,issue,id)
+                initRSide(data,issue,id)
+            }
+        }
+        if (!check) {
+            $(".body-container").html(err404HTML())
+        }
+        
     }).catch(err =>{
         console.log(err)
         alert("Lỗi tải trang!")
@@ -210,8 +227,13 @@ async function getResearch(issue,id) {
 }
 
 $(document).ready(async()=> {
+    const urlParams = new URLSearchParams(window.location.search);
+    const newsPath = {
+        "issue":urlParams.get('issue'),
+        "id":parseInt(urlParams.get('id')),        
+    }
     initUser()
     initHeaderEvent()
     //Khởi tạo trang web 
-    getResearch(0,1)
+    getResearch(newsPath)
 });

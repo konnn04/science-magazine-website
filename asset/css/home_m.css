@@ -1,5 +1,9 @@
+.recommended{
+    margin-top: 9rem;
+}
+
 .r-title{
-    font-size: 1.8rem;
+    font-size: 1.3rem;
 }
 
 .r-summary{
@@ -9,7 +13,7 @@
 }
 
 .r-type{
-    font-size: 1.6em;
+    font-size: 1em;
     font-size: 600;
     margin: 1rem 0;
     height: fit-content;
@@ -21,5 +25,13 @@
 }
 
 .info{
-    width: 35%;
+    width: 40%;
+}
+
+.recommended{
+    aspect-ratio: 4/3;
+}
+
+.section-title>h2{
+    font-size: 2.3rem!important;
 }

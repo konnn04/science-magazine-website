@@ -44,6 +44,11 @@ header{
     position: relative;
 }
 
+.logo a{
+  text-decoration: none;
+  color: unset;
+}
+
 .logo{
     font-size: 3rem;
     font-weight: bold;
@@ -508,4 +513,37 @@ font-size: 2.6rem;
 .copyright-box .copyright{
 color: var(--text);
 font-size: 1.4rem;
+}
+
+#err404{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+  background-color: #000;
+  flex-wrap: wrap;
+  align-items: center;
+
+}
+#err404>div:last-child{
+  color: #fcfcfc;
+}
+
+#err404>div>div{
+  cursor: pointer;
+  border: 2px solid #fff;
+  width: fit-content;
+  border-radius: 2rem;
+  font-size: 2.4rem;
+}
+
+#err404>div>div a{
+  display: inline-block;
+  padding: 1rem;
+
+}
+
+#err404>div>div:hover{
+  background-color: #fcfcfc;
+  color: #000;
 }

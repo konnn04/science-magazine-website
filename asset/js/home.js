@@ -1,16 +1,17 @@
+var Types = ["SCIENTIFIC COMMUNITY","PEOPLE & EVENTS","HEALTH"]
 var currentRFrame=0
 var MagaCover = 0
 var setIntervalFrame
 var cdType = false
 
 function initTypeEvent() {
-    for (let i=0;i<$(".all-new-items").length;i++) {
+    for (let i=0;i<$(".all-news-items").length;i++) {
         $(".r-arrow").eq(i).click(()=>{
             if (cdType) return
-            let temp = parseInt($('.all-new-items').eq(i).css('transform').split(',')[4])
-            if (temp<= -1*( $(".all-new-items").eq(i).width() - $(document).width())) return
-            $(".all-new-items").eq(i).css({
-                "transform":`translateX(${temp - $(".new").width()}px)`
+            let temp = parseInt($('.all-news-items').eq(i).css('transform').split(',')[4])
+            if (temp<= -1*( $(".all-news-items").eq(i).width() - $(document).width())) return
+            $(".all-news-items").eq(i).css({
+                "transform":`translateX(${temp - $(".news").width()}px)`
             })
             cdType=true
             setTimeout(()=>{
@@ -19,10 +20,10 @@ function initTypeEvent() {
         })
         $(".l-arrow").eq(i).click(()=>{  
             if (cdType) return
-            let temp = parseInt($('.all-new-items').eq(i).css('transform').split(',')[4])
+            let temp = parseInt($('.all-news-items').eq(i).css('transform').split(',')[4])
             if (temp>=-50) return
-            $(".all-new-items").eq(i).css({
-                "transform":`translateX(${temp + $(".new").width()}px)`
+            $(".all-news-items").eq(i).css({
+                "transform":`translateX(${temp + $(".news").width()}px)`
             })
             cdType=true
             setTimeout(()=>{
@@ -42,11 +43,11 @@ function tramformMagaCover(x) {
     for (let i=0;i<n;i++)   {
         let j = MagaCover+i+1;
         j=(j<1)?j+n:j;
-        j=(j>5)?j-n:j;
+        j=(j>n)?j-n:j;
         $(".maga-cover-box").eq(i).addClass(`active${j}`)
         j = f+i+1;
         j=(j<1)?j+n:j;
-        j=(j>5)?j-n:j;        
+        j=(j>n)?j-n:j;        
         $(".maga-cover-box").eq(i).removeClass(`active${j}`)
         
     }
@@ -92,15 +93,15 @@ function runFrame(i) {
     },5000)
 }
 //Hàm truyền vào data trả về r-frame tương ứng
-function rFrame(data) {
+function rFrame(data,issueString,id) {
     return `
-    <div class="r-frame">
+    <div class="r-frame" img="${data["cover"]}">
         <div class="info">
             <p class="r-type">${data["type"]}</p>
-            <p class="r-title">${data["title"]}</p>
-            <P class="r-summary">${cutString(data["summary"],300)}</P>
+            <p class="r-title">${cutString(data["title"],60)}</p>
+            <P class="r-summary">${cutString(data["content"][0]["text"],300)}</P>
             <div class="readMore-btn">
-                <a href="#"><button type="submit">Read more <i class="fa-solid fa-angles-right"></i></button></a>
+                <a href="./news.html?issue=${issueString}&id=${id}"><button type="submit">Read more <i class="fa-solid fa-angles-right"></i></button></a>
             </div>
         </div>
     </div>
@@ -108,17 +109,18 @@ function rFrame(data) {
 }
 
 function initRFrame(data) {
-    //tạo chuỗi rỗng chứa html r-frame
+    let n = (data[data.length-1]["news"].length > 5) ?5:data[data.length-1]["news"].length;
     let f=""
-    for (let i of data) {
-        f+=rFrame(i)
+    while(n--) {
+        f+=rFrame(data[data.length-1]["news"][n],data[data.length-1]["id"],n)
     }
+    //tạo chuỗi rỗng chứa html r-frame
     $(".recommended").html(f+$(".recommended").html())
     //tạo chuỗi rỗng chứa html button
     f=""
     for (let i=0;i<$(".recommended .r-frame").length;i++) {
         $(".r-frame").eq(i).css({
-            "background": `linear-gradient(-90deg, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0)), url('${data[i]["img"]}') no-repeat center`,
+            "background": `linear-gradient(-90deg, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0)), url('${$(".r-frame").eq(i).attr("img")}') no-repeat center`,
             "backgroundSize": "cover"
         })
         f+=`<button></button>`
@@ -134,15 +136,63 @@ function initRFrame(data) {
     }
 }
 
+//Tạo các boxbar
+function initBoxType(data) {
+    let typeBoxContent ={}
+    for (let type of Types) {
+        typeBoxContent[type]=""
+    }
+    for (let i=0;i<data.length;i++) {
+        for (let j=0;j<data[i]["news"].length;j++) {
+            for (let type of Types) {
+                if (data[i]["news"][j]["type"]==type) {
+                    typeBoxContent[type]+=
+                    `<div class="news">
+                            <div class="news-wrapper">
+                                <div class="news-img">
+                                    <a href="./news.html?issue=${data[i]["id"]}&id=${j}">
+                                    ${data[i]["news"][j]["title"]}">
+                                    <img src="${data[i]["news"][j]["cover"]}" alt="" srcset=""></a>
+                                </div>
+                                <span>${getStringUnixDate(data[i]["news"][j]["time"])}</span>
+                                <h4>
+                                    <a href="./news.html?issue=${data[i]["id"]}&id=${j}">
+                                    ${data[i]["news"][j]["title"]}
+                                    </a>
+                                </h4>
+                                <span>By ${data[i]["news"][j]["author"][0]["name"]}</span>
+                            </div>                            
+                    </div>`
+                }
+            }
+        }
+    }
+    for (let type of Types) {
+        $(".category").html($(".category").html()+
+        `<div class="t-container">
+        <h3 class="type">${type}</h3>
+        <div class="t-wrapper">
+            <div class="r-arrow"></div>
+            <div class="l-arrow"></div>
+            <div class="all-news-items">
+                ${typeBoxContent[type]}                   
+            </div>
+        </div>
+    </div>`)
+    }   
+}
+
+
 $(document).ready(async()=>{
     initUser()
     initHeaderEvent()    
-    initMagaList()
-    initTypeEvent()
-    await fetch("/asset/data/recommend.json")
+    await fetch("/asset/data/data.json")
     .then(async (res)=>{
         let data = await res.json()
         //Khởi tạo r-frame
         initRFrame(data)
+        initBoxType(data)
     })
+    initMagaList()
+    initTypeEvent()
 })

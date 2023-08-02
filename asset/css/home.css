@@ -43,14 +43,14 @@
  .r-type{
   font-size: 1.8em;
   font-size: 600;
-  margin: 10%  0;
+  margin: 7%  0 5% 0;
   height: 5%;
   border-left: 2px solid #ffcc00;
   padding-left: .5em;
  }
 
  .r-title{
-  font-size: 3rem;
+  font-size: 2.6rem;
   font-weight: 800;
   font-family: 'Merriweather Sans', sans-serif;
   text-transform: uppercase;
@@ -61,9 +61,8 @@
   margin: 1em 2em 2em 0;
   text-align: justify;
   font-family: 'Merriweather', serif;
-  overflow:hidden ;
-  text-overflow:ellipsis;
-  max-height: 50%;
+  max-height: 60%;
+  overflow: hidden;
  }
 
  .readMore-btn{
@@ -207,7 +206,7 @@
   position: relative;
 }
 
-.all-new-items{
+.all-news-items{
   transition: all .2s ease;
   transform: translateX(2.2rem);
   display: flex;
@@ -247,38 +246,56 @@
   cursor: pointer;
 }
 
-.new{
+.news{
   width: 33rem;
   height: 30rem;
   flex-shrink: 0;
 }
 
-.new-wrapper{
+.news-wrapper{
+  user-select: none;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   padding: 1rem;
 }
 
-.new-img{
-  width: 100%;
-  height: 80%;
-  background-image: url(/img/login/background-login.jpg);
-  margin-bottom: 1.8rem;
-  border-radius: 1rem 1rem 0 0;
-  overflow: hidden;
-  transition: all .2s ease;
-}
-.new-img:hover{
-  cursor: pointer;
-  transform: scale(1.05);
+.news-wrapper a{
+  color: unset;
+  text-decoration: none;
 }
 
-.new-title{
-  text-decoration: none;
+.news-img{
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.news-img img{
+  width: 100%;
+}
+
+.news-wrapper h4{
   color: var(--text);
   font-size: 18px;
   font-weight: 600;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
+}
+
+.news-wrapper h4:hover{
+  text-decoration: underline;
+}
+
+.news-wrapper > span{
+  display: inline-block;
+  text-transform: uppercase;
+  color: #d7d7d7;
+  margin: .3rem 0;
+  font-size: 1.2rem;
+}
+
+.news-wrapper > span:last-child{
   font-family: 'Arial', sans-serif;
 }
 
@@ -320,6 +337,38 @@ position: relative;
 width: var(--w-cover-maga);
 height: calc(100vw + 10rem);
 max-height: 600px;
+cursor: pointer;
+}
+
+.maga-box>.overplay{
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: rgba(18, 18, 18, 0.389);
+  transition: all .2s ease;
+}
+
+.maga-box>.overplay:hover{
+  opacity: 1;
+}
+
+.maga-box>.overplay a{
+  text-decoration: none;
+  transition: all .2s ease;
+  margin: auto;
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+  color: #fff;
+  border: 2px solid #ffcc00;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.maga-box>.overplay a:hover{
+  scale: .9;
+  background-color: #ffcc00;
 }
 
 .magazine .maga-cover-box{
@@ -371,5 +420,9 @@ translate: 70% 0;
 z-index: -5;
 filter: brightness(.5);
 }
-
+.active6,
+.active7{
+  z-index: -7;
+  scale: .5;
+}
 
