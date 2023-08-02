@@ -151,7 +151,6 @@ function initBoxType(data) {
                             <div class="news-wrapper">
                                 <div class="news-img">
                                     <a href="./news.html?issue=${data[i]["id"]}&id=${j}">
-                                    ${data[i]["news"][j]["title"]}">
                                     <img src="${data[i]["news"][j]["cover"]}" alt="" srcset=""></a>
                                 </div>
                                 <span>${getStringUnixDate(data[i]["news"][j]["time"])}</span>
