@@ -185,7 +185,7 @@ function initBoxType(data) {
 $(document).ready(async()=>{
     initUser()
     initHeaderEvent()    
-    await fetch("/asset/data/data.json")
+    await fetch("../../asset/data/data.json")
     .then(async (res)=>{
         let data = await res.json()
         //Khởi tạo r-frame
