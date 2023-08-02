@@ -20,7 +20,7 @@
    }
 
    body{
-    background: url('./img/login/background-login.jpg') no-repeat center center fixed;
+    background: url('../../img/login/background-login.jpg') no-repeat center center fixed;
    }
    
    header{
