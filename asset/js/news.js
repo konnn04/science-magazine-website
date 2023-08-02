@@ -228,7 +228,7 @@ function initRecommend(data,issue,id) {
 async function getNews(obj) {
     let id=obj.id
     let issue = 0
-    await fetch("../../asset/data/data.json").then(async (res)=>{
+    await fetch("./asset/data/data.json").then(async (res)=>{
         let check = false
         let data = await res.json()
         for (let i=0;i<data.length;i++) {
