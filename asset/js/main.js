@@ -10,7 +10,7 @@ $(window).scroll(function(){
 
 async function headerHTML() {
     let text=""
-    await fetch("../../asset/htm/header.htm").then(async (res)=>{
+    await fetch("./asset/htm/header.htm").then(async (res)=>{
         text = await res.text()
     })
     return text
