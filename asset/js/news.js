@@ -257,6 +257,7 @@ async function getNews(obj) {
 }
 
 $(document).ready(async()=> {
+    $("header").html(await headerHTML())
     const urlParams = new URLSearchParams(window.location.search);
     const newsPath = {
         "issue":urlParams.get('issue'),

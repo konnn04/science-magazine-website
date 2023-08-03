@@ -8,6 +8,14 @@ $(window).scroll(function(){
    }
 })
 
+async function headerHTML() {
+    let text=""
+    await fetch("../../asset/htm/header.htm").then(async (res)=>{
+        text = await res.text()
+    })
+    return text
+}
+
 function err404HTML() {
     return `<section id="err404">
            <div>
@@ -36,7 +44,6 @@ $(".to-top").click(function(){
 function cutString(s,length) {
     return (s.indexOf(' ',length) ==-1)?s:s.slice(0,s.indexOf(' ',length)+1)+"..."
 }
-
 function initUser() {
     if (getCookie("username")) {
         $(".user-check").html(`<div class="user-info">

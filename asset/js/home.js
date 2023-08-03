@@ -1,4 +1,4 @@
-var Types = ["SCIENTIFIC COMMUNITY","PEOPLE & EVENTS","HEALTH"]
+var Types = ["SCIENTIFIC COMMUNITY","PEOPLE & EVENTS","HEALTH","gyhu"]
 var currentRFrame=0
 var MagaCover = 0
 var setIntervalFrame
@@ -166,6 +166,7 @@ function initBoxType(data) {
             }
         }
     }
+    //?issue== & id
     for (let type of Types) {
         $(".category").html($(".category").html()+
         `<div class="t-container">
@@ -183,6 +184,9 @@ function initBoxType(data) {
 
 
 $(document).ready(async()=>{
+    //init header
+    $("header").html(await headerHTML())
+    //
     initUser()
     initHeaderEvent()    
     await fetch("./asset/data/data.json")
