@@ -1374,6 +1374,198 @@
                     "text":"Hensley ticks off the safety measures that will be in place, but also points to a more personal gauge of her confidence: She moved to Manhattan with her teenage son to help run the lab. “I literally live several miles from the lab,” she says. “I have a tremendous amount of confidence in the team that I work with.”"
                 }
             ]
+        },{
+            "title":"COVID-19 vaccines may undergo major overhaul this fall",
+            "type":"HEALTH",
+            "cover":"https://www.science.org/do/10.1126/science.adi8782/full/_20230526_nid_covidvax-1684959673717.jpg",
+            "subTitle":"As Omicron persists, consensus grows for abandoning the ancestral coronavirus strain to improve immune responses",
+            "desCover":"Regulators must decide soon which strains to include in a fall vaccine against the ever-changing coronavirus.V. ALTOUNIAN/SCIENCE",
+            "time":1652900400000,
+            "author":[{
+                "avt":"https://www.science.org/do/10.1126/author.7725/authorSummary/couzin-frankel-headshot-700x700-1661978904937.jpg",
+                "name":"Jennifer Couzin-Frankel",
+                "job":"Author",
+                "bio":"Jennifer Couzin-Frankel is a reporter at Science, covering biomedical research.",
+                "social":["mailto:jcouzin@aaas.org",""]
+            }],
+            "tags":["CORONAVIRUS","HEALTH"],
+            "content":[
+                {
+                    "type":"p",
+                    "text":"Earlier this year, U.S. regulators settled on <span>a new strategy for COVID-19 vaccines</span>. Like the annual flu shot, the vaccines will be updated each year based on the virus’ evolution, then rolled out in the fall. Accordingly, on 15 June, advisers to the U.S. Food and Drug Administration <span>will weigh which strain or strains of SARS-CoV-2</span> should make up the next iteration of vaccine, so that the agency can greenlight a version for companies to mass-produce."
+                },{
+                    "type":"p",
+                    "text":"Regulators may well jettison the original SARS-CoV-2 strain that emerged in China and is long extinct—but which people are still being vaccinated against today. Many scientists favor eliminating it. The ancestral strain “should go out of the formulation,” says William Messer, an infectious disease specialist and viral immunologist at Oregon Health & Science University. Last week, the World Health Organization (WHO) agreed. But other questions loom, including whether to bundle multiple virus strains into the vaccine or just one."
+                },{
+                    "type":"p",
+                    "text":"To date, COVID-19 vaccines have been modified only once, when a bivalent version based on both the original strain and the BA.5 Omicron variant was introduced in September 2022. Uptake was disappointing: Only <span>17% of people in the United States have rolled up their sleeves</span>. (By comparison, about 50% get an annual flu shot.) Furthermore, many researchers say the bivalent vaccine packed less of a punch than it could have. The decision to preserve the ancestral strain sprang from worries that if an entirely new variant emerged, an Omicron-only vaccine might falter against it."
+                },{
+                    "type":"p",
+                    "text":"This hedging proved unwarranted: All major new variants have flowed from Omicron, which was first detected in South Africa in November 2021. And evidence increasingly shows that a vaccine split between a current strain and one that’s extinct makes it harder for people to mount a strong immune response to the virus."
+                },{
+                    "type":"p",
+                    "text":"On 4 May, for example, David Ho, a virologist at Columbia University, and his colleagues posted <span>a preprint study of 72 people</span>, including some who had received four doses of the original vaccine and others who’d gotten three doses and a bivalent booster. Those who got the booster didn’t produce antibodies that were notably better at neutralizing Omicron. The reason, Ho explains, is a phenomenon called immunological imprinting, in which repeatedly exposing the immune system to one strain—in this case, the ancestral one—skews the immune response in that direction. When the decision was made to keep the ancestral strain in COVID-19 vaccines, Ho says, imprinting “was probably not a dominant consideration, but it is now.”"
+                },{
+                    "type":"p",
+                    "text":"Florian Krammer, a virologist at the Icahn School of Medicine at Mount Sinai, agrees. He and his colleagues published a study this month in The Lancet Microbe in which they studied blood from 16 people 1 month before and about 2 weeks after they got a bivalent booster. After the booster, antibodies in the blood did <span>a slightly better job of neutralizing the ancestral strain</span> than BA.5. Krammer says his team also couldn’t find “specific” antibodies solely reactive to BA.5, which could be especially protective if they’re plentiful."
+                },{
+                    "type":"p",
+                    "text":"Last week, a WHO advisory group said in a statement that although current COVID-19 vaccines guard against severe disease, “protection against symptomatic disease is limited and less durable.” In place of a bivalent shot, the group <span>recommended a single-strain fall vaccine based on the XBB.1 lineage</span> now dominating across continents, although it left the door open to other effective vaccine recipes."
+                },{
+                    "type":"p",
+                    "text":"Whether a single-strain XBB.1 vaccine is the best bet or whether multiple Omicron strains should be included is a point of debate. In the past few months, two closely related XBB substrains, XBB.1.5 and XBB.1.16, have crowded out other Omicron variants. “We’re basically trying to guess what the next generation of variants will be, descending from which lineage,” Ho says."
+                },{
+                    "type":"p",
+                    "text":"“From what we know now, matching the vaccine to whatever circulating variants you’re trying to protect against probably does best,” says Angela Branche, an infectious disease specialist at the University of Rochester. She co-leads a study called COVAIL that’s examining immune responses spurred by different boosters. It has found that<span> monovalent vaccines against Omicron perform somewhat better</span> than those that include the ancestral strain."
+                },{
+                    "type":"p",
+                    "text":"An important question is whether vaccines better matched to current strains could reduce not just severe illness, but also transmission—something current vaccines appear to do poorly. An April study in The New England Journal of Medicine showed that after BA.5 faded and other Omicron strains surged, <span>the bivalent vaccine’s ability to prevent transmission</span> peaked at about 30% 2 weeks after someone got the shot and fell to 0% at 16 weeks. “It’s not an unreasonable supposition” that a closer match could perform a bit better, though the effect is still unlikely to persist, Messer says."
+                },{
+                    "type":"p",
+                    "text":"Some researchers also think the updated vaccines should not be limited to the messenger RNA formulations made by Pfizer and Moderna. Novavax makes a protein subunit vaccine, the technology used in hepatitis B and human papillomavirus vaccines. “It would be good to have protein vaccines for the fall,” as those may give more durable protection, Branche says. But it’s unclear whether the company would be able to mass-produce a new vaccine in time."
+                },{
+                    "type":"p",
+                    "text":"Robert Frenck, who directs the Vaccine Research Center at Cincinnati Children’s Hospital and helped conduct trials of Pfizer’s COVID-19 vaccine, points out that most vaccines for other infectious diseases “use one methodology,” without causing concern. The strategy against COVID-19 need not be any different, he says."
+                },{
+                    "type":"p",
+                    "text":"Messer hopes regulators and companies will stay flexible as COVID-19 knowledge continues to grow—and urges targeting the new vaccines to people at highest risk. In the fall, “vaccine fatigue, COVID fatigue, is still going to persist,” he says, and “triaging your efforts to get good vaccine uptake” will be vital."
+                }
+            ]
+        },{
+            "title":"U.S. planning test reactor to run on weapons-grade uranium",
+            "type":"PHYSICS",
+            "cover":"https://www.science.org/do/10.1126/science.adi8789/full/_20230523_argonne_west_reactor-1684959832133.jpg",
+            "subTitle":"Use of highly enriched fuel in civilian reactor would contravene decades-old nonproliferation policy",
+            "desCover":"The new Molten Chloride Reactor Experiment will reside in an existing containment structure (conical building, foreground) at Idaho National laboratory.U.S. DEPARTMENT OF ENERGY",
+            "time":1653937200000,
+            "author":[{
+                "avt":"https://www.science.org/do/10.1126/author.8001/authorSummary/cho_0053_web-1661978519317.jpg",
+                "name":"Adrian Ch",
+                "job":"Author",
+                "bio":"Staff Writer",
+                "social":["mailto:acho@aaas.org",""]
+            }],
+            "tags":["PHYSICS","Science and Policy"],
+            "content":[
+                {
+                    "type":"p",
+                    "text":"The U.S. Department of Energy (DOE) is planning a small test reactor that would burn a large amount of weapons-grade uranium, <span>according to the project’s draft environmental assessment</span>. The experiment, to be built in a cost-sharing arrangement, would provide data for a new type of power reactor being developed by TerraPower and Southern Company Services. But the use of highly enriched uranium, <span>first reported by Physics Today</span>, would contravene the U.S. policy of removing HEU from civilian reactors around the world to keep it from being made into bombs."
+                },{
+                    "type":"p",
+                    "text":"The decision is “discouraging,” says Edwin Lyman, a physicist and director for nuclear safety at the Union of Concerned Scientists. “When the U.S. preaches the nonproliferation gospel, it should practice what it preaches.” Alan Kuperman, a political scientist at the University of Texas at Austin, says, “There was not by any means adequate public disclosure by the department that they were planning to contradict 5 decades of U.S. nonproliferation policy.”"
+                },{
+                    "type":"p",
+                    "text":"Neither DOE nor Idaho National Laboratory (INL), where the test reactor will be built, would comment on the issue."
+                },{
+                    "type":"p",
+                    "text":"The Molten Chloride Reactor Experiment (MCRE) would differ dramatically from conventional power reactors. They consume uranium fuel enriched to roughly 4% uranium-235, the fissile isotope, and encased in metal rods. Some uranium atoms split or fission to release energy and neutrons, which then split other uranium atoms in a chain reaction. Pressurized water flows around the rods both to slow the neutrons so that they split atoms more effectively and to carry heat to steam generators that ultimately drive turbines to generate electricity."
+                },{
+                    "type":"p",
+                    "text":"The MCRE would instead be cooled by molten salt, into which the uranium would be dissolved. In theory, a molten salt reactor could burn used fuel from conventional reactors and generate less long-lived radioactive waste, Kuperman says. Because <span>the salt would not slow the neutrons</span>, the reactor would need fuel with higher enrichment, which would generate more neutrons."
+                },{
+                    "type":"p",
+                    "text":"TerraPower’s commercial reactor would use fuel enriched to as much as 19% uranium-235, so-called high-assay, low-enriched fuel. But the MCRE will run on HEU enriched to greater than 90%—630 kilograms of it. That’s hundreds of times more than some research reactors use and enough to make dozens of bombs, Kuperman estimates. The uranium is leftover from another research reactor that ran at INL from 1969 to 1990, he says."
+                },{
+                    "type":"p",
+                    "text":"Running on HEU should enable the MCRE to produce the data needed to design and license the molten-salt power reactor while remaining relatively small and inexpensive, Lyman says. DOE would cover $90 million of the MCRE’s $113 million cost, and the reactor would start up in a few years. But its thrifty design would cost the United States credibility, says John Tierney, executive director of the Center for Arms Control and Non-Proliferation. “This is going to be seen as hypocritical by many, many people.”"
+                },{
+                    "type":"p",
+                    "text":"In the 1950s and ’60s, the U.S. helped build research reactors around the world, providing HEU for many of them. In the 1970s, it changed course and led efforts to remove HEU from those reactors and repatriate it. Of the 171 research reactors that ran on HEU, 71 have switched to low-enriched fuel and 28 have shut down, <span>according to the International Atomic Energy Agency</span>—although five U.S. research reactors still use HEU."
+                },{
+                    "type":"p",
+                    "text":"The issue highlights a tension between DOE’s Office of Nuclear Energy, which is eager to develop new reactors, and its National Nuclear Security Administration, which controls nuclear weapons and works for nonproliferation, Kuperman says. He and others have drafted a letter to DOE and President Joe Biden’s administration to encourage them to reconsider the plan. “If they make the wrong decision, I think they’re going to undermine much more of the nonproliferation regime than they realize.”"
+                }
+            ]
         }],
-        "researchs":[]}
+        "researchs":[
+            {
+                "title":"Where and with whom does a brief social-belonging intervention promote progress in college?",
+                "type":"SOCIAL BELONGING",
+                "authors":[
+                    {
+                    "name":"Gregory M. Walton",
+                    "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
+                    },
+                    {
+                    "name":"Mary C. Murphy",
+                    "bio":"Department of Psychological and Brain Sciences, Indiana University, Bloomington, IN, USA."
+                    },
+                    {
+                    "name":"Christine Logel ",
+                    "bio":"Department of Social Development Studies, Renison University College, University of Waterloo, Waterloo, ON, Canada."
+                    },
+                    {
+                    "name":"David S. Yeager",
+                    "bio":"Department of Psychology, University of Texas at Austin, Austin, TX, USA"
+                    },
+                    {
+                    "name":"J. Parker Goyer ",
+                    "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
+                    },
+                    {
+                    "name":"Shannon T. Brady",
+                    "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
+                    },
+                    {
+                    "name":"Katherine T. U. Emerson",
+                    "bio":"Department of Psychological and Brain Sciences, Indiana University, Bloomington, IN, USA."
+                    },
+                    {
+                    "name":"Omid Fotuhi ",
+                    "bio":"Learning Research and Development Center, University of Pittsburgh, Pittsburgh, PA, USA."
+                    },
+                    {
+                    "name":"Alison Blodorn",
+                    "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
+                    },
+                    {
+                    "name":"Kathryn L. Boucher",
+                    "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
+                    },
+                    {
+                    "name":"Evelyn R. Carter",
+                    "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
+                    },
+                    {
+                    "name":"Maithreyi Gopalan",
+                    "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
+                    },
+                    {
+                    "name":"Amy Henderson",
+                    "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
+                    }
+                ],
+                "downloaded":963,
+                "summary":"The rate of earning university degrees in the United States is very unequal across social class, race, and ethnicity. Interventions that promote academic persistence also work differently for students from different backgrounds and operate differently across contexts. Walton et al. conducted a randomized controlled trial to systematically explain and understand these heterogenous effects in a brief online intervention across 22 universities and colleges (see the Perspective by Bowman). The intervention was designed to remedy students’ concerns about belonging through a reading-and-writing activity that emphasized how worries about fitting in, struggling in class, and feeling homesick during the college transition are common and improve over time. They found that the intervention improved retention and persistence in school, particularly among historically underrepresented students, when the school context offered students opportunities to belong. The findings have policy implications for academic institutions that strive to better support and retain diverse students. —Ekeoma Uzogara",
+                "abstract":"A promising way to mitigate inequality is by addressing students’ worries about belonging. But where and with whom is this social-belonging intervention effective? Here we report a team-science randomized controlled experiment with 26,911 students at 22 diverse institutions. Results showed that the social-belonging intervention, administered online before college (in under 30 minutes), increased the rate at which students completed the first year as full-time students, especially among students in groups that had historically progressed at lower rates. The college context also mattered: The intervention was effective only when students’ groups were afforded opportunities to belong. This study develops methods for understanding how student identities and contexts interact with interventions. It also shows that a low-cost, scalable intervention generalizes its effects to 749 4-year institutions in the United States.",
+                "file":[{
+                    "type":"pdf",
+                    "info":["Materials and Methods","Supplementary Text","Tables S1 to S22","References (47–88)"],
+                    "src":"https://www.science.org/doi/suppl/10.1126/science.ade4420/suppl_file/science.ade4420_sm.pdf",
+                    "size":"948.96 KB"
+                }],
+                "RaN":[
+                    {
+                    "text":["R. Chetty, J. N. Friedman, E. Saez, N. Turner, D. Yagan, “Mobility report cards: The role of colleges in intergenerational mobility” (NBER Working Paper 23618, National Bureau of Economic Research, 2017); ","http://www.nber.org/papers/w23618"]
+                },{
+                    "text":["J. Rothwell, “What colleges do for local economies: A direct measure based on consumption,” Brookings Institution, 17 November 2015;","https://www.brookings.edu/research/what-colleges-do-for-local-economies-a-direct-measure-based-on-consumption/"]
+                },{
+                    "text":["E. Aucejo, Z. Tobin, “Assessing racial disparities in postsecondary education,” Federal Reserve Bank of Boston, 5 October 2021;","https://www.bostonfed.org/-/media/Documents/events/2021/racial-disparities-in-todays-economy/Assessing-Racial-Disparities-in-Postsecondary-Education.pdf?la=en."]
+                },{
+                    "text":["P. Tough, The Inequality Machine: How College Divides Us (Mariner Books, 2021)."]
+                },{
+                    "text":["J. A. Berlin, Invited commentary: Benefits of heterogeneity in meta-analysis of data from epidemiologic studies. Am. J. Epidemiol.142, 383–387 (1995)."]
+                },{
+                    "text":["B. B. McShane, J. L. Tackett, U. Böckenholt, A. Gelman, Large-scale replication projects in contemporary psychological research. Am. Stat.73 (suppl. 1), 99–105 (2019)."]
+                },{
+                    "text":["C. J. Bryan, E. Tipton, D. S. Yeager, Behavioural science is unlikely to change the world without a heterogeneity revolution. Nat. Hum. Behav.5, 980–989 (2021)."]
+                },{
+                    "text":["G. M. Walton, S. T. Brady, “The social-belonging intervention” in Handbook of Wise Interventions: How Social Psychology Can Help People Change, G. M. Walton, A. J. Crum, Eds. (The Guilford Press, 2021), pp. 36–62."]
+                },{
+                    "text":["D. A. Prentice, D. T. Miller, Pluralistic Ignorance and the Perpetuation of Social Norms by Unwitting Actors. Adv. Exp. Soc. Psychol.28, 161–209 (1996)."]
+                },{
+                    "text":["G. M. Walton, G. L. Cohen, A brief social-belonging intervention improves academic and health outcomes of minority students. Science331, 1447–1451 (2011)."]
+                }]
+            }
+        ]}
 ]

@@ -1,4 +1,4 @@
-var Types = ["SCIENTIFIC COMMUNITY","PEOPLE & EVENTS","HEALTH","gyhu"]
+var Types = ["SCIENTIFIC COMMUNITY","PEOPLE & EVENTS","HEALTH","PHYSICS"]
 var currentRFrame=0
 var MagaCover = 0
 var setIntervalFrame

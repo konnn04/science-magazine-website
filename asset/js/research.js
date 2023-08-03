@@ -65,13 +65,7 @@ function initNewsContent(data,issue,id) {
     //Tạo đề abstract
     $("#abstract p").text(data[issue]["researchs"][id]["abstract"])
     //
-    $(".showmore-overlay").click(()=>{
-        $(".ref-and-note-box").removeClass("lite")
-    })
-    //
-    $(".hide-overlay").click(()=>{
-        $(".ref-and-note-box").addClass("lite")
-    })
+    
 }
 
 //Tạo Box xem trước pdf?
@@ -122,6 +116,43 @@ function initDownloadDoc(data,issue,id) {
         <h4><i class="fa-solid fa-lock"></i> Please login to see this content!</h4>`)
     }
 }
+
+//Refs and Notse
+function initRefsAndNotes(data,issue,id) {
+    let RaN = data[issue]["researchs"][id]["RaN"]
+    for (let i=0;i<RaN.length;i++) {
+        let content =""
+        for (let j of RaN[i]["text"]) {
+            if (j.includes("http://") || j.includes("https://")) {
+                content+=` <a href="${j}" target="_blank" rel="noopener noreferrer">${j}</a>`
+            }else{
+                content+=(j+" ")
+            }
+        }
+        $(".ref-and-note-box").html($(".ref-and-note-box").html() + 
+        `<div class="ref-item">
+            <p>${i+1}</p>
+            <p>${content}</p>
+    </div>`)
+    }
+    $(".ref-and-note-box").html($(".ref-and-note-box").html() +
+    `<div class="showmore-overlay">
+        <button>SHOW MORE</button>
+    </div>
+    <div class="hide-overlay">
+        <button>SHOW FEWER</button>
+    </div>`)
+    //
+    $(".showmore-overlay").click(()=>{
+        $(".ref-and-note-box").removeClass("lite")
+    })
+    //
+    $(".hide-overlay").click(()=>{
+        $(".ref-and-note-box").addClass("lite")
+    })
+    
+}
+
 //tạo Thanh rmenu
 function initDataRMenu(data,issue,id) {
     $(".r-menu>.tool>.count-download").html(`
@@ -212,6 +243,7 @@ async function getResearch(obj) {
                 initNewsContent(data,issue,id)
                 initPDFView(data,issue,id)
                 initDownloadDoc(data,issue,id)
+                initRefsAndNotes(data,issue,id)
                 initDataRMenu(data,issue,id)
                 initRSide(data,issue,id)
             }
