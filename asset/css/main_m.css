@@ -33,3 +33,11 @@ main{
     justify-content: start;
 }
 
+.copyright-box{
+    display: block;
+    padding: 1rem;
+}
+
+footer .logo{
+    margin: 0;
+}
