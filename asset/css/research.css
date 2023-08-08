@@ -382,6 +382,7 @@ span.type:first-child{
 .ref-and-note-box>.ref-item{
     display: flex;
     align-items: start;
+    width: 100%;
     gap: 1rem;
 }
 
@@ -401,6 +402,11 @@ span.type:first-child{
     font-size: 2.4rem;
     font-family: sans-serif;
     color: #fff;
+}
+
+.ref-and-note-box>.ref-item>p:last-child{
+    width: calc(100% - 6rem);
+    overflow-x: hidden;
 }
 
 
@@ -432,7 +438,6 @@ span.type:first-child{
 
 .ref-and-note-box.lite .showmore-overlay{
     display: flex;
-
 }
 
 .showmore-overlay > button,

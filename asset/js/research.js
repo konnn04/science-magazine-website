@@ -133,7 +133,7 @@ function initRefsAndNotes(data,issue,id) {
         `<div class="ref-item">
             <p>${i+1}</p>
             <p>${content}</p>
-    </div>`)
+        </div>`)
     }
     $(".ref-and-note-box").html($(".ref-and-note-box").html() +
     `<div class="showmore-overlay">
