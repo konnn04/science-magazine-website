@@ -13,8 +13,8 @@ header nav{
     display: none;
 }
 
-main{
-    margin-top: 10rem;
+.main{
+    margin-top: 10rem!important; 
 }
 
 .primary-bar{

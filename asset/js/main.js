@@ -1,3 +1,5 @@
+var Types = ["SCIENTIFIC COMMUNITY","PEOPLE & EVENTS","HEALTH","EARTH","PLANTS & ANIMALS"]
+
 //to top btn
 $(window).scroll(function(){
     if($(this).scrollTop() > 100){
@@ -8,12 +10,20 @@ $(window).scroll(function(){
    }
 })
 
-async function headerHTML() {
-    let text=""
-    await fetch("./asset/htm/header.htm").then(async (res)=>{
-        text = await res.text()
+function initKeyWordsHeader() {
+    Types.forEach((e,i)=>{
+        $(".primary-bar .keywords").html(
+            $(".primary-bar .keywords").html() +
+            `<a href="">${e}</a>`
+        )
     })
-    return text
+}
+
+async function initHeader() {
+    await fetch("./asset/htm/header.htm").then(async (res)=>{
+        let text = await res.text()
+        $("header").html(text)
+    })
 }
 
 function err404HTML() {
@@ -30,6 +40,10 @@ function err404HTML() {
 
 function getStringUnixTime(milisecond) {
     return new Date(milisecond).toLocaleString()
+}
+
+function getStringUnixFullDay(milisecond) {
+    return ((new Date(milisecond).getMonth()+1)+" " +new Date(milisecond).toDateString().slice(4,7)+" "+ new Date(milisecond).getFullYear())
 }
 
 function getStringUnixDate(milisecond) {

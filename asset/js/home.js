@@ -1,4 +1,3 @@
-var Types = ["SCIENTIFIC COMMUNITY","PEOPLE & EVENTS","HEALTH","EDUCATION","BIOLOGY","PLANTS & ANIMALS"]
 var currentRFrame=0
 var MagaCover = 0
 var setIntervalFrame
@@ -13,6 +12,9 @@ function initTypeEvent() {
             $(".all-news-items").eq(i).css({
                 "transform":`translateX(${temp - $(".news").width()}px)`
             })
+            //Kiem tra lai
+            
+            //Cooldown
             cdType=true
             setTimeout(()=>{
                 cdType=false
@@ -25,6 +27,9 @@ function initTypeEvent() {
             $(".all-news-items").eq(i).css({
                 "transform":`translateX(${temp + $(".news").width()}px)`
             })
+            //Kiem tra lai
+            
+            //Cooldown
             cdType=true
             setTimeout(()=>{
                 cdType=false
@@ -48,19 +53,24 @@ function tramformMagaCover(x) {
         j = f+i+1;
         j=(j<1)?j+n:j;
         j=(j>n)?j-n:j;        
-        $(".maga-cover-box").eq(i).removeClass(`active${j}`)
-        
+        $(".maga-cover-box").eq(i).removeClass(`active${j}`)        
     }
+
+
 }
 
-function initMagaList() {
+function initMagaEvent() {
     $(".maga-l-arrow").click(()=>{
         tramformMagaCover(1)
+        $(".maga-box .overplay>a").attr("href","./table_of_contents.html?issue=" + $(".maga-cover-box.active3").attr("content"))
     })
 
     $(".maga-r-arrow").click(()=>{
-        tramformMagaCover(-1)        
+        tramformMagaCover(-1)       
+        $(".maga-box .overplay>a").attr("href","./table_of_contents.html?issue=" + $(".maga-cover-box.active3").attr("content")) 
     })
+
+    $(".maga-box .overplay>a").attr("href","./table_of_contents.html?issue=" + $(".maga-cover-box.active3").attr("content"))
 }
 
 function runFrame(i) {
@@ -135,6 +145,26 @@ function initRFrame(data) {
         })
     }
 }
+//Tạo các bìa Magaa
+
+function initMagaList(data) {
+    let n = data.length
+    let h = ""
+    for (let i=0;i<n;i++) {
+        h+=`
+        <div class="maga-cover-box active${i+1}" content="${data[i].id}">
+            <div class="maga-cover">
+                <img src="${data[i].imgCover}" alt="">
+            </div>
+        </div>`
+    }
+    h+=`<div class="overplay">
+            <a href="#">
+                <div>See more!</div>
+            </a>
+        </div>`
+    $(".maga-box").html(h)
+}
 
 //Tạo các boxbar
 function initBoxType(data) {
@@ -185,7 +215,8 @@ function initBoxType(data) {
 
 $(document).ready(async()=>{
     //init header
-    $("header").html(await headerHTML())
+    initHeader()
+    initKeyWordsHeader()
     //
     initUser()
     initHeaderEvent()    
@@ -193,9 +224,10 @@ $(document).ready(async()=>{
     .then(async (res)=>{
         let data = await res.json()
         //Khởi tạo r-frame
+        initMagaList(data)
         initRFrame(data)
         initBoxType(data)
     })
-    initMagaList()
+    initMagaEvent()
     initTypeEvent()
 })

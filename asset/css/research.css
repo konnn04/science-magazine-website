@@ -497,7 +497,6 @@ span.type:first-child{
 .other-research-box > button{
     transition: all .2s ease;
     display: block;
-    padding: 1rem;
     color: #FFCC00;
     font-weight: 600;
     cursor: pointer;
@@ -506,6 +505,11 @@ span.type:first-child{
     margin-bottom: 1rem;
     margin-left: auto;
 }
+
+.other-research-box > button a{
+    display: block;
+    padding: 1rem;
+} 
 
 .other-research-box i{
     padding-left: 1rem;

@@ -1,12 +1,12 @@
 function initPath(data,issue,id) {
     $(".n-path-box").html(`
-    <span>Home</span>
+    <span> <a href="./home.html">HOME</a> </span>
     <span>></span>
-    <span>Issue ${data[issue]["id"]}</span>
+    <span> <a href="./table_of_contents.html?issue=${data[issue].id}">${data[issue].name.toUpperCase()}</a></span>
     <span>></span>
-    <span>News</span>
+    <span> <a href="#">NEWS</a> </span>
     <span>></span>
-    <span>${data[issue]["news"][id]["title"]}`)
+    <span>${data[issue]["news"][id]["title"].toUpperCase()}`)
 }
 
 function initNewsHeaderBox(data,issue,id) {
@@ -28,9 +28,11 @@ function initNewsIssueDetailBox(data,issue,id) {
     <div class="n-cover-issue-img">
         <img src="${data[issue]["imgCover"]}" alt="" srcset="">
         <div class="n-issue-detail-overplay">
-            <div class="n-issue-detail-see-detail">
-                See more!
-            </div>
+            <a href="./table_of_contents.html?issue=${data[issue].id}">
+                <div class="n-issue-detail-see-detail">
+                    See more!
+                </div>
+            </a>
         </div>
     </div>
     <div class="n-cover-issue-info">
@@ -257,7 +259,8 @@ async function getNews(obj) {
 }
 
 $(document).ready(async()=> {
-    $("header").html(await headerHTML())
+    await initHeader()
+    initKeyWordsHeader()
     const urlParams = new URLSearchParams(window.location.search);
     const newsPath = {
         "issue":urlParams.get('issue'),

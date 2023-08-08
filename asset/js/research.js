@@ -1,12 +1,12 @@
 function initPath(data,issue,id) {
     $(".r-path-box").html(`
-    <span>Home</span>
+    <span> <a href="./home.html">HOME</a> </span>
     <span>></span>
-    <span>Issue ${data[issue]["id"]}</span>
+    <span> <a href="./table_of_contents.html?issue=${data[issue].id}">${data[issue].name.toUpperCase()}</a></span>
     <span>></span>
-    <span>Research</span>
+    <span> <a href="#">RESEARCH</a> </span>
     <span>></span>
-    <span>${data[issue]["researchs"][id]["title"]}`)
+    <span>${data[issue]["researchs"][id]["title"].toUpperCase()}`)
 }
 
 function initHeaderContent(data,issue,id) {
@@ -190,7 +190,7 @@ function initRSide(data,issue,id) {
     $(".other-research-box").html(
         $(".other-research-box").html() + `
         <button>
-        <a href="#">
+        <a href="./table_of_contents.html?issue=${data[issue].id}">
             TABLE OF CONTENTS
             <i class="fa-solid fa-chevron-right"></i>
         </a>
@@ -264,6 +264,8 @@ $(document).ready(async()=> {
         "issue":urlParams.get('issue'),
         "id":parseInt(urlParams.get('id')),        
     }
+    await initHeader()
+    initKeyWordsHeader()
     initUser()
     initHeaderEvent()
     //Khởi tạo trang web 

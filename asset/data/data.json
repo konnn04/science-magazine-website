@@ -2,6 +2,7 @@
     {
         "id":"20221",
         "publicationDate":1648800000000,
+        "name":"The first quarter I 2022",
         "imgCover":"https://cdn.glitch.global/b598bd4a-1b14-4871-bb74-1961a4f1032a/2022-1.png?v=1690185285231",
         "news":[
             {
@@ -986,6 +987,7 @@
         ]
     },{
         "id":"20222",
+        "name":"The first quarter II 2022",
         "publicationDate":1656676800000,
         "imgCover":"https://cdn.glitch.global/b598bd4a-1b14-4871-bb74-1961a4f1032a/2022-2.png?v=1690185287282",
         "news":[
@@ -1935,6 +1937,7 @@
         ]
     },{
         "id":"20223",
+        "name":"The first quarter III 2022",
         "publicationDate":1696118400000,
         "imgCover":"https://cdn.glitch.global/b598bd4a-1b14-4871-bb74-1961a4f1032a/2022-3.png",
         "news":[
@@ -2903,8 +2906,9 @@
         ]
     },{
         "id":"20224",
+        "name":"The first quarter IV 2022",
         "publicationDate":1672444800000,
-        "imgCover":"https://www.science.org/do/10.1126/science.adj2826/full/_20230616_on_stemcells-1687370236203.jpg",
+        "imgCover":"https://cdn.glitch.global/b598bd4a-1b14-4871-bb74-1961a4f1032a/2022-4.png",
         "news":[
             {
             "title":"Biologists create detailed lab replicas of early human embryos",
@@ -3812,6 +3816,7 @@
         ]
     },{
         "id":"20231",
+        "name":"The first quarter I 2023",
         "publicationDate":1680220800000,
         "imgCover":"https://cdn.glitch.global/b598bd4a-1b14-4871-bb74-1961a4f1032a/2023-1.png",
         "news":[
@@ -4802,6 +4807,7 @@
         ]
     },{
         "id":"20232",
+        "name":"The first quarter II 2023",
         "publicationDate":1688172333000,
         "imgCover":"https://cdn.glitch.global/b598bd4a-1b14-4871-bb74-1961a4f1032a/2023-2.png?v=1690185287282",
         "news":[
@@ -5172,7 +5178,7 @@
         },{
             "title":"Does social media polarize voters? Unprecedented experiments on Facebook users reveal surprises",
             "type":"PEOPLE & EVENTS",
-            "cover":"hhttps://www.science.org/do/10.1126/science.adj9982/full/_20230728_nid_facebook-1690481081577.jpg",
+            "cover":"https://www.science.org/do/10.1126/science.adj9982/full/_20230728_nid_facebook-1690481081577.jpg",
             "subTitle":"But some are concerned about Meta’s role in the unusual collaboration between industry and academia",
             "desCover":"STEPHAN SCHMITZ/FOLIO ART",
             "time":1652900400000,

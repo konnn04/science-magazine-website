@@ -540,6 +540,8 @@ font-size: 1.4rem;
 #err404>div>div a{
   display: inline-block;
   padding: 1rem;
+  color: unset;
+  text-decoration: none;
 
 }
 
