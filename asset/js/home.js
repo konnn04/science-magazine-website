@@ -215,7 +215,7 @@ function initBoxType(data) {
 
 $(document).ready(async()=>{
     //init header
-    initHeader()
+    await initHeader()
     initKeyWordsHeader()
     //
     initUser()
