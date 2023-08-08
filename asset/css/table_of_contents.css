@@ -28,14 +28,16 @@ main{
 }
 
 .toc-path-box span a{
-   font-size: 1.8rem;
+   font-size: 1.4rem;
    margin-right: .2rem;
    font-family: 'Roboto', sans-serif;
    text-decoration: none;
+   color: #565656;
+   
 }
 
-.toc-path-box span:last-child{
-   color: #fff;
+.toc-path-box span:last-child a{
+   color: #232323;
 }
 
 /*cover issue box*/
@@ -45,6 +47,7 @@ main{
    /* height: 22rem; */
    margin-bottom: 2rem;
    display: flex;
+   margin-top:2rem;
 }
 
 .book-cover-wrapper{
@@ -113,10 +116,19 @@ main{
 }
 
 .a-title{
+   width: 80%;
    font-size: 2rem;
    font-weight: 600;
-   margin: 1rem 0;
+   margin: 2rem 0 1rem;
    font-family: 'Roboto', sans-serif;
+}
+.a-title a{
+   color: #000;
+   text-decoration: none;
+}
+
+.a-title a:hover{
+   text-decoration: underline;
 }
 
 .a-info{
