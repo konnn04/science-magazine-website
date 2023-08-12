@@ -182,6 +182,7 @@ $(document).ready(async(e)=>{
                 await checkAcc()
             }
     })
+    forgotPw();
 })
 
 // Ham linh tinh
@@ -195,3 +196,9 @@ function isValidUsername(username) {
     const usernameRegex = /^[a-zA-Z0-9_]{6,}$/;
     return usernameRegex.test(username);
   }
+
+function forgotPw(){
+    $('.remember-forgot a').click(()=>{
+    alert('Try to remember your password!');
+})
+}
