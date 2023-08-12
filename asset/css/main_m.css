@@ -1,20 +1,10 @@
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
-}
-
 header .menu-btn{
     display: flex;
 }
     
-header nav{
+header nav,
+header #right .user-check{
     display: none;
-}
-
-.main{
-    margin-top: 10rem!important; 
 }
 
 .primary-bar{

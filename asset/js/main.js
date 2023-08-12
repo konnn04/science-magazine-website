@@ -10,14 +10,7 @@ $(window).scroll(function(){
    }
 })
 
-function initKeyWordsHeader() {
-    Types.forEach((e,i)=>{
-        $(".primary-bar .keywords").html(
-            $(".primary-bar .keywords").html() +
-            `<a href="">${e}</a>`
-        )
-    })
-}
+
 
 async function initHeader() {
     await fetch("./asset/htm/header.htm").then(async (res)=>{
@@ -99,19 +92,19 @@ function initHeaderEvent() {
         },100)
     })
 //Làm mượt chuyển động + Bù phần khuyết
-    $(window).scroll(function () { 
-        if ( $(window).scrollTop()>80) {
-            $("header").addClass("fixed")
-            $(".body-container").css({
-                "marginTop":`${$("header").height()}px`
-            })
-        }else{
-            $("header").removeClass("fixed")
-            $(".body-container").css({
-                "marginTop":`0`
-            })
-        }
-    });
+    // $(window).scroll(function () { 
+    //     if ( $(window).scrollTop()>80) {
+    //         $("header").addClass("fixed")
+    //         $(".body-container").css({
+    //             "marginTop":`${$("header").height()}px`
+    //         })
+    //     }else{
+    //         $("header").removeClass("fixed")
+    //         $(".body-container").css({
+    //             "marginTop":`0`
+    //         })
+    //     }
+    // });
     // user 
     $(".user-info").click(()=>{
         $(".menu-user-box").toggleClass("show");
