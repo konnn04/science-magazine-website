@@ -1,19 +1,12 @@
-header .menu-btn{
+header nav .menu-btn{
     display: flex;
 }
     
-header nav,
-header #right .user-check{
+header nav #left ul,
+header nav #right .user-check{
     display: none;
 }
 
-.primary-bar{
-    display: none;
-}
-
-.logo,nav{
-   width: 100%;
-}
   
 .navigation {
     display: none;

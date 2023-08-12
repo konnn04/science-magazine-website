@@ -1,3 +1,5 @@
+let darkCheck = (localStorage.getItem("theme") == "dark")?true:false
+
 function getCookie(key) {
     var name = key + "=";
     var ca = document.cookie.split(';');

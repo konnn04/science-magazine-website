@@ -1,6 +1,8 @@
 $(document).ready(async()=>{
+    await initHeader()
+    // initKeyWordsHeader()
     initUser()
-    initHeaderEvent() 
+    initHeaderEvent()
     $(window).scroll(function () { 
         console.log($(this).scrollTop());
         if($(this).scrollTop()>70){
