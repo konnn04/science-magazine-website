@@ -3,17 +3,32 @@ var MagaCover = 0
 var setIntervalFrame
 var cdType = false
 
+function checkTypeEvent(i,temp) {
+    if (temp<= -1*( $(".all-news-items").eq(i).width() - $(document).width())) {
+        $(".r-arrow").eq(i).css({"opacity":"0"})
+    }else{
+        $(".r-arrow").eq(i).css({"opacity":"1"})
+    }
+    if (temp>=-50) {
+        $(".l-arrow").eq(i).css({"opacity":"0"})
+    }else{
+        $(".l-arrow").eq(i).css({"opacity":"1"})
+    }
+}
+
 function initTypeEvent() {
+    $(".l-arrow").css({"opacity":"0"})
     for (let i=0;i<$(".all-news-items").length;i++) {
         $(".r-arrow").eq(i).click(()=>{
             if (cdType) return
             let temp = parseInt($('.all-news-items').eq(i).css('transform').split(',')[4])
             if (temp<= -1*( $(".all-news-items").eq(i).width() - $(document).width())) return
+            temp=temp - $(".news").width()
             $(".all-news-items").eq(i).css({
-                "transform":`translateX(${temp - $(".news").width()}px)`
+                "transform":`translateX(${temp}px)`
             })
             //Kiem tra lai
-            
+            checkTypeEvent(i,temp)
             //Cooldown
             cdType=true
             setTimeout(()=>{
@@ -24,11 +39,12 @@ function initTypeEvent() {
             if (cdType) return
             let temp = parseInt($('.all-news-items').eq(i).css('transform').split(',')[4])
             if (temp>=-50) return
+            temp=temp + $(".news").width()
             $(".all-news-items").eq(i).css({
-                "transform":`translateX(${temp + $(".news").width()}px)`
+                "transform":`translateX(${temp}px)`
             })
             //Kiem tra lai
-            
+            checkTypeEvent(i,temp)
             //Cooldown
             cdType=true
             setTimeout(()=>{
@@ -79,7 +95,7 @@ function runFrame(i) {
     //Khởi tạo lại thuộc tính của r-frame
     $(".control button").removeClass("active")
     $(".recommended .r-frame").removeClass("show")    
-    $(".recommended .r-frame").removeClass("hide")
+    $(".recommended .r-frame").addClass("hide")
     currentRFrame=i
     //Gắn class chuyển động cho class đầu tiên
     $(".control button").eq(currentRFrame).addClass("active")
@@ -119,10 +135,9 @@ function rFrame(data,issueString,id) {
 }
 
 function initRFrame(data) {
-    let n = (data[data.length-1]["news"].length > 5) ?5:data[data.length-1]["news"].length;
     let f=""
-    while(n--) {
-        f+=rFrame(data[data.length-1]["news"][n],data[data.length-1]["id"],n)
+    for (let i=data[data.length-1]["news"].length-1;i>=0;i--) {
+        f+=rFrame(data[data.length-1]["news"][i],data[data.length-1]["id"],i)
     }
     //tạo chuỗi rỗng chứa html r-frame
     $(".recommended").html(f+$(".recommended").html())
@@ -137,6 +152,10 @@ function initRFrame(data) {
     }
     $(".control").html(f)
     //Tạo hàm chạy r-frame bắt đầu từ currentRFrame
+    
+}
+
+function initEventRFrame() {
     runFrame(currentRFrame)
     //Gắn sự kiện cho các button khi nhấn vào
     for (let i =0;i<$(".control button").length;i++) {
@@ -172,8 +191,8 @@ function initBoxType(data) {
     for (let type of Types) {
         typeBoxContent[type]=""
     }
-    for (let i=0;i<data.length;i++) {
-        for (let j=0;j<data[i]["news"].length;j++) {
+    for (let i=data.length-1;i>=0;i--) {
+        for (let j=data[i]["news"].length-1;j>=0;j--) { 
             for (let type of Types) {
                 if (data[i]["news"][j]["type"]==type) {
                     typeBoxContent[type]+=
@@ -212,11 +231,51 @@ function initBoxType(data) {
     }   
 }
 
+function fixedRFrame() {
+    //chinh font chu
+    $(".recommended").css({
+        "fontSize":`${($(".r-frame").width()/960)*10}px`
+    })
+    $(window).resize(()=>{
+        $(".recommended").css({
+            "fontSize":`${($(".r-frame").width()/960)*10}px`
+        })
+    })
+}
+
+function initResearchItems(data) {
+    let h =""
+    let n = 6
+    for (let i = data.length-1;i>=0;i--) {
+        for (let j=data[i]["researchs"].length-1;j>=0;j--) {
+            if (n<=0) {
+                $(".researchs").html(h)
+                return
+            }else{
+                n--
+                h+=`
+            <div class="item-research">
+                <span>SCIENCE</span>
+                <span>${getStringUnixDate(data[i]["researchs"][j]["time"])}</span>
+                <h4>
+                    <a href="./research.html?issue=${data[i].id}&id=${j}">
+                        ${data[i]["researchs"][j]["title"]}
+                    </a>
+                </h4>
+                <span>${data[i]["researchs"][j]["authors"][0]["name"]}</span>
+            </div>`
+            }
+            
+            
+        }
+    }
+    
+}
+
 
 $(document).ready(async()=>{
     //init header
     await initHeader()
-    initKeyWordsHeader()
     //
     initUser()
     initHeaderEvent()    
@@ -226,7 +285,12 @@ $(document).ready(async()=>{
         //Khởi tạo r-frame
         initMagaList(data)
         initRFrame(data)
+        fixedRFrame()
+
+        // initNewsMain(data)
         initBoxType(data)
+        initResearchItems(data)
+        initEventRFrame() 
     })
     initMagaEvent()
     initTypeEvent()

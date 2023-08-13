@@ -118,6 +118,10 @@ function init_toc(issueUrl){
           if (data[i]["id"]===issueUrl) {
             issue=i
             check=true
+            $("title").text(data[issue]["name"])
+            // $(".cover-img").css({
+            //   "background":`url('${data[issue]["imgCover"]}') no-repeat`
+            // })
             initPath(data,issue)
             initControl(data,issue)
             initInfo(data,issue)
@@ -127,7 +131,7 @@ function init_toc(issueUrl){
           }
         }
         if (!check) {
-          $("body").html(err404HTML())
+          $("body").html(err404HTML()) 
         }
     })
 }

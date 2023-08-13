@@ -1,4 +1,27 @@
 var Types = ["SCIENTIFIC COMMUNITY","PEOPLE & EVENTS","HEALTH","EARTH","PLANTS & ANIMALS"]
+const KeyWord = ["COVID","HEALTH","EARTH","LGBT"]
+
+const darkContainer = `
+--bg:linear-gradient(-90deg, rgba(3637,38,0.9) 40%, rgba(23,24,25,0)),  no-repeat center;
+--body:linear-gradient(315deg, #262626 0%, #121212 74%) no-repeat center center fixed;
+--theme:#232425;
+--theme2:#252525;
+font-size: 10px;
+--text: #dddddd;
+--textOP: #171717;
+--text2:#d7d7d7;
+--w-cover-maga:350px;  `
+
+const lightContainer = `
+--bg:linear-gradient(-90deg, rgba(180, 180, 180, 0.9) 40%, rgb(234, 234, 234)),  no-repeat center;
+--body:linear-gradient(315deg, #e8e8e8 0%, #ffffff 74%) no-repeat center center fixed;
+--theme:#ffffff;
+--theme2:#efefef;
+font-size: 10px;
+--text: #131313;
+--textOP: #ffffff;
+--text2:#3c3c3c;
+--w-cover-maga:350px;  `
 
 //to top btn
 $(window).scroll(function(){
@@ -10,19 +33,19 @@ $(window).scroll(function(){
    }
 })
 
-function initKeyWordsHeader() {
-    Types.forEach((e,i)=>{
-        $(".primary-bar .keywords").html(
-            $(".primary-bar .keywords").html() +
-            `<a href="">${e}</a>`
-        )
-    })
-}
+
 
 async function initHeader() {
     await fetch("./asset/htm/header.htm").then(async (res)=>{
         let text = await res.text()
         $("header").html(text)
+        let k=""
+        KeyWord.forEach((e,i)=>{
+            k+=`<div>${e}</div>`
+        })
+        $(".kw-box").html(k)
+        // Tao darkmode
+        
     })
 }
 
@@ -80,38 +103,67 @@ function initUser() {
 function initHeaderEvent() {
     $(".menu-btn i").click(()=>{
         $(".menu-box").show()
+        $("#close").fadeIn(500)
         setTimeout(()=>{
             $(".menu-box").toggleClass("active")
         },100)
     })
 
-    $(".menu").eq(0).click(()=>{
-        $(".menu-box").show()
-        setTimeout(()=>{
-            $(".menu-box").toggleClass("active")
-        },100)
-    })
+    //Bị xóa
+    // $(".menu").eq(0).click(()=>{
+    //     $(".menu-box").show()
+    //     setTimeout(()=>{
+    //         $(".menu-box").toggleClass("active")
+    //     },100)
+    // })
 
     $(".close-icon i").click(()=>{
         $(".menu-box").removeClass("active")
+        $("#close").fadeOut(500)
         setTimeout(()=>{
             $(".menu-box").hide()
         },100)
     })
-//Làm mượt chuyển động + Bù phần khuyết
-    $(window).scroll(function () { 
-        if ( $(window).scrollTop()>80) {
-            $("header").addClass("fixed")
-            $(".body-container").css({
-                "marginTop":`${$("header").height()}px`
-            })
-        }else{
-            $("header").removeClass("fixed")
-            $(".body-container").css({
-                "marginTop":`0`
-            })
+
+    $("#right .search-icon").click(function(){
+        $("#search-box").toggleClass("show")
+        $("#right .search-icon").toggleClass("on")
+        if($("#search-box").hasClass("show")) {
+            $(".search-form input").focus()
         }
-    });
+    })
+
+    $("#close").click(()=>{
+        $("#close").fadeOut(500)
+        $("#search-box").removeClass("show")
+        $(".menu-box").removeClass("active")
+    })
+
+    if (darkCheck) $(".switch-darkmode").addClass("on")
+    $(".switch-darkmode").click(()=>{
+        $(".switch-darkmode").toggleClass("on")
+        if ($(".switch-darkmode").hasClass("on")) {
+            localStorage.setItem("theme","dark")
+            document.documentElement.style = darkContainer
+        }else{
+            localStorage.setItem("theme","light")
+            document.documentElement.style = lightContainer
+        }
+    })
+//Làm mượt chuyển động + Bù phần khuyết
+    // $(window).scroll(function () { 
+    //     if ( $(window).scrollTop()>80) {
+    //         $("header").addClass("fixed")
+    //         $(".body-container").css({
+    //             "marginTop":`${$("header").height()}px`
+    //         })
+    //     }else{
+    //         $("header").removeClass("fixed")
+    //         $(".body-container").css({
+    //             "marginTop":`0`
+    //         })
+    //     }
+    // });
     // user 
     $(".user-info").click(()=>{
         $(".menu-user-box").toggleClass("show");
@@ -124,3 +176,7 @@ function initHeaderEvent() {
         },500)
     })
 }
+
+$(document).ready(function () {
+    if (darkCheck) document.documentElement.style = darkContainer
+});
