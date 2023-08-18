@@ -1,3 +1,5 @@
+let popupTemp = []
+
 function initPath(data,issue,id) {
     $(".n-path-box").html(`
     <span> <a href="./home.html">HOME</a> </span>
@@ -71,6 +73,13 @@ function HTMLContent(type,dataHTML) {
         case "h6":{
             return `<h6>${dataHTML["text"]}</h6> <br>`
         }
+        case "tus":{
+            return `
+            <h1 style="text-align: center;color:#ffcc00;font-size:10rem;height:6rem">‘‘</h1>
+            <h2 style="text-align: center;font-family: 'Montserrat', sans-serif;
+            ">‘‘${dataHTML["text"]}’’</h2> <br>
+            <h6 style="text-align: center;color:#444;width:70%;margin-left:auto">${dataHTML["author"]}</h6>`
+        }
         case "img":{
             return `<div class="n-img-box">
                 <img src="${dataHTML["src"]}" alt="" srcset="">
@@ -130,12 +139,44 @@ function initNewsAuthorBox(data,issue,id) {
     $(".info-box").html($(".info-box").html() + HTML)
 }
 
+function initNextNews(data,issue,id) {
+    let count = 3
+    let i=issue
+    let j=id+1
+    for (i;i<data.length;i++) {
+        for (j;(j<data[i]["news"].length && count>0);j++) {
+            if (popupTemp.length<1) popupTemp.push({"i":i,"id":j})
+            count--
+                $(".n-rside-item-box").eq(1).html(
+                    $(".n-rside-item-box").eq(1).html()+
+                    `<div class="n-rside-item">
+                            <div class="n-rside-item-img">
+                                <a href="./news.html?issue=${data[i]["id"]}&id=${j}">
+                                    <img src="${data[i]["news"][j]["cover"]}" alt="" srcset="">
+                                </a>
+                            </div>
+                            <div class="n-rside-item-text">
+                                <span>${getStringUnixDate(data[i]["news"][j]["time"])}</span>
+                                <span>${data[i]["news"][j]["author"][0]["name"]}</span>
+                                <a href="./news.html?issue=${data[i]["id"]}&id=${j}">
+                                    <h3>${cutString(data[i]["news"][j]["title"],60)}</h3>
+                                </a>
+                            </div>
+                        </div>`
+                )           
+        }
+        j=0
+    }    
+    if (count==3) {$(".n-next-box").css({"display":"none"})}
+
+}
 
 function initMoreNews(data,issue,id) {
     let count=3
     for (let j=0;(j<data[issue]["news"].length && count>0);j++) {
         if (id != j) {
             count--
+            if (popupTemp.length<2) popupTemp.push({"i":issue,"id":j})
             $(".n-more-items-box").html(
                 $(".n-more-items-box").html()+
                 `<div class="n-more-items">
@@ -165,6 +206,7 @@ function initSameTopic(data,issue,id) {
         for (let j=0;(j<data[i]["news"].length && count>0);j++) {
             if (data[i]["news"][j]["type"].toUpperCase() === topic && !(issue==i && j==id)) {
                 count--
+            if (popupTemp.length<3) popupTemp.push({"i":i,"id":j})
                 $(".n-rside-item-box").eq(0).html(
                     $(".n-rside-item-box").eq(0).html()+
                     `<div class="n-rside-item">
@@ -185,6 +227,7 @@ function initSameTopic(data,issue,id) {
             }
         }
     }
+    if (count==3) {$(".n-topic-box").css({"display":"none"})}
 }
 
 function initRecommend(data,issue,id) {
@@ -205,8 +248,8 @@ function initRecommend(data,issue,id) {
                 "issue":randIssue,
                 "id":randID
             })
-            $(".n-rside-item-box").eq(1).html(
-                $(".n-rside-item-box").eq(1).html()+
+            $(".n-rside-item-box").eq(2).html(
+                $(".n-rside-item-box").eq(2).html()+
                 `<div class="n-rside-item">
                         <div class="n-rside-item-img">
                             <a href="./news.html?issue=${data[randIssue]["id"]}&id=${randID}">
@@ -226,6 +269,47 @@ function initRecommend(data,issue,id) {
     }
 }
 
+//Tạo link share
+function initNewsShare(data,issue,id) {
+    $(".n-share-box a").eq(0).attr("href",`https://www.facebook.com/sharer/sharer.php?u=` + location.href)
+    $(".n-share-box a").eq(1).attr("href",`https://twitter.com/intent/tweet?url=` + location.href)
+    $(".n-share-box a").eq(2).attr("href",`https://www.linkedin.com/sharing/share-offsite/?url=` + location.href)
+    $(".n-share-box a").eq(3).attr("href",`https://www.reddit.com/submit?url=` + location.href)
+    $(".n-share-box a").eq(4).attr("href",`mailto:?subject=Chia%20s%E1%BA%BB%20trang%20web&body=Xin%20ch%C3%A0o,%20m%C3%B4i%20b%E1%BA%A1n%20h%C3%A3y%20ki%E1%BB%83m%20tra%20trang%20web%20n%C3%A0y:%20` + location.href)
+}
+
+function initNextPopUp(data,issue,id) {
+    popupTemp.forEach((e,i)=>{
+        $(".pop-up-listbox").html(
+            $(".pop-up-listbox").html()+
+            `<div class="pop-up-item">
+                    <div class="pop-up-item-img">
+                        <a href="./news.html?issue=${data[e.i]["id"]}&id=${e.id}">
+                            <img src="${data[e.i]["news"][e.id]["cover"]}" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="pop-up-item-text">
+                        <span>${getStringUnixDate(data[e.i]["news"][e.id]["time"])}</span>
+                        <span>${data[e.i]["news"][e.id]["author"][0]["name"]}</span>
+                        <a href="./news.html?issue=${data[e.i]["id"]}&id=${e.id}">
+                            <h3>${cutString(data[e.i]["news"][e.id]["title"],60)}</h3>
+                        </a>
+                    </div>
+                </div>`
+        )
+    })
+}
+
+function initScroll(){
+    $(window).scroll(function(){
+        let top = $(this).scrollTop() 
+        if (top > $(".tag-box").offset().top - $(window).height() -100 && top < $("footer").offset().top - $(window).height()) {
+            $(".pop-up-recomend").fadeIn(200)
+        }else{
+            $(".pop-up-recomend").fadeOut(200)
+        }
+    })
+}
 
 async function getNews(obj) {
     let id=obj.id
@@ -237,15 +321,23 @@ async function getNews(obj) {
             if (data[i]["id"]===obj.issue && id >=0 && id<data[i]["news"].length) {
                 issue=i
                 check=true
+                $("title").text(data[issue]["news"][id]["title"])
                 initPath(data,issue,id)
                 initNewsHeaderBox(data,issue,id)
                 initNewsIssueDetailBox(data,issue,id)
+                initNewsShare(data,issue,id)
                 initNewsContent(data,issue,id)
                 initNewsTagBox(data,issue,id)
                 initNewsAuthorBox(data,issue,id)
+
+                initNextNews(data,issue,id)
                 initMoreNews(data,issue,id)   //Mới nhất (hoặc chưa đọc)
                 initSameTopic(data,issue,id) //Cùng chủ đề (Type)
+
                 initRecommend(data,issue,id)//Random
+                initNextPopUp(data,issue,id)
+
+                initScroll()
             }
         }
         if (!check) {
@@ -260,7 +352,7 @@ async function getNews(obj) {
 
 $(document).ready(async()=> {
     await initHeader()
-    initKeyWordsHeader()
+    // initKeyWordsHeader()
     const urlParams = new URLSearchParams(window.location.search);
     const newsPath = {
         "issue":urlParams.get('issue'),

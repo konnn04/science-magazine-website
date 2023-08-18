@@ -218,15 +218,21 @@ $(window).scroll(function () {
     if ($(window).scrollTop() -  $(".content-box").eq(0).offset().top > -140) {
         $(".r-menu").addClass("fixed")
         $(".content-box").eq(0).css({
-            "marginTop":`${$(".r-menu").height()}px`
         })
     }else{
         $(".r-menu").removeClass("fixed")
         $(".content-box").eq(0).css({
-            "marginTop":`0`
         })
     }
 });
+
+function initResearchShare() {
+    $(".share-box a").eq(0).attr("href",`https://www.facebook.com/sharer/sharer.php?u=` + location.href)
+    $(".share-box a").eq(1).attr("href",`https://twitter.com/intent/tweet?url=` + location.href)
+    $(".share-box a").eq(2).attr("href",`https://www.linkedin.com/sharing/share-offsite/?url=` + location.href)
+    $(".share-box a").eq(3).attr("href",`https://www.reddit.com/submit?url=` + location.href)
+    $(".share-box a").eq(4).attr("href",`mailto:?subject=Chia%20s%E1%BA%BB%20trang%20web&body=Xin%20ch%C3%A0o,%20m%C3%B4i%20b%E1%BA%A1n%20h%C3%A3y%20ki%E1%BB%83m%20tra%20trang%20web%20n%C3%A0y:%20` + location.href)
+}
 
 async function getResearch(obj) {
     let id=obj.id
@@ -238,7 +244,9 @@ async function getResearch(obj) {
             if (data[i]["id"]===obj.issue && id >=0 && id<data[i]["researchs"].length) {
                 issue=i
                 check=true
+                $("title").text(data[issue]["researchs"][id]["title"])
                 initPath(data,issue,id)
+                initResearchShare()
                 initHeaderContent(data,issue,id)
                 initNewsContent(data,issue,id)
                 initPDFView(data,issue,id)
@@ -265,7 +273,7 @@ $(document).ready(async()=> {
         "id":parseInt(urlParams.get('id')),        
     }
     await initHeader()
-    initKeyWordsHeader()
+    // initKeyWordsHeader()
     initUser()
     initHeaderEvent()
     //Khởi tạo trang web 

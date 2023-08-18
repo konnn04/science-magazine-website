@@ -1,29 +1,12 @@
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99;
-}
-
-header .menu-btn{
+header nav .menu-btn{
     display: flex;
 }
     
-header nav{
+header nav #left ul,
+header nav #right .user-check{
     display: none;
 }
 
-.main{
-    margin-top: 10rem!important; 
-}
-
-.primary-bar{
-    display: none;
-}
-
-.logo,nav{
-   width: 100%;
-}
   
 .navigation {
     display: none;

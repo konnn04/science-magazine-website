@@ -1,37 +1,18 @@
-.recommended{
-    margin-top: 9rem;
-}
-
 .r-title{
-    font-size: 1.3rem;
+    font-size: 3.2em;
 }
 
 .r-summary{
-    font-size: 1.1em;
-    margin: .5em 2em 2em 0;
-    max-height: 35%;
+    font-size: 2em;
 }
-
-.r-type{
-    font-size: 1em;
-    font-size: 600;
-    margin: 1rem 0;
-    height: fit-content;
-    
-}
-
-.readMore-btn{
-    bottom: 0;
-}
-
 .info{
-    width: 40%;
+    width: 55%;
 }
 
-.recommended{
-    aspect-ratio: 4/3;
-}
 
+.readMore-btn button{
+    font-size: 2em;
+}
 .section-title>h2{
     font-size: 2.3rem!important;
 }
