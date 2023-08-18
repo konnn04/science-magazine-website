@@ -202,3 +202,11 @@ function setMeta(data,issue,id,type) {
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SicenceJournal®">`)
 }
+
+function symbolToHexHref(text) {
+    return text.replace(/[?&=]/g, function(match) {
+        if (match === '?') return '%3F';
+        if (match === '&') return '%26';
+        if (match === '=') return '%3D';
+    });
+}

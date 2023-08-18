@@ -271,11 +271,11 @@ function initRecommend(data,issue,id) {
 
 //Tạo link share
 function initNewsShare(data,issue,id) {
-    $(".n-share-box a").eq(0).attr("href",`https://www.facebook.com/sharer/sharer.php?u=` + location.href)
-    $(".n-share-box a").eq(1).attr("href",`https://twitter.com/intent/tweet?url=` + location.href)
-    $(".n-share-box a").eq(2).attr("href",`https://www.linkedin.com/sharing/share-offsite/?url=` + location.href)
-    $(".n-share-box a").eq(3).attr("href",`https://www.reddit.com/submit?url=` + location.href)
-    $(".n-share-box a").eq(4).attr("href",`mailto:?subject=Chia%20s%E1%BA%BB%20trang%20web&body=Xin%20ch%C3%A0o,%20m%C3%B4i%20b%E1%BA%A1n%20h%C3%A3y%20ki%E1%BB%83m%20tra%20trang%20web%20n%C3%A0y:%20` + location.href)
+    $(".n-share-box a").eq(0).attr("href",`https://www.facebook.com/sharer/sharer.php?u=`+symbolToHexHref(location.href))
+    $(".n-share-box a").eq(1).attr("href",`https://twitter.com/intent/tweet?url=`+symbolToHexHref(location.href))
+    $(".n-share-box a").eq(2).attr("href",`https://www.linkedin.com/sharing/share-offsite/?url=`+symbolToHexHref(location.href))
+    $(".n-share-box a").eq(3).attr("href",`https://www.reddit.com/submit?url=`+symbolToHexHref(location.href))
+    $(".n-share-box a").eq(4).attr("href",`mailto:?subject=Chia%20s%E1%BA%BB%20trang%20web&body=Xin%20ch%C3%A0o,%20m%C3%B4i%20b%E1%BA%A1n%20h%C3%A3y%20ki%E1%BB%83m%20tra%20trang%20web%20n%C3%A0y:%20$`+symbolToHexHref(location.href))
 }
 
 function initNextPopUp(data,issue,id) {
