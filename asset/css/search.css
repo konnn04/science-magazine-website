@@ -35,6 +35,15 @@ main{
     width: 100%;
  }
  
+ .a-type, .a-cate{
+   font-size: 1.4rem;
+   text-transform: uppercase;
+   margin: .5rem 0;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 600;
+   color: #ffcc00;
+ }
+ 
  .article{
     width: 100%;
     margin-bottom: 2rem;
@@ -44,7 +53,7 @@ main{
     width: 80%;
     font-size: 2.2rem;
     font-weight: 600;
-    margin: 2rem 0 1rem;
+    margin: 1rem 0;
     font-family: 'Roboto', sans-serif;
  }
  .a-title a{
@@ -91,6 +100,7 @@ main{
  }
 
  .search-box{
+    padding-top: 2rem;
     width: 70%;
     margin: 0 auto;
     position: relative;
@@ -115,6 +125,7 @@ main{
     justify-content: space-between;
     align-items: center;
     margin: 2rem auto;
+    gap: 2rem;
  }
 
  .searchBtn button{
@@ -142,6 +153,7 @@ main{
     align-items: center;
     justify-content: center;
     transition: all .2s ease;
+    
  }
 
  .filter:hover{
@@ -175,7 +187,8 @@ main{
     margin: 0 auto;
     padding-bottom: 6rem;
     position: relative;
-    
+    display: none;
+    overflow: hidden;
  }
 
  .revBtn{
@@ -196,6 +209,10 @@ main{
     color: red;
  }
 
+ .revBtn button:hover{
+   cursor: pointer;
+ }
+
  .f-type{
     width: 30%;
  }
@@ -208,4 +225,83 @@ main{
  .f-type > label{
     font-weight: 600;
  }
+
+ .page-ctrl{
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: .5rem;
+   padding: 1rem 0;
+ }
+
+ .page-ctrl button{
+   font-size: 1.6rem;
+   background-color: transparent;
+   width: 2rem;
+   height: 2rem;
+   position: relative;
+ }
+
+ .page-ctrl button:hover{
+   cursor: pointer;
+ }
+
+ .page-ctrl button::before{
+   content: "";
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 0;
+   height: 2px;
+   background-color: #ffcc00;
+   transition: width 0.1s ease-in-out;
+ }
  
+ .page-ctrl button:hover::before{
+   width: 100%;
+ }
+
+ .active{
+   display: flex;
+   animation: slideDown .5s ease forwards;
+ }
+
+ @keyframes slideDown{
+   0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+ }
+
+ @media screen and (max-width:800px){
+   .filter-box{
+      flex-direction: column;
+   }
+   .filter-box form{
+      width: 100%;
+   }
+   .f-type{
+      width: 100%;
+      margin: 1rem 0;
+   }
+ }
+
+ @media screen and (max-width:600px){
+   .search-box{
+      width: 100%;
+   }
+   .searchBtn{
+      width: 100%;
+      padding: 0 2rem;
+   }
+   .search-bar{
+      width: 100%;
+      padding: 0 2rem;
+   }
+   #kw{
+      width: 100%;
+   }
+ }

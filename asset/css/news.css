@@ -139,6 +139,10 @@ body{
     width: 100%;
 }
 
+.n-img-box{
+    max-width: 1300px;
+}
+
 .n-img-box > img{
     width: 100%;
 }
