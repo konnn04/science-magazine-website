@@ -145,7 +145,7 @@ function initNextNews(data,issue,id) {
     let j=id+1
     for (i;i<data.length;i++) {
         for (j;(j<data[i]["news"].length && count>0);j++) {
-            if (popupTemp.length<1) popupTemp.push({"i":i,"id":j})
+            if (popupTemp.length<1 && !includesObj(popupTemp,{"i":i,"id":j})) popupTemp.push({"i":i,"id":j}) //NEXT POPUP
             count--
                 $(".n-rside-item-box").eq(1).html(
                     $(".n-rside-item-box").eq(1).html()+
@@ -176,7 +176,6 @@ function initMoreNews(data,issue,id) {
     for (let j=0;(j<data[issue]["news"].length && count>0);j++) {
         if (id != j) {
             count--
-            if (popupTemp.length<2) popupTemp.push({"i":issue,"id":j})
             $(".n-more-items-box").html(
                 $(".n-more-items-box").html()+
                 `<div class="n-more-items">
@@ -206,7 +205,7 @@ function initSameTopic(data,issue,id) {
         for (let j=0;(j<data[i]["news"].length && count>0);j++) {
             if (data[i]["news"][j]["type"].toUpperCase() === topic && !(issue==i && j==id)) {
                 count--
-            if (popupTemp.length<3) popupTemp.push({"i":i,"id":j})
+                if (popupTemp.length<2&& !includesObj(popupTemp,{"i":i,"id":j})) popupTemp.push({"i":i,"id":j}) //NEXT POPUP
                 $(".n-rside-item-box").eq(0).html(
                     $(".n-rside-item-box").eq(0).html()+
                     `<div class="n-rside-item">
@@ -232,7 +231,7 @@ function initSameTopic(data,issue,id) {
 
 function initRecommend(data,issue,id) {
     let rand = []
-    let j=3
+    // let j=3
     while (rand.length<3){
         let ok=true
         let randIssue = Math.floor(Math.random() * (data.length))
@@ -244,6 +243,7 @@ function initRecommend(data,issue,id) {
             }
         }
         if (ok) {
+            if (popupTemp.length<3 && !includesObj(popupTemp,{"i":randIssue,"id":randID})) popupTemp.push({"i":randIssue,"id":randID}) //NEXT POPUP
             rand.push({
                 "issue":randIssue,
                 "id":randID
@@ -300,7 +300,7 @@ function initNextPopUp(data,issue,id) {
     })
 }
 
-function initScroll(){
+function initScrollRecommend(){
     $(window).scroll(function(){
         let top = $(this).scrollTop() 
         if (top > $(".tag-box").offset().top - $(window).height() -100 && top < $("footer").offset().top - $(window).height()) {
@@ -330,14 +330,17 @@ async function getNews(obj) {
                 initNewsTagBox(data,issue,id)
                 initNewsAuthorBox(data,issue,id)
 
-                initNextNews(data,issue,id)
                 initMoreNews(data,issue,id)   //Mới nhất (hoặc chưa đọc)
-                initSameTopic(data,issue,id) //Cùng chủ đề (Type)
 
+                initNextNews(data,issue,id)
+                initSameTopic(data,issue,id) //Cùng chủ đề (Type)
                 initRecommend(data,issue,id)//Random
+
                 initNextPopUp(data,issue,id)
 
-                initScroll()
+                initScrollRecommend()
+                //Meta
+                setMeta(data,issue,id,"news")
             }
         }
         if (!check) {

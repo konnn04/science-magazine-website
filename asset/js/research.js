@@ -275,7 +275,7 @@ $(document).ready(async()=> {
     await initHeader()
     // initKeyWordsHeader()
     initUser()
-    initHeaderEvent()
+    // initHeaderContent()
     //Khởi tạo trang web 
     getResearch(newsPath)
 });

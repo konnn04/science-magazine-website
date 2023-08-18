@@ -285,13 +285,13 @@ $(document).ready(async()=>{
         //Khởi tạo r-frame
         initMagaList(data)
         initRFrame(data)
-        fixedRFrame()
-
         // initNewsMain(data)
         initBoxType(data)
         initResearchItems(data)
-        initEventRFrame() 
+        //Meta
     })
+    fixedRFrame()
+    initEventRFrame() 
     initMagaEvent()
     initTypeEvent()
 })

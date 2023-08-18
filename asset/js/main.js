@@ -177,6 +177,28 @@ function initHeaderEvent() {
     })
 }
 
+function includesObj(arr,b) {
+    let keys = Object.keys(b) 
+    for (let i of arr) {
+        let k=0
+        for (let key of keys) {
+            if (i[key] == b[key]) k++;
+        }
+        if (k == keys.length) return true
+    }
+    return false
+}
+
 $(document).ready(function () {
     if (darkCheck) document.documentElement.style = darkContainer
 });
+//News
+function setMeta(data,issue,id,type) {
+    $("head").append(`    
+  <meta property="og:title" content="${data[issue][type][id].title}">
+  <meta property="og:description" content="${data[issue][type][id].subTitle}">
+  <meta property="og:image" content="${data[issue][type][id].cover}">
+  <meta property="og:url" content="${location.href}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SicenceJournal®">`)
+}

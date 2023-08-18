@@ -743,3 +743,45 @@ font-size: 1.4rem;
 #close.on{
   display: block;
 }
+/*  */
+.loading-overplay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: var(--theme);
+  display: flex;
+}
+
+.loading-overplay .text-box{
+  position: relative;
+  margin: auto;
+  width: fit-content;
+  font-family: 'Bacasime Antique', serif;
+  color: var(--text);
+  font-size: 3.5rem;
+}
+
+.loading-overplay .text-box .text1{
+  animation: loadinglogo 3s infinite ;
+}
+
+@keyframes loadinglogo {
+  0%{
+    scale: 1;
+    opacity: .8;
+  }
+  25%{
+    scale: 1.1;
+    opacity: 1;
+  }
+  50%{
+    scale: 1;
+    opacity: .7;
+  }
+  100%{  
+    opacity: .8;
+  }
+}
