@@ -198,6 +198,9 @@ function setMeta(data,issue,id,type) {
   <meta property="og:title" content="${data[issue][type][id].title}">
   <meta property="og:description" content="${data[issue][type][id].subTitle}">
   <meta property="og:image" content="${data[issue][type][id].cover}">
+  <meta name="title" content="${data[issue][type][id].title}">
+  <meta name="description" content="${data[issue][type][id].subTitle}">
+  <meta rel="image_src" href="${data[issue][type][id].cover}">
   <meta property="og:url" content="${location.href}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SicenceJournal®">`)
