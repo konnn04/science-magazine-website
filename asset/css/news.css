@@ -99,7 +99,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #242424;
+    background-color: #202020;
     height: 80vh;
     width: 100vw;
 }
@@ -137,6 +137,10 @@ body{
 
 .n-video-box video{
     width: 100%;
+}
+
+.n-img-box{
+    max-width: 1300px;
 }
 
 .n-img-box > img{
@@ -298,27 +302,27 @@ body{
     transition: all .1s ease;
 }
 
-.icon-share:nth-child(1):hover {
+.n-share-box>a:nth-child(2):hover>.icon-share {
     color: #fff;
     background-color: #547cd1;
     scale: .9;
 }
-.icon-share:nth-child(2):hover {
+.n-share-box>a:nth-child(3):hover>.icon-share {
     color: #fff;
     scale: .9;
     background-color: #1da1f2;
 }
-.icon-share:nth-child(3):hover {
+.n-share-box>a:nth-child(4):hover>.icon-share{
     color: #fff;
     scale: .9;
     background-color: #3a5898;
 }
-.icon-share:nth-child(4):hover {
+.n-share-box>a:nth-child(5):hover>.icon-share {
     color: #fff;
     scale: .9;
     background-color: #f05c5c;
 }
-.icon-share:nth-child(5):hover {
+.n-share-box>a:nth-child(6):hover>.icon-share {
     color: #fff;
     scale: .9;
     background-color: #d19354;
@@ -346,15 +350,15 @@ body{
     padding: .5rem;
     border-radius: 2rem;
     font-size: 1.6rem;
-    border: 3px solid #d19354 ;
+    border: 3px solid #ffcc00 ;
     cursor: pointer;
-    color: #d19354;
+    color: #ffcc00;
     margin-left: 1rem;
 }
 
 .tag-box span:hover{
     color: #fff;
-    background-color: #d19354;
+    background-color: #ffcc00;
     scale: .95;
 }
 /* AUTHOR */
@@ -386,6 +390,16 @@ body{
 .info-item-box .info-avt img{
     width: 100%
 }
+
+.info-text i{
+    margin-left: 1rem;
+}
+
+.info-text i:hover{
+    color: #1da1f2;
+}
+
+
 /* MORE */
 .n-more-box,.info-box{
     font-family: 'Merriweather Sans', sans-serif;
@@ -441,6 +455,10 @@ body{
     font-size: 1.8rem;
     margin: 0;
 }
+
+.n-more-items:hover h6{
+    color: #ffcc00;
+}
 /* aside */
 
 .n-rside{
@@ -488,15 +506,19 @@ body{
     flex: 1;
 }
 
+.n-rside-item:hover h3{
+    color:#ffcc00
+}
+
 .n-rside-item-text span:nth-child(1) {
     border-right: 1px solid var(--text2);
     padding-right: .5rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .n-rside-item-text span:nth-child(2) {
     padding-left: .5rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 0;
 }
 
@@ -544,6 +566,7 @@ div>img{
 
 .pop-up-item-img img {
     width: 100%;
+    
 }
 
 .pop-up-item-text span{
@@ -555,6 +578,10 @@ div>img{
 .pop-up-item-text h3{
     font-size: 1.4rem;
     margin: 0;
+}
+
+.pop-up-item:hover h3{
+    color:#ffcc00;
 }
 
 @media screen and (max-width:1650px) {

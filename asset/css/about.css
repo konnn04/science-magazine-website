@@ -1,27 +1,32 @@
-
-
  /* main */
-
  main{
     width: 100%;
     margin: 0 auto;
     background-color: #fcfcfc;
     padding: 2rem;
+    display: grid;
+    grid-template-columns: 250px 1fr 250px ;
+    gap:2rem;
     position: relative;
  }
 
- section{
-    margin: 2rem auto 5rem;
-    width: 70%;
-    
+.mid {
+   grid-row: 1;
+   grid-column: 2;
+}
+
+ .mid section{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
  }
 
- section p{
+ .mid section p{
     font-size: 1.8rem;
     margin: 1rem 4rem;
  }
 
- section h2{
+ .mid section h2{
     font-size: 2.4rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -37,31 +42,33 @@
  }
 
  .ads{
-    width: 13%;
+    width: 100%;
     height: 500px;
     border: 2px dashed #000;
-    position: absolute;
+    position: sticky;
     background:linear-gradient(#3545cc,#cc33cc);
     display: flex;
     justify-content: center;
     align-items: center;
-    top:2rem;
+   grid-row: 1;
+   top:100px;
  }
 
  .r-ads{
-    right: 1rem;
+   grid-column: 3;
  }
 
  .l-ads{
-    left: 1rem;
+   grid-column: 1;
  }
 
  @media screen and (max-width:1150px){
+   main{
+      display: block;  
+   }
    .ads{
       position: static;
-      margin: 0 auto;
-      width: 70%;
-      height: 150px;
-      margin-bottom: 2rem;
+      max-width: 400px;
+      margin: auto;
    }
  }

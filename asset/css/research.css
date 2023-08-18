@@ -282,7 +282,7 @@ span.type:first-child{
 }
 
 .pdf-view-box {
-    color: #000000;
+    color: var(--text2);
     padding:  3rem;
 }
 

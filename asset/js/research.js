@@ -1,10 +1,10 @@
 function initPath(data,issue,id) {
     $(".r-path-box").html(`
-    <span> <a href="./home.html">HOME</a> </span>
+    <span> <a href="./">HOME</a> </span>
     <span>></span>
     <span> <a href="./table_of_contents.html?issue=${data[issue].id}">${data[issue].name.toUpperCase()}</a></span>
     <span>></span>
-    <span> <a href="#">RESEARCH</a> </span>
+    <span> <a href="./search.html?type=research">RESEARCH</a> </span>
     <span>></span>
     <span>${data[issue]["researchs"][id]["title"].toUpperCase()}`)
 }
@@ -12,26 +12,32 @@ function initPath(data,issue,id) {
 function initHeaderContent(data,issue,id) {
     //Chủ đề 1
     $(".sub-header").html(`
-    <span class="type">RESEARCH ARTICLE</span>
-    <span class="type">${data[issue]["researchs"][id]["type"]}</span>
+    <span class="type">
+        <a href="./search.html?type=research">RESEARCH ARTICLE</a>
+    </span>
+    <span class="type">
+        <a href="./search.html?kw=${data[issue]["researchs"][id]["type"]}" >${data[issue]["researchs"][id]["type"]}</a>
+    </span>
     `)
     //Tiêu đề 2
     $(".r-header h1").html(`<h1>${data[issue]["researchs"][id]["title"]}</h1>`)
     //Các tác giả 3
     let h=""
     for (let i=0; i<6;i++) {
+        let name =data[issue]["researchs"][id]["authors"][i]["name"]
         h+=`
         <div class="author-items">
-            <a href="#">${data[issue]["researchs"][id]["authors"][i]["name"]}</a> 
+            <a href="./search.html?kw=${name}">${name}</a> 
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/ORCID_iD.svg/768px-ORCID_iD.svg.png" alt="" srcset="">,
         </div>`
     }
     $(".r-author-box").html(`${h} + <button id="showmore-author">+${data[issue]["researchs"][id]["authors"].length - 6} Authors</button>`)
     $(".r-author-box button").click(()=>{
         for (let i=0; i<data[issue]["researchs"][id]["authors"].length; i++) {
+            let name =data[issue]["researchs"][id]["authors"][i]["name"]
             h+=`
             <div class="author-items">
-                <a href="#">${data[issue]["researchs"][id]["authors"][i]["name"]}</a> 
+                <a href="./search.html?kw=${name}">${name}</a> 
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/ORCID_iD.svg/768px-ORCID_iD.svg.png" alt="" srcset="">,
             </div>`
         }
@@ -227,11 +233,11 @@ $(window).scroll(function () {
 });
 
 function initResearchShare() {
-    $(".share-box a").eq(0).attr("href",`https://www.facebook.com/sharer/sharer.php?u=` + location.href)
-    $(".share-box a").eq(1).attr("href",`https://twitter.com/intent/tweet?url=` + location.href)
-    $(".share-box a").eq(2).attr("href",`https://www.linkedin.com/sharing/share-offsite/?url=` + location.href)
-    $(".share-box a").eq(3).attr("href",`https://www.reddit.com/submit?url=` + location.href)
-    $(".share-box a").eq(4).attr("href",`mailto:?subject=Chia%20s%E1%BA%BB%20trang%20web&body=Xin%20ch%C3%A0o,%20m%C3%B4i%20b%E1%BA%A1n%20h%C3%A3y%20ki%E1%BB%83m%20tra%20trang%20web%20n%C3%A0y:%20` + location.href)
+    $(".share-box a").eq(0).attr("href",`https://www.facebook.com/sharer/sharer.php?u=`+symbolToHexHref(location.href))
+    $(".share-box a").eq(1).attr("href",`https://twitter.com/intent/tweet?url=`+symbolToHexHref(location.href))
+    $(".share-box a").eq(2).attr("href",`https://www.linkedin.com/sharing/share-offsite/?url=`+symbolToHexHref(location.href))
+    $(".share-box a").eq(3).attr("href",`https://www.reddit.com/submit?url=`+symbolToHexHref(location.href))
+    $(".share-box a").eq(4).attr("href",`mailto:?subject=Chia%20s%E1%BA%BB%20trang%20web&body=Xin%20ch%C3%A0o,%20m%C3%B4i%20b%E1%BA%A1n%20h%C3%A3y%20ki%E1%BB%83m%20tra%20trang%20web%20n%C3%A0y:%20$`+symbolToHexHref(location.href))
 }
 
 async function getResearch(obj) {

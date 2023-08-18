@@ -1,6 +1,6 @@
 function initPath(data, issue){
     $('.toc-path-box').html(`
-    <span><a href="./home.html">Home</a></span>
+    <span><a href="./">Home</a></span>
     <span>&gt;</span>
     <span><a href="">${data[issue].name}</a></span>
     `)
