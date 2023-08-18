@@ -155,6 +155,8 @@ function initRFrame(data) {
     
 }
 
+let startXRFrame = 0
+let deltaXRFrame=0
 function initEventRFrame() {
     runFrame(currentRFrame)
     //Gắn sự kiện cho các button khi nhấn vào
@@ -163,6 +165,31 @@ function initEventRFrame() {
             runFrame(i)
         })
     }
+    let recommended = document.querySelector(".recommended")
+    recommended.addEventListener("touchstart", function(event) {
+        startXRFrame = event.touches[0].clientX;
+    });
+    recommended.addEventListener("touchmove", function(event) {
+        if (!startXRFrame) {
+            return;
+        }
+        deltaXRFrame = event.touches[0].clientX - startXRFrame;
+                
+    })
+    recommended.addEventListener("touchend", function(event){
+        let max = $(".recommended .r-frame").length
+        if (Math.abs(deltaXRFrame) >= 100) {
+            if (deltaXRFrame > 0) {
+                // Vuốt phải
+                currentRFrame=(currentRFrame-1<0)?max-1:currentRFrame-1
+                runFrame(currentRFrame)
+            } else {
+                // Vuốt trái
+                currentRFrame=(currentRFrame+1>=max)?0:currentRFrame+1
+                runFrame(currentRFrame)
+            }
+        }   
+    })
 }
 //Tạo các bìa Magaa
 

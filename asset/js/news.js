@@ -2,22 +2,24 @@ let popupTemp = []
 
 function initPath(data,issue,id) {
     $(".n-path-box").html(`
-    <span> <a href="./home.html">HOME</a> </span>
+    <span> <a href="./">HOME</a> </span>
     <span>></span>
     <span> <a href="./table_of_contents.html?issue=${data[issue].id}">${data[issue].name.toUpperCase()}</a></span>
     <span>></span>
-    <span> <a href="#">NEWS</a> </span>
+    <span> <a href="./search.html?type=news">NEWS</a> </span>
     <span>></span>
     <span>${data[issue]["news"][id]["title"].toUpperCase()}`)
 }
 
 function initNewsHeaderBox(data,issue,id) {
     $(".n-header-box").html($(".n-header-box").html() + `
-    <h6>${data[issue]["news"][id]["type"]}</h6>
+    <h6><a href="./search.html?kw=${data[issue]["news"][id]["type"]}">
+        ${data[issue]["news"][id]["type"]}
+    </a></h6>
     <h1>${data[issue]["news"][id]["title"]}</h1>
     <h5>${data[issue]["news"][id]["subTitle"]}</h5>
     <hr>
-    <span> ${getStringUnixTime(data[issue]["news"][id]["time"])} • ${data[issue]["news"][id]["author"][0]["name"].toUpperCase()}</span>
+    <span> ${getStringUnixTime(data[issue]["news"][id]["time"])} • <a href="./search.html?kw=${data[issue]["news"][id]["author"][0]["name"]}">${data[issue]["news"][id]["author"][0]["name"].toUpperCase()}</a></span>
     <div class="n-img-box">
         <img src="${data[issue]["news"][id]["cover"]}" alt="" srcset="">
         <span>${data[issue]["news"][id]["desCover"]}</span>
@@ -41,7 +43,7 @@ function initNewsIssueDetailBox(data,issue,id) {
         <div>
         A version of this story appeared in Sicence Journal, issue ${data[issue]["id"]}.
         </div>
-        <a href="#${""}">
+        <a href="#">
             <div class="icon-pdf">                                
                 <i class="fa-solid fa-file-pdf"></i>
             </div>
@@ -110,7 +112,7 @@ function initNewsContent(data,issue,id) {
 
 function initNewsTagBox(data,issue,id) {
     for (let i of data[issue]["news"][id]["tags"]) {
-        $(".tag-box").html(  $(".tag-box").html() +`<a href="#"> <span>${i.toUpperCase()}</span> </a>`)
+        $(".tag-box").html(  $(".tag-box").html() +`<a href="./search.html?kw=${i}"> <span>${i.toUpperCase()}</span> </a>`)
     }
 }
 
@@ -130,7 +132,7 @@ function initNewsAuthorBox(data,issue,id) {
                         <img src="${i["avt"] || "https://img.freepik.com/free-icon/user_318-180888.jpg"}" alt="" srcset="">
                     </div>
                     <div class="info-text">
-                        <h5> ${i["name"]} ${social}</h5>
+                        <h5> <a href="./search.html?kw=${i["name"]}">${i["name"]} ${social}</a></h5>
                         <span>${i["job"]}</span>
                         <p>${i["bio"]}</p>
                     </div>
@@ -270,7 +272,7 @@ function initRecommend(data,issue,id) {
 }
 
 //Tạo link share
-function initNewsShare(data,issue,id) {
+function initNewsShare(data,issue,id) { 
     $(".n-share-box a").eq(0).attr("href",`https://www.facebook.com/sharer/sharer.php?u=`+symbolToHexHref(location.href))
     $(".n-share-box a").eq(1).attr("href",`https://twitter.com/intent/tweet?url=`+symbolToHexHref(location.href))
     $(".n-share-box a").eq(2).attr("href",`https://www.linkedin.com/sharing/share-offsite/?url=`+symbolToHexHref(location.href))

@@ -56,7 +56,7 @@ function err404HTML() {
            </div>
            <div>
                 <h1>404 NOT FOUND!</h1>
-                <div><a href="./home.html">Return homepage</a></div>
+                <div><a href="./">Return homepage</a></div>
            </div>
         </section>`
 }
@@ -175,6 +175,19 @@ function initHeaderEvent() {
             initUser()
         },500)
     })
+    $(".search>button").click(()=>{
+        let kw = $(".search-form>.input>input").val().trim()
+        if (kw) {
+            location.href = "search.html?kw=" + kw
+        }
+    })
+    $(".search-box2>.search-icon").click(()=>{
+        let kw = $(".search-box2>input").val().trim()
+        if (kw) {
+            location.href = "search.html?kw=" + kw
+        }
+    })
+
 }
 
 function includesObj(arr,b) {

@@ -17,7 +17,7 @@ function getCookie(key) {
 
 if (location.pathname.includes('/login.html')) {
     if (getCookie("username")!="" && getCookie("email")!="" ) {
-        location.href = "./home.html"
+        location.href = "./"
         console.log("ok")
     }
 }
