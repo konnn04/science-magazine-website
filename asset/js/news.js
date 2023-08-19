@@ -314,11 +314,15 @@ function initScrollRecommend(){
 }
 
 async function getNews(obj) {
+    
     let id=obj.id
     let issue = 0
     await fetch("./asset/data/data.json").then(async (res)=>{
         let check = false
         let data = await res.json()
+        //Tao header
+        await initHeader(data)
+        //Chay cac thanh phan khac
         for (let i=0;i<data.length;i++) {
             if (data[i]["id"]===obj.issue && id >=0 && id<data[i]["news"].length) {
                 issue=i
@@ -356,14 +360,14 @@ async function getNews(obj) {
 }
 
 $(document).ready(async()=> {
-    await initHeader()
     // initKeyWordsHeader()
     const urlParams = new URLSearchParams(window.location.search);
     const newsPath = {
         "issue":urlParams.get('issue'),
         "id":parseInt(urlParams.get('id')),        
     }
+    
+    await getNews(newsPath)
     initUser()
     initHeaderEvent()
-    await getNews(newsPath)
 });
