@@ -246,8 +246,12 @@ async function getResearch(obj) {
     await fetch("./asset/data/data.json").then(async (res)=>{
         let check = false
         let data = await res.json()
+        //Khởi tạo header
+        await initHeader(data)
+        //Kiểm tra xem issue và id có hợp lệ không?
         for (let i=0;i<data.length;i++) {
             if (data[i]["id"]===obj.issue && id >=0 && id<data[i]["researchs"].length) {
+                //Nếu có
                 issue=i
                 check=true
                 $("title").text(data[issue]["researchs"][id]["title"])
@@ -263,6 +267,7 @@ async function getResearch(obj) {
             }
         }
         if (!check) {
+            //Nếu không có
             $(".body-container").html(err404HTML())
         }
         
@@ -278,10 +283,8 @@ $(document).ready(async()=> {
         "issue":urlParams.get('issue'),
         "id":parseInt(urlParams.get('id')),        
     }
-    await initHeader()
-    // initKeyWordsHeader()
-    initUser()
-    // initHeaderContent()
     //Khởi tạo trang web 
-    getResearch(newsPath)
+    await getResearch(newsPath)
+    initUser()
+    initHeaderEvent()
 });

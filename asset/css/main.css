@@ -132,6 +132,7 @@ header nav div>i{
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     position: relative;
+    cursor: pointer;
 }
   
 .nav_links:hover{
@@ -151,9 +152,119 @@ header nav div>i{
     transition: transform 0.3s ease;
 }
   
-.nav_links:hover::after{
+.nav_links:hover::after,
+.sub1.active .nav_links::after{
     transform: scaleX(1);
     transform-origin: left;
+}
+
+.nav_links i{
+  transition: all .2s ease;
+}
+
+.subMenuJournal{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 7rem;
+  padding: 5rem;
+  background-color: #141414;
+  box-sizing: border-box;
+  overflow-x: auto;
+  display: none;
+  transition: all .2s ease;  
+  align-items: center;
+  justify-content: left;
+  gap: 16px;
+}
+
+.subMenuJournal .pad-item{
+  flex-shrink: 0;
+  padding: 0 2rem;
+  border-right: 1px solid #454545;
+  width: fit-content;
+}
+
+/* .subMenuJournal .pad-item h3{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  margin: 1.4rem 0;
+  width: 160px;
+} */
+
+.subMenuJournal .pad-item:last-child{
+  border-right: none;
+}
+
+.subMenuJournal #backOverplay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0000007e;
+  z-index: -1;
+}
+
+.subMenuJournal .item-journal{
+  width: 180px;
+  position: relative;
+  transition: all .2s ease;
+}
+
+.subMenuJournal .item-journal .overplay{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: brightness(.5);
+  opacity: 0;
+  transition: all .2s ease;
+}
+
+.subMenuJournal .item-journal:hover{
+  scale: 1.1;
+}
+
+.subMenuJournal .item-journal:hover .overplay{
+  opacity: 1;
+}
+
+
+.overplay > a{
+  display: block;
+  width: fit-content;
+  padding: .4rem 1rem;
+  border: 1px solid #fff;
+  border-radius: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+  transition: all .2s ease;
+}
+
+.overplay > a:hover{
+  scale: 1.05;
+  background-color: #ffcc00;
+  border: 1px solid #ffcc00;
+}
+
+.item-journal img{
+  width: 100%;
+}
+
+.sub1.active .subMenuJournal{
+  display: flex;
+  animation: fadeIn .2s ease;
+}
+
+.sub1.active .fa-chevron-down{
+  transform: rotate(-180deg);
 }
   
 @media screen and (max-width: 1100px) {
@@ -264,18 +375,20 @@ header nav div>i{
   
 /* Search-Box */
 #search-box{
-  transition: all .2 ease;
+  transition: all .2s ease;
   background-color: #000;
   color: #fff;
   padding: 1rem;
   height: 0;
   opacity: 0;
   overflow: hidden;
+  transform: translateY(-100px);
 }
 
 #search-box.show{
   opacity: 1;
   height: unset;
+  transform: translateY(0);
 }
 
 .search-form,
@@ -783,5 +896,14 @@ font-size: 1.4rem;
   }
   100%{  
     opacity: .8;
+  }
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
   }
 }

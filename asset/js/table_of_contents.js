@@ -44,10 +44,10 @@ function initInfo(data,issue){
     `)
     $("#more").click(()=>{
       if ($("#more").text()=="VIEW MORE") {
-        $(".issue-summary-box>p").text(data[issue].news[0]["content"][0].text)
+        $(".issue-summary-box>p").html(data[issue].news[0]["content"][0].text)
         $("#more").text("VIEW LESS")
       }else{
-        $(".issue-summary-box>p").text(cutString(data[issue].news[0]["content"][0].text,150))
+        $(".issue-summary-box>p").html(cutString(data[issue].news[0]["content"][0].text,150))
         $("#more").text("VIEW MORE")
       }
     })
@@ -108,12 +108,15 @@ function initAllIssue(data) {
     $(".issue-container").html(h)
 }
 
-function init_toc(issueUrl){
+async function init_toc(issueUrl){
     let check = false
     let issue = 0
-    fetch("./asset/data/data.json")
+    await fetch("./asset/data/data.json")
     .then((res)=>res.json())
-    .then(data=>{
+    .then(async data=>{
+        //Tạo header
+        await initHeader(data)
+
         for (let i=0;i<data.length;i++) {
           if (data[i]["id"]===issueUrl) {
             issue=i
@@ -137,9 +140,8 @@ function init_toc(issueUrl){
 }
 
 $(document).ready(async function () {
-  const issueUrl = new URLSearchParams(window.location.search).get('issue');  
-  await initHeader()
+  const issueUrl = new URLSearchParams(window.location.search).get('issue');   
+  await init_toc(issueUrl);
   initUser()
   initHeaderEvent()
-  init_toc(issueUrl);
 });

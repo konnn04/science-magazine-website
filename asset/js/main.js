@@ -35,17 +35,28 @@ $(window).scroll(function(){
 
 
 
-async function initHeader() {
+async function initHeader(data) {
     await fetch("./asset/htm/header.htm").then(async (res)=>{
         let text = await res.text()
         $("header").html(text)
         let k=""
         KeyWord.forEach((e,i)=>{
-            k+=`<div>${e}</div>`
+            k+=`<div> <a href="./search.html?kw=${e}">${e}</a> </div>`
         })
         $(".kw-box").html(k)
-        // Tao darkmode
-        
+        // Tao List Journals
+        k=""
+        data.forEach((e,i)=>{
+            k+=`<div class="pad-item" title="${e.name}">
+            <div class="item-journal">
+                <img src="${e.imgCover}" alt="" srcset="">
+                <div class="overplay">
+                    <a href="./table_of_contents.html?issue=${e.id}">See more</a>
+                </div>
+            </div>
+        </div> `
+        })
+        $(".subMenuJournal").html($(".subMenuJournal").html()+k)
     })
 }
 
@@ -149,6 +160,13 @@ function initHeaderEvent() {
             localStorage.setItem("theme","light")
             document.documentElement.style = lightContainer
         }
+    })
+
+    $(".showJournals").click(()=>{
+        $(".sub1").toggleClass("active")
+    })
+    $("#backOverplay").click(()=>{
+        $(".sub1").removeClass("active")
     })
 //Làm mượt chuyển động + Bù phần khuyết
     // $(window).scroll(function () { 

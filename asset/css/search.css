@@ -64,6 +64,22 @@ main{
  .article{
     width: 100%;
     margin-bottom: 2rem;
+    animation: fadeInResult .5s linear;
+ }
+
+ @keyframes fadeInResult{
+   0%{
+      opacity: 0;
+      transform: translateX(-50px);
+   }
+   80%{
+      opacity: .8;
+      transform: translateX(10px);
+   }
+   100%{
+      opacity: 1;
+      transform: translateX(0);
+   }
  }
  
  .a-title{
@@ -241,27 +257,27 @@ main{
  .revBtn{
    border: 1px solid red;
    color: red;
-   right: 13rem;
+   right: 2rem;
    bottom: 2rem;
  }
 
- .filBtn{
+ /* .filBtn{
    border: 1px solid var(--text) ;
    color: var(--text2);
    right: 2rem;
    bottom: 2rem;
- }
+ } */
 
  .revBtn:hover{
    background-color: red;
    color: #fff;
  }
 
- .filBtn:hover{
+ /* .filBtn:hover{
    border: 1px solid #ffcc00 ;
    background-color: #ffcc00;
    color: #fff;
- }
+ } */
  
  .f-type{
     width: 30%;

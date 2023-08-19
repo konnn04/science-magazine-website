@@ -301,14 +301,13 @@ function initResearchItems(data) {
 
 
 $(document).ready(async()=>{
-    //init header
-    await initHeader()
-    //
-    initUser()
-    initHeaderEvent()    
+    
+      
     await fetch("./asset/data/data.json")
     .then(async (res)=>{
         let data = await res.json()
+        //init header
+        await initHeader(data)
         //Khởi tạo r-frame
         initMagaList(data)
         initRFrame(data)
@@ -317,6 +316,9 @@ $(document).ready(async()=>{
         initResearchItems(data)
         //Meta
     })
+    initUser()
+    initHeaderEvent() 
+
     fixedRFrame()
     initEventRFrame() 
     initMagaEvent()
