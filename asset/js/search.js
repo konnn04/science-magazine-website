@@ -7,7 +7,7 @@ $('.searchBtn button').click(()=>{
         search($(".search-bar #kw").val())
     }
 })
-
+ 
 function createFilter(){
     $('.filter').click(()=>{
         $('.filter-box').toggleClass("active");
@@ -166,17 +166,20 @@ function initNumPage(html) {
     $(".page-ctrl .nextPage").click(()=>{
         curPage++
         initNumPage(html)
+        $("html,body").animate({scrollTop:0},'slow');
     })
     //Trang lùi
     $(".page-ctrl .prevPage").click(()=>{
         curPage--
         initNumPage(html)
+        $("html,body").animate({scrollTop:0},'slow');
     })
     //Các số trang
     for (let i=0;i<$(".midPage").length;i++) {
         $(".midPage").eq(i).click(()=>{
             curPage=i+1
             initNumPage(html)
+            $("html,body").animate({scrollTop:0},'slow');
         })
     }
     $(".midPage").eq(curPage-1).addClass("active")
@@ -272,7 +275,6 @@ function filterCate(e) {
 //Nếu có thì chỉnh bộ lọc
 function startedFilter(type) {
     if (type) {
-        $(".filter-box").addClass("active")
         //Nếu là news thì bỏ 2 tick research và all
         if (type.toUpperCase()=="NEWS") {
             $("#t-news").prop('checked',true)
