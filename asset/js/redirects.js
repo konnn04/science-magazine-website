@@ -33,7 +33,7 @@ async function DATA() {
     return await fetch("./asset/data/data.json").then((res)=> res.json())
 }
 
-function initMeta() {
+function initMeta() { //Bỏ
     document.head.innerHTML+=(`    
   <meta property="og:title" content="Sicence Journal®">
   <meta property="og:description" content="Welcome to Science Journal®, a premier online platform dedicated to nurturing a deep-seated passion for science and facilitating the widespread dissemination of knowledge across diverse scientific realms.">
@@ -47,5 +47,3 @@ function initMeta() {
   <meta name="author" content="Konnn04 and Horyzonn">
   <meta name="robots" content="index, follow">`)//Lập chỉ mục
 }
-
-initMeta()
