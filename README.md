@@ -12,7 +12,7 @@ Giảng viên: Dương Hữu Thành
 BÀI TẬP GIỮA KÌ
 
 Chủ đề: Thiết kế trang web về Tạp chí khoa học
-
+Kho lưu dự án: https://github.com/konnn04/TKW22_Phu_Trieu
 Thành viên:
 + Nguyễn Thanh Triều - 2251052127
 + Nguyễn Thiên Phú - 2251052093
@@ -20,10 +20,10 @@ Thành viên:
 Thông tin dự án:
 - Nguồn tham khảo: www.science.org
 - Thông tin: 
-. Số trang: 8
-. Ngôn ngữ lập trình: Javascript
-. Thư viện sử dụng: JQuery
-. Font sử dụng: Awesome, Google Font
-. Khác: MockApi
+-- Số trang: 8
+-- Ngôn ngữ lập trình: Javascript
+-- Thư viện sử dụng: JQuery
+-- Font sử dụng: Awesome, Google Font
+-- Khác: MockApi
         
 
