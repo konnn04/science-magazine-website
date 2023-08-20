@@ -549,9 +549,43 @@ span.type:first-child{
     margin-right: .4rem;
     border-right: 2px solid #00000017;
 }
+/* Quảng cáo */
 
+.rside .abs{
+    width: 100%;
+    max-width: 320px;
+    margin: auto;
+    border: 1px solid var(--text2);
+    padding: 1rem;
+    position: sticky;
+    box-sizing: border-box;
+    top: 10rem;
+    margin-top: 5rem;
+ }
+ 
+ .rside .abs span{
+    position: absolute;
+    text-align: center;
+    top: -1rem;
+    font-size: 1.2rem;
+    background-color: var(--theme2);
+    padding:0  1rem;
+    left: calc(50% - 60px);
+ }
+ 
+ .rside .abs .img{
+    margin: 1rem 0;
+ }
+ 
+ .abs .img img{
+    width: 100%;
+ }
 
 @media screen and (max-width:1200px) {
+    .n-rside .abs{
+        position: static;
+        top: 0;
+    }
     .main{
         display: block;
         max-width: 800px;

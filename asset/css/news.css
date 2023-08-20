@@ -99,7 +99,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #202020;
+    background-color: #2d2d2d;
     height: 80vh;
     width: 100vw;
 }
@@ -240,6 +240,7 @@ body{
     justify-content: space-between;
     margin-bottom: 3rem;
     z-index: 9;
+    box-shadow: 4px 4px 2px #00000044;
 }
 
 .n-cover-issue-info .icon-pdf{
@@ -463,7 +464,7 @@ body{
 
 .n-rside{
     font-family: 'Merriweather Sans', sans-serif;
-    background-color: #0000000b;
+    background-color: var(--theme2);
     padding: 1rem;
 }
 
@@ -584,6 +585,39 @@ div>img{
     color:#ffcc00;
 }
 
+
+/* Quảng cáo */
+
+.n-rside .abs{
+    width: 100%;
+    max-width: 320px;
+    margin: auto;
+    border: 1px solid var(--text2);
+    padding: 1rem;
+    position: sticky;
+    box-sizing: border-box;
+    top: 10rem;
+    margin-top: 5rem;
+ }
+ 
+ .n-rside .abs span{
+    position: absolute;
+    text-align: center;
+    top: -1rem;
+    font-size: 1.2rem;
+    background-color: var(--theme2);
+    padding:0  1rem;
+    left: calc(50% - 60px);
+ }
+ 
+ .n-rside .abs .img{
+    margin: 1rem 0;
+ }
+ 
+ .abs .img img{
+    width: 100%;
+ }
+
 @media screen and (max-width:1650px) {
     .n-share-box{
         position: static;
@@ -616,7 +650,11 @@ div>img{
         margin: 0;
         height: 0;
     }
-
+    .aside .abs{
+        position: relative;
+        bottom: 0;
+        top: 0;
+     }
 }
 
 @media screen and (max-width:980px) {

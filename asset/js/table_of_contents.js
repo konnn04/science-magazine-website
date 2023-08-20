@@ -111,37 +111,29 @@ function initAllIssue(data) {
 async function init_toc(issueUrl){
     let check = false
     let issue = 0
-    await fetch("./asset/data/data.json")
-    .then((res)=>res.json())
-    .then(async data=>{
-        //Tạo header
-        await initHeader(data)
-
-        for (let i=0;i<data.length;i++) {
-          if (data[i]["id"]===issueUrl) {
-            issue=i
-            check=true
-            $("title").text(data[issue]["name"])
-            // $(".cover-img").css({
-            //   "background":`url('${data[issue]["imgCover"]}') no-repeat`
-            // })
-            initPath(data,issue)
-            initControl(data,issue)
-            initInfo(data,issue)
-            initNews(data,issue)
-            initResearchs(data,issue)
-            initAllIssue(data)
-          }
-        }
-        if (!check) {
-          $("body").html(err404HTML()) 
-        }
-    })
+    const data = await DATA()
+    for (let i=0;i<data.length;i++) {
+      if (data[i]["id"]===issueUrl) {
+        issue=i
+        check=true
+        $("title").text(data[issue]["name"])
+        // $(".cover-img").css({
+        //   "background":`url('${data[issue]["imgCover"]}') no-repeat`
+        // })
+        initPath(data,issue)
+        initControl(data,issue)
+        initInfo(data,issue)
+        initNews(data,issue)
+        initResearchs(data,issue)
+        initAllIssue(data)
+      }
+    }
+    if (!check) {
+      $("body").html(err404HTML()) 
+    }
 }
 
 $(document).ready(async function () {
   const issueUrl = new URLSearchParams(window.location.search).get('issue');   
   await init_toc(issueUrl);
-  initUser()
-  initHeaderEvent()
 });

@@ -32,8 +32,9 @@
 :root{
   --bg:linear-gradient(-90deg, rgba(255, 255, 255, 0.9) 40%, rgb(234, 234, 234)),  no-repeat center;
   --body:linear-gradient(315deg, #e8e8e8 0%, #ffffff 74%) no-repeat center center fixed;
-  --theme:#ffffff;
-  --theme2:#f4f4f4;
+  --theme2:#ffffff;
+  --theme3:#efefef;
+  --theme:#f4f4f4;
   font-size: 10px;
   --text: #131313;
   --textOP: #ffffff;
@@ -326,7 +327,7 @@ header nav div>i{
   transform: rotate(-180deg);
 }
   
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1260px) {
   .navigation li:nth-child(4) {
     display: none;
   }
@@ -746,7 +747,7 @@ header nav div>i{
     height: 5rem;
     border: 2px solid #ffcc00;
     border-radius: 50px ;
-    z-index: 9999;
+    z-index: 40;
     position: fixed;
     right: 2rem;
     bottom: 1rem;
