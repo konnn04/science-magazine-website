@@ -283,6 +283,9 @@ function startedFilter(type) {
             $("#t-research").prop('checked',true)
             $("#type-filter input:not('#t-research')").prop('checked',false)
         }
+        if (type=="ad") {
+            $(".filter-box").addClass("active")
+        }
     }
 }
 

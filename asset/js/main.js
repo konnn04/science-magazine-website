@@ -181,8 +181,9 @@ function initHeaderEvent() {
     //     }
     // });
     // user 
-    $(".user-info").click(()=>{
-        $(".menu-user-box").toggleClass("show");
+
+    $(".user-info").click(function (){
+        this.querySelector(".menu-user-box").classList.toggle("show");
     })
     $(".menu-user li").click(()=>{
         document.cookie="username=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
