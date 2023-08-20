@@ -58,8 +58,12 @@ function initNews(data,issue){
     let countNews = data[issue].news.length;
     let newsList=""
     for(let i=0;i<countNews;i++){
+        let t = "N"+issue+"-"+i
         newsList+= `        
         <div class="article">
+          <div class="mark" mark="${t}">
+          <i class="fa-regular fa-bookmark"></i>    
+          </div>
           <div class="a-title"><a href="./news.html?issue=${data[issue].id}&id=${i}">${data[issue].news[i].title}</a></div>
           <div class="a-info">
             <p class="author">${data[issue].news[i].author[0].name}</p>
@@ -79,8 +83,12 @@ function initResearchs(data,issue){
     let countResearchs = data[issue].researchs.length;
     let researchsList=""
     for(let i=0;i<countResearchs;i++){
+        let t = "R"+issue+"-"+i
         researchsList+= `        
         <div class="article">
+          <div class="mark" mark="${t}">
+            <i class="fa-regular fa-bookmark"></i>
+          </div>
           <div class="a-title"><a href="./research.html?issue=${data[issue].id}&id=${i}">${data[issue].researchs[i].title}</a></div>
           <div class="a-info">
             <p class="author">${data[issue].researchs[i].authors[0].name}</p>
@@ -108,6 +116,23 @@ function initAllIssue(data) {
     $(".issue-container").html(h)
 }
 
+function initEventMark() {
+    let arr = JSON.parse(localStorage.getItem("bookmark"))
+    for (let i=0;i<$(".mark").length;i++) {
+      let t = $(".mark").eq(i).attr("mark")
+      if (arr.includes(t)) {
+        $(".mark").eq(i).find("i").addClass("fa-solid")
+        $(".mark").eq(i).find("i").removeClass("fa-regular")
+      }
+      $(".mark").eq(i).click(()=>{
+        $(".mark").eq(i).find("i").toggleClass("fa-solid")
+        $(".mark").eq(i).find("i").toggleClass("fa-regular")
+        toggleMark(t)
+    })
+    }
+    
+}
+
 async function init_toc(issueUrl){
     let check = false
     let issue = 0
@@ -126,8 +151,9 @@ async function init_toc(issueUrl){
         initNews(data,issue)
         initResearchs(data,issue)
         initAllIssue(data)
+        initEventMark()
       }
-    }
+    } 
     if (!check) {
       $("body").html(err404HTML()) 
     }

@@ -201,6 +201,11 @@ span.type:first-child{
     cursor: pointer;
 }
 
+.r-menu .btn#mark.active,
+.r-menu .btn:hover{
+    color: #ffcc00;
+}
+
 .r-menu.active .menu-read{
     display: block;
 }

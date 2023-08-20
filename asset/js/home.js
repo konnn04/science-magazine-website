@@ -354,9 +354,55 @@ function initResearchItems(data) {
             
         }
     }
-    
 }
 
+//Tạo bookmark
+function initBookmark(data) {
+    let h=""
+    for (let i=arrBookmark.length-1;i>=0;i--) {
+        let issue = arrBookmark[i].substring(1,arrBookmark[i].indexOf("-"))
+        let id= arrBookmark[i].substring(arrBookmark[i].indexOf("-")+1,99)
+        let type = arrBookmark[i][0]
+        if (type == "N") {
+            h+=`<div class="item-bookmark">
+            <i class="fa-solid fa-circle-xmark" mark="${arrBookmark[i]}"></i>
+            <span>NEWS</span>
+            <span>${data[issue].news[id].type}</span>
+            <h4>
+                <a href="./news.html?issue=${data[issue].id}&id=${id}">
+                    ${data[issue].news[id].title}
+                </a>
+            </h4>
+            <span>BY ${data[issue].news[id].author[0]["name"]}</span>
+        </div>`
+        }
+        if (type == "R") {
+            h+=`<div class="item-bookmark">
+            <i class="fa-solid fa-circle-xmark" mark="${arrBookmark[i]}"></i>
+            <span>RESEARCH</span>
+            <span>${data[issue].researchs[id].type}</span>
+            <h4>
+                <a href="./research.html?issue=${data[issue].id}&id=${id}">
+                    ${data[issue].researchs[id].title}
+                </a>
+            </h4>
+            <span>BY ${data[issue].researchs[id].authors[0]["name"]}</span>
+        </div>`
+        }        
+    }
+    $(".bookmarks").html(h)
+    if(h=="") {
+        $(".bookmarks").html("<h3>Nothing!</h3>")
+    }
+
+    $(".fa-circle-xmark").click(function(){
+        $(this).parent().remove()
+        toggleMark($(this).attr("mark"))
+        if($(".bookmarks").html()=="") {
+            $(".bookmarks").html("<h3>Nothing!</h3>")
+        }
+    })    
+}
 
 $(document).ready(async()=>{
     const data = await DATA()
@@ -368,6 +414,8 @@ $(document).ready(async()=>{
     initBoxType(data)
     //In ra vài bài nghiên cứu
     initResearchItems(data)
+    //Tạo bookmark???
+    initBookmark(data)
     //Chỉnh font chữ của frame theo tỉ lệ độ lớn
     fixedRFrame()
     //Tạo sự kiện chạy và nhấn RFrame
@@ -376,4 +424,5 @@ $(document).ready(async()=>{
     initMagaEvent()
     //Tạo sự kiện nhấn của các Category
     initTypeEvent()
+    
 })
