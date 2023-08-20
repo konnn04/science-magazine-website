@@ -19,7 +19,7 @@ let curPage = 0
 let maxPage=0
 let ban=""
 let noBan=""
-
+let limitDay = [0,0]
 
  async function search(kw){
         let result=[];
@@ -81,7 +81,9 @@ let noBan=""
                 initNumPage(html)        
                 $('.result h1 span').html(html.length)
             }
-            
+            $("#sort-search").on("change",()=>{
+                next()
+            })
             next()
         //in so luong tim kiem
         //khoi tao ket qua tim kiem
@@ -189,6 +191,11 @@ function initNumPage(html) {
 //Hàm lọc Cate
 //Tác dụng: so sánh bộ lọc hiện tại để hiển thị kết quả hay không
 function filterCate(e) {
+    //Nếu mọi thời gian thì tiếp tục
+    if ($("#r-time").is(':checked')) {
+        if (e.time<limitDay[0] || e.time>limitDay[1]) return false
+
+    }
     //Nếu tick all thì mọi thể loại đều được in ra
     if ($("#c-all").is(':checked')) return true
     let cate = e.cate.toUpperCase().trim()
@@ -243,11 +250,26 @@ function filterCate(e) {
           </div>`)
         }
     });
+    if ($("#sort-search").val() == '0') {
+        h.reverse()
+    }
     return h
  }
 
  //Hàm khởi tạo QUY TẮC Category 
  function initEventFilter() {
+    //Gán sẳn ngày 
+    $("#r-from").val("2020-01-01")
+    $("#r-to").val(getDateForInput())
+    limitDay[0]= new Date($("#r-from").val()).getTime()
+    limitDay[1]= new Date($("#r-to").val()).getTime()
+    //Sự kiện lấy thời gian
+    $("#r-from").on("input",(e)=>{
+        limitDay[0]= new Date($("#r-from").val()).getTime()
+    })
+    $("#r-to").on("input",(e)=>{
+        limitDay[1]= new Date($("#r-to").val()).getTime()
+    })
     //Nếu tick cate-all thì bỏ tất cả tick còn lại
     $("#category input#c-all").click(()=>{
         if ($("#category #c-all").is(":checked")) {
@@ -265,6 +287,7 @@ function filterCate(e) {
         $("#t-all").click()
         if (!$("#c-all").is(":checked")) {
             $("#c-all").click()
+            $("#r-all").click()
         }
     })
  }

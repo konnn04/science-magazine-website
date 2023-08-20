@@ -61,10 +61,12 @@
                 <div class="f-type" id="release-date">
                     <label for="">Release Date:</label>
                     <form action="" id="time-filter">
-                        <input type="checkbox" name="" id="r-all" checked> 
+                        <input type="radio" name="time" id="r-all" checked> 
                         <label for="r-all">All</label> <br>
-                        <label for="from">From: </label><input type="date" name="" id="from"> <br>
-                        <label for="to">To: </label><input type="date" name="" id="to">
+                        <input type="radio" name="time" id="r-time">                         
+                        <label for="r-time">Date:</label> <br>
+                        <label for="r-from">From: </label><input type="date" name="" id="r-from"> <br>
+                        <label for="r-to">To: </label><input type="date" name="" id="r-to">
                     </form>
                 </div>
                 <div class="revBtn">
@@ -76,6 +78,12 @@
                 <h1><span></span> Result Found</h1>
         </div>
         <section class="content-wrapper">
+            <section class="sort">
+                <select name="" id="sort-search" value="0">
+                    <option value="0">Latest</option>
+                    <option value="1">Oldest</option>
+                </select>
+            </section>
             <section class="content-box news">
                 <div class="article-box">
                      <!--  -->
@@ -153,4 +161,4 @@
     <script src="./asset/js/main.js"></script>
     <script src="./asset/js/search.js"></script>
 </body>
-</html>
+</html> 
