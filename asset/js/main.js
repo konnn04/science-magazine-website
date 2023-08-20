@@ -51,6 +51,9 @@ async function initHeader(data) {
         </div> `
         })
         $(".subMenuJournal").html($(".subMenuJournal").html()+k)
+        //Tạo link cho Current Issue và First release papers
+        $("#curentIssue").attr("href",`./table_of_contents.html?issue=${data[data.length-1].id}`)
+        $("#firstPaper").attr("href",`./news.html?issue=${data[data.length-1].id}&id=0`)
     })
 }
 
