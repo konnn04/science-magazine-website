@@ -21,7 +21,7 @@ main{
    width: 100vw;
    height: 18rem;
    overflow: hidden;
-   background: url('/img/login/background-login.jpg') no-repeat center;
+   background: url('../../img/login/background-login.jpg') no-repeat center;
    background-size:cover;
    position: absolute;
    top: -7rem;
