@@ -80,6 +80,10 @@ function getStringUnixFullDay(milisecond) {
     return ((new Date(milisecond).getMonth()+1)+" " +new Date(milisecond).toDateString().slice(4,7)+" "+ new Date(milisecond).getFullYear())
 }
 
+async function DATA() {
+    return await fetch("./asset/data/data.json").then((res)=> res.json())
+}
+
 function getStringUnixDate(milisecond) {
     return new Date(milisecond).toLocaleDateString()
 }
@@ -220,9 +224,7 @@ function includesObj(arr,b) {
     return false
 }
 
-$(document).ready(function () {
-    if (darkCheck) document.documentElement.style = darkContainer
-});
+
 //News
 function setMeta(data,issue,id,type) {
     $("head").append(`    
@@ -241,3 +243,12 @@ function symbolToHexHref(text) {
         if (match === '=') return '%3D';
     });
 }
+//LỆNH DÙNG CHUNG CHO TOÀN TRANG WEB 
+$(document).ready(async function () {
+    //Khởi tạo header
+    await initHeader(await DATA())
+    initUser()
+    initHeaderEvent()
+    //Kiểm tra và gắn bảng màu sáng tối
+    if (darkCheck) document.documentElement.style = darkContainer
+});

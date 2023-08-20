@@ -243,38 +243,30 @@ function initResearchShare() {
 async function getResearch(obj) {
     let id=obj.id
     let issue = 0
-    await fetch("./asset/data/data.json").then(async (res)=>{
-        let check = false
-        let data = await res.json()
-        //Khởi tạo header
-        await initHeader(data)
-        //Kiểm tra xem issue và id có hợp lệ không?
-        for (let i=0;i<data.length;i++) {
-            if (data[i]["id"]===obj.issue && id >=0 && id<data[i]["researchs"].length) {
-                //Nếu có
-                issue=i
-                check=true
-                $("title").text(data[issue]["researchs"][id]["title"])
-                initPath(data,issue,id)
-                initResearchShare()
-                initHeaderContent(data,issue,id)
-                initNewsContent(data,issue,id)
-                initPDFView(data,issue,id)
-                initDownloadDoc(data,issue,id)
-                initRefsAndNotes(data,issue,id)
-                initDataRMenu(data,issue,id)
-                initRSide(data,issue,id)
-            }
+    let data = await DATA() //Lấy data file.json
+    let check = false
+    //Kiểm tra xem issue và id có hợp lệ không?
+    for (let i=0;i<data.length;i++) {
+        if (data[i]["id"]===obj.issue && id >=0 && id<data[i]["researchs"].length) {
+            //Nếu có
+            issue=i
+            check=true
+            $("title").text(data[issue]["researchs"][id]["title"])
+            initPath(data,issue,id)
+            initResearchShare()
+            initHeaderContent(data,issue,id)
+            initNewsContent(data,issue,id)
+            initPDFView(data,issue,id)
+            initDownloadDoc(data,issue,id)
+            initRefsAndNotes(data,issue,id)
+            initDataRMenu(data,issue,id)
+            initRSide(data,issue,id)
         }
-        if (!check) {
-            //Nếu không có
-            $(".body-container").html(err404HTML())
-        }
-        
-    }).catch(err =>{
-        console.log(err)
-        alert("Lỗi tải trang!")
-    })
+    }
+    if (!check) {
+        //Nếu không có
+        $(".body-container").html(err404HTML())    
+    }
 }
 
 $(document).ready(async()=> {
@@ -282,9 +274,7 @@ $(document).ready(async()=> {
     const newsPath = {
         "issue":urlParams.get('issue'),
         "id":parseInt(urlParams.get('id')),        
-    }
+    }    
     //Khởi tạo trang web 
     await getResearch(newsPath)
-    initUser()
-    initHeaderEvent()
 });

@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root{
+    font-size: 10px;
+}
+li{
+    list-style: none;
+    margin: 0;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+main{
+    margin-top: 7rem;
+    width: 100%;
+}
+
+.banner{
+    width: 100%;
+    min-height: calc(100vh - 7rem);
+    background: url(./sub_bg.png) no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.l-banner{
+    width: 41%;
+    
+}
+
+.l-banner div{
+    color: #fcfcfc;
+    font-family: 'Roboto', sans-serif;
+}
+
+.slogan{
+    font-size: 5rem;
+    font-weight: bold;
+}
+.slogan span{
+    font-family: 'Bacasime Antique', serif;
+}
+
+.des{
+    font-size: 2rem;
+    font-weight: 100;
+    margin: 3rem 0;
+}
+
+.des span{
+    font-weight: 400;
+}
+
+.joinBtn{
+    width: 20rem;
+    height: 6rem;
+    background-color: #ffcc00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3rem;
+    transition: all .2s ease;
+}
+
+.joinBtn a{
+    text-decoration: none;
+    color: #121314;
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+
+.note{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+.shirt-img{
+    margin-left: 1.5rem;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.shirt-img img{
+    width: 100%;
+}
+
+.choose{
+    margin-bottom: 2rem;
+}
+
+.c-title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.agree{
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.packs{
+    width: 100%; 
+    margin: 2rem 0;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.down li{
+    display: flex;
+    gap: .5rem;
+}
+
+.pack{
+    border: 2px solid #cfcfcf;
+    box-sizing: border-box;
+    min-width: 30rem;
+    width: 30rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 20px;
+    height: 63rem; 
+    min-height: 63rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), 
+               -5px -5px 10px rgba(0, 0, 0, 0.3), 
+               5px -5px 10px rgba(0, 0, 0, 0.3), 
+               -5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.fa-star,.fa-triangle-exclamation{
+    color: #ffcc00;
+}
+
+.free{
+    width: fit-content;
+    height: fit-content;
+    padding: .5rem;
+    margin: 1rem auto 0;
+    background-color: rgba(52,168,83,0.3);
+    color: #34a853;
+    font-size: 1.4rem;
+    border-radius: 30px;
+}
+
+
+.pack div{
+    
+    font-family: 'Open Sans', sans-serif;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.star{
+    padding: 0 3rem;
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+    font-size: 2.4rem;
+}
+
+.star i{
+    font-size: 2,4rem;
+}
+
+.price{
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+.buy{
+    width: 100%;
+    position: relative;
+}
+
+.notBuy{
+    width: 50%;
+    height: 4rem;
+    background-color: #ffcc00;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto 2rem;
+    transition: all .2s ease;
+}
+
+.bought{
+    width: 50%;
+    height: 4rem;
+    background-color: white;
+    color: #7f7f7f;
+    border: 2px solid#7f7f7f;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s ease;
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.notBuy:hover,.joinBtn:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.up{
+    border-bottom: 2px solid #cfcfcf;
+}
+
+.fa-check{
+    color: #19c37d;
+}
+
+.down{
+    margin-top: 1rem;
+    padding: 0 .5rem;
+}
+
+.down li{
+    font-size: 1.8rem;
+    margin: .5rem 0;
+}
+
+.down li:not(:first-child){
+    margin-left: 1rem;
+}
+
+.active{
+    display: flex;
+}
