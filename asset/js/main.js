@@ -245,13 +245,12 @@ function includesObj(arr,b) {
 
 //News
 function setMeta(data,issue,id,type) {
-    $("head").append(`    
-  <meta property="og:title" content="${data[issue][type][id].title}">
-  <meta property="og:description" content="${data[issue][type][id].subTitle}">
-  <meta property="og:image" content="${data[issue][type][id].cover}">
-  <meta property="og:url" content="${location.href}">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="SicenceJournal®">`)
+    $("meta[property='og:title']").attr("content",data[issue][type][id].title)
+    $("meta[property='title']").attr("content",data[issue][type][id].title)
+    $("meta[property='og:description']").attr("content",data[issue][type][id].subTitle)
+    $("meta[property='description']").attr("content",data[issue][type][id].subTitle)
+    $("meta[property='og:image']").attr("content",data[issue][type][id].cover)
+    $("meta[property='og:url").attr("content",location.href)
 }
 
 function symbolToHexHref(text) {
