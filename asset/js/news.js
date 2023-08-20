@@ -313,50 +313,42 @@ function initScrollRecommend(){
     })
 }
 
-async function getNews(obj) {
-    
+async function getNews(obj) {    
     let id=obj.id
     let issue = 0
-    await fetch("./asset/data/data.json").then(async (res)=>{
-        let check = false
-        let data = await res.json()
-        //Tao header
-        await initHeader(data)
-        //Chay cac thanh phan khac
-        for (let i=0;i<data.length;i++) {
-            if (data[i]["id"]===obj.issue && id >=0 && id<data[i]["news"].length) {
-                issue=i
-                check=true
-                $("title").text(data[issue]["news"][id]["title"])
-                initPath(data,issue,id)
-                initNewsHeaderBox(data,issue,id)
-                initNewsIssueDetailBox(data,issue,id)
-                initNewsShare(data,issue,id)
-                initNewsContent(data,issue,id)
-                initNewsTagBox(data,issue,id)
-                initNewsAuthorBox(data,issue,id)
+    //Lấy data.sjon về
+    const data = await DATA()
+    //Kiểm tra đường dẫn issue và id
+    for (let i=0;i<data.length;i++) {
+        if (data[i]["id"]===obj.issue && id >=0 && id<data[i]["news"].length) {
+            issue=i
+            check=true
+            $("title").text(data[issue]["news"][id]["title"])
+            initPath(data,issue,id)
+            initNewsHeaderBox(data,issue,id)
+            initNewsIssueDetailBox(data,issue,id)
+            initNewsShare(data,issue,id)
+            initNewsContent(data,issue,id)
+            initNewsTagBox(data,issue,id)
+            initNewsAuthorBox(data,issue,id)
+            //Ngoài nội đung
+            initMoreNews(data,issue,id)   //Mới nhất (hoặc chưa đọc)
 
-                initMoreNews(data,issue,id)   //Mới nhất (hoặc chưa đọc)
+            initNextNews(data,issue,id)
+            initSameTopic(data,issue,id) //Cùng chủ đề (Type)
+            initRecommend(data,issue,id)//Random
 
-                initNextNews(data,issue,id)
-                initSameTopic(data,issue,id) //Cùng chủ đề (Type)
-                initRecommend(data,issue,id)//Random
+            initNextPopUp(data,issue,id)
 
-                initNextPopUp(data,issue,id)
-
-                initScrollRecommend()
-                //Meta
-                setMeta(data,issue,id,"news")
-            }
+            initScrollRecommend()
+            //Meta
+            setMeta(data,issue,id,"news")
         }
-        if (!check) {
-            $(".body-container").html(err404HTML())
-        }
-        
-    }).catch(err =>{
-        console.log(err)
-        alert("Lỗi tải trang!")
-    })
+    }
+    //Không trùng thì không tìm thấy 404
+    if (!check) {
+        $(".body-container").html(err404HTML())
+    }
 }
 
 $(document).ready(async()=> {

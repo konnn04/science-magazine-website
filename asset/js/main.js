@@ -1,4 +1,4 @@
-var Types = ["SCIENTIFIC COMMUNITY","PEOPLE & EVENTS","HEALTH","EARTH","PLANTS & ANIMALS"]
+var Types = ["SCIENTIFIC COMMUNITY","PEOPLE & EVENTS","HEALTH","EARTH","BIOLOGY"]
 const KeyWord = ["COVID","HEALTH","EARTH","LGBT"]
 
 const darkContainer = `
@@ -6,6 +6,7 @@ const darkContainer = `
 --body:linear-gradient(315deg, #262626 0%, #121212 74%) no-repeat center center fixed;
 --theme:#111;
 --theme2:#252525;
+--theme3:#303030;
 font-size: 10px;
 --text: #fcfcfc;
 --textOP: #171717;
@@ -15,23 +16,16 @@ font-size: 10px;
 const lightContainer = `
 --bg:linear-gradient(-90deg, rgba(255, 255, 255, 0.9) 40%, rgb(234, 234, 234)),  no-repeat center;
 --body:linear-gradient(315deg, #e8e8e8 0%, #ffffff 74%) no-repeat center center fixed;
---theme:#ffffff;
---theme2:#efefef;
+--theme:#f4f4f4;
+--theme2:#fff;
+--theme3:#efefef;
 font-size: 10px;
 --text: #131313;
 --textOP: #ffffff;
 --text2:#3c3c3c;
 --w-cover-maga:350px;  `
 
-//to top btn
-$(window).scroll(function(){
-    if($(this).scrollTop() > 100){
-        $(".to-top").fadeIn();
-    }
-    else{
-        $(".to-top").fadeOut();
-   }
-})
+
 
 
 
@@ -209,6 +203,24 @@ function initHeaderEvent() {
             location.href = "search.html?kw=" + kw
         }
     })
+    //Sự kiện enter tìm kiếm
+    $(".search-box2 input").on("keydown",(e)=>{
+        if (e.keyCode === 13) {
+            $(".search-box2>.search-icon").click()
+        }
+    })
+
+    $(".search-form .input input").on("keydown",(e)=>{
+        if (e.keyCode === 13) {
+            $(".search>button").click()
+        }
+    })
+
+    $(".search-bar input").on("keydown",(e)=>{
+        if (e.keyCode === 13) {
+            $(".searchBtn>button").click()
+        }
+    })
 
 }
 
@@ -252,3 +264,13 @@ $(document).ready(async function () {
     //Kiểm tra và gắn bảng màu sáng tối
     if (darkCheck) document.documentElement.style = darkContainer
 });
+
+//to top btn
+$(window).scroll(function(){
+    if($(this).scrollTop() > 100){
+        $(".to-top").fadeIn();
+    }
+    else{
+        $(".to-top").fadeOut();
+   }
+})

@@ -14,6 +14,11 @@ ul{
     padding: 0;
     margin: 0;
 }
+
+body{
+    background-color: var(--theme);
+}
+
 main{
     margin-top: 7rem;
     width: 100%;
@@ -22,7 +27,7 @@ main{
 .banner{
     width: 100%;
     min-height: calc(100vh - 7rem);
-    background: url(./sub_bg.png) no-repeat center;
+    background: url(../../img/subs/sub_bg.png) no-repeat center;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -31,8 +36,12 @@ main{
 }
 
 .l-banner{
-    width: 41%;
-    
+    width: 41%;    
+}
+
+.r-banner{
+    width: 30%;
+    min-width:400px;
 }
 
 .l-banner div{
@@ -83,6 +92,7 @@ main{
 }
 
 .shirt-img{
+    transition: all .3s ease;
     margin-left: 1.5rem;
     width: 80%;
     display: flex;
@@ -90,12 +100,25 @@ main{
     overflow: hidden;
 }
 
+.shirt-img:hover{
+    scale: 1.1;
+}
+
 .shirt-img img{
     width: 100%;
 }
 
 .choose{
+    transition: all 1s ease;
     margin-bottom: 2rem;
+    color: var(--text);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.choose.show{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .c-title{
@@ -123,12 +146,17 @@ main{
     flex-wrap: wrap;
 }
 
+
+
 .down li{
     display: flex;
     gap: .5rem;
 }
 
 .pack{
+    opacity: 0;
+    transition: all .6s ease;
+    color: var(--text);
     border: 2px solid #cfcfcf;
     box-sizing: border-box;
     min-width: 30rem;
@@ -142,6 +170,31 @@ main{
                -5px -5px 10px rgba(0, 0, 0, 0.3), 
                5px -5px 10px rgba(0, 0, 0, 0.3), 
                -5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.packs > .pack:nth-child(1) {
+    transform: translateY(100px);
+}
+
+.packs > .pack:nth-child(2) {
+    transform: translateY(200px);
+}
+
+.packs > .pack:nth-child(3) {
+    transform: translateY(300px);
+}
+
+.packs > .pack:nth-child(4) {
+    transform: translateY(400px);
+}
+
+.pack:hover{
+    scale: 1.05;
+}
+
+.packs.show .pack{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .fa-star,.fa-triangle-exclamation{
@@ -257,4 +310,17 @@ main{
 
 .active{
     display: flex;
+} 
+
+
+@media screen and (max-width:860px){
+    .banner{
+        flex-direction: column;
+    }
+    .l-banner,
+    .r-banner{
+        width: 100%;
+        padding: 3rem;
+        max-width: 600px;
+    }
 }

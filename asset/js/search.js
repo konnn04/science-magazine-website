@@ -22,11 +22,9 @@ let noBan=""
 
 
  async function search(kw){
-         let result=[];
-         await fetch("./asset/data/data.json")
-        .then((res)=>res.json())
-        .then(data=>{
-            initCateFilter()
+        let result=[];
+        const data = await DATA()
+        initCateFilter()
             for(let i =0; i < data.length; i++){
                 for(let j =0; j< data[i].news.length; j++){
                     //tim theo ten tac gia, noi dung,subtitle,tags,title
@@ -70,21 +68,21 @@ let noBan=""
                 }
             }
             let html
-        function next() {
-            html = initResults(data,result)
-            //Tinh maxPage
-            if(html.length%maxItem==0){
-                maxPage=parseInt(html.length/maxItem);
+            //Taoj hàm next
+            function next() {
+                html = initResults(data,result)
+                //Tinh maxPage
+                if(html.length%maxItem==0){
+                    maxPage=parseInt(html.length/maxItem);
+                }
+                else maxPage=parseInt(html.length/maxItem) + 1;
+                //tao html cua nut
+                curPage=1
+                initNumPage(html)        
+                $('.result h1 span').html(html.length)
             }
-            else maxPage=parseInt(html.length/maxItem) + 1;
-            //tao html cua nut
-            curPage=1
-            initNumPage(html)        
-            $('.result h1 span').html(html.length)
-        }
-            next()
             
-        })
+            next()
         //in so luong tim kiem
         //khoi tao ket qua tim kiem
         
@@ -298,18 +296,9 @@ function startedFilter(type) {
     initEventFilter(type)
     //Lấy keyword từ href về cho vào input
     $(".search-bar #kw").val(kw)
-    //Khởi tạo header
-    await fetch("./asset/data/data.json")
-        .then((res)=>res.json())
-        .then(async data=>{
-            await initHeader(data);
-        })    
+
     // Tạo sự kiện nhấn nút Filter
     createFilter();
-    //Tạo người dùng header
-    initUser()
-    //Tạo sự kiện cần thiết cho header (Menu, tìm kiếm,...)
-    initHeaderEvent()
     //Kiểm tra 1 trong 3 trường hợp xảy ra để thực hiện tìm kiếm
     //TH1: có keyword để tìm kiếm qua ?kw
     //TH2,3: có type để in ra theo loại như news và research

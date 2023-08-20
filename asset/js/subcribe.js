@@ -1,7 +1,4 @@
 $(document).ready(async function(){
-    await fetch()
-    // initUser()
-    // initHeaderEvent()
     checkCurPlan()
     toSub()
 })
@@ -17,7 +14,21 @@ function checkCurPlan(){
 function toSub(){
     $('.joinBtn').on('click', function() {
         $('html, body').animate({
-            scrollTop: $('#c').offset().top
+            scrollTop: $('#c').offset().top - 100
         }, 800); 
     });
+
+    $(window).scroll(function(){
+        if ($(window).scrollTop() > $(".choose").offset().top - $(window).height() + 200 ) {
+            $(".choose").addClass("show")
+        }else{
+            $(".choose").removeClass("show")
+        }
+
+        if ($(window).scrollTop() > $(".packs").offset().top - $(window).height() + 400 ) {
+            $(".packs").addClass("show")
+        }else{
+            $(".packs").removeClass("show")
+        }
+    })
 }
