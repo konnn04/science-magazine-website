@@ -43,11 +43,16 @@ function initNewsIssueDetailBox(data,issue,id) {
         <div>
         A version of this story appeared in Sicence Journal, issue ${data[issue]["id"]}.
         </div>
-        <a href="#">
-            <div class="icon-pdf">                                
+        <div class="flex">
+            <a href="#">
+                <div class="icon-pdf">                                
                 <i class="fa-solid fa-file-pdf"></i>
+                </div>
+            </a>
+            <div class="btn-mark">
+                <i class="fa-regular fa-bookmark"></i>
             </div>
-        </a>
+        </div>
     </div>
     `)
 }
@@ -313,6 +318,21 @@ function initScrollRecommend(){
     })
 }
 
+function initEventMark(issue,id){
+    let arr = JSON.parse(localStorage.getItem("bookmark"))
+    if (arr.includes("N"+issue+"-"+id)) {
+        $(".btn-mark").addClass("active")
+        $(".btn-mark").find("i").toggleClass("fa-solid")
+        $(".btn-mark").find("i").toggleClass("fa-regular")
+    }
+    $(".btn-mark").click(()=>{
+        $(".btn-mark").toggleClass("active")
+        $(".btn-mark").find("i").toggleClass("fa-solid")
+        $(".btn-mark").find("i").toggleClass("fa-regular")
+        toggleMark("N"+issue+"-"+id)
+    })
+}
+
 async function getNews(obj) {    
     let id=obj.id
     let issue = 0
@@ -342,7 +362,8 @@ async function getNews(obj) {
 
             initScrollRecommend()
             //Meta
-            setMeta(data,issue,id,"news")
+            setMeta(data,issue,id,"news")            
+            initEventMark(issue,id)
         }
     }
     //Không trùng thì không tìm thấy 404
@@ -357,9 +378,6 @@ $(document).ready(async()=> {
     const newsPath = {
         "issue":urlParams.get('issue'),
         "id":parseInt(urlParams.get('id')),        
-    }
-    
+    }    
     await getNews(newsPath)
-    initUser()
-    initHeaderEvent()
 });

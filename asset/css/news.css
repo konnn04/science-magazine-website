@@ -243,6 +243,22 @@ body{
     box-shadow: 4px 4px 2px #00000044;
 }
 
+.n-cover-issue-info .flex{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.n-cover-issue-info .btn-mark{
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.n-cover-issue-info .btn-mark.active i,
+.n-cover-issue-info .btn-mark:hover{
+    color: #ffcc00;
+}
+
 .n-cover-issue-info .icon-pdf{
     background-color: rgb(160, 0, 0);
     height: 5rem;

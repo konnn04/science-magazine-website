@@ -27,7 +27,17 @@ font-size: 10px;
 
 
 
-
+function toggleMark(t){
+    let arr = JSON.parse(localStorage.getItem("bookmark"))
+    let p=arr.indexOf(t)
+    if (p>=0) {
+        arr.splice(p,1)
+        localStorage.setItem("bookmark",JSON.stringify(arr))
+    }else{
+        arr.push(t)
+        localStorage.setItem("bookmark",JSON.stringify(arr))
+    }
+}
 
 async function initHeader(data) {
     await fetch("./asset/htm/header.htm").then(async (res)=>{

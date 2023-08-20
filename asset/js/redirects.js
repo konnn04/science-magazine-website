@@ -1,6 +1,12 @@
 let darkCheck = (localStorage.getItem("theme") == "dark")?true:false
 let nextPage = (sessionStorage.getItem("next")||"./")
 
+let arrBookmark = JSON.parse(localStorage.getItem("bookmark"))
+if (arrBookmark == null) {
+    localStorage.setItem("bookmark","[]")
+    arrBookmark =[]
+}
+
 function getCookie(key) {
     var name = key + "=";
     var ca = document.cookie.split(';');
@@ -31,6 +37,8 @@ if (location.pathname.includes('/login.html')) {
 async function DATA() {
     return await fetch("./asset/data/data.json").then((res)=> res.json())
 }
+
+
 
 function initMeta() { //Bỏ
     document.head.innerHTML+=(`    

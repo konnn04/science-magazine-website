@@ -172,7 +172,8 @@
  }
 
  .category,
- .research-box{
+ .research-box,
+ .bookmark-box{
   width: 100vw;
   height: fit-content;
  }
@@ -313,18 +314,7 @@
   padding-left: 1rem;
 }
 
-@media screen and (max-width:1000px) {
-  .research-box .researchs{
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-}
 
-@media screen and (max-width:640px) {
-  .research-box .researchs{
-    grid-template-columns: 1fr;
-  }
-}
 
 /* category */
  .section-title{ 
@@ -332,9 +322,8 @@
   margin-left: 2rem;
  }
 
- .category div h2,
- .magazine div h2,
- .research-box div h2{
+
+.section-title h2{
   color: var(--text);
   font-size: 3rem;
   padding: 0.5rem;
@@ -469,6 +458,82 @@
 .news-wrapper > span:last-child{
   font-family: 'Arial', sans-serif;
 }
+/* Bookmark */
+.bookmark-box .bookmark-border{
+  padding: 2rem;
+  margin: auto;
+  overflow-y: auto;
+  width: calc(100% - 4rem);
+  max-height: 500px;
+}
+
+.bookmark-box .bookmarks{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.bookmark-box .bookmarks h3{
+  color: var(--text);
+  font-size: 1.8rem;
+  grid-column: 1/span 3;
+  text-align: center;
+  font-style: italic;
+}
+
+.item-bookmark{
+  min-height: 100px;
+  height: 100%;
+  padding: 1rem;
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  border: 1px solid rgba(135,135,135,0.6);
+  transition: all .2s ease;
+  position: relative;
+}
+
+.item-bookmark i{
+  opacity: 0;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  color: rgba(255, 0, 0, 0.76);
+}
+
+.item-bookmark:hover{
+  background-color: #ffcc00;
+  scale: 1.05;
+  color: #121314;
+}
+
+.item-bookmark:hover i{
+  opacity: 1;
+}
+
+.item-bookmark span:nth-child(2),
+.item-bookmark span:nth-child(3){
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  padding-right: .5rem;
+  font-weight: 600;
+}
+
+.item-bookmark span:nth-child(3){
+  padding-left: .5rem;
+  border-left: 2px solid var(--text);
+}
+
+.item-bookmark h4{
+  font-size: 18px;
+  margin: .5rem 0;
+}
+
+.item-bookmark span:nth-child(4){
+  text-transform: uppercase;
+}
 
 /*  */
 .magazine{
@@ -597,3 +662,17 @@ filter: brightness(.5);
   scale: .5;
 }
 
+@media screen and (max-width:1000px) {
+  .research-box .researchs,
+  .bookmark-box .bookmarks{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width:640px) {
+  .research-box .researchs,
+  .bookmark-box .bookmarks{
+    grid-template-columns: 1fr;
+  }
+}

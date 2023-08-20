@@ -27,7 +27,7 @@ main{
    top: -7rem;
    left: 0;
 }
-
+ 
 .toc-path-box{
    width: 100%;    
    margin: 1rem 0;
@@ -171,6 +171,25 @@ main{
 .article{
    width: 100%;
    margin-bottom: 2rem;
+   position: relative;
+}
+
+.article>.mark{
+   position: absolute;
+   right: 1rem;
+   top: 2.2rem;
+   font-size: 2rem;
+   cursor: pointer;
+   transition: all .2s ease;
+}
+
+.article:first-child>.mark{
+   top: .5rem;
+}
+
+.article>.mark:hover,
+.article>.mark i.fa-solid{
+   color: #ffcc00;
 }
 
 .a-title{

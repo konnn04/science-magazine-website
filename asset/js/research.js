@@ -240,6 +240,21 @@ function initResearchShare() {
     $(".share-box a").eq(4).attr("href",`mailto:?subject=Chia%20s%E1%BA%BB%20trang%20web&body=Xin%20ch%C3%A0o,%20m%C3%B4i%20b%E1%BA%A1n%20h%C3%A3y%20ki%E1%BB%83m%20tra%20trang%20web%20n%C3%A0y:%20$`+symbolToHexHref(location.href))
 }
 
+function initEventMark(issue,id) {
+    let arr =JSON.parse(localStorage.getItem("bookmark"))
+    if (arr.includes("R"+issue+"-"+id)) {
+        $("#mark").addClass("active")
+        $("#mark").find("i").toggleClass("fa-solid")
+        $("#mark").find("i").toggleClass("fa-regular")
+    }
+    $("#mark").click(()=>{
+        $("#mark").toggleClass("active")
+        $("#mark").find("i").toggleClass("fa-solid")
+        $("#mark").find("i").toggleClass("fa-regular")
+        toggleMark("R"+issue+"-"+id)
+    })
+}
+
 async function getResearch(obj) {
     let id=obj.id
     let issue = 0
@@ -261,6 +276,9 @@ async function getResearch(obj) {
             initRefsAndNotes(data,issue,id)
             initDataRMenu(data,issue,id)
             initRSide(data,issue,id)
+            //Tao sk mark
+            initEventMark(issue,id)
+
         }
     }
     if (!check) {
@@ -268,6 +286,8 @@ async function getResearch(obj) {
         $(".body-container").html(err404HTML())    
     }
 }
+
+
 
 $(document).ready(async()=> {
     const urlParams = new URLSearchParams(window.location.search);
