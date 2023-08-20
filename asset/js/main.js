@@ -194,7 +194,7 @@ function initHeaderEvent() {
         document.cookie="username=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
         document.cookie="email=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
         setTimeout(()=>{
-            initUser()
+            location.reload()
         },500)
     })
     $(".search>button").click(()=>{

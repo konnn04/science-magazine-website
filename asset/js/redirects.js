@@ -16,16 +16,15 @@ function getCookie(key) {
     return "";
 }
 
-if (location.pathname.includes('/subcribe.html')) {
-    if (!(getCookie("username")!="" || getCookie("email")!="" )) {
-        location.href = "./login.html"
-        sessionStorage.setItem("next","./subcribe.html")
-    }
-}
-
 if (location.pathname.includes('/login.html')) {
     if (getCookie("username")!="" && getCookie("email")!="" ) {
         location.href = "./"
+    }
+}else{
+    if (!(getCookie("username")!="" || getCookie("email")!="" )) {
+        sessionStorage.setItem("next",window.location.href)
+    }else{
+        sessionStorage.setItem("next","./")
     }
 }
 

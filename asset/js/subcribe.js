@@ -6,8 +6,15 @@ $(document).ready(async function(){
 function checkCurPlan(){
    $('.bought').eq(0).addClass('active')
    $('.notBuy').click(function(){
-    $('.bought').removeClass('active')
-    $(this).siblings().addClass('active')
+    //Kiểm tra đã đăng nhập chưa mới mua
+    if (getCookie("username")!="" && getCookie("email")!="") {
+        $('.bought').removeClass('active')
+        $(this).siblings().addClass('active')
+    }else{
+        setTimeout(()=>{
+            location.href="./login.html"
+        },1000)
+    }
    })
 }
 
