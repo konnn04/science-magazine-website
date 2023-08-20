@@ -561,16 +561,18 @@ header nav div>i{
   transform: translate(-100%, 0);
   opacity: 0;
   display: none;
-  position: absolute;
+  position: fixed;
   background-color: #000000;
-  z-index: 999;
+  z-index: 99;
   top:0;
   left: 0;
+  bottom: 0;
   width: 100%;
   max-width: 400px;
   padding: 1rem;
   color: #fff;
-  height: 130vh;
+  overflow-y: auto;
+  user-select: none;
   }
   
 
@@ -697,8 +699,8 @@ header nav div>i{
 .darkmode-box{
   transition: all .2s ease;
   position: absolute;
-  top: calc(100vh - 5rem);
-  left: 1rem;
+  top: 1rem;
+  right: 1rem;
   z-index: 99;
   color: #fff;
 }
@@ -747,7 +749,7 @@ header nav div>i{
     height: 5rem;
     border: 2px solid #ffcc00;
     border-radius: 50px ;
-    z-index: 40;
+    z-index: 7;
     position: fixed;
     right: 2rem;
     bottom: 1rem;
