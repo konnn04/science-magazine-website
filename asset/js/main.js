@@ -74,6 +74,15 @@ function getStringUnixFullDay(milisecond) {
     return ((new Date(milisecond).getMonth()+1)+" " +new Date(milisecond).toDateString().slice(4,7)+" "+ new Date(milisecond).getFullYear())
 }
 
+function getDateForInput() {
+    let currentDate = new Date();
+    let year = currentDate.getFullYear();
+    let month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+    let day = currentDate.getDate().toString().padStart(2, '0');
+    let formattedDate = year + '-' + month + '-' + day;
+    return formattedDate
+}
+
 async function DATA() {
     return await fetch("./asset/data/data.json").then((res)=> res.json())
 }

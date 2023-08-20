@@ -20,10 +20,27 @@ main{
     position: relative;
     margin: 0 auto;
  }
+
+ .content-wrapper .sort{
+   padding: 2rem 0 0 0;
+ }
+ 
+ .content-wrapper .sort select{
+   text-transform: uppercase;
+   font-size: 1.6rem;
+   outline: none;
+   background-color: transparent;
+   color: var(--text);
+   border: 1px solid var(--text2);
+ }
+
+ .sort select option{   
+   background-color: var(--theme);
+ }
  
  .content-box{
     width: 100%;
-    margin-top: 4rem;
+    margin-top: 2rem;
     border-top: 4px solid #ffcc00;
     margin-bottom: 10rem;
  }
@@ -354,7 +371,7 @@ main{
    .filter-box form{
       width: 100%;
    }
-   .f-type{
+   .f-type{ 
       width: 100%;
       margin: 1rem 0;
    }

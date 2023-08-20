@@ -165,7 +165,8 @@ $(document).ready(async(e)=>{
             switch (status) {
                 case 200:{
                     setTimeout(()=>{
-                        location.href='./'
+                        sessionStorage.clear()
+                        location.href= nextPage //ở redirects.js
                     },1000)
                     break
                 }
