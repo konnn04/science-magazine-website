@@ -35,7 +35,10 @@ if (location.pathname.includes('/login.html')) {
 }
 
 async function DATA() {
-    return await fetch("./asset/data/data.json").then((res)=> res.json())
+    return await fetch("./asset/data/data.json").then((res)=> res.json()).catch(err=>{
+        alert("Vui lòng khởi chạy Live Server hoặc truy cập tại https://github.com/konnn04/TKW22_Phu_Trieu")
+        console.log(err)
+    })
 }
 
 
