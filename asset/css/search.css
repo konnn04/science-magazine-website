@@ -193,8 +193,7 @@ main{
     height: 30px;
     border-radius: 40px;
     transition: all 0.2s ease;
-    color: var(--text);
-
+    color: #fff;
  }
 
  .searchBtn button:hover{
