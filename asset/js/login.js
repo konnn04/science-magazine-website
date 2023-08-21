@@ -1,4 +1,7 @@
 var cd=false
+var count = 0
+var bg = ["https://images.hdqwalls.com/wallpapers/planet-science-fiction-among-stars-4k-27.jpg","https://sportishka.com/uploads/posts/2022-11/1667479858_2-sportishka-com-p-feliks-baumgartner-prizhok-iz-stratosferi-2.jpg","https://images.hdqwalls.com/wallpapers/urban-city-science-fiction-4k-or.jpg","https://wallpapercave.com/wp/wp4807893.jpg","https://images.hdqwalls.com/wallpapers/space-science-fiction-4k-de.jpg","https://wallpaperaccess.com/full/824584.jpg","https://www.albayan.ae/polopoly_fs/1.4563978.1669112103!/image/image.jpg"]
+
 const API="https://64b00d29c60b8f941af524b6.mockapi.io/acc"
 
 function initCd() {
@@ -143,6 +146,9 @@ async function checkAcc(){
 }
 
 $(document).ready(async(e)=>{
+    //Tạo ảnh ngẫu nhiên
+    $("body").css("backgroundImage",`url(${bg[Math.floor(Math.random()*bg.length)]})`)
+        
     $('.register-link').click((e)=> { 
         $('.wrapper').addClass('active')    
     });
@@ -159,7 +165,8 @@ $(document).ready(async(e)=>{
             switch (status) {
                 case 200:{
                     setTimeout(()=>{
-                        location.pathname='./home.html'
+                        sessionStorage.clear()
+                        location.href= nextPage //ở redirects.js
                     },1000)
                     break
                 }

@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Learn more about Sicence Journal®'s research">
+    <meta property="og:description" content="Welcome to Science Journal®, a premier online platform dedicated to nurturing a deep-seated passion for science and facilitating the widespread dissemination of knowledge across diverse scientific realms.">
+    <meta property="og:image" content="https://cdn.glitch.global/b598bd4a-1b14-4871-bb74-1961a4f1032a/thubm.png">
+    <meta property="og:url" content="https://konnn04.github.io/TKW22_Phu_Trieu/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SicenceJournal®">
+    <meta property="title" content="Learn more about Sicence Journal®'s research">
+    <meta property="description" content="Welcome to Science Journal®, a premier online platform dedicated to nurturing a deep-seated passion for science and facilitating the widespread dissemination of knowledge across diverse scientific realms.">
+    <meta name="keywords" content="Sicence Journal">
+    <meta name="author" content="Konnn04 and Horyzonn">
+    <meta name="robots" content="index, follow">
+    <!--  -->
     <link rel="stylesheet" href="./asset/css/main.css">
     <link rel="stylesheet" href="./asset/css/main_m.css" media="screen and (max-width: 760px)">
     <link rel="stylesheet" href="./asset/css/research.css" >
@@ -12,6 +24,13 @@
     <script src="./asset/js/redirects.js"></script>
 </head>
 <body>
+    <!-- LOAD  -->
+    <div class="loading-overplay">
+        <div class="text-box">
+           <div class="text1">ScienceJournal®</div>
+           <!-- <div class="text2">Science Journal</div> -->
+        </div>
+    </div>
     <header>
         <!--  -->
     </header>
@@ -74,8 +93,8 @@
                         <div class="btn">
                             <i class="fa-solid fa-bell"></i>
                         </div>
-                        <div class="btn">
-                            <i class="fa-solid fa-bookmark"></i>
+                        <div class="btn" id="mark">
+                            <i class="fa-regular fa-bookmark"></i>
                         </div>                                                  
                         <a href="#supials" id="rdownload">
                             <div class="btn">Download</div>
@@ -102,6 +121,9 @@
                 <p>
                     <!--  -->
                 </p>
+                <div class="img-thumb">
+                    <img src="" alt="">
+                </div>
                 </div>
                 <div class="pdf-view-box" >
                     <!-- initPDFView -->
@@ -124,25 +146,28 @@
                     <div class="cover-box">
                         <img src="./img/maga-cover/2022-1.png" alt="" srcset="">
                     </div>
-                    <div class="other-research-box">
-                        
-                        <!-- initRSide(data,issue,id) -->
-                        
+                    <div class="other-research-box">                        
+                        <!-- initRSide(data,issue,id) -->                        
                     </div>
                 </div>
                 <div class="last-news-box">
                     <h5>LATEST NEWS</h5>
                     <div class="last-news-list">
-                        <!-- <div class="items">
-                            <span>NEWS</span>
-                            <span>27 JUL. 2023</span>
-                            <h6><a href="#">Does social media polarize voters? Unprecedented experiments on Facebook users reveal surprises</a></h6>
-                        </div>
-                        <div class="items">
-                            <span>NEWS</span>
-                            <span>27 JUL. 2023</span>
-                            <h6><a href="#">Does social media polarize voters? Unprecedented experiments on Facebook users reveal surprises</a></h6>
-                        </div> -->
+                        <!--  -->
+                    </div>
+                </div>
+                <!-- Quảng cáo -->
+                <div class="abs">
+                    <span>ADVERTISEMENT</span>
+                    <div class="img">
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <img src="https://cdn.glitch.global/b598bd4a-1b14-4871-bb74-1961a4f1032a/serial-google-ads-bai-3-hinh-thuc-thanh-toan-chi-phi-quang-cao-ads.jpg" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="img">
+                       <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="https://cdn.glitch.global/b598bd4a-1b14-4871-bb74-1961a4f1032a/serial-google-ads-bai-3-hinh-thuc-thanh-toan-chi-phi-quang-cao-ads.jpg" alt="" srcset="">  
+                       </a>
                     </div>
                 </div>
                 <!-- <div class="recommended-box">
@@ -229,6 +254,7 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="./asset/js/loading.js"></script>
     <script src="./asset/js/main.js"></script>
     <script src="./asset/js/research.js"></script>
 </body>

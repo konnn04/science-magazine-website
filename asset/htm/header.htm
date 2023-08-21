@@ -4,14 +4,46 @@
             <i class="fa-solid fa-bars"></i>
         </div>
         <ul class="navigation">
-            <li><a class="nav_links" href="./home.html">News</a></li>
-            <li><a class="nav_links" href="./about.html">About</a></li>
-            <li><a class="nav_links" href="#contact">Contact</a></li>
-            <li><a class="nav_links" href="#">Subcribe</a></li>
+            <li><a class="nav_links" href="./search.html?type=research">Researchs</a></li>
+            <li class="sub1">
+                <a class="nav_links showJournals">
+                    Issues
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+                <div class="subMenuJournal">
+                    <div id="backOverplay"></div>
+                    <!--  -->
+                </div>
+                
+            </li>
+            <li id="about">
+                <a class="nav_links" href="./about.html">
+                    About
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+                <div class="subMenu2">
+                    <ul>
+                        <li>
+                            <a class="nav_links" href="./about.html#misson">Our Mission</a>
+                        </li>
+                        <li>
+                            <a class="nav_links" href="./about.html#scope">Our Scope</a>
+                        </li>
+                        <li>
+                            <a class="nav_links" href="./about.html#contact">Contact</a>
+                        </li>
+                        <li>
+                            <a class="nav_links" href="./about.html#dev">Web Developer</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li><a class="nav_links" href="./subcribe.html">Subcribe</a></li>
+
         </ul>
     </div>
     <div id="mid" class="logo">
-        <a href="./home.html"><p>SicenceJournal®</p></a>
+        <a href="./"><p>ScienceJournal®</p></a>
     </div>
     <div id="right">
         <div class="search-icon">
@@ -19,7 +51,7 @@
         </div>
         <div class="user-check">
             <!--  -->
-        </div>
+        </div>        
     </div>
 </nav>
 <!-- Search -->
@@ -29,7 +61,7 @@
             <input type="search" placeholder="Enter Search Keyword...">
             <div class="search">
                 <div>
-                    <a href="#">ADVANCED SEARCH</a>
+                    <a href="./search.html?type=ad">ADVANCED SEARCH</a>
                 </div>
                 <button>
                     Search
@@ -41,11 +73,7 @@
     <div class="trending-kw">
         <h3>Trending Keyword:</h3>
         <div class="kw-box">
-            <div>aaaaa</div>
-            <div>aaaaa</div>
-            <div>aaaaa</div>
-            <div>aaaaa</div>
-            <div>aaaaa</div>
+            <!--  -->
         </div>
     </div>
 </section>
@@ -65,18 +93,44 @@
         </div>
     </div>
     <div class="menu-item-box">
-        <a href="./home.html">Science Journal®</a>
+        <a href="./">Science Journal®</a>
     </div>
     <div class="menu-item-box nav_col">
         <ul class="nav-list">
-            <li><a href="#">News</a></li>
-            <li><a href="#">Research</a></li>
-            <li><a href="./about.html">About</a></li>
+            <li><a href="./search.html?type=news">News</a></li>
+            <li><a href="./search.html?type=research">Researchs</a></li>
             <li><a href="./about.html#contact">Contact</a></li>
-            <li><a href="#">Subcribe</a></li>
+            <li><a href="./subcribe.html">Subcribe</a></li>
+            <li><a href="./about.html">About</a></li>
         </ul>
     </div>   
-    <div class="menu-item-box"></div>
+    <div class="menu-item-box">
+        <ul class="more-list">
+            <li >
+                <a  id="curentIssue" href="#">Curent Issue</a>
+            </li>
+            <li>
+                <a id="firstPaper" href="#">First release papers</a>
+            </li>
+            <li>
+                <a href="./about.html#contact">Contact us</a>
+            </li>
+            <li>
+                <a href="./about.html">About</a>
+            </li>
+        </ul>
+    </div>
+    <div class="menu-item-box">
+        <div class="social-box">
+            <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+            <div class="icon"><i class="fa-brands fa-twitter"></i></div>
+            <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+            <div class="icon"><i class="fa-brands fa-youtube"></i></div>
+        </div>
+    </div>
+    <div class="menu-item-box">
+        <a style="font-size: 3rem;" href="./">Science Journal®</a>
+    </div>
     <div class="darkmode-box">
         <div class="switch-darkmode">
             <i class="fa-solid fa-moon"></i>

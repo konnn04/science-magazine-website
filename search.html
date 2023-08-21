@@ -1,17 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Search in Sicence Journal®">
+    <meta property="og:description" content="Welcome to Science Journal®, a premier online platform dedicated to nurturing a deep-seated passion for science and facilitating the widespread dissemination of knowledge across diverse scientific realms.">
+    <meta property="og:image" content="https://cdn.glitch.global/b598bd4a-1b14-4871-bb74-1961a4f1032a/thubm.png">
+    <meta property="og:url" content="https://konnn04.github.io/TKW22_Phu_Trieu/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SicenceJournal®">
+    <meta property="title" content="Search in Sicence Journal®">
+    <meta property="description" content="Welcome to Science Journal®, a premier online platform dedicated to nurturing a deep-seated passion for science and facilitating the widespread dissemination of knowledge across diverse scientific realms.">
+    <meta name="keywords" content="Sicence Journal">
+    <meta name="author" content="Konnn04 and Horyzonn">
+    <meta name="robots" content="index, follow">
+    <!--  -->
     <link rel="stylesheet" href="./asset/css/main.css">
     <link rel="stylesheet" href="./asset/css/main_m.css" media="screen and (max-width: 760px)">
     <link rel="stylesheet" href="./asset/css/search.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="https://static.thenounproject.com/png/1201563-200.png" type="image/x-icon">
-    <title>Science Journal</title>
+    <title>Search - Science Journal</title>
     <script src="./asset/js/redirects.js"></script>
 </head>
 <body>
+    <!-- LOAD  -->
+    <div class="loading-overplay">
+        <div class="text-box">
+           <div class="text1">ScienceJournal®</div>
+           <!-- <div class="text2">Science Journal</div> -->
+        </div>
+    </div>
     <header>
         <!--  -->
     </header>
@@ -33,33 +52,37 @@
             <div class="filter-box">
                 <div class="f-type" id="type">
                     <label for="">Type:</label>
-                    <form action="">
-                        <input type="checkbox" name="" id="t-all"> <label for="t-all">All</label> <br>
-                        <input type="checkbox" name="" id="news"> <label for="news">News</label> <br>
-                        <input type="checkbox" name="" id="research"> <label for="research">Research</label> <br>
+                    <form action="" id="type-filter">
+                        <input type="radio" name="typeItem" id="t-all" checked> <label for="t-all">All</label> <br>
+                        <input type="radio" name="typeItem" id="t-news"> <label for="t-news">News</label> <br>
+                        <input type="radio" name="typeItem" id="t-research"> <label for="t-research">Research</label> <br>
                     </form>
                 </div>
                 <div class="f-type" id="category">
                     <label for="">Category:</label>
-                    <form action="">
-                        <input type="checkbox" name="" id="c-all"> <label for="c-all">All</label> <br>
-                        <input type="checkbox" name="" id="scientific-community"> <label for="scientific-community">Scientific Community</label> <br>
-                        <input type="checkbox" name="" id="people&event"> <label for="people&event">People & Event</label> <br>
-                        <input type="checkbox" name="" id="health"> <label for="health">Health</label> <br>
-                        <input type="checkbox" name="" id="earth"> <label for="earth">Earth</label> <br>
-                        <input type="checkbox" name="" id="plants&animals"> <label for="plants&animals">Plants & Animals</label> <br>
+                    <form action="" id="cate-filter">
+                        <input type="checkbox" name="" id="c-all" checked> <label for="c-all">All</label> <br>
+                        <input type="checkbox" name="" id="c-scientific-community"> <label for="c-scientific-community">Scientific Community</label> <br>
+                        <input type="checkbox" name="" id="c-peopleevent"> <label for="c-peopleevent">People & Event</label> <br>
+                        <input type="checkbox" name="" id="c-health"> <label for="c-health">Health</label> <br>
+                        <input type="checkbox" name="" id="c-earth"> <label for="c-earth">Earth</label> <br>
+                        <input type="checkbox" name="" id="c-plantsanimals"> <label for="c-plantsanimals">Plants & Animals</label> <br>
+                        <input type="checkbox" name="" id="c-other"> <label for="c-other">Other</label> <br>
                     </form>
                 </div>
                 <div class="f-type" id="release-date">
                     <label for="">Release Date:</label>
-                    <form action="">
-                        <input type="checkbox" name="" id="r-all"> <label for="r-all">All</label> <br>
-                        <label for="from">From: </label><input type="date" name="" id="from"> <br>
-                        <label for="from">To: </label><input type="date" name="" id="to">
+                    <form action="" id="time-filter">
+                        <input type="radio" name="time" id="r-all" checked> 
+                        <label for="r-all">All</label> <br>
+                        <input type="radio" name="time" id="r-time">                         
+                        <label for="r-time">Date:</label> <br>
+                        <label for="r-from">From: </label><input type="date" name="" id="r-from"> <br>
+                        <label for="r-to">To: </label><input type="date" name="" id="r-to">
                     </form>
                 </div>
                 <div class="revBtn">
-                    <button>Remove All</button>
+                    Remove All
                 </div>
             </div>
         </section>
@@ -67,6 +90,12 @@
                 <h1><span></span> Result Found</h1>
         </div>
         <section class="content-wrapper">
+            <section class="sort">
+                <select name="" id="sort-search" value="0">
+                    <option value="0">Latest</option>
+                    <option value="1">Oldest</option>
+                </select>
+            </section>
             <section class="content-box news">
                 <div class="article-box">
                      <!--  -->
@@ -140,7 +169,8 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="./asset/js/loading.js"></script>
     <script src="./asset/js/main.js"></script>
     <script src="./asset/js/search.js"></script>
 </body>
-</html>
+</html> 

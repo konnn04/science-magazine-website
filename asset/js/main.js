@@ -1,4 +1,4 @@
-var Types = ["SCIENTIFIC COMMUNITY","PEOPLE & EVENTS","HEALTH","EARTH","PLANTS & ANIMALS"]
+var Types = ["SCIENTIFIC COMMUNITY","PEOPLE & EVENTS","HEALTH","EARTH","BIOLOGY"]
 const KeyWord = ["COVID","HEALTH","EARTH","LGBT"]
 
 const darkContainer = `
@@ -6,6 +6,7 @@ const darkContainer = `
 --body:linear-gradient(315deg, #262626 0%, #121212 74%) no-repeat center center fixed;
 --theme:#232425;
 --theme2:#252525;
+--theme3:#303030;
 font-size: 10px;
 --text: #dddddd;
 --textOP: #171717;
@@ -15,37 +16,54 @@ font-size: 10px;
 const lightContainer = `
 --bg:linear-gradient(-90deg, rgba(180, 180, 180, 0.9) 40%, rgb(234, 234, 234)),  no-repeat center;
 --body:linear-gradient(315deg, #e8e8e8 0%, #ffffff 74%) no-repeat center center fixed;
---theme:#ffffff;
---theme2:#efefef;
+--theme:#f4f4f4;
+--theme2:#fff;
+--theme3:#efefef;
 font-size: 10px;
 --text: #131313;
 --textOP: #ffffff;
 --text2:#3c3c3c;
 --w-cover-maga:350px;  `
 
-//to top btn
-$(window).scroll(function(){
-    if($(this).scrollTop() > 100){
-        $(".to-top").fadeIn();
+
+
+function toggleMark(t){
+    let arr = JSON.parse(localStorage.getItem("bookmark"))
+    let p=arr.indexOf(t)
+    if (p>=0) {
+        arr.splice(p,1)
+        localStorage.setItem("bookmark",JSON.stringify(arr))
+    }else{
+        arr.push(t)
+        localStorage.setItem("bookmark",JSON.stringify(arr))
     }
-    else{
-        $(".to-top").fadeOut();
-   }
-})
+}
 
-
-
-async function initHeader() {
+async function initHeader(data) {
     await fetch("./asset/htm/header.htm").then(async (res)=>{
         let text = await res.text()
         $("header").html(text)
         let k=""
         KeyWord.forEach((e,i)=>{
-            k+=`<div>${e}</div>`
+            k+=`<div> <a href="./search.html?kw=${e}">${e}</a> </div>`
         })
         $(".kw-box").html(k)
-        // Tao darkmode
-        
+        // Tao List Journals
+        k=""
+        data.forEach((e,i)=>{
+            k+=`<div class="pad-item" title="${e.name}">
+            <div class="item-journal">
+                <img src="${e.imgCover}" alt="" srcset="">
+                <div class="overplay">
+                    <a href="./table_of_contents.html?issue=${e.id}">See more</a>
+                </div>
+            </div>
+        </div> `
+        })
+        $(".subMenuJournal").html($(".subMenuJournal").html()+k)
+        //Tạo link cho Current Issue và First release papers
+        $("#curentIssue").attr("href",`./table_of_contents.html?issue=${data[data.length-1].id}`)
+        $("#firstPaper").attr("href",`./news.html?issue=${data[data.length-1].id}&id=0`)
     })
 }
 
@@ -56,7 +74,7 @@ function err404HTML() {
            </div>
            <div>
                 <h1>404 NOT FOUND!</h1>
-                <div><a href="./home.html">Return homepage</a></div>
+                <div><a href="./">Return homepage</a></div>
            </div>
         </section>`
 }
@@ -67,6 +85,15 @@ function getStringUnixTime(milisecond) {
 
 function getStringUnixFullDay(milisecond) {
     return ((new Date(milisecond).getMonth()+1)+" " +new Date(milisecond).toDateString().slice(4,7)+" "+ new Date(milisecond).getFullYear())
+}
+
+function getDateForInput() {
+    let currentDate = new Date();
+    let year = currentDate.getFullYear();
+    let month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+    let day = currentDate.getDate().toString().padStart(2, '0');
+    let formattedDate = year + '-' + month + '-' + day;
+    return formattedDate
 }
 
 function getStringUnixDate(milisecond) {
@@ -150,6 +177,13 @@ function initHeaderEvent() {
             document.documentElement.style = lightContainer
         }
     })
+
+    $(".showJournals").click(()=>{
+        $(".sub1").toggleClass("active")
+    })
+    $("#backOverplay").click(()=>{
+        $(".sub1").removeClass("active")
+    })
 //Làm mượt chuyển động + Bù phần khuyết
     // $(window).scroll(function () { 
     //     if ( $(window).scrollTop()>80) {
@@ -165,18 +199,96 @@ function initHeaderEvent() {
     //     }
     // });
     // user 
-    $(".user-info").click(()=>{
-        $(".menu-user-box").toggleClass("show");
+
+    $(".user-info").click(function (){
+        this.querySelector(".menu-user-box").classList.toggle("show");
     })
     $(".menu-user li").click(()=>{
         document.cookie="username=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
         document.cookie="email=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
         setTimeout(()=>{
-            initUser()
+            location.reload()
         },500)
     })
+    $(".search>button").click(()=>{
+        let kw = $(".search-form>.input>input").val().trim()
+        if (kw) {
+            location.href = "search.html?kw=" + kw
+        }
+    })
+    $(".search-box2>.search-icon").click(()=>{
+        let kw = $(".search-box2>input").val().trim()
+        if (kw) {
+            location.href = "search.html?kw=" + kw
+        }
+    })
+    //Sự kiện enter tìm kiếm
+    $(".search-box2 input").on("keydown",(e)=>{
+        if (e.keyCode === 13) {
+            $(".search-box2>.search-icon").click()
+        }
+    })
+
+    $(".search-form .input input").on("keydown",(e)=>{
+        if (e.keyCode === 13) {
+            $(".search>button").click()
+        }
+    })
+
+    $(".search-bar input").on("keydown",(e)=>{
+        if (e.keyCode === 13) {
+            $(".searchBtn>button").click()
+        }
+    })
+
 }
 
-$(document).ready(function () {
+function includesObj(arr,b) {
+    let keys = Object.keys(b) 
+    for (let i of arr) {
+        let k=0
+        for (let key of keys) {
+            if (i[key] == b[key]) k++;
+        }
+        if (k == keys.length) return true
+    }
+    return false
+}
+
+
+//News
+function setMeta(data,issue,id,type) {
+    $("meta[property='og:title']").attr("content",data[issue][type][id].title)
+    $("meta[property='title']").attr("content",data[issue][type][id].title)
+    $("meta[property='og:description']").attr("content",data[issue][type][id].subTitle)
+    $("meta[property='description']").attr("content",data[issue][type][id].subTitle)
+    $("meta[property='og:image']").attr("content",data[issue][type][id].cover)
+    $("meta[property='og:url").attr("content",location.href)
+}
+
+function symbolToHexHref(text) {
+    return text.replace(/[?&=]/g, function(match) {
+        if (match === '?') return '%3F';
+        if (match === '&') return '%26';
+        if (match === '=') return '%3D';
+    });
+}
+//LỆNH DÙNG CHUNG CHO TOÀN TRANG WEB 
+$(document).ready(async function () {
+    //Khởi tạo header
+    await initHeader(await DATA())
+    initUser()
+    initHeaderEvent()
+    //Kiểm tra và gắn bảng màu sáng tối
     if (darkCheck) document.documentElement.style = darkContainer
 });
+
+//to top btn
+$(window).scroll(function(){
+    if($(this).scrollTop() > 100){
+        $(".to-top").fadeIn();
+    }
+    else{
+        $(".to-top").fadeOut();
+   }
+})
