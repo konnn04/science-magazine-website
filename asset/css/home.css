@@ -198,7 +198,7 @@
 .researchs .item-research{
   transition: all .2s ease;
   padding: 1rem;
-  color: var(--text2);
+  color:  #dcdcdc;
   /* background-color: #ffffff05; */
   border: 1px solid rgba(135,135,135,0.6);
   display: flex;
@@ -272,6 +272,7 @@
 
 .researchs .item-research:hover span{
   text-shadow: 1px 1px 2px #000000;  
+  color: #d5d5d5;
 }
 
 .researchs .item-research:hover h4{
@@ -314,7 +315,7 @@
   font-size: 1.2rem;
   display: inline-block;
   text-transform: uppercase;
-  color: var(--text2);
+  color: #d5d5d5;
     margin: .3rem 0;
 }
 
