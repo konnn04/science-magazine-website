@@ -201,6 +201,11 @@ span.type:first-child{
     cursor: pointer;
 }
 
+.r-menu .btn#mark.active,
+.r-menu .btn:hover{
+    color: #ffcc00;
+}
+
 .r-menu.active .menu-read{
     display: block;
 }
@@ -260,6 +265,14 @@ span.type:first-child{
     margin-bottom: 1rem;
 }
 
+.content-box .img-thumb {
+    max-width: 700px;
+    margin: 1rem auto;
+}
+
+.content-box .img-thumb img{
+    width: 100%;
+}
 
 .pdf-view-box>div>button {
     margin: auto;
@@ -282,7 +295,7 @@ span.type:first-child{
 }
 
 .pdf-view-box {
-    color: #000000;
+    color: var(--text2);
     padding:  3rem;
 }
 
@@ -549,9 +562,43 @@ span.type:first-child{
     margin-right: .4rem;
     border-right: 2px solid #00000017;
 }
+/* Quảng cáo */
 
+.rside .abs{
+    width: 100%;
+    max-width: 320px;
+    margin: auto;
+    border: 1px solid var(--text2);
+    padding: 1rem;
+    position: sticky;
+    box-sizing: border-box;
+    top: 10rem;
+    margin-top: 5rem;
+ }
+ 
+ .rside .abs span{
+    position: absolute;
+    text-align: center;
+    top: -1rem;
+    font-size: 1.2rem;
+    background-color: var(--theme2);
+    padding:0  1rem;
+    left: calc(50% - 60px);
+ }
+ 
+ .rside .abs .img{
+    margin: 1rem 0;
+ }
+ 
+ .abs .img img{
+    width: 100%;
+ }
 
 @media screen and (max-width:1200px) {
+    .n-rside .abs{
+        position: static;
+        top: 0;
+    }
     .main{
         display: block;
         max-width: 800px;

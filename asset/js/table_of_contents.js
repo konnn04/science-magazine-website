@@ -1,6 +1,6 @@
 function initPath(data, issue){
     $('.toc-path-box').html(`
-    <span><a href="./home.html">Home</a></span>
+    <span><a href="./">Home</a></span>
     <span>&gt;</span>
     <span><a href="">${data[issue].name}</a></span>
     `)
@@ -44,10 +44,10 @@ function initInfo(data,issue){
     `)
     $("#more").click(()=>{
       if ($("#more").text()=="VIEW MORE") {
-        $(".issue-summary-box>p").text(data[issue].news[0]["content"][0].text)
+        $(".issue-summary-box>p").html(data[issue].news[0]["content"][0].text)
         $("#more").text("VIEW LESS")
       }else{
-        $(".issue-summary-box>p").text(cutString(data[issue].news[0]["content"][0].text,150))
+        $(".issue-summary-box>p").html(cutString(data[issue].news[0]["content"][0].text,150))
         $("#more").text("VIEW MORE")
       }
     })
@@ -58,8 +58,12 @@ function initNews(data,issue){
     let countNews = data[issue].news.length;
     let newsList=""
     for(let i=0;i<countNews;i++){
+        let t = "N"+issue+"-"+i
         newsList+= `        
         <div class="article">
+          <div class="mark" mark="${t}">
+          <i class="fa-regular fa-bookmark"></i>    
+          </div>
           <div class="a-title"><a href="./news.html?issue=${data[issue].id}&id=${i}">${data[issue].news[i].title}</a></div>
           <div class="a-info">
             <p class="author">${data[issue].news[i].author[0].name}</p>
@@ -79,8 +83,12 @@ function initResearchs(data,issue){
     let countResearchs = data[issue].researchs.length;
     let researchsList=""
     for(let i=0;i<countResearchs;i++){
+        let t = "R"+issue+"-"+i
         researchsList+= `        
         <div class="article">
+          <div class="mark" mark="${t}">
+            <i class="fa-regular fa-bookmark"></i>
+          </div>
           <div class="a-title"><a href="./research.html?issue=${data[issue].id}&id=${i}">${data[issue].researchs[i].title}</a></div>
           <div class="a-info">
             <p class="author">${data[issue].researchs[i].authors[0].name}</p>
@@ -108,38 +116,50 @@ function initAllIssue(data) {
     $(".issue-container").html(h)
 }
 
-function init_toc(issueUrl){
+function initEventMark() {
+    let arr = JSON.parse(localStorage.getItem("bookmark"))
+    for (let i=0;i<$(".mark").length;i++) {
+      let t = $(".mark").eq(i).attr("mark")
+      if (arr.includes(t)) {
+        $(".mark").eq(i).find("i").addClass("fa-solid")
+        $(".mark").eq(i).find("i").removeClass("fa-regular")
+      }
+      $(".mark").eq(i).click(()=>{
+        $(".mark").eq(i).find("i").toggleClass("fa-solid")
+        $(".mark").eq(i).find("i").toggleClass("fa-regular")
+        toggleMark(t)
+    })
+    }
+    
+}
+
+async function init_toc(issueUrl){
     let check = false
     let issue = 0
-    fetch("./asset/data/data.json")
-    .then((res)=>res.json())
-    .then(data=>{
-        for (let i=0;i<data.length;i++) {
-          if (data[i]["id"]===issueUrl) {
-            issue=i
-            check=true
-            $("title").text(data[issue]["name"])
-            // $(".cover-img").css({
-            //   "background":`url('${data[issue]["imgCover"]}') no-repeat`
-            // })
-            initPath(data,issue)
-            initControl(data,issue)
-            initInfo(data,issue)
-            initNews(data,issue)
-            initResearchs(data,issue)
-            initAllIssue(data)
-          }
-        }
-        if (!check) {
-          $("body").html(err404HTML()) 
-        }
-    })
+    const data = await DATA()
+    for (let i=0;i<data.length;i++) {
+      if (data[i]["id"]===issueUrl) {
+        issue=i
+        check=true
+        $("title").text(data[issue]["name"])
+        // $(".cover-img").css({
+        //   "background":`url('${data[issue]["imgCover"]}') no-repeat`
+        // })
+        initPath(data,issue)
+        initControl(data,issue)
+        initInfo(data,issue)
+        initNews(data,issue)
+        initResearchs(data,issue)
+        initAllIssue(data)
+        initEventMark()
+      }
+    } 
+    if (!check) {
+      $("body").html(err404HTML()) 
+    }
 }
 
 $(document).ready(async function () {
-  const issueUrl = new URLSearchParams(window.location.search).get('issue');  
-  await initHeader()
-  initUser()
-  initHeaderEvent()
-  init_toc(issueUrl);
+  const issueUrl = new URLSearchParams(window.location.search).get('issue');   
+  await init_toc(issueUrl);
 });

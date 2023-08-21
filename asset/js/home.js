@@ -2,6 +2,8 @@ var currentRFrame=0
 var MagaCover = 0
 var setIntervalFrame
 var cdType = false
+let startXRFrame = 0
+let deltaXRFrame=0
 
 function checkTypeEvent(i,temp) {
     if (temp<= -1*( $(".all-news-items").eq(i).width() - $(document).width())) {
@@ -87,6 +89,29 @@ function initMagaEvent() {
     })
 
     $(".maga-box .overplay>a").attr("href","./table_of_contents.html?issue=" + $(".maga-cover-box.active3").attr("content"))
+    //Sự kiện vuốt
+    $(".maga-border").on("touchstart",function(event) {
+        startXRFrame = event.touches[0].clientX;
+    });
+    $(".maga-border").on("touchmove",function(event) {
+        if (!startXRFrame) {
+            return;
+        }
+        deltaXRFrame = event.touches[0].clientX - startXRFrame;
+                
+    })
+    $(".maga-border").on("touchend",function(event){
+        console.log("ok")
+        if (Math.abs(deltaXRFrame) >= 100) {
+            if (deltaXRFrame > 0) {
+                // Vuốt phải
+                $(".maga-l-arrow").click()
+            } else {
+                // Vuốt trái
+                $(".maga-r-arrow").click()
+            }
+        }   
+    })
 }
 
 function runFrame(i) {
@@ -155,6 +180,7 @@ function initRFrame(data) {
     
 }
 
+
 function initEventRFrame() {
     runFrame(currentRFrame)
     //Gắn sự kiện cho các button khi nhấn vào
@@ -163,6 +189,31 @@ function initEventRFrame() {
             runFrame(i)
         })
     }
+    let recommended = document.querySelector(".recommended")
+    recommended.addEventListener("touchstart", function(event) {
+        startXRFrame = event.touches[0].clientX;
+    });
+    recommended.addEventListener("touchmove", function(event) {
+        if (!startXRFrame) {
+            return;
+        }
+        deltaXRFrame = event.touches[0].clientX - startXRFrame;
+                
+    })
+    recommended.addEventListener("touchend", function(event){
+        let max = $(".recommended .r-frame").length
+        if (Math.abs(deltaXRFrame) >= 100) {
+            if (deltaXRFrame > 0) {
+                // Vuốt phải
+                currentRFrame=(currentRFrame-1<0)?max-1:currentRFrame-1
+                runFrame(currentRFrame)
+            } else {
+                // Vuốt trái
+                currentRFrame=(currentRFrame+1>=max)?0:currentRFrame+1
+                runFrame(currentRFrame)
+            }
+        }   
+    })
 }
 //Tạo các bìa Magaa
 
@@ -196,7 +247,7 @@ function initBoxType(data) {
             for (let type of Types) {
                 if (data[i]["news"][j]["type"]==type) {
                     typeBoxContent[type]+=
-                    `<div class="news">
+                    `<div class="news" title="${data[i]["news"][j]["title"]}">
                             <div class="news-wrapper">
                                 <div class="news-img">
                                     <a href="./news.html?issue=${data[i]["id"]}&id=${j}">
@@ -229,6 +280,31 @@ function initBoxType(data) {
         </div>
     </div>`)
     }   
+    //Bắt sự kiện vuốt
+    for (let i =0; i<$(".t-container").length;i++) {
+        $(".t-container").eq(i).on("touchstart",function(event) {
+            startXRFrame = event.touches[0].clientX;
+        });
+        $(".t-container").eq(i).on("touchmove",function(event) {
+            if (!startXRFrame) {
+                return;
+            }
+            deltaXRFrame = event.touches[0].clientX - startXRFrame;
+                    
+        })
+        $(".t-container").eq(i).on("touchend",function(event){
+            console.log("ok")
+            if (Math.abs(deltaXRFrame) >= 100) {
+                if (deltaXRFrame > 0) {
+                    // Vuốt phải
+                    $(".t-container .l-arrow").eq(i).click()
+                } else {
+                    // Vuốt trái
+                    $(".t-container .r-arrow").eq(i).click()
+                }
+            }   
+        })
+    }
 }
 
 function fixedRFrame() {
@@ -243,55 +319,112 @@ function fixedRFrame() {
     })
 }
 
-function initResearchItems(data) {
-    let h =""
-    let n = 6
+function initResearchItems(data) {    
+    let n = 7
+
+    let h = `<div class="current-issue-box" title="Current Issue is ${data[data.length-1].name}">
+                <div class="img-cur-issue">
+                    <img src="${data[data.length-1].imgCover}" alt="">
+                    <div class="overplay-researchs">
+                        <a href="./table_of_contents.html?issue=${data[data.length-1].id}">See more</a>
+                    </div>
+                </div>                    
+            </div>`
+
     for (let i = data.length-1;i>=0;i--) {
         for (let j=data[i]["researchs"].length-1;j>=0;j--) {
             if (n<=0) {
-                $(".researchs").html(h)
+                $(".researchs").html($(".researchs").html()+h)
                 return
             }else{
                 n--
                 h+=`
-            <div class="item-research">
-                <span>SCIENCE</span>
+            <a class="item-research" href="./research.html?issue=${data[i].id}&id=${j}" title="Click to see ${data[i]["researchs"][j]["title"]}" style="background-image:  linear-gradient(180deg,var(--hover-research1),var(--hover-research2)), url(${data[i]["researchs"][j]["cover"]});">
+                <div class="r-content">
+                <span>${data[i]["researchs"][j]["type"]}</span>
                 <span>${getStringUnixDate(data[i]["researchs"][j]["time"])}</span>
                 <h4>
-                    <a href="./research.html?issue=${data[i].id}&id=${j}">
+                    
                         ${data[i]["researchs"][j]["title"]}
-                    </a>
+                    
                 </h4>
                 <span>${data[i]["researchs"][j]["authors"][0]["name"]}</span>
-            </div>`
+                </div>
+            </a>`
             }
             
             
         }
     }
-    
 }
 
+//Tạo bookmark
+function initBookmark(data) {
+    let h=""
+    for (let i=arrBookmark.length-1;i>=0;i--) {
+        let issue = arrBookmark[i].substring(1,arrBookmark[i].indexOf("-"))
+        let id= arrBookmark[i].substring(arrBookmark[i].indexOf("-")+1,99)
+        let type = arrBookmark[i][0]
+        if (type == "N") {
+            h+=`<div class="item-bookmark">
+            <i class="fa-solid fa-circle-xmark" mark="${arrBookmark[i]}"></i>
+            <span>NEWS</span>
+            <span>${data[issue].news[id].type}</span>
+            <h4>
+                <a href="./news.html?issue=${data[issue].id}&id=${id}">
+                    ${data[issue].news[id].title}
+                </a>
+            </h4>
+            <span>BY ${data[issue].news[id].author[0]["name"]}</span>
+        </div>`
+        }
+        if (type == "R") {
+            h+=`<div class="item-bookmark">
+            <i class="fa-solid fa-circle-xmark" mark="${arrBookmark[i]}"></i>
+            <span>RESEARCH</span>
+            <span>${data[issue].researchs[id].type}</span>
+            <h4>
+                <a href="./research.html?issue=${data[issue].id}&id=${id}">
+                    ${data[issue].researchs[id].title}
+                </a>
+            </h4>
+            <span>BY ${data[issue].researchs[id].authors[0]["name"]}</span>
+        </div>`
+        }         
+    }
+    $(".bookmarks").html(h)
+    if(h=="") {
+        $(".bookmarks").html("<h3>Nothing!</h3>")
+    }
+
+    $(".fa-circle-xmark").click(function(){
+        $(this).parent().remove()
+        toggleMark($(this).attr("mark"))
+        if($(".bookmarks").html()=="") {
+            $(".bookmarks").html("<h3>Nothing!</h3>")
+        }
+    })    
+}
 
 $(document).ready(async()=>{
-    //init header
-    await initHeader()
-    //
-    initUser()
-    initHeaderEvent()    
-    await fetch("./asset/data/data.json")
-    .then(async (res)=>{
-        let data = await res.json()
-        //Khởi tạo r-frame
-        initMagaList(data)
-        initRFrame(data)
-        fixedRFrame()
-
-        // initNewsMain(data)
-        initBoxType(data)
-        initResearchItems(data)
-        initEventRFrame() 
-    })
+    const data = await DATA()
+    //Tạo các trang bìa tạp chí
+    initMagaList(data)
+    //Khởi tạo r-frame
+    initRFrame(data)
+    //In ra các bài báo thuộc cùng thể loại
+    initBoxType(data)
+    //In ra vài bài nghiên cứu
+    initResearchItems(data)
+    //Tạo bookmark???
+    initBookmark(data)
+    //Chỉnh font chữ của frame theo tỉ lệ độ lớn
+    fixedRFrame()
+    //Tạo sự kiện chạy và nhấn RFrame
+    initEventRFrame() 
+    //Tạo sự kiện các bìa tạp chí
     initMagaEvent()
+    //Tạo sự kiện nhấn của các Category
     initTypeEvent()
+    
 })

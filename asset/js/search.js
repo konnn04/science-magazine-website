@@ -1,22 +1,13 @@
-$(document).ready(async function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    let kw = urlParams.get('kw')
-    $(".search-bar #kw").val(kw)
-    await initHeader();
-    createFilter();
-    initUser()
-    initHeaderEvent()
-    if (kw) {
-        await search(kw)
-    }
-});
+
 
 $('.searchBtn button').click(()=>{
     if ($(".search-bar #kw").val().trim()) {
-        window.location.search="?kw="+$(".search-bar #kw").val()
+        //window.location.search="?kw="+$(".search-bar #kw").val()
+        window.history.replaceState( null, null, "?kw="+$(".search-bar #kw").val());
+        search($(".search-bar #kw").val())
     }
 })
-
+ 
 function createFilter(){
     $('.filter').click(()=>{
         $('.filter-box').toggleClass("active");
@@ -26,44 +17,28 @@ function createFilter(){
 let maxItem = 10
 let curPage = 0
 let maxPage=0
+let ban=""
+let noBan=""
+let limitDay = [0,0]
 
  async function search(kw){
-         $(".filter-box").removeClass("active");
-         let result=[];
-         await fetch("./asset/data/data.json")
-        .then((res)=>res.json())
-        .then(data=>{
+        let result=[];
+        const data = await DATA()
+        initCateFilter()
             for(let i =0; i < data.length; i++){
                 for(let j =0; j< data[i].news.length; j++){
-                    let check =false;
-                    //tim theo ten tac gia
-                    for(let k = 0; k < data[i].news[j].author.length;k++){
-                        if(data[i].news[j].author[k].name.toLowerCase().includes(kw.toLowerCase())){
-                            check=true
-                        }
-                    }
-                    //tim theo noi dung
-                    for(let k = 0; k < data[i].news[j].content.length;k++){
-                        if(data[i].news[j].content[k].text && data[i].news[j].content[k].text.toLowerCase().includes(kw.toLowerCase())){
-                            check = true    
-                        }
-                    }
-                    //tim theo subtitle
-                    if(data[i].news[j].subTitle.toLowerCase().includes(kw.toLowerCase())){
-                        check = true
-                    }
-                    //tim theo tags
-                    for(let k = 0; k < data[i].news[j].tags.length;k++){
-                        if(data[i].news[j].tags[k].toLowerCase().includes(kw.toLowerCase())){
-                            check = true
-                        }
-                    }
-                    //tim theo title
-                    if(data[i].news[j].title.toLowerCase().includes(kw.toLowerCase())){
-                        check = true
-                    }
-                    //neu thoa man 1 trong cac dieu kien thi them vao mang
-                    if(check){
+                    //tim theo ten tac gia, noi dung,subtitle,tags,title
+                    let text =data[i].news[j].subTitle.toLowerCase()+" "+data[i].news[j].title.toLowerCase()+" "
+                    data[i].news[j].content.forEach((e,i)=>{
+                        if(e.text) text+=e.text.toLowerCase()+" "                        
+                    })
+                    data[i].news[j].author.forEach((e,i)=>{
+                        if(e.name) text+=e.name.toLowerCase()+" "                        
+                    })
+                    data[i].news[j].tags.forEach((e,i)=>{
+                        if(e) text+=e.toLowerCase()+" "                         
+                    })
+                    if (text.includes(kw.toLowerCase())) {
                         result.push({
                             issue:i,
                             id:j,
@@ -72,67 +47,95 @@ let maxPage=0
                             cate:data[i].news[j].type
                         })
                     }
-                }
-                
-                
+                }                
+                 
                 for(let j=0; j< data[i].researchs.length; j++){
-                    let check = false;
-                    //tim theo title
-                    if(data[i].researchs[j].title.toLowerCase().includes(kw.toLowerCase())){
-                        check = true
-                    }
-                    //tim theo type
-                    if(data[i].researchs[j].type.toLowerCase().includes(kw.toLowerCase())){
-                        check = true
-                    }
-                    //tim theo author
-                    for(let k=0;k<data[i].researchs[j].authors.length;k++){
-                        if(data[i].researchs[j].authors[k].name.toLowerCase().includes(kw.toLowerCase())){
-                            check=true;
-                        }
-                    }
+                    //tim theo title, type, author,abstract
+                    let text = data[i].researchs[j].title.toLowerCase()+" "+data[i].researchs[j].type.toLowerCase()+" "+data[i].researchs[j].summary.toLowerCase()+" "+data[i].researchs[j].abstract.toLowerCase()+" "
+                    data[i].researchs[j].authors.forEach((e,i)=>{
+                        text+=e.name.toLowerCase()+" "
+                    })
                     //tim theo summary
-                    if(data[i].researchs[j].summary.toLowerCase().includes(kw.toLowerCase())){
-                        check = true
-                    }
-                    //neu thoa man 1 trong cac dieu kien thi them vao mang
-                    if(check){
+                    if(text.includes(kw.toLowerCase())){
                         result.push({
                             issue:i,
                             id:j,
                             type:"Research",
                             time:data[i].researchs[j].time,
-                            cate:""
+                            cate:data[i].researchs[j].type
                         })
                     }
                 }
             }
-        let html = initResults(data,result)
-        //Tinh maxPage
-        if(html.length%maxItem==0){
-            maxPage=parseInt(html.length/maxItem);
-        }
-        else maxPage=parseInt(html.length/maxItem) + 1;
-        //tao html cua nut
-        curPage=1
-        initNumPage(html)        
-            
-        })
+            let html
+            //Taoj hàm next
+            function next() {
+                html = initResults(data,result)
+                //Tinh maxPage
+                if(html.length%maxItem==0){
+                    maxPage=parseInt(html.length/maxItem);
+                }
+                else maxPage=parseInt(html.length/maxItem) + 1;
+                //tao html cua nut
+                curPage=1
+                initNumPage(html)        
+                $('.result h1 span').html(html.length)
+            }
+            $("#sort-search").on("change",()=>{
+                next()
+            })
+            next()
         //in so luong tim kiem
-        $('.result h1 span').html(result.length)
         //khoi tao ket qua tim kiem
         
      
  }
 
+ //Tạo các bộ lọc
+ //ban: là không có tick
+ //noBan: là có tick
+ function initCateFilter() {
+    ban = ""
+    noBan = ""
+    if ($("#cate-filter #c-scientific-community").is(':checked')) {
+        noBan+= "Scientific Community "
+    }else{
+        ban+= "Scientific Community "
+    }
+    if ($("#cate-filter #c-peopleevent").is(':checked')) {
+        noBan+= "People & Events "
+    }else{
+        ban+= "People & Events "
+    }
+    if ($("#cate-filter #c-health").is(':checked')) {
+        noBan+= "Health "
+    }else{
+        ban+= "Health "
+    }
+    if ($("#cate-filter #c-earth").is(':checked')) {
+        noBan+= "Earth "
+    }else{
+        ban+= "Earth "
+    }
+    if ($("#cate-filter #c-plantsanimals").is(':checked')) {
+        noBan+= "Plants & Animals "
+    }else{
+        ban+= "Plants & Animals "
+    }
+ }
+//Chia mảng HTML kết quả và in ra dựa vào trang hiện tại
  function dividePage(html) {
     let h=""
-    for (let i = (curPage-1) * maxItem;i<(curPage) * maxItem;i++){
+    //Kiểm tra rằng có í hơn maxTiem không tránh chạy tràn
+    let length = (curPage * maxItem - html.length < 0)?(curPage * maxItem):html.length;
+    
+    for (let i = (curPage-1) * maxItem;i<length;i++){
         h+=html[i]
     }
     $(".article-box").html(h)
  }
 
+//Hàm tạo đánh số trang và tính số trang đối đa
 function initNumPage(html) {
     let pageNum = ""
     if (maxPage==0) {
@@ -140,42 +143,83 @@ function initNumPage(html) {
         $(".page-ctrl").html("")
         return
     } 
+    //Nếu có nhiều hơn 1 trang
+    //Thì in ra bộ nút
     if(maxPage!=1){
         for (let i=1;i<=maxPage;i++) {
             pageNum+=`<button class="midPage">${i}</button>`
         }
+        //Nếu đang ở trang đầu thì k in ra <--
         if (curPage == 1) {
             pageNum+=`<button class="nextPage">&rarr;</button>`
+        //Nếu đang ở trang cuối thì k in ra -->
         }else if (curPage==maxPage) {
             pageNum=`<button class="prevPage">&larr;</button>`+pageNum
         }else{
+            //Nằm khoảng giữa thì in cả <-- và -->
             pageNum=`<button class="prevPage">&larr;</button>` + pageNum+`<button class="nextPage">&rarr;</button>`
         }
         $(".page-ctrl").html(pageNum)
     } 
+        //Tạo sự kiện các nút đã tạo
+    //Trang kế
     $(".page-ctrl .nextPage").click(()=>{
         curPage++
         initNumPage(html)
+        $("html,body").animate({scrollTop:0},'slow');
     })
+    //Trang lùi
     $(".page-ctrl .prevPage").click(()=>{
         curPage--
         initNumPage(html)
+        $("html,body").animate({scrollTop:0},'slow');
     })
+    //Các số trang
     for (let i=0;i<$(".midPage").length;i++) {
         $(".midPage").eq(i).click(()=>{
             curPage=i+1
             initNumPage(html)
+            $("html,body").animate({scrollTop:0},'slow');
         })
     }
     $(".midPage").eq(curPage-1).addClass("active")
+    //Tiến hành chia số trang in ra dựa vào trang hiện tại
     dividePage(html)
 
 }
 
+//Hàm lọc Cate
+//Tác dụng: so sánh bộ lọc hiện tại để hiển thị kết quả hay không
+function filterCate(e) {
+    //Nếu mọi thời gian thì tiếp tục
+    if ($("#r-time").is(':checked')) {
+        if (e.time<limitDay[0] || e.time>limitDay[1]) return false
+
+    }
+    //Nếu tick all thì mọi thể loại đều được in ra
+    if ($("#c-all").is(':checked')) return true
+    let cate = e.cate.toUpperCase().trim()
+    //c-other là trường hợp đặc biệt
+    if ($("#cate-filter #c-other").is(':checked')) {
+        //Nếu lấy cả other thì mình lọc bỏ những thứ chưa được tick trên filter
+        if (!ban.toUpperCase().includes(cate)) return true
+    }else{
+        //Nếu không lấy other thì mình chỉ lấy những thứ đã tick
+        if (noBan.toUpperCase().includes(cate)) return true
+    }
+    return false
+}
+
+//Tạo mảng các thành phần HTML kết quả tìm kiếm
+//Mục đích: Chia trang tránh làm trang dài
  function initResults(data,result) {
+    let filterType = {
+        "news":($("#t-all").is(':checked') || $("#t-news").is(':checked')),
+        "research":($("#t-all").is(':checked') || $("#t-research").is(':checked')),
+    }
     let h=[]
     result.forEach((e,i) => {
-        if (e.type == "News") {
+        if (e.type == "News"&& filterCate(e) && filterType.news) {
             h.push(`<div class="article">
             <div class="a-type">News</div>
             <div class="a-cate">${data[e.issue].news[e.id]["type"]}</div>
@@ -189,7 +233,8 @@ function initNumPage(html) {
               <p>${cutString(data[e.issue].news[e.id]["content"][0].text,200)}</p>
             </div>
           </div>`)
-        }else{
+        }
+        if (e.type == "Research"&& filterCate(e) && filterType.research){
             h.push(`<div class="article">
             <div class="a-type">Research</div>
             <div class="a-cate">${data[e.issue].researchs[e.id]["type"]}</div>
@@ -205,5 +250,85 @@ function initNumPage(html) {
           </div>`)
         }
     });
+    if ($("#sort-search").val() == '0') {
+        h.reverse()
+    }
     return h
  }
+
+ //Hàm khởi tạo QUY TẮC Category 
+ function initEventFilter() {
+    //Gán sẳn ngày 
+    $("#r-from").val("2020-01-01")
+    $("#r-to").val(getDateForInput())
+    limitDay[0]= new Date($("#r-from").val()).getTime()
+    limitDay[1]= new Date($("#r-to").val()).getTime()
+    //Sự kiện lấy thời gian
+    $("#r-from").on("input",(e)=>{
+        limitDay[0]= new Date($("#r-from").val()).getTime()
+    })
+    $("#r-to").on("input",(e)=>{
+        limitDay[1]= new Date($("#r-to").val()).getTime()
+    })
+    //Nếu tick cate-all thì bỏ tất cả tick còn lại
+    $("#category input#c-all").click(()=>{
+        if ($("#category #c-all").is(":checked")) {
+            $("#category input:not('#c-all')").prop('checked', false)
+        }
+    })
+    //Ngược lại tick k phải cate-all thì bỏ tick chỗ cate-all
+    $("#category input:not('#c-all')").click(()=>{
+        if ($("#category #c-all").is(":checked")) {
+            $("#category #c-all").prop('checked', false)
+        }
+    })
+    //Xóa về mặc định cho cate-all
+    $(".revBtn").click(()=>{
+        $("#t-all").click()
+        if (!$("#c-all").is(":checked")) {
+            $("#c-all").click()
+            $("#r-all").click()
+        }
+    })
+ }
+
+//Kiểm tra xem location.search có type không
+//Nếu có thì chỉnh bộ lọc
+function startedFilter(type) {
+    if (type) {
+        //Nếu là news thì bỏ 2 tick research và all
+        if (type.toUpperCase()=="NEWS") {
+            $("#t-news").prop('checked',true)
+            $("#type-filter input:not('#t-news')").prop('checked',false)
+        }
+        //ngược lại
+        if (type.toUpperCase()=="RESEARCH") {
+            $("#t-research").prop('checked',true)
+            $("#type-filter input:not('#t-research')").prop('checked',false)
+        }
+        if (type=="ad") {
+            $(".filter-box").addClass("active")
+        }
+    }
+}
+
+ $(document).ready(async function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    let kw = urlParams.get('kw')
+    let type = urlParams.get('type')
+    //Tick sẵn loại type qua ?type
+    startedFilter(type)
+    //Tạo quy tắc cho filter (all và ..v..v..)
+    initEventFilter(type)
+    //Lấy keyword từ href về cho vào input
+    $(".search-bar #kw").val(kw)
+
+    // Tạo sự kiện nhấn nút Filter
+    createFilter();
+    //Kiểm tra 1 trong 3 trường hợp xảy ra để thực hiện tìm kiếm
+    //TH1: có keyword để tìm kiếm qua ?kw
+    //TH2,3: có type để in ra theo loại như news và research
+    if (kw || type.toUpperCase()=="NEWS"|| type.toUpperCase()=="RESEARCH") {
+        await search(kw||"")
+    }
+});

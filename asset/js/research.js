@@ -1,10 +1,10 @@
 function initPath(data,issue,id) {
     $(".r-path-box").html(`
-    <span> <a href="./home.html">HOME</a> </span>
+    <span> <a href="./">HOME</a> </span>
     <span>></span>
     <span> <a href="./table_of_contents.html?issue=${data[issue].id}">${data[issue].name.toUpperCase()}</a></span>
     <span>></span>
-    <span> <a href="#">RESEARCH</a> </span>
+    <span> <a href="./search.html?type=research">RESEARCH</a> </span>
     <span>></span>
     <span>${data[issue]["researchs"][id]["title"].toUpperCase()}`)
 }
@@ -12,26 +12,32 @@ function initPath(data,issue,id) {
 function initHeaderContent(data,issue,id) {
     //Chủ đề 1
     $(".sub-header").html(`
-    <span class="type">RESEARCH ARTICLE</span>
-    <span class="type">${data[issue]["researchs"][id]["type"]}</span>
+    <span class="type">
+        <a href="./search.html?type=research">RESEARCH ARTICLE</a>
+    </span>
+    <span class="type">
+        <a href="./search.html?kw=${data[issue]["researchs"][id]["type"]}" >${data[issue]["researchs"][id]["type"]}</a>
+    </span>    
     `)
     //Tiêu đề 2
     $(".r-header h1").html(`<h1>${data[issue]["researchs"][id]["title"]}</h1>`)
     //Các tác giả 3
     let h=""
     for (let i=0; i<6;i++) {
+        let name =data[issue]["researchs"][id]["authors"][i]["name"]
         h+=`
         <div class="author-items">
-            <a href="#">${data[issue]["researchs"][id]["authors"][i]["name"]}</a> 
+            <a href="./search.html?kw=${name}">${name}</a> 
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/ORCID_iD.svg/768px-ORCID_iD.svg.png" alt="" srcset="">,
         </div>`
     }
     $(".r-author-box").html(`${h} + <button id="showmore-author">+${data[issue]["researchs"][id]["authors"].length - 6} Authors</button>`)
     $(".r-author-box button").click(()=>{
         for (let i=0; i<data[issue]["researchs"][id]["authors"].length; i++) {
+            let name =data[issue]["researchs"][id]["authors"][i]["name"]
             h+=`
             <div class="author-items">
-                <a href="#">${data[issue]["researchs"][id]["authors"][i]["name"]}</a> 
+                <a href="./search.html?kw=${name}">${name}</a> 
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/ORCID_iD.svg/768px-ORCID_iD.svg.png" alt="" srcset="">,
             </div>`
         }
@@ -55,15 +61,16 @@ function initHeaderContent(data,issue,id) {
        setTimeout(()=>{
         $("html,body").animate({scrollTop:$(window).scrollTop() - 120},'slow');
        },100)
-
     })
 }
 //Tạo Summary và Abstract
 function initNewsContent(data,issue,id) {
     //Tạo đoạn tóm tắt
-    $("#summary p").text(data[issue]["researchs"][id]["summary"])
+    $("#summary p").html(data[issue]["researchs"][id]["summary"])
     //Tạo đề abstract
-    $("#abstract p").text(data[issue]["researchs"][id]["abstract"])
+    $("#abstract p").html(data[issue]["researchs"][id]["abstract"])
+    //Gắn thumb cho abstract
+    $("#abstract img").attr("src",data[issue]["researchs"][id]["cover"])
     //
     
 }
@@ -227,55 +234,68 @@ $(window).scroll(function () {
 });
 
 function initResearchShare() {
-    $(".share-box a").eq(0).attr("href",`https://www.facebook.com/sharer/sharer.php?u=` + location.href)
-    $(".share-box a").eq(1).attr("href",`https://twitter.com/intent/tweet?url=` + location.href)
-    $(".share-box a").eq(2).attr("href",`https://www.linkedin.com/sharing/share-offsite/?url=` + location.href)
-    $(".share-box a").eq(3).attr("href",`https://www.reddit.com/submit?url=` + location.href)
-    $(".share-box a").eq(4).attr("href",`mailto:?subject=Chia%20s%E1%BA%BB%20trang%20web&body=Xin%20ch%C3%A0o,%20m%C3%B4i%20b%E1%BA%A1n%20h%C3%A3y%20ki%E1%BB%83m%20tra%20trang%20web%20n%C3%A0y:%20` + location.href)
+    $(".share-box a").eq(0).attr("href",`https://www.facebook.com/sharer/sharer.php?u=`+symbolToHexHref(location.href))
+    $(".share-box a").eq(1).attr("href",`https://twitter.com/intent/tweet?url=`+symbolToHexHref(location.href))
+    $(".share-box a").eq(2).attr("href",`https://www.linkedin.com/sharing/share-offsite/?url=`+symbolToHexHref(location.href))
+    $(".share-box a").eq(3).attr("href",`https://www.reddit.com/submit?url=`+symbolToHexHref(location.href))
+    $(".share-box a").eq(4).attr("href",`mailto:?subject=Chia%20s%E1%BA%BB%20trang%20web&body=Xin%20ch%C3%A0o,%20m%C3%B4i%20b%E1%BA%A1n%20h%C3%A3y%20ki%E1%BB%83m%20tra%20trang%20web%20n%C3%A0y:%20$`+symbolToHexHref(location.href))
+}
+
+function initEventMark(issue,id) {
+    let arr =JSON.parse(localStorage.getItem("bookmark"))
+    if (arr.includes("R"+issue+"-"+id)) {
+        $("#mark").addClass("active")
+        $("#mark").find("i").toggleClass("fa-solid")
+        $("#mark").find("i").toggleClass("fa-regular")
+    }
+    $("#mark").click(()=>{
+        $("#mark").toggleClass("active")
+        $("#mark").find("i").toggleClass("fa-solid")
+        $("#mark").find("i").toggleClass("fa-regular")
+        toggleMark("R"+issue+"-"+id)
+    })
 }
 
 async function getResearch(obj) {
     let id=obj.id
     let issue = 0
-    await fetch("./asset/data/data.json").then(async (res)=>{
-        let check = false
-        let data = await res.json()
-        for (let i=0;i<data.length;i++) {
-            if (data[i]["id"]===obj.issue && id >=0 && id<data[i]["researchs"].length) {
-                issue=i
-                check=true
-                $("title").text(data[issue]["researchs"][id]["title"])
-                initPath(data,issue,id)
-                initResearchShare()
-                initHeaderContent(data,issue,id)
-                initNewsContent(data,issue,id)
-                initPDFView(data,issue,id)
-                initDownloadDoc(data,issue,id)
-                initRefsAndNotes(data,issue,id)
-                initDataRMenu(data,issue,id)
-                initRSide(data,issue,id)
-            }
+    let data = await DATA() //Lấy data file.json
+    let check = false
+    //Kiểm tra xem issue và id có hợp lệ không?
+    for (let i=0;i<data.length;i++) {
+        if (data[i]["id"]===obj.issue && id >=0 && id<data[i]["researchs"].length) {
+            //Nếu có
+            issue=i
+            check=true
+            $("title").text(data[issue]["researchs"][id]["title"])
+            initPath(data,issue,id)
+            initResearchShare()
+            initHeaderContent(data,issue,id)
+            initNewsContent(data,issue,id)
+            initPDFView(data,issue,id)
+            initDownloadDoc(data,issue,id)
+            initRefsAndNotes(data,issue,id)
+            initDataRMenu(data,issue,id)
+            initRSide(data,issue,id)
+            //Tao sk mark
+            initEventMark(issue,id)
+
         }
-        if (!check) {
-            $(".body-container").html(err404HTML())
-        }
-        
-    }).catch(err =>{
-        console.log(err)
-        alert("Lỗi tải trang!")
-    })
+    }
+    if (!check) {
+        //Nếu không có
+        $(".body-container").html(err404HTML())    
+    }
 }
+
+
 
 $(document).ready(async()=> {
     const urlParams = new URLSearchParams(window.location.search);
     const newsPath = {
         "issue":urlParams.get('issue'),
         "id":parseInt(urlParams.get('id')),        
-    }
-    await initHeader()
-    // initKeyWordsHeader()
-    initUser()
-    initHeaderEvent()
+    }    
     //Khởi tạo trang web 
-    getResearch(newsPath)
+    await getResearch(newsPath)
 });

@@ -99,7 +99,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #353637;
+    background-color: #2d2d2d;
     height: 80vh;
     width: 100vw;
 }
@@ -240,6 +240,23 @@ body{
     justify-content: space-between;
     margin-bottom: 3rem;
     z-index: 9;
+    box-shadow: 4px 4px 2px #00000044;
+}
+
+.n-cover-issue-info .flex{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.n-cover-issue-info .btn-mark{
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.n-cover-issue-info .btn-mark.active i,
+.n-cover-issue-info .btn-mark:hover{
+    color: #ffcc00;
 }
 
 .n-cover-issue-info .icon-pdf{
@@ -302,27 +319,27 @@ body{
     transition: all .1s ease;
 }
 
-.icon-share:nth-child(1):hover {
+.n-share-box>a:nth-child(2):hover>.icon-share {
     color: #fff;
     background-color: #547cd1;
     scale: .9;
 }
-.icon-share:nth-child(2):hover {
+.n-share-box>a:nth-child(3):hover>.icon-share {
     color: #fff;
     scale: .9;
     background-color: #1da1f2;
 }
-.icon-share:nth-child(3):hover {
+.n-share-box>a:nth-child(4):hover>.icon-share{
     color: #fff;
     scale: .9;
     background-color: #3a5898;
 }
-.icon-share:nth-child(4):hover {
+.n-share-box>a:nth-child(5):hover>.icon-share {
     color: #fff;
     scale: .9;
     background-color: #f05c5c;
 }
-.icon-share:nth-child(5):hover {
+.n-share-box>a:nth-child(6):hover>.icon-share {
     color: #fff;
     scale: .9;
     background-color: #d19354;
@@ -463,7 +480,7 @@ body{
 
 .n-rside{
     font-family: 'Merriweather Sans', sans-serif;
-    background-color: #0000000b;
+    background-color: var(--theme2);
     padding: 1rem;
 }
 
@@ -513,12 +530,12 @@ body{
 .n-rside-item-text span:nth-child(1) {
     border-right: 1px solid var(--text2);
     padding-right: .5rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .n-rside-item-text span:nth-child(2) {
     padding-left: .5rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 0;
 }
 
@@ -584,6 +601,39 @@ div>img{
     color:#ffcc00;
 }
 
+
+/* Quảng cáo */
+
+.n-rside .abs{
+    width: 100%;
+    max-width: 320px;
+    margin: auto;
+    border: 1px solid var(--text2);
+    padding: 1rem;
+    position: sticky;
+    box-sizing: border-box;
+    top: 10rem;
+    margin-top: 5rem;
+ }
+ 
+ .n-rside .abs span{
+    position: absolute;
+    text-align: center;
+    top: -1rem;
+    font-size: 1.2rem;
+    background-color: var(--theme2);
+    padding:0  1rem;
+    left: calc(50% - 60px);
+ }
+ 
+ .n-rside .abs .img{
+    margin: 1rem 0;
+ }
+ 
+ .abs .img img{
+    width: 100%;
+ }
+
 @media screen and (max-width:1650px) {
     .n-share-box{
         position: static;
@@ -616,7 +666,11 @@ div>img{
         margin: 0;
         height: 0;
     }
-
+    .aside .abs{
+        position: relative;
+        bottom: 0;
+        top: 0;
+     }
 }
 
 @media screen and (max-width:980px) {

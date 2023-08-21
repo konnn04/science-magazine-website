@@ -2,22 +2,24 @@ let popupTemp = []
 
 function initPath(data,issue,id) {
     $(".n-path-box").html(`
-    <span> <a href="./home.html">HOME</a> </span>
+    <span> <a href="./">HOME</a> </span>
     <span>></span>
     <span> <a href="./table_of_contents.html?issue=${data[issue].id}">${data[issue].name.toUpperCase()}</a></span>
     <span>></span>
-    <span> <a href="#">NEWS</a> </span>
+    <span> <a href="./search.html?type=news">NEWS</a> </span>
     <span>></span>
     <span>${data[issue]["news"][id]["title"].toUpperCase()}`)
 }
 
 function initNewsHeaderBox(data,issue,id) {
     $(".n-header-box").html($(".n-header-box").html() + `
-    <h6>${data[issue]["news"][id]["type"]}</h6>
+    <h6><a href="./search.html?kw=${data[issue]["news"][id]["type"]}">
+        ${data[issue]["news"][id]["type"]}
+    </a></h6>
     <h1>${data[issue]["news"][id]["title"]}</h1>
     <h5>${data[issue]["news"][id]["subTitle"]}</h5>
     <hr>
-    <span> ${getStringUnixTime(data[issue]["news"][id]["time"])} • ${data[issue]["news"][id]["author"][0]["name"].toUpperCase()}</span>
+    <span> ${getStringUnixTime(data[issue]["news"][id]["time"])} • <a href="./search.html?kw=${data[issue]["news"][id]["author"][0]["name"]}">${data[issue]["news"][id]["author"][0]["name"].toUpperCase()}</a></span>
     <div class="n-img-box">
         <img src="${data[issue]["news"][id]["cover"]}" alt="" srcset="">
         <span>${data[issue]["news"][id]["desCover"]}</span>
@@ -41,11 +43,16 @@ function initNewsIssueDetailBox(data,issue,id) {
         <div>
         A version of this story appeared in Sicence Journal, issue ${data[issue]["id"]}.
         </div>
-        <a href="#${""}">
-            <div class="icon-pdf">                                
+        <div class="flex">
+            <a href="#">
+                <div class="icon-pdf">                                
                 <i class="fa-solid fa-file-pdf"></i>
+                </div>
+            </a>
+            <div class="btn-mark">
+                <i class="fa-regular fa-bookmark"></i>
             </div>
-        </a>
+        </div>
     </div>
     `)
 }
@@ -110,7 +117,7 @@ function initNewsContent(data,issue,id) {
 
 function initNewsTagBox(data,issue,id) {
     for (let i of data[issue]["news"][id]["tags"]) {
-        $(".tag-box").html(  $(".tag-box").html() +`<a href="#"> <span>${i.toUpperCase()}</span> </a>`)
+        $(".tag-box").html(  $(".tag-box").html() +`<a href="./search.html?kw=${i}"> <span>${i.toUpperCase()}</span> </a>`)
     }
 }
 
@@ -130,7 +137,7 @@ function initNewsAuthorBox(data,issue,id) {
                         <img src="${i["avt"] || "https://img.freepik.com/free-icon/user_318-180888.jpg"}" alt="" srcset="">
                     </div>
                     <div class="info-text">
-                        <h5> ${i["name"]} ${social}</h5>
+                        <h5> <a href="./search.html?kw=${i["name"]}">${i["name"]} ${social}</a></h5>
                         <span>${i["job"]}</span>
                         <p>${i["bio"]}</p>
                     </div>
@@ -145,7 +152,7 @@ function initNextNews(data,issue,id) {
     let j=id+1
     for (i;i<data.length;i++) {
         for (j;(j<data[i]["news"].length && count>0);j++) {
-            if (popupTemp.length<1) popupTemp.push({"i":i,"id":j})
+            if (popupTemp.length<1 && !includesObj(popupTemp,{"i":i,"id":j})) popupTemp.push({"i":i,"id":j}) //NEXT POPUP
             count--
                 $(".n-rside-item-box").eq(1).html(
                     $(".n-rside-item-box").eq(1).html()+
@@ -176,7 +183,6 @@ function initMoreNews(data,issue,id) {
     for (let j=0;(j<data[issue]["news"].length && count>0);j++) {
         if (id != j) {
             count--
-            if (popupTemp.length<2) popupTemp.push({"i":issue,"id":j})
             $(".n-more-items-box").html(
                 $(".n-more-items-box").html()+
                 `<div class="n-more-items">
@@ -206,7 +212,7 @@ function initSameTopic(data,issue,id) {
         for (let j=0;(j<data[i]["news"].length && count>0);j++) {
             if (data[i]["news"][j]["type"].toUpperCase() === topic && !(issue==i && j==id)) {
                 count--
-            if (popupTemp.length<3) popupTemp.push({"i":i,"id":j})
+                if (popupTemp.length<2&& !includesObj(popupTemp,{"i":i,"id":j})) popupTemp.push({"i":i,"id":j}) //NEXT POPUP
                 $(".n-rside-item-box").eq(0).html(
                     $(".n-rside-item-box").eq(0).html()+
                     `<div class="n-rside-item">
@@ -232,7 +238,7 @@ function initSameTopic(data,issue,id) {
 
 function initRecommend(data,issue,id) {
     let rand = []
-    let j=3
+    // let j=3
     while (rand.length<3){
         let ok=true
         let randIssue = Math.floor(Math.random() * (data.length))
@@ -244,6 +250,7 @@ function initRecommend(data,issue,id) {
             }
         }
         if (ok) {
+            if (popupTemp.length<3 && !includesObj(popupTemp,{"i":randIssue,"id":randID})) popupTemp.push({"i":randIssue,"id":randID}) //NEXT POPUP
             rand.push({
                 "issue":randIssue,
                 "id":randID
@@ -270,12 +277,12 @@ function initRecommend(data,issue,id) {
 }
 
 //Tạo link share
-function initNewsShare(data,issue,id) {
-    $(".n-share-box a").eq(0).attr("href",`https://www.facebook.com/sharer/sharer.php?u=` + location.href)
-    $(".n-share-box a").eq(1).attr("href",`https://twitter.com/intent/tweet?url=` + location.href)
-    $(".n-share-box a").eq(2).attr("href",`https://www.linkedin.com/sharing/share-offsite/?url=` + location.href)
-    $(".n-share-box a").eq(3).attr("href",`https://www.reddit.com/submit?url=` + location.href)
-    $(".n-share-box a").eq(4).attr("href",`mailto:?subject=Chia%20s%E1%BA%BB%20trang%20web&body=Xin%20ch%C3%A0o,%20m%C3%B4i%20b%E1%BA%A1n%20h%C3%A3y%20ki%E1%BB%83m%20tra%20trang%20web%20n%C3%A0y:%20` + location.href)
+function initNewsShare(data,issue,id) { 
+    $(".n-share-box a").eq(0).attr("href",`https://www.facebook.com/sharer/sharer.php?u=`+symbolToHexHref(location.href))
+    $(".n-share-box a").eq(1).attr("href",`https://twitter.com/intent/tweet?url=`+symbolToHexHref(location.href))
+    $(".n-share-box a").eq(2).attr("href",`https://www.linkedin.com/sharing/share-offsite/?url=`+symbolToHexHref(location.href))
+    $(".n-share-box a").eq(3).attr("href",`https://www.reddit.com/submit?url=`+symbolToHexHref(location.href))
+    $(".n-share-box a").eq(4).attr("href",`mailto:?subject=Chia%20s%E1%BA%BB%20trang%20web&body=Xin%20ch%C3%A0o,%20m%C3%B4i%20b%E1%BA%A1n%20h%C3%A3y%20ki%E1%BB%83m%20tra%20trang%20web%20n%C3%A0y:%20$`+symbolToHexHref(location.href))
 }
 
 function initNextPopUp(data,issue,id) {
@@ -300,7 +307,7 @@ function initNextPopUp(data,issue,id) {
     })
 }
 
-function initScroll(){
+function initScrollRecommend(){
     $(window).scroll(function(){
         let top = $(this).scrollTop() 
         if (top > $(".tag-box").offset().top - $(window).height() -100 && top < $("footer").offset().top - $(window).height()) {
@@ -311,54 +318,66 @@ function initScroll(){
     })
 }
 
-async function getNews(obj) {
-    let id=obj.id
-    let issue = 0
-    await fetch("./asset/data/data.json").then(async (res)=>{
-        let check = false
-        let data = await res.json()
-        for (let i=0;i<data.length;i++) {
-            if (data[i]["id"]===obj.issue && id >=0 && id<data[i]["news"].length) {
-                issue=i
-                check=true
-                $("title").text(data[issue]["news"][id]["title"])
-                initPath(data,issue,id)
-                initNewsHeaderBox(data,issue,id)
-                initNewsIssueDetailBox(data,issue,id)
-                initNewsShare(data,issue,id)
-                initNewsContent(data,issue,id)
-                initNewsTagBox(data,issue,id)
-                initNewsAuthorBox(data,issue,id)
-
-                initNextNews(data,issue,id)
-                initMoreNews(data,issue,id)   //Mới nhất (hoặc chưa đọc)
-                initSameTopic(data,issue,id) //Cùng chủ đề (Type)
-
-                initRecommend(data,issue,id)//Random
-                initNextPopUp(data,issue,id)
-
-                initScroll()
-            }
-        }
-        if (!check) {
-            $(".body-container").html(err404HTML())
-        }
-        
-    }).catch(err =>{
-        console.log(err)
-        alert("Lỗi tải trang!")
+function initEventMark(issue,id){
+    let arr = JSON.parse(localStorage.getItem("bookmark"))
+    if (arr.includes("N"+issue+"-"+id)) {
+        $(".btn-mark").addClass("active")
+        $(".btn-mark").find("i").toggleClass("fa-solid")
+        $(".btn-mark").find("i").toggleClass("fa-regular")
+    }
+    $(".btn-mark").click(()=>{
+        $(".btn-mark").toggleClass("active")
+        $(".btn-mark").find("i").toggleClass("fa-solid")
+        $(".btn-mark").find("i").toggleClass("fa-regular")
+        toggleMark("N"+issue+"-"+id)
     })
 }
 
+async function getNews(obj) {    
+    let id=obj.id
+    let issue = 0
+    //Lấy data.sjon về
+    const data = await DATA()
+    //Kiểm tra đường dẫn issue và id
+    for (let i=0;i<data.length;i++) {
+        if (data[i]["id"]===obj.issue && id >=0 && id<data[i]["news"].length) {
+            issue=i
+            check=true
+            $("title").text(data[issue]["news"][id]["title"])
+            initPath(data,issue,id)
+            initNewsHeaderBox(data,issue,id)
+            initNewsIssueDetailBox(data,issue,id)
+            initNewsShare(data,issue,id)
+            initNewsContent(data,issue,id)
+            initNewsTagBox(data,issue,id)
+            initNewsAuthorBox(data,issue,id)
+            //Ngoài nội đung
+            initMoreNews(data,issue,id)   //Mới nhất (hoặc chưa đọc)
+
+            initNextNews(data,issue,id)
+            initSameTopic(data,issue,id) //Cùng chủ đề (Type)
+            initRecommend(data,issue,id)//Random
+
+            initNextPopUp(data,issue,id)
+
+            initScrollRecommend()
+            //Meta
+            setMeta(data,issue,id,"news")            
+            initEventMark(issue,id)
+        }
+    }
+    //Không trùng thì không tìm thấy 404
+    if (!check) {
+        $(".body-container").html(err404HTML())
+    }
+}
+
 $(document).ready(async()=> {
-    await initHeader()
     // initKeyWordsHeader()
     const urlParams = new URLSearchParams(window.location.search);
     const newsPath = {
         "issue":urlParams.get('issue'),
         "id":parseInt(urlParams.get('id')),        
-    }
-    initUser()
-    initHeaderEvent()
+    }    
     await getNews(newsPath)
 });
