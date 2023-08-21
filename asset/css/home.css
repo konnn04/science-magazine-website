@@ -334,7 +334,6 @@
   box-shadow: 
   2px 2px 4px rgba(0, 0, 0, 0.2),
   -2px -2px 4px rgba(255, 255, 255, 0.2);
-
 }
 .research-box .more-research i{
   transition: all .2s ease;
@@ -342,7 +341,7 @@
 
 .research-box .more-research>a:hover{
   background-color: #ffcc00;
-  color: #fff;
+  color: #121314;
 }
 
 .research-box .more-research>a:hover i{
