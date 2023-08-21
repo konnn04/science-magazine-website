@@ -4,7 +4,7 @@ const KeyWord = ["COVID","HEALTH","EARTH","LGBT"]
 const darkContainer = `
 --bg:linear-gradient(-90deg, rgba(3637,38,0.9) 40%, rgba(23,24,25,0)),  no-repeat center;
 --body:linear-gradient(315deg, #262626 0%, #121212 74%) no-repeat center center fixed;
---theme:#232425;
+--theme:#111;
 --theme2:#252525;
 --theme3:#303030;
 font-size: 10px;
@@ -16,7 +16,7 @@ font-size: 10px;
 const lightContainer = `
 --bg:linear-gradient(-90deg, rgba(180, 180, 180, 0.9) 40%, rgb(234, 234, 234)),  no-repeat center;
 --body:linear-gradient(315deg, #e8e8e8 0%, #ffffff 74%) no-repeat center center fixed;
---theme:#f4f4f4;
+--theme:#f1f1f1;
 --theme2:#fff;
 --theme3:#efefef;
 font-size: 10px;
@@ -25,8 +25,7 @@ font-size: 10px;
 --text2:#3c3c3c;
 --w-cover-maga:350px;  `
 
-
-
+//Bật tắt đánh dấu
 function toggleMark(t){
     let arr = JSON.parse(localStorage.getItem("bookmark"))
     let p=arr.indexOf(t)
@@ -64,8 +63,12 @@ async function initHeader(data) {
         //Tạo link cho Current Issue và First release papers
         $("#curentIssue").attr("href",`./table_of_contents.html?issue=${data[data.length-1].id}`)
         $("#firstPaper").attr("href",`./news.html?issue=${data[data.length-1].id}&id=0`)
+    }).catch(err => {
+        alert("Lỗi nạp header")
+        console.log(err)
     })
 }
+
 
 function err404HTML() {
     return `<section id="err404">

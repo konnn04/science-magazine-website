@@ -4,6 +4,7 @@ var bg = ["https://images.hdqwalls.com/wallpapers/planet-science-fiction-among-s
 
 const API="https://64b00d29c60b8f941af524b6.mockapi.io/acc"
 
+//Tạo cooldown đăng nhập tránh tạo acc nhiều lần
 function initCd() {
     cd=true
     setTimeout(()=>{
@@ -11,6 +12,7 @@ function initCd() {
     },3000)
 }
 
+//Set Cookie
 function setCookie(username,email,remember) {
     let d = new Date()
     if (remember) {
@@ -23,6 +25,7 @@ function setCookie(username,email,remember) {
     document.cookie = "email="+email+"; expires="+expires
 }
 
+//Tải thông tin đăng ký
 async function fetchSignUp(upload) {
     var status = 200
     await fetch(API,{
@@ -53,6 +56,7 @@ async function fetchSignUp(upload) {
     return status
 }
 
+//Kiểm tra đăng nhập
 async function fetchLogin(){
     var status = 500
     await fetch(API,{
@@ -84,6 +88,7 @@ async function fetchLogin(){
     return status
 }
 
+//Kiểm tra định form 
 async function checkAcc(){
     let email = $('#emailSignUp').val().trim()
     if (!isValidEmail(email)) {
@@ -148,15 +153,15 @@ async function checkAcc(){
 $(document).ready(async(e)=>{
     //Tạo ảnh ngẫu nhiên
     $("body").css("backgroundImage",`url(${bg[Math.floor(Math.random()*bg.length)]})`)
-        
+    //Tạo sự kiện nút chuyển trang đăng kí
     $('.register-link').click((e)=> { 
         $('.wrapper').addClass('active')    
     });
-    
+    //Tạo sự kiện nút chuyển trang đăng nhập    
     $('.login-link').click((e)=>{
         $('.wrapper').removeClass('active');
     })
-
+    //ĐĂNG NHẬP
     $('.submitBtn').eq(0).click(async (e)=>{
         $('.input-box').removeClass("invalid")
         $('.input-box').removeClass("valid")
@@ -181,7 +186,7 @@ $(document).ready(async(e)=>{
             }
         }
     })
-
+    //ĐĂNG KÍ
     $('.submitBtn').eq(1).click(async (e)=>{
         $('.input-box').removeClass("invalid")
             if (!cd) {
@@ -193,7 +198,6 @@ $(document).ready(async(e)=>{
 })
 
 // Ham linh tinh
-
 function isValidEmail(email) {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);

@@ -5,6 +5,7 @@ var cdType = false
 let startXRFrame = 0
 let deltaXRFrame=0
 
+//Kiểm tra mũi tên ẩn hay không chỗ Type NEWS
 function checkTypeEvent(i,temp) {
     if (temp<= -1*( $(".all-news-items").eq(i).width() - $(document).width())) {
         $(".r-arrow").eq(i).css({"opacity":"0"})
@@ -18,6 +19,7 @@ function checkTypeEvent(i,temp) {
     }
 }
 
+//Tại sự kiện nút và vuốt (trên điện thoại) type NEWS
 function initTypeEvent() {
     $(".l-arrow").css({"opacity":"0"})
     for (let i=0;i<$(".all-news-items").length;i++) {
@@ -57,6 +59,7 @@ function initTypeEvent() {
     
 }
 
+//Tạo sự kiện chuyển trang bìa tạp chí
 function tramformMagaCover(x) {
     let n=$(".maga-cover-box").length
     let f = MagaCover
@@ -73,11 +76,11 @@ function tramformMagaCover(x) {
         j=(j>n)?j-n:j;        
         $(".maga-cover-box").eq(i).removeClass(`active${j}`)        
     }
-
-
 }
 
+//Tạo sự kiện vuốt (điện thoại) và nút chuyển Bìa tạp chí
 function initMagaEvent() {
+    // Nút
     $(".maga-l-arrow").click(()=>{
         tramformMagaCover(1)
         $(".maga-box .overplay>a").attr("href","./table_of_contents.html?issue=" + $(".maga-cover-box.active3").attr("content"))
@@ -114,6 +117,7 @@ function initMagaEvent() {
     })
 }
 
+//Chạy RFrame chuyển động tại i (i <- show)
 function runFrame(i) {
     //Xóa Interval trước đó nếu có
     clearInterval(setIntervalFrame)
@@ -159,6 +163,7 @@ function rFrame(data,issueString,id) {
     `
 }
 
+// Nạp RFrame vô HTML
 function initRFrame(data) {
     let f=""
     for (let i=data[data.length-1]["news"].length-1;i>=0;i--) {
@@ -180,7 +185,7 @@ function initRFrame(data) {
     
 }
 
-
+//Tạo sự kiện cho RFrame
 function initEventRFrame() {
     runFrame(currentRFrame)
     //Gắn sự kiện cho các button khi nhấn vào
@@ -307,6 +312,7 @@ function initBoxType(data) {
     }
 }
 
+//Chỉnh font chữ của RFrame theo độ to
 function fixedRFrame() {
     //chinh font chu
     $(".recommended").css({
@@ -319,8 +325,9 @@ function fixedRFrame() {
     })
 }
 
+//Tạo các bài nghiên cứu mưới nhất
 function initResearchItems(data) {    
-    let n = 7
+    let n = 7 // Số bài
 
     let h = `<div class="current-issue-box" title="Current Issue is ${data[data.length-1].name}">
                 <div class="img-cur-issue">
