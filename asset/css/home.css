@@ -1,4 +1,9 @@
  /*Body*/
+:root{
+  --hover-research1:#00000017;
+  --hover-research2:#000;
+}
+
  body{
   background: var(--body);
  }
@@ -190,16 +195,25 @@
   margin: auto;
 }
 
-.researchs .item-research{ 
+.researchs .item-research{
   transition: all .2s ease;
   padding: 1rem;
-  color: var(--text);
-  background-color: #ffffff05;
+  color: var(--text2);
+  /* background-color: #ffffff05; */
   border: 1px solid rgba(135,135,135,0.6);
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  background-size: cover;
+}
+
+.researchs .item-research .r-content{
+  width: 100%;
+  flex-shrink: 0;
 }
 
 .researchs .current-issue-box{
-  grid-row: 1/span 3;
+  grid-row: 1/span 2;
 }
 
 .researchs .current-issue-box .overplay-researchs{
@@ -251,12 +265,27 @@
 
 .researchs .item-research:hover{
   scale: 1.02;
-  background-color: #ffcc00;
-  color: #121314;
+  cursor: pointer;
+  --hover-research1:#00000000;
+  --hover-research2:rgba(0, 0, 0, 0.74);
 }
 
 .researchs .item-research:hover span{
-  color: #121314;
+  text-shadow: 1px 1px 2px #000000;  
+}
+
+.researchs .item-research:hover h4{
+  text-shadow: 1px 1px 1px #000;
+  text-decoration: underline;
+  transition: all .2s ease;
+}
+
+.researchs .item-research:hover h4:hover{
+  color: #ffcc00;
+}
+
+.researchs .item-research:hover span:last-child{
+  color: #ffffff;
 }
 
 .item-research span:nth-child(1) {
@@ -289,7 +318,7 @@
     margin: .3rem 0;
 }
 
-.research-box>div>a{
+.research-box .more-research>a{
   transition: all .2s ease;
   display: block;
   width: fit-content;
@@ -304,13 +333,18 @@
   box-shadow: 
   2px 2px 4px rgba(0, 0, 0, 0.2),
   -2px -2px 4px rgba(255, 255, 255, 0.2);
+
 }
-.research-box>div>a:hover{
-  background-color: #ffcc00;
-  color: #121314;
+.research-box .more-research i{
+  transition: all .2s ease;
 }
 
-.research-box>div>a:hover i{
+.research-box .more-research>a:hover{
+  background-color: #ffcc00;
+  color: #fff;
+}
+
+.research-box .more-research>a:hover i{
   padding-left: 1rem;
 }
 
@@ -475,7 +509,7 @@
 }
 
 .bookmark-box .bookmarks h3{
-  color: var(--text);
+  color: var(--text); 
   font-size: 1.8rem;
   grid-column: 1/span 3;
   text-align: center;
@@ -666,7 +700,7 @@ filter: brightness(.5);
   .research-box .researchs,
   .bookmark-box .bookmarks{
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -674,5 +708,14 @@ filter: brightness(.5);
   .research-box .researchs,
   .bookmark-box .bookmarks{
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  :root{
+    --hover-research1:#00000084;
+    --hover-research2:#000000;    
+  }
+  .researchs .item-research:hover{
+    --hover-research1:#0000009b;
+    --hover-research2:#000000b3;    
   }
 }
