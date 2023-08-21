@@ -320,7 +320,7 @@ function fixedRFrame() {
 }
 
 function initResearchItems(data) {    
-    let n = 9
+    let n = 7
 
     let h = `<div class="current-issue-box" title="Current Issue is ${data[data.length-1].name}">
                 <div class="img-cur-issue">
@@ -339,16 +339,18 @@ function initResearchItems(data) {
             }else{
                 n--
                 h+=`
-            <div class="item-research" title="Click to see ${data[i]["researchs"][j]["title"]}">
+            <a class="item-research" href="./research.html?issue=${data[i].id}&id=${j}" title="Click to see ${data[i]["researchs"][j]["title"]}" style="background-image:  linear-gradient(180deg,var(--hover-research1),var(--hover-research2)), url(${data[i]["researchs"][j]["cover"]});">
+                <div class="r-content">
                 <span>${data[i]["researchs"][j]["type"]}</span>
                 <span>${getStringUnixDate(data[i]["researchs"][j]["time"])}</span>
                 <h4>
-                    <a href="./research.html?issue=${data[i].id}&id=${j}">
+                    
                         ${data[i]["researchs"][j]["title"]}
-                    </a>
+                    
                 </h4>
                 <span>${data[i]["researchs"][j]["authors"][0]["name"]}</span>
-            </div>`
+                </div>
+            </a>`
             }
             
             
@@ -388,7 +390,7 @@ function initBookmark(data) {
             </h4>
             <span>BY ${data[issue].researchs[id].authors[0]["name"]}</span>
         </div>`
-        }        
+        }         
     }
     $(".bookmarks").html(h)
     if(h=="") {

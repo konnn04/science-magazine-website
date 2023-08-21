@@ -17,7 +17,7 @@ function initHeaderContent(data,issue,id) {
     </span>
     <span class="type">
         <a href="./search.html?kw=${data[issue]["researchs"][id]["type"]}" >${data[issue]["researchs"][id]["type"]}</a>
-    </span>
+    </span>    
     `)
     //Tiêu đề 2
     $(".r-header h1").html(`<h1>${data[issue]["researchs"][id]["title"]}</h1>`)
@@ -61,15 +61,16 @@ function initHeaderContent(data,issue,id) {
        setTimeout(()=>{
         $("html,body").animate({scrollTop:$(window).scrollTop() - 120},'slow');
        },100)
-
     })
 }
 //Tạo Summary và Abstract
 function initNewsContent(data,issue,id) {
     //Tạo đoạn tóm tắt
-    $("#summary p").text(data[issue]["researchs"][id]["summary"])
+    $("#summary p").html(data[issue]["researchs"][id]["summary"])
     //Tạo đề abstract
-    $("#abstract p").text(data[issue]["researchs"][id]["abstract"])
+    $("#abstract p").html(data[issue]["researchs"][id]["abstract"])
+    //Gắn thumb cho abstract
+    $("#abstract img").attr("src",data[issue]["researchs"][id]["cover"])
     //
     
 }

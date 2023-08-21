@@ -536,6 +536,7 @@
             {
                 "title":"Where and with whom does a brief social-belonging intervention promote progress in college?",
                 "type":"SOCIAL BELONGING",
+                "cover":"https://news.stanford.edu/report/wp-content/uploads/sites/3/2022/09/DBE-4_banner-960x480.jpg",
                 "authors":[
                     {
                     "name":"Gregory M. Walton",
@@ -625,8 +626,8 @@
             },{
                 "title":"Inspiraling streams of enriched gas observed around a massive galaxy 11 billion years ago",
                 "type":"GALAXIES",
-                "authors":[
-                    
+                "cover":"https://scitechdaily.com/images/Inspiraling-Streams-of-Enriched-Gas-Around-Massive-Galaxy-scaled.jpg",
+                "authors":[                    
                     {
                     "name":"Shannon T. Brady",
                     "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
@@ -715,8 +716,8 @@
                 "title":"Garnet crystallization does not drive oxidation at arcs",
                 "type":"GALAXIES",
                 "time":1643850000000,
-                "authors":[
-                    
+                "cover":"https://www.science.org/cms/asset/bfe648d3-34fb-47a5-8f4f-e8eefdc75497/keyimage.gif",
+                "authors":[                    
                     {
                     "name":"Shannon T. Brady",
                     "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
@@ -814,8 +815,8 @@
                 "title":"Topological kinetic crossover in a nanomagnet array",
                 "type":"MAGNETISM",
                 "time":1644685200000,
-                "authors":[
-                    
+                "cover":"https://www.science.org/cms/asset/4836182b-86c3-4476-b81a-8d150eadfdee/keyimage.gif",
+                "authors":[                    
                     {
                     "name":"Shannon T. Brady",
                     "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
@@ -903,6 +904,7 @@
                 "title":"Molecular basis of translation termination at noncanonical stop codons in human mitochondria",
                 "type":"MITORIBOSOME",
                 "time":1646078400000,
+                "cover":"https://www.science.org/cms/10.1126/science.adf9890/asset/0e9653e7-c6b5-4132-8990-832433222304/assets/images/large/science.adf9890-f3.jpg",
                 "authors":[
                     
                     {
@@ -1489,6 +1491,7 @@
                 "title":"Where and with whom does a brief social-belonging intervention promote progress in college?",
                 "type":"SOCIAL BELONGING",
                 "time":1649073600000,
+                "cover":"https://blackeoejournal.com/wp-content/uploads/2020/09/African-American-male-college-student.jpg",
                 "authors":[
                     {
                     "name":"Gregory M. Walton",
@@ -1578,6 +1581,7 @@
                 "title":"Natural iron fertilization by shallow hydrothermal sources fuels diazotroph blooms in the ocean",
                 "type":"OCEAN NUTRIENTS",
                 "time":1649872800000,
+                "cover":"https://www.whoi.edu/wp-content/uploads/2022/04/Iron_fertilization.jpg",
                 "authors":[
                     {
                     "name":"Gregory M. Walton",
@@ -1667,8 +1671,8 @@
                 "title":"Ectocytosis renders T cell receptor signaling self-limiting at the immune synapse",
                 "type":"CELL BIOLOGY",
                 "time":1651474800000,
-                "authors":[
-                    
+                "cover":"https://www.science.org/cms/asset/e69e2c97-dce8-4b98-b068-bd7ebc144c48/keyimage.gif",
+                "authors":[                    
                     {
                     "name":"Christine Logel ",
                     "bio":"Department of Social Development Studies, Renison University College, University of Waterloo, Waterloo, ON, Canada."
@@ -1759,6 +1763,7 @@
                 "title":"Correlated insulator of excitons in WSe<sub>2</sub>/WS<sub>2</sub> moiré superlattices",
                 "type":"2D MATERIALS",
                 "time":1653897600000,
+                "cover":"https://www.science.org/cms/10.1126/science.add5574/asset/9f49eef0-ef12-4b3e-b867-9a9af47bbd61/assets/images/large/science.add5574-f4.jpg",
                 "authors":[
                     {
                     "name":"Gregory M. Walton",
@@ -1848,6 +1853,7 @@
                 "title":"Erosion of heterogeneous rock drives diversification of Appalachian fishes",
                 "type":"BIOGEOGRAPHY",
                 "time":1655064000000,
+                "cover":"https://www.science.org/cms/asset/eeded66a-2e0d-46dd-b72d-cd0fbab408b3/keyimage.gif",
                 "authors":[
                     {
                     "name":"Gregory M. Walton",
@@ -2458,6 +2464,7 @@
                 "title":"Taurine deficiency as a driver of aging",
                 "type":"AGING",
                 "time":1658275200000,
+                "cover":"https://www.bioworld.com/ext/resources/BWS/BWS-source/Taurine-aging-hero.jpg?height=635&t=1686321472&width=1200",
                 "authors":[
                     {
                     "name":"Parminder Singh",
@@ -2552,6 +2559,7 @@
                 "title":"A microbiota-modulated checkpoint directs immunosuppressive intestinal T cells into cancers",
                 "type":"CANCER IMMUNOTHERAPY",
                 "time":1657324800000,
+                "cover":"https://www.science.org/cms/asset/9efe2ec4-4891-42e6-8d50-93b72603b4db/keyimage.gif",
                 "authors":[                    
                     {
                     "name":"Marine Fidelle",
@@ -2650,6 +2658,7 @@
                 "title":"Atomic-scale polarization switching in wurtzite ferroelectrics",
                 "type":"FERROELECTRICS",
                 "time": 1659873600000,
+                "cover":"https://www.science.org/cms/asset/fe3ec9bb-57fb-4e29-9a70-2d34f10ee189/keyimage.gif",
                 "authors":[                    
                     {
                     "name":"SEBASTIAN CALDERON V ",
@@ -2743,6 +2752,7 @@
                 "title":"Topological kinetic crossover in a nanomagnet array",
                 "type":"MAGNETISM",
                 "time":1660916700000,
+                "cover":"https://www.science.org/cms/10.1126/science.add6575/asset/4979ef5b-5d43-4128-ae5b-919007882275/assets/images/large/science.add6575-f1.jpg",
                 "authors":[
                     
                     {
@@ -2832,6 +2842,7 @@
                 "title":"Molecular basis of translation termination at noncanonical stop codons in human mitochondria",
                 "type":"MITORIBOSOME",
                 "time":1662059700000,
+                "cover":"https://www.science.org/cms/10.1126/science.adf9890/asset/0e9653e7-c6b5-4132-8990-832433222304/assets/images/large/science.adf9890-f3.jpg",
                 "authors":[
                     
                     {
@@ -3375,9 +3386,10 @@
         }],
         "researchs":[
             {
-                "title":"Where and with whom does a brief social-belonging intervention promote progress in college?",
-                "type":"SOCIAL BELONGING",
+                "title":"Pre–Younger Dryas megafaunal extirpation at Rancho La Brea linked to fire-driven state shift",
+                "type":"PALEONTOLOGY",
                 "time":1664607600000,
+                "cover":"https://www.science.org/cms/asset/9fadb81d-36dd-46fe-86db-df25a869768b/keyimage.gif",
                 "authors":[
                     {
                     "name":"Gregory M. Walton",
@@ -3432,9 +3444,9 @@
                     "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
                     }
                 ],
-                "downloaded":963,
-                "summary":"The rate of earning university degrees in the United States is very unequal across social class, race, and ethnicity. Interventions that promote academic persistence also work differently for students from different backgrounds and operate differently across contexts. Walton et al. conducted a randomized controlled trial to systematically explain and understand these heterogenous effects in a brief online intervention across 22 universities and colleges (see the Perspective by Bowman). The intervention was designed to remedy students’ concerns about belonging through a reading-and-writing activity that emphasized how worries about fitting in, struggling in class, and feeling homesick during the college transition are common and improve over time. They found that the intervention improved retention and persistence in school, particularly among historically underrepresented students, when the school context offered students opportunities to belong. The findings have policy implications for academic institutions that strive to better support and retain diverse students. —Ekeoma Uzogara",
-                "abstract":"A promising way to mitigate inequality is by addressing students’ worries about belonging. But where and with whom is this social-belonging intervention effective? Here we report a team-science randomized controlled experiment with 26,911 students at 22 diverse institutions. Results showed that the social-belonging intervention, administered online before college (in under 30 minutes), increased the rate at which students completed the first year as full-time students, especially among students in groups that had historically progressed at lower rates. The college context also mattered: The intervention was effective only when students’ groups were afforded opportunities to belong. This study develops methods for understanding how student identities and contexts interact with interventions. It also shows that a low-cost, scalable intervention generalizes its effects to 749 4-year institutions in the United States.",
+                "downloaded":1963,
+                "summary":"It is well known that many large vertebrate species went extinct during the late Pleistocene in most regions of the world. What caused these extinctions remains debated, although both climate change and human impacts have been implicated. O’Keefe et al. used the extensive fossil record created by the entrapment of animals in the La Brea tar pits in conjunction with nearby core samples and found a clear relationship between an increase in fire—and fire-related ecosystems—and large mammal extinction. The authors argue that this increase in fire may have resulted from climate change–induced warming and drying in conjunction with increasing impacts of humans in the system. —Sacha Vignieri",
+                "abstract":"The cause, or causes, of the Pleistocene megafaunal extinctions have been difficult to establish, in part because poor spatiotemporal resolution in the fossil record hinders alignment of species disappearances with archeological and environmental data. We obtained 172 new radiocarbon dates on megafauna from Rancho La Brea in California spanning 15.6 to 10.0 thousand calendar years before present (ka). Seven species of extinct megafauna disappeared by 12.9 ka, before the onset of the Younger Dryas. Comparison with high-resolution regional datasets revealed that these disappearances coincided with an ecological state shift that followed aridification and vegetation changes during the Bølling-Allerød (14.69 to 12.89 ka). Time-series modeling implicates large-scale fires as the primary cause of the extirpations, and the catalyst of this state shift may have been mounting human impacts in a drying, warming, and increasingly fire-prone ecosystem.",
                 "file":[{
                     "type":"pdf",
                     "info":["Materials and Methods","Supplementary Text","Tables S1 to S22","References (47–88)"],
@@ -3464,9 +3476,10 @@
                     "text":["G. M. Walton, G. L. Cohen, A brief social-belonging intervention improves academic and health outcomes of minority students. Science331, 1447–1451 (2011)."]
                 }]
             },{
-                "title":"Natural iron fertilization by shallow hydrothermal sources fuels diazotroph blooms in the ocean",
-                "type":"OCEAN NUTRIENTS",
+                "title":"Yolk sac cell atlas reveals multiorgan functions during human early development",
+                "type":"HUMAN DEVELOPMENT",
                 "time":1665133200000,
+                "cover":"https://storage.googleapis.com/haniffa/data/yolk-sac/Movie%20S2.png",
                 "authors":[
                     {
                     "name":"Gregory M. Walton",
@@ -3521,9 +3534,9 @@
                     "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
                     }
                 ],
-                "downloaded":2246,
-                "summary":"Large areas of the world’s surface ocean contain limited concentrations of iron, most of which is supplied by upwelling of deeper, nutrient-rich water or atmospheric deposition. Bonnet et al. found that shallow hydrothermal sources also can supply iron to the surface ocean. They show that fluids emitted along the Tonga volcanic Arc in the South Pacific supply enough iron to the photic layer to stimulate biological activity well above that in adjacent unfertilized waters. —H. Jesse Smith",
-                "abstract":"Iron is an essential nutrient that regulates productivity in ~30% of the ocean. Compared with deep (>2000 meter) hydrothermal activity at mid-ocean ridges that provide iron to the ocean’s interior, shallow (<500 meter) hydrothermal fluids are likely to influence the surface’s ecosystem. However, their effect is unknown. In this work, we show that fluids emitted along the Tonga volcanic arc (South Pacific) have a substantial impact on iron concentrations in the photic layer through vertical diffusion. This enrichment stimulates biological activity, resulting in an extensive patch of chlorophyll (360,000 square kilometers). Diazotroph activity is two to eight times higher and carbon export fluxes are two to three times higher in iron-enriched waters than in adjacent unfertilized waters. Such findings reveal a previously undescribed mechanism of natural iron fertilization in the ocean that fuels regional hotspot sinks for atmospheric CO<sub>2</sub>.",
+                "downloaded":2546,
+                "summary":"The yolk sac (YS) is a membranous structure attached to the developing embryo that acts to support hematopoiesis, metabolism, and coagulation. Our current understanding of its role in human development has been limited by a reliance on nonhuman model systems. Goh et al. used single-cell RNA sequencing, light-sheet microscopy, and RNAscope-based in situ hybridization to generate a human YS atlas derived from 10 samples spanning 4 to 8 postconception weeks or Carnegie stages 10 to 23. The authors found that endoderm in human YS, but not murine YS, provides hematopoietic growth factors. Furthermore, in humans, the YS is the dominant source of early erythropoiesis, unlike in mice, in which the liver also plays a role. Finally, the authors report that human YS can fuel the accelerated production of macrophages from hematopoietic stem and progenitor cells independently of monocytes. —Seth Thomas Scanlon",
+                "abstract":"The extraembryonic yolk sac (YS) ensures delivery of nutritional support and oxygen to the developing embryo but remains ill-defined in humans. We therefore assembled a comprehensive multiomic reference of the human YS from 3 to 8 postconception weeks by integrating single-cell protein and gene expression data. Beyond its recognized role as a site of hematopoiesis, we highlight roles in metabolism, coagulation, vascular development, and hematopoietic regulation. We reconstructed the emergence and decline of YS hematopoietic stem and progenitor cells from hemogenic endothelium and revealed a YS-specific accelerated route to macrophage production that seeds developing organs. The multiorgan functions of the YS are superseded as intraembryonic organs develop, effecting a multifaceted relay of vital functions as pregnancy proceeds.",
                 "file":[{
                     "type":"pdf",
                     "info":["Materials and Methods","Supplementary Text","Tables S1 to S8","References (61–96)"],
@@ -3553,11 +3566,11 @@
                     "text":["G. M. Walton, G. L. Cohen, A brief social-belonging intervention improves academic and health outcomes of minority students. Science331, 1447–1451 (2011)."]
                 }]
             },{
-                "title":"Ectocytosis renders T cell receptor signaling self-limiting at the immune synapse",
-                "type":"CELL BIOLOGY",
+                "title":"Alcanivorax borkumensis biofilms enhance oil degradation by interfacial tubulation",
+                "type":"BIOPHYSICS",
+                "cover":"https://www.science.org/cms/10.1126/science.adf3345/asset/aec1942d-f9b1-4871-b655-f0dfe6d8c05a/assets/images/large/science.adf3345-f2.jpg",
                 "time":1667133900000,
-                "authors":[
-                    
+                "authors":[                    
                     {
                     "name":"Christine Logel ",
                     "bio":"Department of Social Development Studies, Renison University College, University of Waterloo, Waterloo, ON, Canada."
@@ -3603,9 +3616,9 @@
                     "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
                     }
                 ],
-                "downloaded":8131,
-                "summary":"Cytotoxic T lymphocytes (CTLs) are serial killers that can destroy multiple target cells in succession. Using high-resolution three-dimensional imaging, Stinchcombe et al. found that T cell receptor (TCR) activation causes rapid membrane specialization at the immune synapse so that membrane containing activated TCRs buds off in a process known as “ectocytosis. ” As ectosomes bud off, CTLs and their target cells separate, allowing serial killing to proceed. Thus, in activated CTLs, ectocytosis renders TCR signaling self-limiting. —Stella M. Hurtley",
-                "abstract":"Cytotoxic T lymphocytes (CTLs) kill virus-infected and cancer cells through T cell receptor (TCR) recognition. How CTLs terminate signaling and disengage to allow serial killing has remained a mystery. TCR activation triggers membrane specialization within the immune synapse, including the production of diacylglycerol (DAG), a lipid that can induce negative membrane curvature. We found that activated TCRs were shed into DAG-enriched ectosomes at the immune synapse rather than internalized through endocytosis, suggesting that DAG may contribute to the outward budding required for ectocytosis. Budding ectosomes were endocytosed directly by target cells, thereby terminating TCR signaling and simultaneously disengaging the CTL from the target cell to allow serial killing. Thus, ectocytosis renders TCR signaling self-limiting.",
+                "downloaded":18131,
+                "summary":"Certain marine bacteria can degrade small-molecule hydrocarbons, but there is still limited understanding on how this process works in biofilms. Prasad et al. show that one such bacterium, Alcanivorax borkumensis, initially forms a spherical biofilm around a droplet of hexadecane, which subsequently grows and buckles (see the Perspective by McGenity and Laissue). This transition is caused by an initial limited interaction with the oil by only some of the cells, followed by rapid cell growth and division that distorts the shape of the biofilm, leading to an increase in the surface area and acceleration in the rate of consumption. Adhesion of aligned rod-shaped bacterial cells to the oil stabilizes the tube-like protrusions. The addition of surfactants commonly used to disperse marine oil spills disrupts the biofilms, and the cells return to their spherical morphology. —Marc S. Lavine",
+                "abstract":"During the consumption of alkanes, Alcanivorax borkumensis will form a biofilm around an oil droplet, but the role this plays during degradation remains unclear. We identified a shift in biofilm morphology that depends on adaptation to oil consumption: Longer exposure leads to the appearance of dendritic biofilms optimized for oil consumption effected through tubulation of the interface. In situ microfluidic tracking enabled us to correlate tubulation to localized defects in the interfacial cell ordering. We demonstrate control over droplet deformation by using confinement to position defects, inducing dimpling in the droplets. We developed a model that elucidates biofilm morphology, linking tubulation to decreased interfacial tension and increased cell hydrophobicity.",
                 "file":[{
                     "type":"pdf",
                     "info":["Materials and Methods","Figs. S1 to S11","References (33–36)"],
@@ -3645,9 +3658,10 @@
                     "text":["G. M. Walton, G. L. Cohen, A brief social-belonging intervention improves academic and health outcomes of minority students. Science331, 1447–1451 (2011)."]
                 }]
             },{
-                "title":"Correlated insulator of excitons in WSe<sub>2</sub>/WS<sub>2</sub> moiré superlattices",
-                "type":"2D MATERIALS",
+                "title":"Design of stimulus-responsive two-state hinge proteins",
+                "type":"PROTEIN DESIGN",
                 "time":1667418300000,
+                "cover":"https://www.science.org/cms/asset/9dda6f9c-a78b-4a74-ad73-215d537990dd/keyimage.gif",
                 "authors":[
                     {
                     "name":"Gregory M. Walton",
@@ -3703,8 +3717,8 @@
                     }
                 ],
                 "downloaded":6802,
-                "summary":"Moiré multilayers of graphene and transition metal dichalcogenides have been found to host a number of exotic electronic phases. In addition to charge carriers—electrons and holes—these two-dimensional structures support their pairs, called excitons, which are also expected to form correlated phases. Xiong et al. observed a correlated insulator of interlayer excitons in a bilayer consisting of tungsten diselenide, which hosted holes, and tungsten disulfide, which hosted electrons. The researchers measured the optical response of the material to excitation by light and found signatures of an incompressible state of excitons. —Jelena Stajic",
-                "abstract":"A panoply of unconventional electronic states has been observed in moiré superlattices. Engineering similar bosonic phases remains, however, largely unexplored. We report the observation of a bosonic correlated insulator in tungsten diselenide/tungsten disulfide (WSe2/WS2) moiré superlattices composed of excitons, that is, tightly bound electron-hole pairs. We develop a pump probe spectroscopy method that we use to observe an exciton incompressible state at exciton filling νex = 1 and charge neutrality, indicating a correlated insulator of excitons. With varying charge density, the bosonic correlated insulator continuously transitions into an electron correlated insulator at charge filling νe = 1, suggesting a mixed correlated insulating state between the two limits. Our studies establish semiconducting moiré superlattices as an intriguing platform for engineering bosonic phases.",
+                "summary":"Natural proteins often adopt multiple conformational states, thereby changing their activity or binding partners in response to another protein, small molecule, or other stimulus. It has been difficult to engineer such conformational switching between two folded states in human-designed proteins. Praetorius et al. developed a hinge-like protein by simultaneously considering both desired states in the design process. The successful designs exhibited a large shift in conformation upon binding to a target peptide helix, which could be tailored for specificity. The authors characterized the protein structures, binding kinetics, and conformational equilibrium of the designs. This work provides the groundwork for generating protein switches that respond to biological triggers and can produce conformational changes that modulate protein assemblies. —Michael A. Funk",
+                "abstract":"In nature, proteins that switch between two conformations in response to environmental stimuli structurally transduce biochemical information in a manner analogous to how transistors control information flow in computing devices. Designing proteins with two distinct but fully structured conformations is a challenge for protein design as it requires sculpting an energy landscape with two distinct minima. Here we describe the design of “hinge” proteins that populate one designed state in the absence of ligand and a second designed state in the presence of ligand. X-ray crystallography, electron microscopy, double electron-electron resonance spectroscopy, and binding measurements demonstrate that despite the significant structural differences the two states are designed with atomic level accuracy and that the conformational and binding equilibria are closely coupled.",
                 "file":[{
                     "type":"pdf",
                     "info":["Materials and Methods","Supplementary Text","Figs. S1 to S16","References (42–63)"],
@@ -3734,9 +3748,10 @@
                     "text":["G. M. Walton, G. L. Cohen, A brief social-belonging intervention improves academic and health outcomes of minority students. Science331, 1447–1451 (2011)."]
                 }]
             },{
-                "title":"Erosion of heterogeneous rock drives diversification of Appalachian fishes",
-                "type":"BIOGEOGRAPHY",
+                "title":"A massive helium star with a sufficiently strong magnetic field to form a magnetar",
+                "type":"STELLAR ASTROPHYSICS",
                 "time":1669380300000,
+                "cover":"https://www.science.org/cms/asset/c0301fb8-7ac0-420d-9da6-1f265de40541/keyimage.jpg",
                 "authors":[
                     {
                     "name":"Gregory M. Walton",
@@ -4374,9 +4389,10 @@
         ],
         "researchs":[
             {
-                "title":"Where and with whom does a brief social-belonging intervention promote progress in college?",
-                "type":"SOCIAL BELONGING",
+                "title":"Overcoming losses in superlenses with synthetic waves of complex frequency",
+                "type":"OPTICS",
                 "time":1673767800000,
+                "cover":"https://www.science.org/cms/10.1126/science.adi1267/asset/522551d8-de2a-4d02-a1ac-babaf137cebf/assets/images/large/science.adi1267-f3.jpg",
                 "authors":[
                     {
                     "name":"Gregory M. Walton",
@@ -4431,9 +4447,9 @@
                     "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
                     }
                 ],
-                "downloaded":963,
-                "summary":"The rate of earning university degrees in the United States is very unequal across social class, race, and ethnicity. Interventions that promote academic persistence also work differently for students from different backgrounds and operate differently across contexts. Walton et al. conducted a randomized controlled trial to systematically explain and understand these heterogenous effects in a brief online intervention across 22 universities and colleges (see the Perspective by Bowman). The intervention was designed to remedy students’ concerns about belonging through a reading-and-writing activity that emphasized how worries about fitting in, struggling in class, and feeling homesick during the college transition are common and improve over time. They found that the intervention improved retention and persistence in school, particularly among historically underrepresented students, when the school context offered students opportunities to belong. The findings have policy implications for academic institutions that strive to better support and retain diverse students. —Ekeoma Uzogara",
-                "abstract":"A promising way to mitigate inequality is by addressing students’ worries about belonging. But where and with whom is this social-belonging intervention effective? Here we report a team-science randomized controlled experiment with 26,911 students at 22 diverse institutions. Results showed that the social-belonging intervention, administered online before college (in under 30 minutes), increased the rate at which students completed the first year as full-time students, especially among students in groups that had historically progressed at lower rates. The college context also mattered: The intervention was effective only when students’ groups were afforded opportunities to belong. This study develops methods for understanding how student identities and contexts interact with interventions. It also shows that a low-cost, scalable intervention generalizes its effects to 749 4-year institutions in the United States.",
+                "downloaded":2363,
+                "summary":"In most imaging techniques, the smallest feature sizes that can be resolved are on the order of the wavelength of light used for illumination. Several techniques have been developed that can resolve subwavelength features. Of these, superlenses fabricated from plasmonic materials and metamaterials suffer optical losses that limit their performance. Guan et al. show that illumination with synthetic frequency waves, waveforms that that are temporally attenuated, can retrieve subwavelength features, thus making their superlenses truly super. This work demonstrates a practical approach to overcoming intrinsic losses in plasmonic systems and shows that there is potential for substantial improvements in imaging and sensing capabilities. —Ian S. Osborne",
+                "abstract":"Superlenses made of plasmonic materials and metamaterials can image features at the subdiffraction scale. However, intrinsic losses impose a serious restriction on imaging resolution, a problem that has hindered widespread applications of superlenses. Optical waves of complex frequency that exhibit a temporally attenuating behavior have been proposed to offset the intrinsic losses in superlenses through the introduction of virtual gain, but experimental realization has been lacking because of the difficulty of imaging measurements with temporal decay. In this work, we present a multifrequency approach to constructing synthetic excitation waves of complex frequency based on measurements at real frequencies. This approach allows us to implement virtual gain experimentally and observe deep-subwavelength images. Our work offers a practical solution to overcome the intrinsic losses of plasmonic systems for imaging and sensing applications.",
                 "file":[{
                     "type":"pdf",
                     "info":["Materials and Methods","Supplementary Text","Tables S1 to S22","References (47–88)"],
@@ -4463,9 +4479,10 @@
                     "text":["G. M. Walton, G. L. Cohen, A brief social-belonging intervention improves academic and health outcomes of minority students. Science331, 1447–1451 (2011)."]
                 }]
             },{
-                "title":"Inspiraling streams of enriched gas observed around a massive galaxy 11 billion years ago",
-                "type":"GALAXIES",
+                "title":"Human POT1 protects the telomeric ds-ss DNA junction by capping the 5′ end of the chromosome",
+                "type":"MOLECULAR BIOLOGY",
                 "time":1675080900000,
+                "cover":"https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41580-021-00328-y/MediaObjects/41580_2021_328_Fig1_HTML.png",
                 "authors":[
                     
                     {
@@ -4520,8 +4537,8 @@
                         "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
                         }
                 ],
-                "downloaded":963,
-                "summary":"Galaxies accrete gas from the surrounding intergalactic medium and then turn this gas into stars. Feedback processes such as supernova explosions enrich the gas with elements heavier than helium and can impart enough momentum to eject some gas out of the galaxy. S. Zhang et al. observed the intergalactic medium around a massive galaxy at redshift 2.3. In addition to emission lines caused by hydrogen and helium, they observed lines for carbon, indicating that the gas has been enriched with heavier elements. The kinematics are consistent with streams of gas spiraling toward the massive galaxy. The authors propose that the enriched gas has been recycled from an earlier period of star formation. —Keith T. Smith",
+                "downloaded":9363,
+                "summary":"Mammalian chromosomes are capped with telomeric DNA that is mostly double-stranded but terminates in a single-stranded overhang. A multiprotein complex called shelterin coats telomeric DNA to protect chromosome ends from being recognized as DNA breaks. Tesmer et al. have revealed that the human shelterin protein POT1 protects the telomeric double-stranded–single-stranded DNA junction. Only one of the two mouse POT1 proteins binds this junction, which explains its sufficiency for end protection. Disrupting junction binding of human POT1 alters the 5ʹ terminus sequence and marks chromosome ends as sites of DNA damage, demonstrating the importance of this interaction for chromosome end protection. —Di Jiang",
                 "abstract":"Stars form in galaxies, from gas that has been accreted from the intergalactic medium. Simulations have shown that recycling of gas—the reaccretion of gas that was previously ejected from a galaxy—could sustain star formation in the early Universe. We observe the gas surrounding a massive galaxy at redshift 2.3 and detect emission lines from neutral hydrogen, helium, and ionized carbon that extend 100 kiloparsecs from the galaxy. The kinematics of this circumgalactic gas is consistent with an inspiraling stream. The carbon abundance indicates that the gas had already been enriched with elements heavier than helium, previously ejected from a galaxy. We interpret the results as evidence of gas recycling during high-redshift galaxy assembly.",
                 "file":[{
                     "type":"pdf",
@@ -4552,9 +4569,10 @@
                     "text":["G. M. Walton, G. L. Cohen, A brief social-belonging intervention improves academic and health outcomes of minority students. Science331, 1447–1451 (2011)."]
                 }]
             },{
-                "title":"Garnet crystallization does not drive oxidation at arcs",
-                "type":"GALAXIES",
+                "title":"Ergodicity breaking in rapidly rotating C60 fullerenes",
+                "type":"PHYSICS",
                 "time":1676223000000,
+                "cover":"https://www.science.org/cms/10.1126/science.adi6354/asset/9f251417-5e53-4974-a91a-32a49de2891b/assets/images/large/science.adi6354-f1.jpg",
                 "authors":[
                     
                     {
@@ -4651,9 +4669,10 @@
                     "text":["G. M. Walton, G. L. Cohen, A brief social-belonging intervention improves academic and health outcomes of minority students. Science331, 1447–1451 (2011)."]
                 }]
             },{
-                "title":"Topological kinetic crossover in a nanomagnet array",
-                "type":"MAGNETISM",
+                "title":"Ligand-protected metal nanoclusters as low-loss, highly polarized emitters for optical waveguides",
+                "type":"NANOMATERIALS",
                 "time": 1677328200000,
+                "cover":"https://www.science.org/cms/asset/c376421a-6f05-4936-b6ee-d9f36cdccec8/keyimage.gif",
                 "authors":[
                     
                     {
@@ -4708,8 +4727,8 @@
                         "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
                         }
                 ],
-                "downloaded":2208,
-                "summary":"Frustrated magnetic systems, such as spin ices, do not have a ground state in which each spin is at an energy minimum. In an artificial spin ice geometry called Santa Fe ice, this frustration can be viewed through the magnetic moment configurations at the vertices of the magnetic array. X. Zhang et al. monitored the kinetics of the strings formed by “unhappy” vertices—those not in their lowest energy state. Using x-ray magnetic circular dichroism photoemission electron microscopy, the researchers took images of the system once a second and analyzed the observed changes in string configurations. The system underwent a crossover between a low-temperature regime with limited string motion to a high-temperature one characterized by changes in string topology. —Jelena Stajic",
+                "downloaded":3208,
+                "summary":"Optical waveguides are often passive devices that rely on changes in the refractive index of materials to confine and guide light, but they can also function through optical active materials that absorb and remit light. Wang et al. show that crystals of small metal clusters such as PtAg18 protected by ligand shells can exhibit high optical waveguide performance with low optical loss coefficients and high polarization of the re-emitted light. These effects are amplified by favorable crystal packing and molecular orientation effects. —Phil Szuromi",
                 "abstract":"Ergodic kinetics, which are critical to equilibrium thermodynamics, can be constrained by a system’s topology. We studied a model nanomagnetic array in which such constraints visibly affect the behavior of the magnetic moments. In this system, magnetic excitations connect into thermally active one-dimensional strings whose motion can be imaged in real time. At high temperatures, our data showed the merging, breaking, and reconnecting of strings, resulting in the system transitioning between topologically distinct configurations. Below a crossover temperature, the string motion is dominated by simple changes in length and shape. In this low-temperature regime, the system is energetically stable because of its inability to explore all possible topological configurations. This kinetic crossover suggests a generalizable conception of topologically broken ergodicity and limited equilibration.",
                 "file":[{
                     "type":"pdf",
@@ -4740,9 +4759,10 @@
                     "text":["G. M. Walton, G. L. Cohen, A brief social-belonging intervention improves academic and health outcomes of minority students. Science331, 1447–1451 (2011)."]
                 }]
             },{
-                "title":"Molecular basis of translation termination at noncanonical stop codons in human mitochondria",
-                "type":"MITORIBOSOME",
+                "title":"Universal theory of strange metals from spatially random interactions",
+                "type":"PHYSICS",
                 "time":1677655800000,
+                "cover":"https://scx2.b-cdn.net/gfx/news/hires/2019/2dmaterial.jpg",
                 "authors":[
                     
                     {
@@ -4798,8 +4818,8 @@
                         }
                 ],
                 "downloaded":5063,
-                "summary":"Termination of translation in human mitochondria involves recognition of noncanonical stop codons that in other genomes code for amino acids. To reveal which factor is responsible for this process and to understand the molecular mechanism of stop codon recognition, Saurer et al. used a combination of gene editing, ribosomal profiling and cryo–electron microscopy to investigate the termination process in vivo and in vitro. The specific recognition of the noncanonical stop codon by the identified release factor results in a distortion of the messenger RNA and requires participation of the ribosomal RNA, a recognition mechanism that was not observed for canonical termination complexes. —Di Jiang",
-                "abstract":"The genetic code that specifies the identity of amino acids incorporated into proteins during protein synthesis is almost universally conserved. Mitochondrial genomes feature deviations from the standard genetic code, including the reassignment of two arginine codons to stop codons. The protein required for translation termination at these noncanonical stop codons to release the newly synthesized polypeptides is not currently known. In this study, we used gene editing and ribosomal profiling in combination with cryo–electron microscopy to establish that mitochondrial release factor 1 (mtRF1) detects noncanonical stop codons in human mitochondria by a previously unknown mechanism of codon recognition. We discovered that binding of mtRF1 to the decoding center of the ribosome stabilizes a highly unusual conformation in the messenger RNA in which the ribosomal RNA participates in specific recognition of the noncanonical stop codons.",
+                "summary":"Many correlated electron systems, such as cuprates and heavy fermion materials, host an unusual type of metallic state called the strange metal. Strange metals have transport and thermodynamic properties with temperature dependences that differ from those of ordinary metals. Devising a theory that describes all of these properties correctly remains challenging. Patel et al. achieved this goal by introducing disorder in the coupling constants of a model of strongly interacting systems. —Jelena Stajic",
+                "abstract":"Strange metals—ubiquitous in correlated quantum materials—transport electrical charge at low temperatures but not by the individual electronic quasiparticle excitations, which carry charge in ordinary metals. In this work, we consider two-dimensional metals of fermions coupled to quantum critical scalars, the latter representing order parameters or fractionalized particles. We show that at low temperatures (T), such metals generically exhibit strange metal behavior with a T-linear resistivity arising from spatially random fluctuations in the fermion-scalar Yukawa couplings about a nonzero spatial average. We also find a T ln(1/T) specific heat and a rationale for the Planckian bound on the transport scattering time. These results are in agreement with observations and are obtained in the large N expansion of an ensemble of critical metals with N fermion flavors.",
                 "file":[{
                     "type":"pdf",
                     "info":["Materials and Methods","Supplementary Text","Figs. S1 to S13","Tables S1 to S2"],
@@ -5305,9 +5325,10 @@
         }],
         "researchs":[
             {
-                "title":"Where and with whom does a brief social-belonging intervention promote progress in college?",
-                "type":"SOCIAL BELONGING",
+                "title":"Chemical remodeling of a cellular chaperone to target the active state of mutant KRAS",
+                "type":"CANCER",
                 "time":1680464700000,
+                "cover":"https://www.science.org/cms/asset/9c803493-f1a8-426a-b6a9-f12fe474b4e3/keyimage.gif",
                 "authors":[
                     {
                     "name":"Gregory M. Walton",
@@ -5362,8 +5383,8 @@
                     "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
                     }
                 ],
-                "downloaded":963,
-                "summary":"The rate of earning university degrees in the United States is very unequal across social class, race, and ethnicity. Interventions that promote academic persistence also work differently for students from different backgrounds and operate differently across contexts. Walton et al. conducted a randomized controlled trial to systematically explain and understand these heterogenous effects in a brief online intervention across 22 universities and colleges (see the Perspective by Bowman). The intervention was designed to remedy students’ concerns about belonging through a reading-and-writing activity that emphasized how worries about fitting in, struggling in class, and feeling homesick during the college transition are common and improve over time. They found that the intervention improved retention and persistence in school, particularly among historically underrepresented students, when the school context offered students opportunities to belong. The findings have policy implications for academic institutions that strive to better support and retain diverse students. —Ekeoma Uzogara",
+                "downloaded":3963,
+                "summary":"<b>KRAS</b> is one of the most common oncogenes, but unfortunately it is also commonly thought of as “undruggable” because it lacks a suitable binding pocket for small-molecule drug candidates. To get around this limitation, Schulze et al. built on observations from natural product–derived drugs to go after oncogenic KRAS indirectly (see the Perspective by Liu). The authors identified a naturally occurring compound that binds cyclophilin A, a type of cellular chaperone, and then modified this compound to also bind oncogenic mutant KRAS in a three-way complex. The authors used this approach to design multiple small molecules that effectively bound mutant KRAS in complex with cyclophilin A. These molecules were very effective at inhibiting the downstream pathways involved in cell proliferation and at suppressing tumor growth in multiple models. —Yevgeniya Nusinovich",
                 "abstract":"A promising way to mitigate inequality is by addressing students’ worries about belonging. But where and with whom is this social-belonging intervention effective? Here we report a team-science randomized controlled experiment with 26,911 students at 22 diverse institutions. Results showed that the social-belonging intervention, administered online before college (in under 30 minutes), increased the rate at which students completed the first year as full-time students, especially among students in groups that had historically progressed at lower rates. The college context also mattered: The intervention was effective only when students’ groups were afforded opportunities to belong. This study develops methods for understanding how student identities and contexts interact with interventions. It also shows that a low-cost, scalable intervention generalizes its effects to 749 4-year institutions in the United States.",
                 "file":[{
                     "type":"pdf",
@@ -5394,9 +5415,10 @@
                     "text":["G. M. Walton, G. L. Cohen, A brief social-belonging intervention improves academic and health outcomes of minority students. Science331, 1447–1451 (2011)."]
                 }]
             },{
-                "title":"Natural iron fertilization by shallow hydrothermal sources fuels diazotroph blooms in the ocean",
-                "type":"OCEAN NUTRIENTS",
+                "title":"MyoD-family inhibitor proteins act as auxiliary subunits of Piezo channels",
+                "type":"BIOPHYSICS",
                 "time":1681907400000,
+                "cover":"https://www.science.org/cms/10.1126/science.adh8190/asset/783f7ee6-d43c-4b6d-86bb-2db25d74e9a3/assets/images/large/science.adh8190-f1.jpg",
                 "authors":[
                     {
                     "name":"Gregory M. Walton",
@@ -5452,7 +5474,7 @@
                     }
                 ],
                 "downloaded":2246,
-                "summary":"Large areas of the world’s surface ocean contain limited concentrations of iron, most of which is supplied by upwelling of deeper, nutrient-rich water or atmospheric deposition. Bonnet et al. found that shallow hydrothermal sources also can supply iron to the surface ocean. They show that fluids emitted along the Tonga volcanic Arc in the South Pacific supply enough iron to the photic layer to stimulate biological activity well above that in adjacent unfertilized waters. —H. Jesse Smith",
+                "summary":"Piezo ion channels act as sensors that convert mechanical energy into cellular signals. The mechanistic details of their modulation remains to be fully elucidated. Zhou et al. used two molecular strategies in combination with CRISPR/Cas9 editing to identify previously unrecognized Piezo channel-binding partners. Using a blend of electrophysiology and cryo–electron microscopy, the authors provide molecular details of how MyoD family inhibitor proteins interact with Piezo channels and regulate their gating. They identified an interacting interface that likely represents a scaffold that might be leveraged to generate Piezo-targeted therapeutics. —Mattia Marosov",
                 "abstract":"Iron is an essential nutrient that regulates productivity in ~30% of the ocean. Compared with deep (>2000 meter) hydrothermal activity at mid-ocean ridges that provide iron to the ocean’s interior, shallow (<500 meter) hydrothermal fluids are likely to influence the surface’s ecosystem. However, their effect is unknown. In this work, we show that fluids emitted along the Tonga volcanic arc (South Pacific) have a substantial impact on iron concentrations in the photic layer through vertical diffusion. This enrichment stimulates biological activity, resulting in an extensive patch of chlorophyll (360,000 square kilometers). Diazotroph activity is two to eight times higher and carbon export fluxes are two to three times higher in iron-enriched waters than in adjacent unfertilized waters. Such findings reveal a previously undescribed mechanism of natural iron fertilization in the ocean that fuels regional hotspot sinks for atmospheric CO<sub>2</sub>.",
                 "file":[{
                     "type":"pdf",
@@ -5483,9 +5505,10 @@
                     "text":["G. M. Walton, G. L. Cohen, A brief social-belonging intervention improves academic and health outcomes of minority students. Science331, 1447–1451 (2011)."]
                 }]
             },{
-                "title":"Ectocytosis renders T cell receptor signaling self-limiting at the immune synapse",
-                "type":"CELL BIOLOGY",
+                "title":"DNA methylation networks underlying mammalian traits",
+                "type":"EVOLUTIONARY BIOLOGY",
                 "time":1683229500000,
+                "cover":"https://www.science.org/cms/asset/86f87fac-905b-43a9-ba68-db94becdb52d/keyimage.gif",
                 "authors":[
                     
                     {
@@ -5534,8 +5557,8 @@
                     }
                 ],
                 "downloaded":8131,
-                "summary":"Cytotoxic T lymphocytes (CTLs) are serial killers that can destroy multiple target cells in succession. Using high-resolution three-dimensional imaging, Stinchcombe et al. found that T cell receptor (TCR) activation causes rapid membrane specialization at the immune synapse so that membrane containing activated TCRs buds off in a process known as “ectocytosis. ” As ectosomes bud off, CTLs and their target cells separate, allowing serial killing to proceed. Thus, in activated CTLs, ectocytosis renders TCR signaling self-limiting. —Stella M. Hurtley",
-                "abstract":"Cytotoxic T lymphocytes (CTLs) kill virus-infected and cancer cells through T cell receptor (TCR) recognition. How CTLs terminate signaling and disengage to allow serial killing has remained a mystery. TCR activation triggers membrane specialization within the immune synapse, including the production of diacylglycerol (DAG), a lipid that can induce negative membrane curvature. We found that activated TCRs were shed into DAG-enriched ectosomes at the immune synapse rather than internalized through endocytosis, suggesting that DAG may contribute to the outward budding required for ectocytosis. Budding ectosomes were endocytosed directly by target cells, thereby terminating TCR signaling and simultaneously disengaging the CTL from the target cell to allow serial killing. Thus, ectocytosis renders TCR signaling self-limiting.",
+                "summary":"DNA methylation installs a methyl group to cytosine, placing an epigenetic mark that regulates gene expression. Comparative epigenomics combines epigenetic signatures with phylogenetic relationships to understand species characteristics. Haghani et al. evaluated methylation levels in highly conserved DNA sequences, profiling ~15,000 samples across 348 mammalian species (see the Perspective by de Mendoza). Phylogenetic trees suggest that the divergence of DNA methylation profiles closely mirrors genetic evolution. Species with longer maximum life spans have developed tidier methylation patterns within the genome, characterized by unique peaks and troughs of methylation. Methylation patterns associated with maximum life spans generally differ from those connected to age or interventions that affect mortality risk in mice. These data provide a rich resource of information for fields including evolutionary biology and longevity research. —Di Jiang",
+                "abstract":"Using DNA methylation profiles (n = 15,456) from 348 mammalian species, we constructed phyloepigenetic trees that bear marked similarities to traditional phylogenetic ones. Using unsupervised clustering across all samples, we identified 55 distinct cytosine modules, of which 30 are related to traits such as maximum life span, adult weight, age, sex, and human mortality risk. Maximum life span is associated with methylation levels in HOXL subclass homeobox genes and developmental processes and is potentially regulated by pluripotency transcription factors. The methylation state of some modules responds to perturbations such as caloric restriction, ablation of growth hormone receptors, consumption of high-fat diets, and expression of Yamanaka factors. This study reveals an intertwined evolution of the genome and epigenome that mediates the biological characteristics and traits of different mammalian species.",
                 "file":[{
                     "type":"pdf",
                     "info":["Materials and Methods","Figs. S1 to S11","References (33–36)"],
@@ -5575,9 +5598,10 @@
                     "text":["G. M. Walton, G. L. Cohen, A brief social-belonging intervention improves academic and health outcomes of minority students. Science331, 1447–1451 (2011)."]
                 }]
             },{
-                "title":"Correlated insulator of excitons in WSe<sub>2</sub>/WS<sub>2</sub> moiré superlattices",
-                "type":"2D MATERIALS",
+                "title":"A genome-wide genetic screen uncovers determinants of human pigmentation",
+                "type":"MELANOGENESIS",
                 "time":1685338200000,
+                "cover":"https://www.science.org/cms/asset/1f6db10c-dd79-4a37-8e18-6f3075d1d73a/keyimage.gif",
                 "authors":[
                     {
                     "name":"Gregory M. Walton",
@@ -5632,9 +5656,9 @@
                     "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
                     }
                 ],
-                "downloaded":6802,
-                "summary":"Moiré multilayers of graphene and transition metal dichalcogenides have been found to host a number of exotic electronic phases. In addition to charge carriers—electrons and holes—these two-dimensional structures support their pairs, called excitons, which are also expected to form correlated phases. Xiong et al. observed a correlated insulator of interlayer excitons in a bilayer consisting of tungsten diselenide, which hosted holes, and tungsten disulfide, which hosted electrons. The researchers measured the optical response of the material to excitation by light and found signatures of an incompressible state of excitons. —Jelena Stajic",
-                "abstract":"A panoply of unconventional electronic states has been observed in moiré superlattices. Engineering similar bosonic phases remains, however, largely unexplored. We report the observation of a bosonic correlated insulator in tungsten diselenide/tungsten disulfide (WSe2/WS2) moiré superlattices composed of excitons, that is, tightly bound electron-hole pairs. We develop a pump probe spectroscopy method that we use to observe an exciton incompressible state at exciton filling νex = 1 and charge neutrality, indicating a correlated insulator of excitons. With varying charge density, the bosonic correlated insulator continuously transitions into an electron correlated insulator at charge filling νe = 1, suggesting a mixed correlated insulating state between the two limits. Our studies establish semiconducting moiré superlattices as an intriguing platform for engineering bosonic phases.",
+                "downloaded":5802,
+                "summary":"Skin pigmentation provides crucial protection from the DNA damage caused by sun exposure, but the production of melanin in the skin and hair is known to vary across populations. In this study, Bajpai et al. used flow cytometry and the light-scattering properties of melanin to identify genes important to melanogenesis in human skin cells. The authors performed a genome-wide CRISPR screen and identified 169 genes whose loss was associated with reduced light scattering, and thus melanin. Many of these genes are associated with skin pigmentation in humans, and the authors performed functional work on several of their candidates. This study reveals many new candidate genes with roles in melanogenesis. —Corinne Simonti",
+                "abstract":"Skin color, one of the most diverse human traits, is determined by the quantity, type, and distribution of melanin. In this study, we leveraged the light-scattering properties of melanin to conduct a genome-wide screen for regulators of melanogenesis. We identified 169 functionally diverse genes that converge on melanosome biogenesis, endosomal transport, and gene regulation, of which 135 represented previously unknown associations with pigmentation. In agreement with their melanin-promoting function, the majority of screen hits were up-regulated in melanocytes from darkly pigmented individuals. We further unraveled functions of KLF6 as a transcription factor that regulates melanosome maturation and pigmentation in vivo, and of the endosomal trafficking protein COMMD3 in modulating melanosomal pH. Our study reveals a plethora of melanin-promoting genes, with broad implications for human variation, cell biology, and medicine.",
                 "file":[{
                     "type":"pdf",
                     "info":["Materials and Methods","Supplementary Text","Figs. S1 to S16","References (42–63)"],
@@ -5664,9 +5688,10 @@
                     "text":["G. M. Walton, G. L. Cohen, A brief social-belonging intervention improves academic and health outcomes of minority students. Science331, 1447–1451 (2011)."]
                 }]
             },{
-                "title":"Erosion of heterogeneous rock drives diversification of Appalachian fishes",
-                "type":"BIOGEOGRAPHY",
+                "title":"Global water use efficiency saturation due to increased vapor pressure deficit",
+                "type":"PLANT WATER USE",
                 "time":1686646800000,
+                "cover":"https://www.science.org/cms/asset/e3549f25-746c-4d05-a5cb-8ba9a2ff34ec/keyimage.gif",
                 "authors":[
                     {
                     "name":"Gregory M. Walton",
@@ -5721,9 +5746,9 @@
                     "bio":"Department of Psychology, Stanford University, Stanford, CA, USA."
                     }
                 ],
-                "downloaded":2246,
-                "summary":"Biodiversity is typically high in mountain ranges, likely because of their history of tectonic activity and wide range of environments from base to peak. Looking closer, however, reveals that mountain diversity often occurs within environments and in ranges that have long ceased being tectonically active. Stokes et al. describe diversification among lineages of a freshwater fish species in the North American Appalachian Mountains driven by an affiliation with metamorphic rock. Specifically, as metamorphic rock wore away and was replaced by other types, greenfin darters were increasingly isolated in upstream reaches where metamorphic rock remained, leading to population separation and allopatric diversification. —Sacha Vignieri",
-                "abstract":"The high levels of biodiversity supported by mountains suggest a possible link between geologic processes and biological evolution. Freshwater biodiversity is high not only in tectonically active settings but also in tectonically quiescent montane regions such as the Appalachian Mountains. We show that erosion through different rock types drove allopatric divergence between lineages of the Greenfin Darter (Nothonotus chlorobranchius), a fish species endemic to rivers draining metamorphic rocks in the Tennessee River basin in the United States. In the past, metamorphic rock preferred by N. chlorobranchius was more widespread, but as erosion exposed other rock types, lineages of this species were progressively isolated in tributaries farther upstream, where metamorphic rock remained. Our results suggest a geologic mechanism for initiating allopatric diversification in mountains long after tectonic activity ceases.",
+                "downloaded":4246,
+                "summary":"How have plants managed the trade‐off between carbon gain and water loss in a world of increasing atmospheric carbon dioxide concentrations and rising temperatures? Li et al. showed that plant water use efficiency, the ratio between the net assimilation of carbon through photosynthesis and the stomatal conductance of transpiration, increased from 1982 to 2000, but then remained constant from 2001 to 2016. The authors interpret this as being the result of increases in the vapor pressure and intensifying evapotranspiration. Their results illustrate one more way in which the adverse effects of climate warming make it more difficult to achieve carbon neutrality. —H. Jesse Smith",
+                "abstract":"The ratio of carbon assimilation to water evapotranspiration (ET) of an ecosystem, referred to as ecosystem water use efficiency (WUE<sub>eco</sub>), is widely expected to increase because of the rising atmospheric carbon dioxide concentration (C<sub>a</sub>). However, little is known about the interactive effects of rising C<sub>a</sub> and climate change on WUE<sub>eco</sub>. On the basis of upscaled estimates from machine learning methods and global FLUXNET observations, we show that global WUE<sub>eco</sub> has not risen since 2001 because of the asymmetric effects of an increased vapor pressure deficit (VPD), which depressed photosynthesis and enhanced ET. An undiminished ET trend indicates that rising temperature and VPD may play a more important role in regulating ET than declining stomatal conductance. Projected increases in VPD are predicted to affect the future coupling of the terrestrial carbon and water cycles.",
                 "file":[{
                     "type":"pdf",
                     "info":["Materials and Methods","Figs. S1 to S12","Tables S1 to S6","References (40–89)"],
