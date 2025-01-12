@@ -2,7 +2,7 @@ PURPOSE FOR LEARNING - NOT PROFIT
 
 VUI LÒNG MỞ LIVE SERVER ĐỂ CHẠY
 
-HOẶC CŨNG CÓ THỂ TRUY CẬP TẠI: https://konnn04.github.io/TKW22_Phu_Trieu/
+[Demo](https://konnn04.github.io/Science-Journal-Web-Interface/)
 
 Đại học Mở Tp.HCM
 
@@ -17,8 +17,6 @@ Giảng viên: Dương Hữu Thành
 ## BÀI TẬP GIỮA KÌ
 
 ### Chủ đề: Thiết kế trang web về Tạp chí khoa học
-
-Kho lưu dự án: https://github.com/konnn04/TKW22_Phu_Trieu
 
 ### Thành viên:
 + Nguyễn Thanh Triều - 2251052127
