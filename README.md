@@ -2,7 +2,7 @@ PURPOSE FOR LEARNING - NOT PROFIT
 
 VUI LÒNG MỞ LIVE SERVER ĐỂ CHẠY
 
-[Demo](https://konnn04.github.io/Science-Journal-Web-Interface/)
+[Demo](http://konnn04.is-a.dev/science-magazine-website/)
 
 Đại học Mở Tp.HCM
 
